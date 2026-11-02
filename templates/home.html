@@ -1,0 +1,18 @@
+<main id="contenu" class="wrap">
+  {{header}}
+  <h1>{{h1}}</h1>
+  <p class="lead">{{lead}}</p>
+  <a class="btn btn-accent btn-xl" href="/{{lang}}/scan/">{{scan}}</a>
+  <h2>{{timersTitle}}</h2>
+  <div class="grid2">
+    <a class="tile" href="/{{lang}}/timers/for-time/"><span>For Time</span><small>{{fortime}}</small></a>
+    <a class="tile" href="/{{lang}}/timers/amrap/"><span>AMRAP</span><small>{{amrap}}</small></a>
+    <a class="tile" href="/{{lang}}/timers/emom/"><span>EMOM</span><small>{{emom}}</small></a>
+    <a class="tile" href="/{{lang}}/timers/tabata/"><span>Tabata</span><small>{{tabata}}</small></a>
+  </div>
+  <h2>{{recent}}</h2>
+  <p id="recent-empty">{{empty}}</p>
+  <ul id="recent-list" class="recent"></ul>
+  <p><a href="/{{lang}}/hero-wods/">{{heroesLink}}</a></p>
+  {{footer}}
+</main>

@@ -1,0 +1,290 @@
+[
+  {
+    "slug": "fran",
+    "name": "Fran",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "21-15-9 reps for time of:\nThrusters (43/30 kg)\nPull-ups",
+      "fr": "21-15-9 répétitions, for time :\nThrusters (43/30 kg)\nTractions"
+    },
+    "scaling": {
+      "en": "Keep 21-15-9. Lighten the thrusters or switch pull-ups for banded or jumping pull-ups.",
+      "fr": "Gardez 21-15-9. Allégez les thrusters, ou remplacez les tractions par des tractions élastiques ou sautées."
+    },
+    "verified": true
+  },
+  {
+    "slug": "cindy",
+    "name": "Cindy",
+    "category": "girl",
+    "format": "amrap",
+    "timer": { "durationSec": 1200 },
+    "text": {
+      "en": "AMRAP 20 min:\n5 pull-ups\n10 push-ups\n15 air squats",
+      "fr": "AMRAP 20 min :\n5 tractions\n10 pompes\n15 squats"
+    },
+    "scaling": {
+      "en": "Keep the 5-10-15. Use banded pull-ups or knee push-ups, and shorten the clock if needed.",
+      "fr": "Gardez le 5-10-15. Tractions élastiques ou pompes sur les genoux, et raccourcissez le chrono si besoin."
+    },
+    "verified": true
+  },
+  {
+    "slug": "murph",
+    "name": "Murph",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n1 mile run\n100 pull-ups\n200 push-ups\n300 air squats\n1 mile run",
+      "fr": "For time :\n1 mile de course\n100 tractions\n200 pompes\n300 squats\n1 mile de course"
+    },
+    "scaling": {
+      "en": "Partition the pull-ups, push-ups and squats as you like. Shorten the run or the reps before adding load.",
+      "fr": "Répartissez tractions, pompes et squats comme vous voulez. Raccourcissez la course ou les reps avant d’ajouter une charge."
+    },
+    "verified": true
+  },
+  {
+    "slug": "helen",
+    "name": "Helen",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n400 m run\n21 kettlebell swings, 1.5 pood (24 kg)\n12 pull-ups",
+      "fr": "3 tours for time :\n400 m de course\n21 swings kettlebell, 1,5 pood (24 kg)\n12 tractions"
+    },
+    "scaling": {
+      "en": "Keep 3 rounds. Use a lighter kettlebell and banded pull-ups.",
+      "fr": "Gardez 3 tours. Kettlebell plus légère et tractions élastiques."
+    },
+    "verified": false
+  },
+  {
+    "slug": "grace",
+    "name": "Grace",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "30 clean and jerks for time, 135 lb (61 kg)",
+      "fr": "30 épaulés-jetés for time, 135 lb (61 kg)"
+    },
+    "scaling": {
+      "en": "Keep 30 reps. Lighten the bar until the reps stay unbroken or in a few quick sets.",
+      "fr": "Gardez 30 répétitions. Allégez la barre pour rester en séries courtes."
+    },
+    "verified": false
+  },
+  {
+    "slug": "diane",
+    "name": "Diane",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "21-15-9 reps for time of:\nDeadlifts, 225 lb (102 kg)\nHandstand push-ups",
+      "fr": "21-15-9 répétitions, for time :\nSoulevés de terre, 225 lb (102 kg)\nPompes en équilibre"
+    },
+    "scaling": {
+      "en": "Keep 21-15-9. Lighten the deadlift and pike the handstand push-ups.",
+      "fr": "Gardez 21-15-9. Allégez le soulevé de terre et passez les pompes en équilibre en pike."
+    },
+    "verified": false
+  },
+  {
+    "slug": "annie",
+    "name": "Annie",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "50-40-30-20-10 reps for time of:\nDouble-unders\nSit-ups",
+      "fr": "50-40-30-20-10 répétitions, for time :\nDouble-unders\nAbdominaux"
+    },
+    "scaling": {
+      "en": "Keep the rep scheme. Single-unders can stand in for double-unders.",
+      "fr": "Gardez le schéma. Des single-unders peuvent remplacer les double-unders."
+    },
+    "verified": false
+  },
+  {
+    "slug": "karen",
+    "name": "Karen",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "150 wall-ball shots for time, 20 lb (9 kg) ball",
+      "fr": "150 wall-balls for time, médecine-ball de 20 lb (9 kg)"
+    },
+    "scaling": {
+      "en": "Keep the squat and the target you can hit. Lighten the ball or lower the rep count.",
+      "fr": "Gardez le squat et une cible que vous touchez. Allégez le ballon ou baissez les répétitions."
+    },
+    "verified": false
+  },
+  {
+    "slug": "isabel",
+    "name": "Isabel",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "30 snatches for time, 135 lb (61 kg)",
+      "fr": "30 arrachés for time, 135 lb (61 kg)"
+    },
+    "scaling": {
+      "en": "Keep 30 reps. Lighten the bar so the snatches stay in quick sets.",
+      "fr": "Gardez 30 répétitions. Allégez la barre pour rester en séries courtes."
+    },
+    "verified": false
+  },
+  {
+    "slug": "jackie",
+    "name": "Jackie",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n1000 m row\n50 thrusters, 45 lb (20 kg)\n30 pull-ups",
+      "fr": "For time :\n1000 m au rameur\n50 thrusters, 45 lb (20 kg)\n30 tractions"
+    },
+    "scaling": {
+      "en": "Keep the order. Shorten the row, lighten the thrusters, and band the pull-ups.",
+      "fr": "Gardez l’ordre. Raccourcissez le rameur, allégez les thrusters, tractions élastiques."
+    },
+    "verified": false
+  },
+  {
+    "slug": "elizabeth",
+    "name": "Elizabeth",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "21-15-9 reps for time of:\nCleans, 135 lb (61 kg)\nRing dips",
+      "fr": "21-15-9 répétitions, for time :\nCleans, 135 lb (61 kg)\nDips aux anneaux"
+    },
+    "scaling": {
+      "en": "Keep 21-15-9. Lighten the cleans and use foot-assisted or banded ring dips.",
+      "fr": "Gardez 21-15-9. Allégez les cleans et assistez les dips aux anneaux."
+    },
+    "verified": false
+  },
+  {
+    "slug": "angie",
+    "name": "Angie",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n100 pull-ups\n100 push-ups\n100 sit-ups\n100 squats",
+      "fr": "For time :\n100 tractions\n100 pompes\n100 abdominaux\n100 squats"
+    },
+    "scaling": {
+      "en": "Keep the order. Cut each movement to 50 or 25 reps, or use easier variations.",
+      "fr": "Gardez l’ordre. Passez à 50 ou 25 répétitions, ou à des variantes plus faciles."
+    },
+    "verified": false
+  },
+  {
+    "slug": "barbara",
+    "name": "Barbara",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n20 pull-ups\n30 push-ups\n40 sit-ups\n50 squats\nRest 3 minutes between rounds",
+      "fr": "5 tours for time :\n20 tractions\n30 pompes\n40 abdominaux\n50 squats\n3 minutes de repos entre les tours"
+    },
+    "scaling": {
+      "en": "The 3-minute rest stays. Lower the reps or use easier pull-ups and push-ups. The clock here does not insert the rests for you.",
+      "fr": "Le repos de 3 minutes reste. Baissez les reps ou facilitez tractions et pompes. Ce chrono n’insère pas les repos tout seul."
+    },
+    "verified": false
+  },
+  {
+    "slug": "chelsea",
+    "name": "Chelsea",
+    "category": "girl",
+    "format": "emom",
+    "timer": { "intervalSec": 60, "rounds": 30 },
+    "text": {
+      "en": "Every minute for 30 minutes:\n5 pull-ups\n10 push-ups\n15 squats",
+      "fr": "Chaque minute pendant 30 minutes :\n5 tractions\n10 pompes\n15 squats"
+    },
+    "scaling": {
+      "en": "Keep the minute. Reduce the reps or the number of minutes so you finish inside the minute.",
+      "fr": "Gardez la minute. Baissez les reps ou le nombre de minutes pour finir dans la minute."
+    },
+    "verified": false
+  },
+  {
+    "slug": "nancy",
+    "name": "Nancy",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n400 m run\n15 overhead squats, 95 lb (43 kg)",
+      "fr": "5 tours for time :\n400 m de course\n15 overhead squats, 95 lb (43 kg)"
+    },
+    "scaling": {
+      "en": "Keep 5 rounds. Lighten the bar or shorten the run.",
+      "fr": "Gardez 5 tours. Allégez la barre ou raccourcissez la course."
+    },
+    "verified": false
+  },
+  {
+    "slug": "mary",
+    "name": "Mary",
+    "category": "girl",
+    "format": "amrap",
+    "timer": { "durationSec": 1200 },
+    "text": {
+      "en": "AMRAP 20 min:\n5 handstand push-ups\n10 one-legged squats, alternating\n15 pull-ups",
+      "fr": "AMRAP 20 min :\n5 pompes en équilibre\n10 squats sur une jambe, en alternant\n15 tractions"
+    },
+    "scaling": {
+      "en": "Keep the 20 minutes. Pike the handstand push-ups, hold a support on the pistols, and band the pull-ups.",
+      "fr": "Gardez les 20 minutes. Pike pour les pompes, appui pour les pistols, élastique pour les tractions."
+    },
+    "verified": false
+  },
+  {
+    "slug": "kelly",
+    "name": "Kelly",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n400 m run\n30 box jumps, 24 inch (61 cm)\n30 wall-ball shots, 20 lb (9 kg)",
+      "fr": "5 tours for time :\n400 m de course\n30 box jumps, boîte de 24 inch (61 cm)\n30 wall-balls, 20 lb (9 kg)"
+    },
+    "scaling": {
+      "en": "Keep 5 rounds. Lower the box, lighten the ball, or reduce the reps.",
+      "fr": "Gardez 5 tours. Boîte plus basse, ballon plus léger, ou moins de répétitions."
+    },
+    "verified": false
+  },
+  {
+    "slug": "linda",
+    "name": "Linda",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "10-9-8-7-6-5-4-3-2-1 reps for time of:\nDeadlift, 1½ bodyweight\nBench press, bodyweight\nClean, ¾ bodyweight",
+      "fr": "10-9-8-7-6-5-4-3-2-1 répétitions, for time :\nSoulevé de terre, 1½ poids de corps\nDéveloppé couché, poids de corps\nClean, ¾ de poids de corps"
+    },
+    "scaling": {
+      "en": "Keep the descending ladder. Use lighter fixed bars if the bodyweight loads are too heavy.",
+      "fr": "Gardez l’échelle descendante. Des barres fixes plus légères si les charges au poids de corps sont trop lourdes."
+    },
+    "verified": false
+  }
+]

@@ -1,0 +1,48 @@
+<main id="contenu" class="wrap">
+  {{header}}
+  <h1>{{h1}}</h1>
+  <p class="lead">{{lead}}</p>
+  <p id="status" role="status"></p>
+  <div class="actions">
+    <button type="button" id="export" class="btn">{{export}}</button>
+    <label class="btn btn-ghost">{{import}} <input id="import" type="file" accept="application/json"></label>
+    <button type="button" id="clear" class="btn btn-ghost">{{clear}}</button>
+  </div>
+  <p id="empty">{{empty}}</p>
+  <ul id="list" class="cards"></ul>
+  <h2>{{addTitle}}</h2>
+  <form id="manual" class="stack">
+    <label>{{name}} <input name="name" required maxlength="160"></label>
+    <label>{{format}}
+      <select id="format" name="format">{{options}}</select>
+    </label>
+    <div data-for="fortime"><label>{{capMin}} <input name="capMin" type="number" min="1" max="1440" inputmode="numeric"></label></div>
+    <div data-for="amrap other"><label>{{minutes}} <input name="minutes" type="number" min="1" max="1440" value="20" inputmode="numeric"></label></div>
+    <div data-for="emom"><label>{{intervals}} <input name="intervals" type="number" min="1" max="500" value="10" inputmode="numeric"></label></div>
+    <div data-for="emom"><label>{{interval}} <input name="interval" type="number" min="1" max="3600" value="60" inputmode="numeric"></label></div>
+    <div data-for="tabata"><label>{{work}} <input name="work" type="number" min="1" max="3600" value="20" inputmode="numeric"></label></div>
+    <div data-for="tabata"><label>{{rest}} <input name="rest" type="number" min="0" max="3600" value="10" inputmode="numeric"></label></div>
+    <div data-for="tabata"><label>{{tabataRounds}} <input name="tabataRounds" type="number" min="1" max="500" value="8" inputmode="numeric"></label></div>
+    <div data-for="tabata"><label>{{sets}} <input name="sets" type="number" min="1" max="40" inputmode="numeric"></label></div>
+    <div data-for="tabata"><label>{{setRest}} <input name="setRest" type="number" min="0" max="3600" inputmode="numeric"></label></div>
+    <label>{{prep}} <input name="prep" type="number" min="0" max="120" value="10" inputmode="numeric"></label>
+    <label>{{text}} <textarea name="text"></textarea></label>
+    <button type="submit" class="btn btn-accent">{{save}}</button>
+  </form>
+  <p hidden data-label="relaunch">{{relaunch}}</p>
+  <p hidden data-label="delete">{{delete}}</p>
+  <p hidden data-label="addResult">{{addResult}}</p>
+  <p hidden data-label="rounds">{{rounds}}</p>
+  <p hidden data-label="reps">{{reps}}</p>
+  <p hidden data-label="note">{{note}}</p>
+  <dialog id="confirm">
+    <form method="dialog" class="stack">
+      <p id="confirm-text"></p>
+      <div class="actions">
+        <button value="cancel" class="btn btn-ghost">{{cancel}}</button>
+        <button value="ok" class="btn">{{confirm}}</button>
+      </div>
+    </form>
+  </dialog>
+  {{footer}}
+</main>

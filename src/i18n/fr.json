@@ -1,0 +1,280 @@
+{
+  "ui": {
+    "untitled": "Sans nom",
+    "formats": {
+      "fortime": "For Time",
+      "amrap": "AMRAP",
+      "emom": "EMOM",
+      "tabata": "Tabata",
+      "other": "Autre"
+    },
+    "confidence": { "high": "élevée", "medium": "moyenne", "low": "faible" },
+    "timer": {
+      "pause": "Pause",
+      "resume": "Reprendre",
+      "prep": "Préparation",
+      "work": "Effort",
+      "rest": "Repos",
+      "setRest": "Repos entre blocs",
+      "round": "Tour {round}/{rounds}",
+      "cap": "Cap {time}",
+      "hits": "{n} rounds",
+      "hitsOne": "{n} round",
+      "saved": "Enregistré dans l’historique de cet appareil.",
+      "saveFailed": "Enregistrement impossible sur cet appareil.",
+      "announcePrep": "Préparation",
+      "announceWork": "Effort, tour {round} sur {rounds}",
+      "announceRest": "Repos, tour {round} sur {rounds}",
+      "announceSetRest": "Repos entre les blocs",
+      "announceRound": "Intervalle {round} sur {rounds}",
+      "announceDone": "Terminé",
+      "announcePaused": "En pause",
+      "announceRunning": "En cours",
+      "announceHits": "{n} rounds",
+      "announceHitsOne": "{n} round"
+    },
+    "dashboard": {
+      "duplicate": "Ce WOD est déjà dans l’historique.",
+      "imported": "Import : {added} ajoutés, {merged} fusionnés.",
+      "importError": "Fichier illisible. Il faut un export WODBurner version 1.",
+      "cleared": "Historique effacé de cet appareil.",
+      "confirmClear": "Effacer tous les WODs et les réglages de cet appareil ?",
+      "confirmDelete": "Supprimer « {name} » ?",
+      "resultSaved": "Résultat ajouté.",
+      "needName": "Indiquez un nom.",
+      "saved": "WOD enregistré."
+    },
+    "scan": {
+      "preparing": "Préparation de la photo…",
+      "sending": "Lecture du tableau…",
+      "decode": "Cette image ne s’ouvre pas ici. Prenez la photo directement avec l’appareil, ou enregistrez-la en JPEG.",
+      "size": "La photo reste trop lourde après compression. Rapprochez-vous du tableau et recadrez.",
+      "network": "Pas de réseau. Le scan en a besoin. Le chrono et l’historique marchent sans.",
+      "invalid": "La lecture n’est pas exploitable. Saisissez le WOD à la main.",
+      "offline": "Vous êtes hors ligne. Le scan attend une connexion.",
+      "turnstileWait": "La vérification anti-abus n’est pas prête. Réessayez dans un instant.",
+      "unconfigured": "La vérification anti-abus n’est pas configurée sur cette installation.",
+      "saved": "Enregistré. Vous pouvez lancer le chrono.",
+      "failed": "Le scan a échoué."
+    },
+    "hero": {
+      "added": "Ajouté à votre historique.",
+      "duplicate": "Déjà dans votre historique.",
+      "failed": "Enregistrement impossible sur cet appareil."
+    },
+    "wod": {
+      "missing": "Aucun WOD de cet appareil ne correspond à ce lien.",
+      "noResults": "Pas encore de résultat."
+    }
+  },
+  "pages": {
+    "skip": "Aller au contenu",
+    "nav": {
+      "timers": "Chronos",
+      "heroes": "Benchmarks",
+      "history": "Historique",
+      "scan": "Scanner",
+      "privacy": "Confidentialité"
+    },
+    "root": {
+      "title": "WODBurner — chrono CrossFit",
+      "description": "Chrono For Time, AMRAP, EMOM et Tabata, benchmarks, et scan d’un tableau. Sans compte.",
+      "h1": "WODBurner",
+      "lead": "Choisissez la langue. Le chrono reste sur cet appareil."
+    },
+    "home": {
+      "title": "WODBurner — chrono CrossFit",
+      "description": "Chrono For Time, AMRAP, EMOM et Tabata, WODs de référence, et scan d’un tableau blanc. Sans compte, sur cet appareil.",
+      "h1": "Le chrono, prêt.",
+      "lead": "For Time, AMRAP, EMOM, Tabata. L’historique reste dans ce navigateur. Aucun compte.",
+      "scan": "Scanner un tableau",
+      "timersTitle": "Chronos",
+      "fortime": "Compte en montant. Vous arrêtez quand c’est fini.",
+      "amrap": "Compte à rebours. Vous ajoutez les rounds.",
+      "emom": "Un intervalle, puis le suivant.",
+      "tabata": "Effort et repos qui alternent.",
+      "recent": "Derniers WODs",
+      "empty": "Aucun WOD sur cet appareil pour l’instant.",
+      "heroesLink": "Voir les benchmarks"
+    },
+    "timers": {
+      "title": "Chronos CrossFit — WODBurner",
+      "description": "Quatre chronos : For Time, AMRAP, EMOM et Tabata. Réglables par l’adresse, utilisables hors ligne.",
+      "h1": "Quatre chronos",
+      "lead": "Chacun se règle dans l’adresse, pour le partager ou le relancer.",
+      "fortime": "Le temps monte. Un time cap l’arrête et demande les reps.",
+      "amrap": "Le temps descend. Le bouton +1 round est large.",
+      "emom": "Exemple : 10 intervalles de 60 s, ou un intervalle de 2:30.",
+      "tabata": "20 s d’effort, 10 s de repos, 8 tours. Les chiffres se règlent."
+    },
+    "forTime": {
+      "title": "Chrono For Time — WODBurner",
+      "description": "Chrono For Time. Le temps monte à partir de l’heure de départ. Un time cap arrête le chrono et ouvre la saisie des reps.",
+      "h1": "For Time",
+      "lead": "Le temps monte. Terminé enregistre le temps. Avec un time cap, le chrono s’arrête au cap et vous notez les reps.",
+      "capLabel": "Time cap en minutes, vide s’il n’y en a pas",
+      "prepLabel": "Préparation, en secondes",
+      "noscript": "Le chrono a besoin de JavaScript. Le réglage ci-dessus reste lisible."
+    },
+    "amrap": {
+      "title": "Chrono AMRAP — WODBurner",
+      "description": "Chrono AMRAP. Compte à rebours sur la durée choisie, avec un bouton large pour compter les rounds.",
+      "h1": "AMRAP",
+      "lead": "Le temps descend depuis la durée choisie. +1 round compte les tours. À la fin, vous notez rounds et reps.",
+      "minutesLabel": "Durée en minutes",
+      "prepLabel": "Préparation, en secondes",
+      "noscript": "Le chrono a besoin de JavaScript. Le réglage ci-dessus reste lisible."
+    },
+    "emom": {
+      "title": "Chrono EMOM — WODBurner",
+      "description": "Chrono EMOM. Affiche l’intervalle en cours et le temps qui reste. Bip au changement, 3-2-1 avant le suivant.",
+      "h1": "EMOM",
+      "lead": "Chaque intervalle a la même durée. L’écran montre le tour en cours et le temps restant dans l’intervalle.",
+      "intervalsLabel": "Nombre d’intervalles",
+      "intervalLabel": "Durée d’un intervalle, en secondes",
+      "prepLabel": "Préparation, en secondes",
+      "noscript": "Le chrono a besoin de JavaScript. Le réglage ci-dessus reste lisible."
+    },
+    "tabata": {
+      "title": "Chrono Tabata — WODBurner",
+      "description": "Chrono Tabata. Alterne effort et repos, avec un changement de libellé et de couleur, et des bips distincts.",
+      "h1": "Tabata",
+      "lead": "L’effort et le repos alternent. Le repos compte dans le total, y compris après le dernier effort. Un repos plus long peut séparer plusieurs blocs.",
+      "workLabel": "Effort, en secondes",
+      "restLabel": "Repos, en secondes",
+      "roundsLabel": "Tours",
+      "setsLabel": "Blocs, vide = 1",
+      "setRestLabel": "Repos entre blocs, en secondes",
+      "prepLabel": "Préparation, en secondes",
+      "noscript": "Le chrono a besoin de JavaScript. Le réglage ci-dessus reste lisible."
+    },
+    "timerChrome": {
+      "start": "Démarrer",
+      "pause": "Pause",
+      "done": "Terminé",
+      "plus": "+1 round",
+      "sound": "Son",
+      "volume": "Volume",
+      "full": "Plein écran",
+      "modify": "Modifier",
+      "wake": "L’écran peut s’éteindre : ce navigateur ne propose pas le Wake Lock.",
+      "resultTitle": "Résultat",
+      "roundsLabel": "Rounds",
+      "repsLabel": "Reps",
+      "noteLabel": "Note",
+      "save": "Enregistrer"
+    },
+    "dashboard": {
+      "title": "Historique — WODBurner",
+      "description": "Historique des WODs gardé sur cet appareil.",
+      "h1": "Historique",
+      "lead": "Les WODs de ce navigateur. Rien n’est envoyé tant que vous ne scannez pas une photo.",
+      "empty": "Aucun WOD enregistré sur cet appareil.",
+      "export": "Exporter JSON",
+      "import": "Importer JSON",
+      "clear": "Tout effacer",
+      "cancel": "Annuler",
+      "confirm": "Effacer",
+      "addTitle": "Saisir un WOD",
+      "name": "Nom",
+      "format": "Format",
+      "text": "Texte",
+      "save": "Enregistrer",
+      "relaunch": "Relancer",
+      "addResult": "Ajouter un résultat",
+      "delete": "Supprimer",
+      "result": "Résultat",
+      "note": "Note",
+      "rounds": "Rounds",
+      "reps": "Reps",
+      "capMin": "Time cap, minutes",
+      "minutes": "Minutes",
+      "intervals": "Intervalles",
+      "interval": "Secondes par intervalle",
+      "work": "Effort, secondes",
+      "rest": "Repos, secondes",
+      "tabataRounds": "Tours",
+      "sets": "Blocs",
+      "setRest": "Repos entre blocs, secondes",
+      "prep": "Préparation, secondes"
+    },
+    "scan": {
+      "title": "Scanner un tableau — WODBurner",
+      "description": "Photo d’un tableau blanc, lecture du WOD, chrono prêt à lancer. La photo n’est pas conservée.",
+      "h1": "Scanner un tableau",
+      "lead": "Choisissez une photo ou prenez-la maintenant. Vous relisez le texte, puis vous l’enregistrez ou vous lancez le chrono. La photo n’est pas gardée.",
+      "file": "Photo du tableau",
+      "drop": "Déposez la photo ici, ou utilisez le bouton.",
+      "offline": "Le scan a besoin du réseau. Sans réseau, le chrono et l’historique restent utilisables.",
+      "save": "Enregistrer",
+      "launch": "Lancer le chrono",
+      "manual": "Saisir le WOD à la main",
+      "name": "Nom",
+      "format": "Format",
+      "text": "Texte",
+      "confidence": "Confiance",
+      "warnings": "À vérifier"
+    },
+    "wod": {
+      "title": "WOD enregistré — WODBurner",
+      "description": "Ouvre un WOD gardé sur cet appareil.",
+      "h1": "WOD enregistré",
+      "lead": "Cette page ouvre un WOD déjà enregistré dans ce navigateur. L’identifiant est dans le lien.",
+      "missing": "Rien ne correspond à ce lien sur cet appareil. Ouvrez l’historique.",
+      "launch": "Lancer le chrono",
+      "results": "Résultats"
+    },
+    "heroes": {
+      "title": "Benchmarks CrossFit — WODBurner",
+      "description": "WODs de référence : Fran, Cindy, Murph et les Girls. Le texte est dans la page, le chrono se lance sans compte.",
+      "h1": "Benchmarks",
+      "lead": "La définition affichée est celle que l’on retrouve le plus souvent. Une fiche marquée « à vérifier » n’a pas encore été relue par un humain."
+    },
+    "hero": {
+      "launch": "Lancer le chrono",
+      "add": "Ajouter à mon historique",
+      "scaling": "Échelle",
+      "format": "Format",
+      "unverified": "À vérifier : un humain doit relire les chiffres avant de s’y fier.",
+      "descriptionSuffix": "WOD de référence sur WODBurner. Lancez le chrono ou ajoutez-le à l’historique de cet appareil."
+    },
+    "privacy": {
+      "title": "Confidentialité — WODBurner",
+      "description": "Ce qui reste sur l’appareil, ce que le scan envoie, et comment tout effacer.",
+      "h1": "Confidentialité",
+      "blocks": [
+        {
+          "h": "Pas de compte",
+          "p": [
+            "WODBurner ne crée pas de compte. Il n’y a pas de mot de passe, pas de cookie, pas de publicité et pas de mesure d’audience."
+          ]
+        },
+        {
+          "h": "Ce qui reste sur cet appareil",
+          "p": [
+            "Les WODs, les résultats, la langue, le son et le volume sont enregistrés dans ce navigateur (IndexedDB). L’export JSON vous permet de les copier. Tout effacer retire ces données de l’appareil. C’est le seul geste qui correspond à une suppression de compte, puisqu’il n’y a pas de compte."
+          ]
+        },
+        {
+          "h": "La photo du tableau",
+          "p": [
+            "La photo part uniquement quand vous lancez un scan. Le navigateur la réduit, puis l’envoie au service de lecture. Ce service la transmet au modèle le temps de la requête et ne la stocke pas. Le texte relu est ce qui peut être enregistré, et seulement sur votre appareil, si vous le demandez.",
+            "Un tableau peut montrer des noms ou des visages. L’image n’est pas conservée par WODBurner."
+          ]
+        },
+        {
+          "h": "Vérification anti-abus",
+          "p": [
+            "Le scan demande une vérification Cloudflare Turnstile. Un plafond quotidien limite le nombre de lectures. Pour ce plafond, le service conserve un compteur lié à une empreinte de l’adresse IP, pas un dossier à votre nom."
+          ]
+        }
+      ]
+    },
+    "notFound": {
+      "title": "Page introuvable — WODBurner",
+      "description": "Cette page n’existe pas.",
+      "h1": "Page introuvable",
+      "lead": "Le lien ne correspond à aucune page."
+    }
+  }
+}

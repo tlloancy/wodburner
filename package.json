@@ -1,0 +1,23 @@
+{
+  "name": "wodburner",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc --noEmit && node scripts/build.mjs && node scripts/check-static.mjs",
+    "size": "node scripts/size.mjs",
+    "test": "vitest run",
+    "dev": "node scripts/dev.mjs",
+    "check": "tsc --noEmit && vitest run && node scripts/build.mjs && node scripts/check-static.mjs && node scripts/size.mjs"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261102.1",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5",
+    "wrangler": "^4.156.1"
+  }
+}

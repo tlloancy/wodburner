@@ -1,0 +1,16 @@
+<main id="contenu" class="wrap">
+  {{header}}
+  <p class="meta">{{category}}</p>
+  <h1>{{name}}</h1>
+  {{unverified}}
+  <p><strong>{{formatLabel}}</strong> {{format}}</p>
+  <pre id="hero-text" class="wod-text">{{text}}</pre>
+  <h2>{{scalingLabel}}</h2>
+  <p>{{scaling}}</p>
+  <div class="actions">
+    <a class="btn btn-accent" href="{{launchHref}}">{{launch}}</a>
+    <button type="button" id="add-hero" class="btn" data-name="{{nameAttr}}" data-format="{{formatValue}}" data-timer="{{timerAttr}}">{{add}}</button>
+  </div>
+  <p id="add-status" role="status"></p>
+  {{footer}}
+</main>

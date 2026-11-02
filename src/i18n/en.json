@@ -1,0 +1,280 @@
+{
+  "ui": {
+    "untitled": "Untitled",
+    "formats": {
+      "fortime": "For Time",
+      "amrap": "AMRAP",
+      "emom": "EMOM",
+      "tabata": "Tabata",
+      "other": "Other"
+    },
+    "confidence": { "high": "high", "medium": "medium", "low": "low" },
+    "timer": {
+      "pause": "Pause",
+      "resume": "Resume",
+      "prep": "Get ready",
+      "work": "Work",
+      "rest": "Rest",
+      "setRest": "Rest between sets",
+      "round": "Round {round}/{rounds}",
+      "cap": "Cap {time}",
+      "hits": "{n} rounds",
+      "hitsOne": "{n} round",
+      "saved": "Saved in this device’s history.",
+      "saveFailed": "Could not save on this device.",
+      "announcePrep": "Get ready",
+      "announceWork": "Work, round {round} of {rounds}",
+      "announceRest": "Rest, round {round} of {rounds}",
+      "announceSetRest": "Rest between sets",
+      "announceRound": "Interval {round} of {rounds}",
+      "announceDone": "Finished",
+      "announcePaused": "Paused",
+      "announceRunning": "Running",
+      "announceHits": "{n} rounds",
+      "announceHitsOne": "{n} round"
+    },
+    "dashboard": {
+      "duplicate": "This workout is already in your history.",
+      "imported": "Import: {added} added, {merged} merged.",
+      "importError": "Unreadable file. Use a WODBurner version 1 export.",
+      "cleared": "History removed from this device.",
+      "confirmClear": "Erase every workout and setting on this device?",
+      "confirmDelete": "Delete “{name}”?",
+      "resultSaved": "Result added.",
+      "needName": "Enter a name.",
+      "saved": "Workout saved."
+    },
+    "scan": {
+      "preparing": "Preparing the photo…",
+      "sending": "Reading the board…",
+      "decode": "This image cannot be opened here. Take the photo directly with the camera, or save it as a JPEG.",
+      "size": "The photo is still too large after compression. Move closer and crop the board.",
+      "network": "No network. The scan needs one. The timer and history work without it.",
+      "invalid": "The reading could not be used. Type the workout instead.",
+      "offline": "You are offline. The scan waits for a connection.",
+      "turnstileWait": "The abuse check is not ready. Try again in a moment.",
+      "unconfigured": "The abuse check is not configured on this install.",
+      "saved": "Saved. You can start the timer.",
+      "failed": "The scan failed."
+    },
+    "hero": {
+      "added": "Added to your history.",
+      "duplicate": "Already in your history.",
+      "failed": "Could not save on this device."
+    },
+    "wod": {
+      "missing": "No workout on this device matches this link.",
+      "noResults": "No result yet."
+    }
+  },
+  "pages": {
+    "skip": "Skip to content",
+    "nav": {
+      "timers": "Timers",
+      "heroes": "Benchmarks",
+      "history": "History",
+      "scan": "Scan",
+      "privacy": "Privacy"
+    },
+    "root": {
+      "title": "WODBurner — CrossFit timer",
+      "description": "For Time, AMRAP, EMOM and Tabata timer, benchmarks, and whiteboard scan. No account.",
+      "h1": "WODBurner",
+      "lead": "Choose a language. The timer stays on this device."
+    },
+    "home": {
+      "title": "WODBurner — CrossFit timer",
+      "description": "For Time, AMRAP, EMOM and Tabata timer, benchmark workouts, and whiteboard scan. No account. Stored on this device.",
+      "h1": "The timer, ready.",
+      "lead": "For Time, AMRAP, EMOM, Tabata. History stays in this browser. No account.",
+      "scan": "Scan a whiteboard",
+      "timersTitle": "Timers",
+      "fortime": "Counts up. You stop it when you finish.",
+      "amrap": "Counts down. You add the rounds.",
+      "emom": "One interval, then the next.",
+      "tabata": "Work and rest, back and forth.",
+      "recent": "Latest workouts",
+      "empty": "No workout on this device yet.",
+      "heroesLink": "Browse the benchmarks"
+    },
+    "timers": {
+      "title": "CrossFit timers — WODBurner",
+      "description": "Four timers: For Time, AMRAP, EMOM and Tabata. Set them from the URL. They work offline.",
+      "h1": "Four timers",
+      "lead": "Each one is set in the address, so you can share it or run it again.",
+      "fortime": "Time counts up. A time cap stops it and asks for the reps.",
+      "amrap": "Time counts down. The +1 round button is large.",
+      "emom": "Example: 10 intervals of 60 s, or one interval of 2:30.",
+      "tabata": "20 s work, 10 s rest, 8 rounds. The numbers are editable."
+    },
+    "forTime": {
+      "title": "For Time timer — WODBurner",
+      "description": "For Time clock. Time counts up from the start. A time cap stops the clock and opens the rep field.",
+      "h1": "For Time",
+      "lead": "Time counts up. Done records the time. With a time cap, the clock stops at the cap and you enter the reps.",
+      "capLabel": "Time cap in minutes, empty if there is none",
+      "prepLabel": "Countdown before the start, in seconds",
+      "noscript": "The clock needs JavaScript. The settings above stay readable."
+    },
+    "amrap": {
+      "title": "AMRAP timer — WODBurner",
+      "description": "AMRAP timer. Counts down for the chosen length, with a large button to count rounds.",
+      "h1": "AMRAP",
+      "lead": "Time counts down from the length you set. +1 round counts the rounds. At the end, enter rounds and reps.",
+      "minutesLabel": "Length in minutes",
+      "prepLabel": "Countdown before the start, in seconds",
+      "noscript": "The clock needs JavaScript. The settings above stay readable."
+    },
+    "emom": {
+      "title": "EMOM timer — WODBurner",
+      "description": "EMOM timer. Shows the current interval and the time left in it. A beep on the change, 3-2-1 before the next.",
+      "h1": "EMOM",
+      "lead": "Every interval has the same length. The screen shows the current round and the time left in the interval.",
+      "intervalsLabel": "Number of intervals",
+      "intervalLabel": "Length of one interval, in seconds",
+      "prepLabel": "Countdown before the start, in seconds",
+      "noscript": "The clock needs JavaScript. The settings above stay readable."
+    },
+    "tabata": {
+      "title": "Tabata timer — WODBurner",
+      "description": "Tabata timer. Alternates work and rest, with a label and a color change, and distinct beeps.",
+      "h1": "Tabata",
+      "lead": "Work and rest alternate. Rest is part of the total, including after the last work interval. A longer rest can separate several sets.",
+      "workLabel": "Work, in seconds",
+      "restLabel": "Rest, in seconds",
+      "roundsLabel": "Rounds",
+      "setsLabel": "Sets, empty = 1",
+      "setRestLabel": "Rest between sets, in seconds",
+      "prepLabel": "Countdown before the start, in seconds",
+      "noscript": "The clock needs JavaScript. The settings above stay readable."
+    },
+    "timerChrome": {
+      "start": "Start",
+      "pause": "Pause",
+      "done": "Done",
+      "plus": "+1 round",
+      "sound": "Sound",
+      "volume": "Volume",
+      "full": "Full screen",
+      "modify": "Edit",
+      "wake": "The screen may sleep: this browser has no Wake Lock.",
+      "resultTitle": "Result",
+      "roundsLabel": "Rounds",
+      "repsLabel": "Reps",
+      "noteLabel": "Note",
+      "save": "Save"
+    },
+    "dashboard": {
+      "title": "History — WODBurner",
+      "description": "Workout history stored on this device.",
+      "h1": "History",
+      "lead": "Workouts in this browser. Nothing is sent unless you scan a photo.",
+      "empty": "No workout saved on this device.",
+      "export": "Export JSON",
+      "import": "Import JSON",
+      "clear": "Erase everything",
+      "cancel": "Cancel",
+      "confirm": "Erase",
+      "addTitle": "Type a workout",
+      "name": "Name",
+      "format": "Format",
+      "text": "Text",
+      "save": "Save",
+      "relaunch": "Run again",
+      "addResult": "Add a result",
+      "delete": "Delete",
+      "result": "Result",
+      "note": "Note",
+      "rounds": "Rounds",
+      "reps": "Reps",
+      "capMin": "Time cap, minutes",
+      "minutes": "Minutes",
+      "intervals": "Intervals",
+      "interval": "Seconds per interval",
+      "work": "Work, seconds",
+      "rest": "Rest, seconds",
+      "tabataRounds": "Rounds",
+      "sets": "Sets",
+      "setRest": "Rest between sets, seconds",
+      "prep": "Countdown, seconds"
+    },
+    "scan": {
+      "title": "Scan a whiteboard — WODBurner",
+      "description": "Whiteboard photo, workout text, timer ready to start. The photo is not kept.",
+      "h1": "Scan a whiteboard",
+      "lead": "Choose a photo or take one now. You check the text, then save it or start the timer. The photo is not kept.",
+      "file": "Photo of the board",
+      "drop": "Drop the photo here, or use the button.",
+      "offline": "The scan needs a network. Without one, the timer and the history still work.",
+      "save": "Save",
+      "launch": "Start the timer",
+      "manual": "Type the workout instead",
+      "name": "Name",
+      "format": "Format",
+      "text": "Text",
+      "confidence": "Confidence",
+      "warnings": "Check this"
+    },
+    "wod": {
+      "title": "Saved workout — WODBurner",
+      "description": "Opens a workout stored on this device.",
+      "h1": "Saved workout",
+      "lead": "This page opens a workout already stored in this browser. The id is in the link.",
+      "missing": "Nothing on this device matches this link. Open the history.",
+      "launch": "Start the timer",
+      "results": "Results"
+    },
+    "heroes": {
+      "title": "CrossFit benchmarks — WODBurner",
+      "description": "Benchmark workouts: Fran, Cindy, Murph and the Girls. The text is in the page. The timer starts without an account.",
+      "h1": "Benchmarks",
+      "lead": "The text is the widely published version. A card marked “needs review” has not been checked by a person yet."
+    },
+    "hero": {
+      "launch": "Start the timer",
+      "add": "Add to my history",
+      "scaling": "Scaling",
+      "format": "Format",
+      "unverified": "Needs review: a person should check the numbers before you rely on them.",
+      "descriptionSuffix": "Benchmark workout on WODBurner. Start the timer or add it to this device’s history."
+    },
+    "privacy": {
+      "title": "Privacy — WODBurner",
+      "description": "What stays on the device, what a scan sends, and how to erase it.",
+      "h1": "Privacy",
+      "blocks": [
+        {
+          "h": "No account",
+          "p": [
+            "WODBurner does not create an account. There is no password, no cookie, no advertising, and no audience measurement."
+          ]
+        },
+        {
+          "h": "What stays on this device",
+          "p": [
+            "Workouts, results, language, sound and volume are stored in this browser (IndexedDB). The JSON export copies them. Erase everything removes them from the device. That is the only action that stands in for deleting an account, because there is no account."
+          ]
+        },
+        {
+          "h": "The whiteboard photo",
+          "p": [
+            "The photo leaves the device only when you start a scan. The browser shrinks it, then sends it to the reading service. That service forwards it to the model for the request and does not store it. The text you review can be saved, and only on your device, if you ask for that.",
+            "A whiteboard can show names or faces. WODBurner does not keep the image."
+          ]
+        },
+        {
+          "h": "Abuse check",
+          "p": [
+            "The scan asks for a Cloudflare Turnstile check. A daily ceiling limits how many readings can run. For that ceiling the service stores a counter tied to a hash of the IP address, not a profile under your name."
+          ]
+        }
+      ]
+    },
+    "notFound": {
+      "title": "Page not found — WODBurner",
+      "description": "This page does not exist.",
+      "h1": "Page not found",
+      "lead": "The link does not match a page."
+    }
+  }
+}

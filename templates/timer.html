@@ -1,0 +1,43 @@
+<main id="contenu" class="timer-shell">
+  {{header}}
+  <p id="wod-name" class="wod-name" hidden></p>
+  <section id="setup">
+    <h1>{{h1}}</h1>
+    <p class="lead">{{lead}}</p>
+    <noscript><p>{{noscript}}</p></noscript>
+    <form id="setup-form" class="stack">
+      {{fields}}
+      <button type="submit" class="btn btn-accent">{{start}}</button>
+    </form>
+  </section>
+  <section id="run" hidden>
+    <p id="live" class="sr-only" aria-live="polite"></p>
+    <p id="label" class="phase-label">{{h1}}</p>
+    <p id="clock" class="clock" aria-hidden="true">00:00</p>
+    <p id="sub" class="sub"></p>
+    <p id="rounds-hit" class="hits" hidden></p>
+    <div class="controls">
+      <button type="button" id="start" class="btn btn-accent">{{start}}</button>
+      <button type="button" id="pause" class="btn" hidden>{{pause}}</button>
+      <button type="button" id="done" class="btn" hidden>{{done}}</button>
+      <button type="button" id="plus" class="btn plus" hidden>{{plus}}</button>
+    </div>
+    <div class="tools">
+      <button type="button" id="sound" class="btn btn-ghost" aria-pressed="true">{{sound}}</button>
+      <label class="vol">{{volume}} <input id="volume" type="range" min="0" max="100" value="70"></label>
+      <button type="button" id="full" class="btn btn-ghost">{{full}}</button>
+      <button type="button" id="modify" class="btn btn-ghost">{{modify}}</button>
+    </div>
+    <p id="wake-note" class="note" hidden>{{wake}}</p>
+    <form id="result-form" class="stack" hidden>
+      <h2>{{resultTitle}}</h2>
+      <p id="result-summary"></p>
+      <label id="field-rounds">{{roundsLabel}} <input name="rounds" type="number" min="0" inputmode="numeric"></label>
+      <label id="field-reps">{{repsLabel}} <input name="reps" type="number" min="0" inputmode="numeric"></label>
+      <label id="field-note">{{noteLabel}} <input name="note" type="text" maxlength="500"></label>
+      <button type="submit" class="btn btn-accent">{{save}}</button>
+      <p id="save-status" role="status"></p>
+    </form>
+  </section>
+  {{footer}}
+</main>
