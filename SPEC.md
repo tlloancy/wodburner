@@ -22,6 +22,8 @@ Index : `/`, `/{lang}/`, `/{lang}/timers/`, les quatre chronos, `/{lang}/hero-wo
 
 `/generate`, `/premium`, `/hall-of-fame`, `/open-stats` et les variantes `/fr/` et `/en/` redirigent en 301 vers la racine de la langue. Sans langue, la cible est `/en/`.
 
+Les adresses de l’ancien site sans langue vont vers l’anglais : `/timers`, `/timers/for-time`, `/timers/amrap`, `/timers/emom`, `/timers/tabata`, `/dashboard`, `/scan`, `/hero-wods` et `/hero-wods/{slug}` pour chaque fiche publiée.
+
 ## Données
 
 `Format`, `TimerConfig`, `Result` et `Wod` sont dans `src/types.ts`. Le hash est le SHA-256 de name + format + text normalisés. IndexedDB `wodburner`, stores `wods` (clé `id`, index `createdAt`) et `meta`. `navigator.storage.persist()` après un enregistrement. Export `{version, exportedAt, wods}`. Import version 1, fusion par hash. La photo n’est pas stockée.

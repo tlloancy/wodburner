@@ -74,7 +74,9 @@
       "heroes": "Benchmarks",
       "history": "History",
       "scan": "Scan",
-      "privacy": "Privacy"
+      "privacy": "Privacy",
+      "contact": "Contact",
+      "email": "thomaslloancy@gmail.com"
     },
     "root": {
       "title": "WODBurner — CrossFit timer",
@@ -244,9 +246,15 @@
       "h1": "Privacy",
       "blocks": [
         {
+          "h": "Publisher",
+          "p": [
+            "The site is published by Thomas Lloancy. For a question about these pages or your data: thomaslloancy@gmail.com."
+          ]
+        },
+        {
           "h": "No account",
           "p": [
-            "WODBurner does not create an account. There is no password, no cookie, no advertising, and no audience measurement."
+            "WODBurner does not create an account. There is no password, no advertising, and no cookie set by these pages. Cloudflare, which hosts the site, can count visits."
           ]
         },
         {
@@ -258,7 +266,7 @@
         {
           "h": "The whiteboard photo",
           "p": [
-            "The photo leaves the device only when you start a scan. The browser shrinks it, then sends it to the reading service. That service forwards it to the model for the request and does not store it. The text you review can be saved, and only on your device, if you ask for that.",
+            "The photo leaves the device only when you start a scan. The browser shrinks it, then sends it to WODBurner’s reading service. That service forwards it to Google Gemini for the request and does not keep it. The text you review can be saved, and only on your device, if you ask for that.",
             "A whiteboard can show names or faces. WODBurner does not keep the image."
           ]
         },

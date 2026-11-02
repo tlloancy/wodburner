@@ -74,7 +74,9 @@
       "heroes": "Benchmarks",
       "history": "Historique",
       "scan": "Scanner",
-      "privacy": "Confidentialité"
+      "privacy": "Confidentialité",
+      "contact": "Contact",
+      "email": "thomaslloancy@gmail.com"
     },
     "root": {
       "title": "WODBurner — chrono CrossFit",
@@ -244,9 +246,15 @@
       "h1": "Confidentialité",
       "blocks": [
         {
+          "h": "Éditeur",
+          "p": [
+            "Le site est publié par Thomas Lloancy. Pour une question sur ces pages ou sur vos données : thomaslloancy@gmail.com."
+          ]
+        },
+        {
           "h": "Pas de compte",
           "p": [
-            "WODBurner ne crée pas de compte. Il n’y a pas de mot de passe, pas de cookie, pas de publicité et pas de mesure d’audience."
+            "WODBurner ne crée pas de compte. Il n’y a pas de mot de passe, pas de publicité, et pas de cookie posé par ces pages. Cloudflare, qui héberge le site, peut compter les visites."
           ]
         },
         {
@@ -258,7 +266,7 @@
         {
           "h": "La photo du tableau",
           "p": [
-            "La photo part uniquement quand vous lancez un scan. Le navigateur la réduit, puis l’envoie au service de lecture. Ce service la transmet au modèle le temps de la requête et ne la stocke pas. Le texte relu est ce qui peut être enregistré, et seulement sur votre appareil, si vous le demandez.",
+            "La photo part uniquement quand vous lancez un scan. Le navigateur la réduit, puis l’envoie au service de lecture de WODBurner. Ce service la transmet à Google Gemini le temps de la requête et ne la conserve pas. Le texte relu est ce qui peut être enregistré, et seulement sur votre appareil, si vous le demandez.",
             "Un tableau peut montrer des noms ou des visages. L’image n’est pas conservée par WODBurner."
           ]
         },

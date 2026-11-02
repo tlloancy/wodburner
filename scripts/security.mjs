@@ -32,16 +32,38 @@ export function permissionsPolicy() {
 }
 
 export const LEGACY = ['generate', 'premium', 'hall-of-fame', 'open-stats'];
+const TIMERS = ['for-time', 'amrap', 'emom', 'tabata'];
 
-export function redirectLines() {
-  const lines = [];
+export function redirectTarget(pathname, heroSlugs = []) {
+  const bare = (pathname.startsWith('/') ? pathname : `/${pathname}`).replace(/\/+$/, '') || '/';
+  const legacy = bare.match(/^\/(?:(fr|en)\/)?(generate|premium|hall-of-fame|open-stats)$/);
+  if (legacy && LEGACY.includes(legacy[2])) return `/${legacy[1] || 'en'}/`;
+  if (bare === '/timers') return '/en/timers/';
+  if (bare === '/dashboard') return '/en/dashboard/';
+  if (bare === '/scan') return '/en/scan/';
+  if (bare === '/hero-wods') return '/en/hero-wods/';
+  const timer = bare.match(/^\/timers\/(for-time|amrap|emom|tabata)$/);
+  if (timer) return `/en/timers/${timer[1]}/`;
+  const hero = bare.match(/^\/hero-wods\/([a-z0-9-]+)$/);
+  if (hero && heroSlugs.includes(hero[1])) return `/en/hero-wods/${hero[1]}/`;
+  return '';
+}
+
+export function redirectLines(heroSlugs = []) {
+  const pairs = [];
+  const add = (from, to) => {
+    pairs.push([from, to]);
+    pairs.push([`${from}/`, to]);
+  };
   for (const slug of LEGACY) {
-    lines.push(`/${slug}    /en/    301`);
-    lines.push(`/${slug}/    /en/    301`);
-    for (const lang of ['fr', 'en']) {
-      lines.push(`/${lang}/${slug}    /${lang}/    301`);
-      lines.push(`/${lang}/${slug}/    /${lang}/    301`);
-    }
+    add(`/${slug}`, '/en/');
+    for (const lang of ['fr', 'en']) add(`/${lang}/${slug}`, `/${lang}/`);
   }
-  return lines;
+  add('/timers', '/en/timers/');
+  for (const slug of TIMERS) add(`/timers/${slug}`, `/en/timers/${slug}/`);
+  add('/dashboard', '/en/dashboard/');
+  add('/scan', '/en/scan/');
+  add('/hero-wods', '/en/hero-wods/');
+  for (const slug of heroSlugs) add(`/hero-wods/${slug}`, `/en/hero-wods/${slug}/`);
+  return pairs.map(([from, to]) => `${from}    ${to}    301`);
 }

@@ -3,12 +3,13 @@ import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
-import { contentSecurityPolicy, permissionsPolicy, LEGACY } from './security.mjs';
+import { contentSecurityPolicy, permissionsPolicy, redirectTarget } from './security.mjs';
 import { readFileSync } from 'node:fs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 const config = JSON.parse(readFileSync(path.join(root, 'site.config.json'), 'utf8'));
+const heroSlugs = JSON.parse(readFileSync(path.join(root, 'data/hero-wods.json'), 'utf8')).map((wod) => wod.slug);
 const worker = process.env.WORKER_ORIGIN || config.workerOrigin;
 
 await new Promise((resolve, reject) => {
@@ -40,11 +41,9 @@ const port = Number(process.env.PORT || 4173);
 createServer(async (req, res) => {
   try {
     const url = new URL(req.url || '/', `http://127.0.0.1:${port}`);
-    const bare = url.pathname.replace(/\/+$/, '') || '/';
-    const legacy = bare.match(/^\/(?:(fr|en)\/)?(generate|premium|hall-of-fame|open-stats)$/);
-    if (legacy && LEGACY.includes(legacy[2])) {
-      const lang = legacy[1] || 'en';
-      res.writeHead(301, { location: `/${lang}/`, ...security });
+    const dest = redirectTarget(url.pathname, heroSlugs);
+    if (dest) {
+      res.writeHead(301, { location: dest, ...security });
       res.end();
       return;
     }

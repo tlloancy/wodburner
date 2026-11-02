@@ -116,10 +116,11 @@ const footerTpl = await read('footer.html');
 const cspMeta = contentSecurityPolicy(worker, true);
 const pages = [];
 
-function chrome(lang, currentPath) {
+function chrome(lang, currentPath, section = '') {
   const pack = packs[lang].pages;
   const other = lang === 'fr' ? 'en' : 'fr';
   const otherHref = currentPath === '/' ? `/${other}/` : currentPath.replace(`/${lang}/`, `/${other}/`);
+  const here = (name) => (section === name ? ' aria-current="page"' : '');
   const vars = {
     lang,
     other,
@@ -130,6 +131,12 @@ function chrome(lang, currentPath) {
     navHistory: esc(pack.nav.history),
     navScan: esc(pack.nav.scan),
     privacy: esc(pack.nav.privacy),
+    contact: esc(pack.nav.contact),
+    email: esc(pack.nav.email),
+    curTimers: here('timers'),
+    curHeroes: here('heroes'),
+    curHistory: here('history'),
+    curScan: here('scan'),
   };
   return { header: fill(headerTpl, vars), footer: fill(footerTpl, vars) };
 }
@@ -189,11 +196,11 @@ function software(lang, path, description) {
 for (const lang of ['fr', 'en']) {
   const p = packs[lang].pages;
   const ui = packs[lang].ui;
-  const home = chrome(lang, `/${lang}/`);
+  const home = chrome(lang, `/${lang}/`, '');
   const homeBody = fill(await read('home.html'), { ...home, lang, h1: esc(p.home.h1), lead: esc(p.home.lead), scan: esc(p.home.scan), timersTitle: esc(p.home.timersTitle), fortime: esc(p.home.fortime), amrap: esc(p.home.amrap), emom: esc(p.home.emom), tabata: esc(p.home.tabata), recent: esc(p.home.recent), empty: esc(p.home.empty), heroesLink: esc(p.home.heroesLink) });
   addPage({ lang, id: 'home', path: `/${lang}/`, out: `${lang}/index.html`, index: true, title: p.home.title, description: p.home.description, script: 'home', body: homeBody, jsonld: software(lang, `/${lang}/`, p.home.description) });
 
-  const timers = chrome(lang, `/${lang}/timers/`);
+  const timers = chrome(lang, `/${lang}/timers/`, 'timers');
   addPage({ lang, id: 'timers', path: `/${lang}/timers/`, out: `${lang}/timers/index.html`, index: true, title: p.timers.title, description: p.timers.description, script: 'boot', body: fill(await read('timers.html'), { ...timers, lang, h1: esc(p.timers.h1), lead: esc(p.timers.lead), fortime: esc(p.timers.fortime), amrap: esc(p.timers.amrap), emom: esc(p.timers.emom), tabata: esc(p.timers.tabata) }) });
 
   const timerSpecs = [
@@ -205,7 +212,7 @@ for (const lang of ['fr', 'en']) {
   const timerTpl = await read('timer.html');
   for (const [slug, format, key, fields] of timerSpecs) {
     const route = `/${lang}/timers/${slug}/`;
-    const bar = chrome(lang, route);
+    const bar = chrome(lang, route, 'timers');
     const copy = p[key];
     const body = fill(timerTpl, {
       ...bar,
@@ -231,10 +238,10 @@ for (const lang of ['fr', 'en']) {
     addPage({ lang, id: 'timer', format, path: route, out: `${lang}/timers/${slug}/index.html`, index: true, title: copy.title, description: copy.description, script: 'timer', body });
   }
 
-  const dash = chrome(lang, `/${lang}/dashboard/`);
+  const dash = chrome(lang, `/${lang}/dashboard/`, 'history');
   addPage({ lang, id: 'dashboard', path: `/${lang}/dashboard/`, out: `${lang}/dashboard/index.html`, index: false, title: p.dashboard.title, description: p.dashboard.description, script: 'dashboard', body: fill(await read('dashboard.html'), { ...dash, ...Object.fromEntries(Object.entries(p.dashboard).map(([k, v]) => [k, esc(v)])), options: formatOptions(ui) }) });
 
-  const scan = chrome(lang, `/${lang}/scan/`);
+  const scan = chrome(lang, `/${lang}/scan/`, 'scan');
   addPage({ lang, id: 'scan', path: `/${lang}/scan/`, out: `${lang}/scan/index.html`, index: false, title: p.scan.title, description: p.scan.description, script: 'scan', body: fill(await read('scan.html'), {
     ...scan,
     lang,
@@ -248,10 +255,10 @@ for (const lang of ['fr', 'en']) {
     options: formatOptions(ui),
   }) });
 
-  const wod = chrome(lang, `/${lang}/wod/`);
+  const wod = chrome(lang, `/${lang}/wod/`, 'history');
   addPage({ lang, id: 'wod', path: `/${lang}/wod/`, out: `${lang}/wod/index.html`, index: false, title: p.wod.title, description: p.wod.description, script: 'wod', body: fill(await read('wod.html'), { ...wod, lang, h1: esc(p.wod.h1), lead: esc(p.wod.lead), missing: esc(p.wod.missing), launch: esc(p.wod.launch), results: esc(p.wod.results) }) });
 
-  const heroBar = chrome(lang, `/${lang}/hero-wods/`);
+  const heroBar = chrome(lang, `/${lang}/hero-wods/`, 'heroes');
   const groups = ['girl', 'hero'].map((category) => {
     const items = heroes.filter((wod) => wod.category === category).map((wod) => `<li><a href="/${lang}/hero-wods/${esc(wod.slug)}/">${esc(wod.name)}</a> <span class="meta">${esc(ui.formats[wod.format])}</span></li>`).join('');
     const label = category === 'hero' ? 'Hero' : 'Girl';
@@ -261,7 +268,7 @@ for (const lang of ['fr', 'en']) {
 
   for (const wod of heroes) {
     const route = `/${lang}/hero-wods/${wod.slug}/`;
-    const bar = chrome(lang, route);
+    const bar = chrome(lang, route, 'heroes');
     const text = wod.text[lang];
     const steps = text.split('\n').map((line) => line.trim()).filter(Boolean);
     const jsonld = jsonScript({
@@ -392,7 +399,7 @@ await writeFile(path.join(dist, '_headers'), `/*
 /sw.js
   Cache-Control: no-cache
 `);
-await writeFile(path.join(dist, '_redirects'), `${redirectLines().join('\n')}\n`);
+await writeFile(path.join(dist, '_redirects'), `${redirectLines(heroes.map((wod) => wod.slug)).join('\n')}\n`);
 await writeFile(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /fr/dashboard/\nDisallow: /en/dashboard/\nDisallow: /fr/scan/\nDisallow: /en/scan/\nDisallow: /fr/wod/\nDisallow: /en/wod/\n\nSitemap: ${site}/sitemap.xml\n`);
 
 const sitemap = [`<?xml version="1.0" encoding="UTF-8"?>`, `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`];

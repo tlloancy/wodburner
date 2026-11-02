@@ -51,7 +51,9 @@ if (!dash.includes('noindex')) fail('dashboard should be noindex');
 const headers = await readFile(path.join(dist, '_headers'), 'utf8');
 if (!headers.includes('Content-Security-Policy') || headers.includes('unsafe-inline')) fail('CSP header');
 const redirects = await readFile(path.join(dist, '_redirects'), 'utf8');
-if (!redirects.includes('/generate') || !redirects.includes('/hall-of-fame')) fail('redirects');
+for (const line of ['/generate    /en/    301', '/timers/emom    /en/timers/emom/    301', '/dashboard    /en/dashboard/    301', '/scan    /en/scan/    301', '/hero-wods/fran    /en/hero-wods/fran/    301']) {
+  if (!redirects.includes(line)) fail(`redirects missing ${line}`);
+}
 const sitemap = await readFile(path.join(dist, 'sitemap.xml'), 'utf8');
 if (!sitemap.includes('/fr/hero-wods/fran/') || sitemap.includes('/dashboard/')) fail('sitemap');
 const sw = await readFile(path.join(dist, 'sw.js'), 'utf8');

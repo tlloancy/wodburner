@@ -53,13 +53,16 @@ a { color: inherit; }
 .top { margin-bottom: 1.4rem; }
 .foot { margin-top: 2rem; color: var(--muted); }
 .word { font-weight: 750; letter-spacing: -0.03em; text-decoration: none; }
-nav { display: flex; flex-wrap: wrap; gap: 0.35rem 0.8rem; }
+nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
+nav a, .lang, .word, .foot a, .btn, .tile { text-decoration: none; }
 nav a, .lang {
   min-height: 48px;
   display: inline-flex;
   align-items: center;
-  text-underline-offset: 0.2em;
 }
+.lang { margin-left: auto; }
+nav a:hover, .lang:hover, .foot a:hover, .word:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+nav a[aria-current="page"] { color: var(--accent); text-decoration: none; }
 
 h1 {
   margin: 0 0 0.6rem;
@@ -94,16 +97,28 @@ h2 { font-size: 1.35rem; letter-spacing: -0.02em; }
 .grid2, .grid4 { display: grid; gap: 0.75rem; }
 .grid2 { grid-template-columns: 1fr 1fr; }
 .tile {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.35rem;
   background: var(--raise);
   color: var(--fg);
   border-color: var(--line);
-  align-items: flex-end;
-  justify-content: space-between;
   min-height: 6.5rem;
   text-align: left;
 }
-.tile span { font-size: 1.25rem; font-weight: 700; }
-.tile small { color: var(--muted); font-size: 0.92rem; }
+.tile span { font-size: 1.25rem; font-weight: 700; line-height: 1.2; }
+.tile small { color: var(--muted); font-size: 1rem; line-height: 1.35; }
+.empty {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+  padding: 1rem;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  background: var(--raise);
+}
+.empty p { margin: 0; }
 
 .stack, .card, form { display: grid; gap: 0.85rem; }
 label { display: grid; gap: 0.35rem; font-weight: 650; }
@@ -160,6 +175,7 @@ textarea { min-height: 9rem; resize: vertical; }
   border: 0;
 }
 .controls { display: grid; gap: 0.6rem; }
+.timer-shell form .btn, .timer-shell .controls .btn { width: 100%; }
 
 .drop {
   border: 1px dashed var(--line);
