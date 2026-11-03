@@ -11,7 +11,7 @@ Les charges « femmes » souvent publiées ensuite (par exemple 65 lb à Fran, 9
 - `diane` — 21-15-9 deadlift 225 lb (102 kg) et handstand push-ups. La charge 155 lb n’est pas dans l’extrait de la page CrossFit utilisé ici.
 - `annie` — 50-40-30-20-10 double-unders et sit-ups.
 - `karen` — 150 wall-balls, ballon de 20 lb (9 kg). La page citée ne donne pas 14 lb ni la hauteur de cible dans l’extrait retenu. Le Journal (« The New Girls ») indique une cible à 10 pieds et un ballon de 20 lb.
-- `isabel` — 30 snatch, 135 lb (61 kg).
+- `isabel` — 30 snatch, 135 lb (61 kg). Heavy Isabel sur la fiche : 100 kg. Les Semifinals 2025 prescrivent 225 lb (102 kg) et 155 lb (70 kg), avec un cap de 10 minutes sur cette épreuve.
 - `jackie` — 1000 m rameur, 50 thrusters 45 lb (20 kg), 30 tractions.
 - `elizabeth` — 21-15-9 cleans 135 lb (61 kg) et ring dips. La page CrossFit actuelle dit « cleans ». Un Journal plus ancien dit « hang cleans ». L’ordre et le mot exact sont à trancher.
 - `angie` — 100 tractions, 100 pompes, 100 sit-ups, 100 squats.
