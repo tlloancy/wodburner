@@ -30,7 +30,7 @@ Les adresses de l’ancien site sans langue vont vers l’anglais : `/timers`, `
 
 ## Scan
 
-Le navigateur décode, limite le grand côté à 1280 px sans agrandir, encode en WebP 0,75, retombe en JPEG 0,8 si le type n’est pas WebP, et refait une passe plus compressée si le fichier dépasse 150 Ko. Envoi binaire. Le Worker vérifie le type, 512 Ko, les octets magiques, Turnstile, 5 scans par IP et par jour, un plafond global, et un cache 24 h sur le SHA-256 de l’image. Gemini est appelé en REST avec `x-goog-api-key`, `inline_data`, `responseMimeType: application/json`, `responseSchema`, température 0. Un retry si le JSON est invalide. Timeout 20 s. Pas de journal d’image ni de texte.
+Le navigateur décode, limite le grand côté à 1280 px sans agrandir, encode en WebP 0,75, retombe en JPEG 0,8 si le type n’est pas WebP, et refait une passe plus compressée si le fichier dépasse 150 Ko. Envoi binaire. Le Worker vérifie le type, 512 Ko, les octets magiques, Turnstile, 5 scans par IP et par jour, un plafond global, et un cache 24 h sur le SHA-256 de l’image. Gemini est appelé en REST avec `x-goog-api-key`, `inline_data`, `responseMimeType: application/json`, `responseSchema`, température 0. Un retry si le JSON est invalide. Timeout 20 s. Pas de journal d’image ni de texte. Si le tableau contient un skill et un metcon, la lecture renvoie les deux : le chrono de chacun est lu sur son propre texte. L’échauffement n’est pas un chrono.
 
 ## Chrono
 

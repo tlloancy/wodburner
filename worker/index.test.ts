@@ -117,6 +117,7 @@ describe('scan worker', () => {
     expect(sent.generationConfig.temperature).toBe(0);
     expect(sent.generationConfig.responseMimeType).toBe('application/json');
     expect(sent.generationConfig.responseSchema).toEqual(SCAN_SCHEMA);
+    expect(SCAN_SCHEMA.required).toContain('parts');
     expect(sent.contents[0].parts[1].inline_data.mime_type).toBe('image/jpeg');
     expect(typeof sent.contents[0].parts[1].inline_data.data).toBe('string');
   });

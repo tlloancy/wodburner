@@ -55,7 +55,9 @@
       "turnstileWait": "Cochez la vérification anti-abus. La photo part ensuite.",
       "unconfigured": "La vérification anti-abus n’est pas configurée sur cette installation.",
       "saved": "Enregistré. Vous pouvez lancer le chrono.",
-      "failed": "Le scan a échoué."
+      "failed": "Le scan a échoué.",
+      "skill": "Skill",
+      "metcon": "Metcon"
     },
     "hero": {
       "added": "Ajouté à votre historique.",
@@ -204,7 +206,7 @@
       "title": "Scanner un tableau — WODBurner",
       "description": "Photo d’un tableau blanc, lecture du WOD, chrono prêt à lancer. La photo n’est pas conservée.",
       "h1": "Scanner un tableau",
-      "lead": "Choisissez une photo ou prenez-la maintenant. Vous relisez le texte, puis vous l’enregistrez ou vous lancez le chrono. La photo n’est pas gardée.",
+      "lead": "Choisissez une photo ou prenez-la maintenant. S’il y a un skill et un metcon, chacun a son chrono. Vous relisez, puis vous enregistrez ou vous lancez. La photo n’est pas gardée.",
       "file": "Choisir une photo",
       "camera": "Prendre une photo",
       "drop": "Déposez la photo ici, ou utilisez un bouton.",

@@ -4,7 +4,7 @@ import { workoutHash } from '../hash';
 import { registerSW } from '../pwa';
 import { fileToBlob, postScan, ScanError } from '../scan';
 import { timerHref } from '../timer-link';
-import type { Format, TimerConfig, Wod } from '../types';
+import type { Format, ScanResult, TimerConfig, Wod } from '../types';
 import { parseTimer } from '../validate';
 
 registerSW();
@@ -13,7 +13,7 @@ void setMeta('lang', lang).catch(() => undefined);
 
 const status = document.querySelector<HTMLElement>('#scan-status');
 const offline = document.querySelector<HTMLElement>('#offline');
-const review = document.querySelector<HTMLFormElement>('#review');
+const review = document.querySelector<HTMLElement>('#review');
 const fileInput = document.querySelector<HTMLInputElement>('#file');
 const cameraInput = document.querySelector<HTMLInputElement>('#camera');
 const drop = document.querySelector<HTMLElement>('#drop');
@@ -160,25 +160,60 @@ function readTimer(data: FormData, format: Format): TimerConfig {
   return parseTimer(timer);
 }
 
-function fillReview(result: { name: string; format: Format; timer: TimerConfig; text: string; confidence: string; warnings: string[] }): void {
-  if (!review) return;
-  const name = review.elements.namedItem('name');
-  const format = review.elements.namedItem('format');
-  const text = review.elements.namedItem('text');
-  if (name instanceof HTMLInputElement) name.value = result.name;
-  if (format instanceof HTMLSelectElement) format.value = result.format;
-  if (text instanceof HTMLTextAreaElement) text.value = result.text;
-  const set = (key: string, value: number | undefined, scale = 1): void => {
-    const input = review.elements.namedItem(key);
-    if (input instanceof HTMLInputElement) input.value = value == null ? '' : String(Math.round(value / scale));
-  };
-  set('capMin', result.timer.capSec, 60);
-  set('minutes', result.timer.durationSec, 60);
-  set('rounds', result.timer.rounds);
-  set('interval', result.timer.intervalSec);
-  set('work', result.timer.workSec);
-  set('rest', result.timer.restSec);
-  if (confidence) confidence.textContent = `${confidenceText()} ${strings.confidence[result.confidence as 'high' | 'medium' | 'low']}`;
+function applyFormat(form: HTMLFormElement): void {
+  const format = form.elements.namedItem('format');
+  const current = format instanceof HTMLSelectElement ? format.value : '';
+  for (const label of form.querySelectorAll<HTMLElement>('[data-for]')) {
+    const on = label.dataset.for === current;
+    label.hidden = !on;
+    const input = label.querySelector('input');
+    if (input) input.disabled = !on;
+  }
+}
+
+function fillReview(result: ScanResult): void {
+  const host = document.querySelector<HTMLElement>('#pieces');
+  const tpl = document.querySelector<HTMLTemplateElement>('#piece');
+  if (!review || !host || !tpl) return;
+  host.replaceChildren();
+  const many = result.parts.length > 1;
+  for (const part of result.parts) {
+    const node = tpl.content.firstElementChild?.cloneNode(true);
+    if (!(node instanceof HTMLFormElement)) continue;
+    const title = node.querySelector('h2');
+    const label = part.role === 'skill' ? strings.scan.skill : strings.scan.metcon;
+    const sameRole = result.parts.filter((item) => item.role === part.role).length > 1;
+    if (title) {
+      title.textContent = sameRole ? `${label} — ${part.name}` : label;
+      title.hidden = !many;
+    }
+    const name = node.elements.namedItem('name');
+    const format = node.elements.namedItem('format');
+    const text = node.elements.namedItem('text');
+    if (name instanceof HTMLInputElement) name.value = part.name;
+    if (format instanceof HTMLSelectElement) format.value = part.format;
+    if (text instanceof HTMLTextAreaElement) text.value = part.text;
+    const set = (key: string, value: number | undefined, scale = 1): void => {
+      const written = value == null ? '' : String(Math.round(value / scale));
+      for (const input of node.querySelectorAll<HTMLInputElement>(`input[name="${key}"]`)) input.value = written;
+    };
+    set('capMin', part.timer.capSec, 60);
+    set('minutes', part.timer.durationSec, 60);
+    set('rounds', part.timer.rounds);
+    set('interval', part.timer.intervalSec);
+    set('work', part.timer.workSec);
+    set('rest', part.timer.restSec);
+    applyFormat(node);
+    if (format instanceof HTMLSelectElement) format.addEventListener('change', () => applyFormat(node));
+    node.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const submitter = (event as SubmitEvent).submitter;
+      const action = submitter instanceof HTMLButtonElement && submitter.value === 'launch' ? 'launch' : 'save';
+      void save(node, action);
+    });
+    host.append(node);
+  }
+  if (confidence) confidence.textContent = `${confidenceText()} ${strings.confidence[result.confidence]}`;
   if (warnings) {
     warnings.replaceChildren();
     for (const warning of result.warnings) {
@@ -188,15 +223,15 @@ function fillReview(result: { name: string; format: Format; timer: TimerConfig; 
     }
   }
   review.hidden = false;
+  review.scrollIntoView({ block: 'nearest' });
 }
 
 function confidenceText(): string {
   return document.querySelector('#confidence-label')?.textContent || '';
 }
 
-async function save(action: 'save' | 'launch'): Promise<void> {
-  if (!review) return;
-  const data = new FormData(review);
+async function save(form: HTMLFormElement, action: 'save' | 'launch'): Promise<void> {
+  const data = new FormData(form);
   const name = String(data.get('name') ?? '').trim();
   const format = String(data.get('format') ?? 'other') as Format;
   const text = String(data.get('text') ?? '');
@@ -225,8 +260,8 @@ async function save(action: 'save' | 'launch'): Promise<void> {
     location.assign(`${href.pathname}${href.search}`);
     return;
   }
-  const reviewStatus = document.querySelector<HTMLElement>('#review-status');
-  if (reviewStatus) reviewStatus.textContent = strings.scan.saved;
+  const note = form.querySelector('.save-note');
+  if (note) note.textContent = strings.scan.saved;
   else say(strings.scan.saved);
 }
 
@@ -300,13 +335,6 @@ drop?.addEventListener('drop', (event) => {
   const file = event.dataTransfer?.files?.[0];
   if (file) void run(file);
 });
-review?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const submitter = (event as SubmitEvent).submitter;
-  const action = submitter instanceof HTMLButtonElement && submitter.value === 'launch' ? 'launch' : 'save';
-  void save(action);
-});
-
 window.addEventListener('offline', showOffline);
 window.addEventListener('online', showOffline);
 showOffline();

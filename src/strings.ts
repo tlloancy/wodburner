@@ -49,6 +49,8 @@ export interface Strings {
     unconfigured: string;
     saved: string;
     failed: string;
+    skill: string;
+    metcon: string;
   };
   hero: { added: string; duplicate: string; failed: string };
   wod: { missing: string; noResults: string };

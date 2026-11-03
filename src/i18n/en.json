@@ -55,7 +55,9 @@
       "turnstileWait": "Complete the abuse check. The photo is sent right after.",
       "unconfigured": "The abuse check is not configured on this install.",
       "saved": "Saved. You can start the timer.",
-      "failed": "The scan failed."
+      "failed": "The scan failed.",
+      "skill": "Skill",
+      "metcon": "Metcon"
     },
     "hero": {
       "added": "Added to your history.",
@@ -204,7 +206,7 @@
       "title": "Scan a whiteboard — WODBurner",
       "description": "Whiteboard photo, workout text, timer ready to start. The photo is not kept.",
       "h1": "Scan a whiteboard",
-      "lead": "Choose a photo or take one now. You check the text, then save it or start the timer. The photo is not kept.",
+      "lead": "Choose a photo or take one now. If the board has a skill and a metcon, each one gets its own timer. You check them, then save or start. The photo is not kept.",
       "file": "Choose a photo",
       "camera": "Take a photo",
       "drop": "Drop the photo here, or use a button.",

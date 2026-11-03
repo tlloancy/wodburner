@@ -1,4 +1,5 @@
-import { FORMATS, SOURCES, type Format, type Result, type ScanResult, type TimerConfig, type Wod, type WodSource } from './types';
+import { arrangeBoard, type BoardPart } from './board';
+import { FORMATS, SOURCES, type BoardRole, type Format, type Result, type ScanResult, type TimerConfig, type Wod, type WodSource } from './types';
 
 export class DataError extends Error {
   constructor(readonly code: string) {
@@ -53,14 +54,43 @@ export function parseScanResult(value: unknown): ScanResult {
     if (typeof warning !== 'string' || warning.length > 300) throw new DataError('invalid-warnings');
     warnings.push(warning);
   }
-  return {
+  const arranged = arrangeBoard({
     name: value.name.trim(),
     format: value.format as Format,
     timer: parseTimer(value.timer ?? {}),
     text: value.text,
+    parts: parseParts(value.parts),
+  });
+  return {
+    name: arranged.name,
+    format: arranged.format,
+    timer: arranged.timer,
+    text: value.text,
     confidence: value.confidence,
     warnings,
+    parts: arranged.parts,
   };
+}
+
+function parseParts(value: unknown): BoardPart[] {
+  if (value === undefined) return [];
+  if (!Array.isArray(value) || value.length > 8) throw new DataError('invalid-scan');
+  const parts: BoardPart[] = [];
+  for (const item of value) {
+    if (!isObj(item)) throw new DataError('invalid-scan');
+    if (item.role !== 'skill' && item.role !== 'metcon') continue;
+    if (typeof item.name !== 'string' || item.name.length > 160) throw new DataError('invalid-scan');
+    if (typeof item.format !== 'string' || !FORMATS.includes(item.format as Format)) throw new DataError('invalid-scan');
+    if (typeof item.text !== 'string' || item.text.length > 20_000) throw new DataError('invalid-scan');
+    parts.push({
+      role: item.role as BoardRole,
+      name: item.name.trim(),
+      format: item.format as Format,
+      timer: parseTimer(item.timer ?? {}),
+      text: item.text,
+    });
+  }
+  return parts;
 }
 
 function parseResult(value: unknown): Result {

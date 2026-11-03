@@ -5,38 +5,60 @@ export const PROMPT = `You are an expert CrossFit coach. You are given a photo o
 
 Rules:
 1. Read the ENTIRE image. It may contain several columns or sections (warm-up, strength, metcon, accessory).
-2. "text": transcribe everything, in the ORIGINAL language of the image, with line breaks and indentation preserved. Combine all sections into one cohesive text but keep the structure of the image. Do not translate, summarize or invent anything. Mark an unreadable fragment as [?].
-3. "name": the title of the workout if there is one (e.g. "Fran", "Murph"). Otherwise a short descriptive name (4 words max) based on the main exercises.
-4. "format": the format of the MAIN conditioning piece (the metcon), not the warm-up or strength. One of fortime, amrap, emom, tabata, other.
-5. "timer": derive ONLY what is written on the board. Omit every field that does not apply.
+2. "text": transcribe everything, in the ORIGINAL language of the image, with line breaks preserved. Keep each section title on its own line (Skill, Force, Strength, Metcon, WOD, AMRAP, EMOM, For time). Do not translate, summarize or invent anything. Mark an unreadable fragment as [?].
+3. "name": the title of the workout if there is one (e.g. "Fran", "Murph"). Otherwise a short descriptive name (4 words max) based on the metcon.
+4. "parts": one entry per clockable piece, skill first when both exist.
+   - Warm-up, mobility and cool-down are NOT parts. Leave them in "text" only.
+   - role "skill": technique or strength (skill, strength, force, weightlifting, gymnastics), including when that piece is itself an EMOM or "every 2:00".
+   - role "metcon": the conditioning piece (metcon, WOD, AMRAP, for time, chipper).
+   - If the board has both, return both. Never merge them into one part and never give them the same timer.
+   - If there is only one clockable piece, return one part.
+   - Each part's "text" is only that piece. Each part's "format" and "timer" come ONLY from that piece's own lines.
+5. "format" and "timer" at the top level copy the metcon part, or the only part. Timer rules, applied separately to each part:
    - AMRAP of N minutes: durationSec = N*60.
-   - EMOM: "EMOM N" or "every minute for N" -> intervalSec 60, rounds N. "Every 2:30 for 6 rounds" -> intervalSec 150, rounds 6. An alternating EMOM over N minutes -> intervalSec 60, rounds N.
+   - EMOM: "EMOM N" or "every minute for N" -> intervalSec 60, rounds N. "Every 2:30 for 6 rounds" or "E2MOM x 6" -> intervalSec 150 or 120, rounds 6. "Toutes les 2 min x 5" -> intervalSec 120, rounds 5.
    - Tabata: workSec 20, restSec 10, rounds 8 unless other values are written.
    - For Time with a time cap: capSec. No cap written -> omit it.
-   - Never guess a number that is not on the board (except the Tabata defaults above).
+   - Sets and reps with a rest, and no AMRAP, EMOM, For Time or Tabata: format "other" and an empty timer. Do not borrow the other piece's minutes.
+   - Never guess a number that is not on that piece (except the Tabata defaults above).
 6. "confidence": high if everything is clearly legible, medium if some parts are uncertain, low if the image is hard to read.
 7. "warnings": short messages in the language of the image for anything unclear or illegible (e.g. "line 4 illegible"). Empty array if none.`;
 
+const TIMER_SCHEMA = {
+  type: 'object',
+  properties: {
+    capSec: { type: 'integer' },
+    durationSec: { type: 'integer' },
+    intervalSec: { type: 'integer' },
+    rounds: { type: 'integer' },
+    workSec: { type: 'integer' },
+    restSec: { type: 'integer' },
+  },
+};
+
+const PART_SCHEMA = {
+  type: 'object',
+  required: ['role', 'name', 'format', 'timer', 'text'],
+  properties: {
+    role: { type: 'string', enum: ['skill', 'metcon'] },
+    name: { type: 'string' },
+    format: { type: 'string', enum: ['fortime', 'amrap', 'emom', 'tabata', 'other'] },
+    timer: TIMER_SCHEMA,
+    text: { type: 'string' },
+  },
+};
+
 export const SCAN_SCHEMA = {
   type: 'object',
-  required: ['name', 'format', 'timer', 'text', 'confidence', 'warnings'],
+  required: ['name', 'format', 'timer', 'text', 'confidence', 'warnings', 'parts'],
   properties: {
     name: { type: 'string' },
     format: { type: 'string', enum: ['fortime', 'amrap', 'emom', 'tabata', 'other'] },
-    timer: {
-      type: 'object',
-      properties: {
-        capSec: { type: 'integer' },
-        durationSec: { type: 'integer' },
-        intervalSec: { type: 'integer' },
-        rounds: { type: 'integer' },
-        workSec: { type: 'integer' },
-        restSec: { type: 'integer' },
-      },
-    },
+    timer: TIMER_SCHEMA,
     text: { type: 'string' },
     confidence: { type: 'string', enum: ['high', 'medium', 'low'] },
     warnings: { type: 'array', items: { type: 'string' } },
+    parts: { type: 'array', items: PART_SCHEMA },
   },
 };
 

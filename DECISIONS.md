@@ -19,5 +19,6 @@ Le dossier git est `wodburner/`. Le répertoire de travail reste celui qui le co
 - Pas de script d’audience dans les pages. Cloudflare peut compter les visites si l’option est active sur la zone. La page confidentialité le dit.
 - L’éditeur affiché est Thomas Lloancy, contact thomaslloancy@gmail.com. La photo de scan est transmise à Google Gemini. Un humain doit relire cette page.
 - Gemini reçoit `generationConfig.responseSchema` avec le schéma du §7.3, et l’image en `inline_data`, comme demandé. L’API documente aussi `responseJsonSchema`. Un appel réel doit confirmer que `responseSchema` est accepté.
+- Un tableau avec un skill et un metcon devient deux WODs. Le format au premier niveau de la réponse reste celui du metcon. Le skill en 5×5 sans AMRAP, EMOM ou For Time reste un chrono libre, pas la durée du metcon.
 - `Permissions-Policy` laisse `camera=(self)` pour la prise de photo du scan. Le reste est fermé.
 - La page `/` utilise la langue enregistrée dans IndexedDB si elle existe, sinon `navigator.language`, sinon l’anglais.

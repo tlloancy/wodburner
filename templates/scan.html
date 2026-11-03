@@ -12,24 +12,31 @@
       <label class="btn btn-accent">{{camera}} <input id="camera" class="sr-only" type="file" accept="image/*" capture="environment"></label>
     </div>
   </form>
-  <form id="review" class="stack" hidden>
+  <div id="review" class="stack" hidden>
     <p id="confidence"><span id="confidence-label">{{confidence}}</span></p>
     <ul id="warnings" class="warnings"></ul>
-    <label>{{name}} <input name="name" maxlength="160"></label>
-    <label>{{format}} <select name="format">{{options}}</select></label>
-    <label>{{capMin}} <input name="capMin" type="number" min="1" max="1440" inputmode="numeric"></label>
-    <label>{{minutes}} <input name="minutes" type="number" min="1" max="1440" inputmode="numeric"></label>
-    <label>{{rounds}} <input name="rounds" type="number" min="1" max="500" inputmode="numeric"></label>
-    <label>{{interval}} <input name="interval" type="number" min="1" max="3600" inputmode="numeric"></label>
-    <label>{{work}} <input name="work" type="number" min="1" max="3600" inputmode="numeric"></label>
-    <label>{{rest}} <input name="rest" type="number" min="0" max="3600" inputmode="numeric"></label>
-    <label>{{text}} <textarea name="text"></textarea></label>
-    <div class="actions">
-      <button type="submit" class="btn" value="save">{{save}}</button>
-      <button type="submit" class="btn btn-accent" value="launch">{{launch}}</button>
-    </div>
-    <p id="review-status" class="save-note" role="status"></p>
-  </form>
+    <div id="pieces"></div>
+  </div>
+  <template id="piece">
+    <form class="stack piece">
+      <h2></h2>
+      <label>{{name}} <input name="name" maxlength="160"></label>
+      <label>{{format}} <select name="format">{{options}}</select></label>
+      <label data-for="fortime">{{capMin}} <input name="capMin" type="number" min="1" max="1440" inputmode="numeric"></label>
+      <label data-for="amrap">{{minutes}} <input name="minutes" type="number" min="1" max="1440" inputmode="numeric"></label>
+      <label data-for="emom">{{rounds}} <input name="rounds" type="number" min="1" max="500" inputmode="numeric"></label>
+      <label data-for="emom">{{interval}} <input name="interval" type="number" min="1" max="3600" inputmode="numeric"></label>
+      <label data-for="tabata">{{work}} <input name="work" type="number" min="1" max="3600" inputmode="numeric"></label>
+      <label data-for="tabata">{{rest}} <input name="rest" type="number" min="0" max="3600" inputmode="numeric"></label>
+      <label data-for="tabata">{{rounds}} <input name="rounds" type="number" min="1" max="500" inputmode="numeric"></label>
+      <label>{{text}} <textarea name="text"></textarea></label>
+      <div class="actions">
+        <button type="submit" class="btn" value="save">{{save}}</button>
+        <button type="submit" class="btn btn-accent" value="launch">{{launch}}</button>
+      </div>
+      <p class="save-note" role="status"></p>
+    </form>
+  </template>
   <p><a href="/{{lang}}/dashboard/">{{manual}}</a></p>
   {{footer}}
 </main>

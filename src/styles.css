@@ -122,6 +122,8 @@ h2 { font-size: 1.35rem; letter-spacing: -0.02em; }
 .empty p { margin: 0; }
 
 .stack, .card, form { display: grid; gap: 0.85rem; }
+.piece + .piece { border-top: 1px solid var(--line); padding-top: 1rem; }
+.piece h2 { margin: 0; font-size: 1.2rem; }
 label { display: grid; gap: 0.35rem; font-weight: 650; }
 input, select, textarea {
   min-height: 48px;

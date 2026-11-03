@@ -33,6 +33,16 @@ export interface Wod {
   results: Result[];
 }
 
+export type BoardRole = 'skill' | 'metcon';
+
+export interface BoardPart {
+  role: BoardRole;
+  name: string;
+  format: Format;
+  timer: TimerConfig;
+  text: string;
+}
+
 export interface ScanResult {
   name: string;
   format: Format;
@@ -40,6 +50,7 @@ export interface ScanResult {
   text: string;
   confidence: 'high' | 'medium' | 'low';
   warnings: string[];
+  parts: BoardPart[];
 }
 
 export const FORMATS: readonly Format[] = ['fortime', 'amrap', 'emom', 'tabata', 'other'];
