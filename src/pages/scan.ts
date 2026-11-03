@@ -15,6 +15,7 @@ const status = document.querySelector<HTMLElement>('#scan-status');
 const offline = document.querySelector<HTMLElement>('#offline');
 const review = document.querySelector<HTMLFormElement>('#review');
 const fileInput = document.querySelector<HTMLInputElement>('#file');
+const cameraInput = document.querySelector<HTMLInputElement>('#camera');
 const drop = document.querySelector<HTMLElement>('#drop');
 const warnings = document.querySelector<HTMLElement>('#warnings');
 const confidence = document.querySelector<HTMLElement>('#confidence');
@@ -24,6 +25,9 @@ const endpoint = `${document.body.dataset.worker || ''}/scan`;
 
 let token = '';
 let widgetId = '';
+let generation = 0;
+let pendingResolve: ((value: string) => void) | null = null;
+let pendingReject: ((error: Error) => void) | null = null;
 
 function say(message: string): void {
   if (status) status.textContent = message;
@@ -34,7 +38,14 @@ function showOffline(): void {
 }
 
 interface TurnstileApi {
-  render: (el: HTMLElement, opts: { sitekey: string; callback: (value: string) => void }) => string;
+  render: (el: HTMLElement, opts: {
+    sitekey: string;
+    theme: 'dark';
+    appearance: 'always';
+    callback: (value: string) => void;
+    'expired-callback': () => void;
+    'error-callback': () => void;
+  }) => string;
   getResponse: (id: string) => string | undefined;
   reset: (id: string) => void;
 }
@@ -63,8 +74,22 @@ async function ensureTurnstile(): Promise<void> {
   if (!api || widgetId) return;
   widgetId = api.render(widget, {
     sitekey: siteKey,
+    theme: 'dark',
+    appearance: 'always',
     callback: (value) => {
       token = value;
+      pendingResolve?.(value);
+      pendingResolve = null;
+      pendingReject = null;
+    },
+    'expired-callback': () => {
+      token = '';
+    },
+    'error-callback': () => {
+      token = '';
+      pendingReject?.(new Error('turnstile'));
+      pendingResolve = null;
+      pendingReject = null;
     },
   });
 }
@@ -73,6 +98,35 @@ function currentToken(): string {
   const api = turnstileApi();
   if (api && widgetId) return api.getResponse(widgetId) || token;
   return token;
+}
+
+function waitForToken(gen: number): Promise<string> {
+  const existing = currentToken();
+  if (existing) return Promise.resolve(existing);
+  return new Promise((resolve, reject) => {
+    const timer = window.setTimeout(() => {
+      if (generation === gen) {
+        pendingResolve = null;
+        pendingReject = null;
+      }
+      reject(new Error('turnstile'));
+    }, 60000);
+    pendingResolve = (value) => {
+      window.clearTimeout(timer);
+      if (generation !== gen) reject(new Error('replaced'));
+      else resolve(value);
+    };
+    pendingReject = (error) => {
+      window.clearTimeout(timer);
+      reject(generation === gen ? error : new Error('replaced'));
+    };
+  });
+}
+
+function resetTurnstile(): void {
+  token = '';
+  const api = turnstileApi();
+  if (api && widgetId) api.reset(widgetId);
 }
 
 function readTimer(data: FormData, format: Format): TimerConfig {
@@ -173,6 +227,7 @@ async function save(action: 'save' | 'launch'): Promise<void> {
 }
 
 async function run(file: File): Promise<void> {
+  const gen = ++generation;
   if (!navigator.onLine) {
     say(strings.scan.offline);
     showOffline();
@@ -183,13 +238,17 @@ async function run(file: File): Promise<void> {
     return;
   }
   try {
-    say(strings.scan.preparing);
-    const blob = await fileToBlob(file);
-    const turnstile = currentToken();
+    await ensureTurnstile();
+    if (generation !== gen) return;
+    let turnstile = currentToken();
     if (!turnstile) {
       say(strings.scan.turnstileWait);
-      return;
+      turnstile = await waitForToken(gen);
     }
+    if (generation !== gen) return;
+    say(strings.scan.preparing);
+    const blob = await fileToBlob(file);
+    if (generation !== gen) return;
     say(strings.scan.sending);
     const license = await getMeta('license');
     const result = await postScan(blob, {
@@ -197,9 +256,18 @@ async function run(file: File): Promise<void> {
       turnstileToken: turnstile,
       ...(typeof license === 'string' && license ? { license } : {}),
     });
+    if (generation !== gen) return;
     fillReview(result);
     say('');
+    resetTurnstile();
   } catch (error) {
+    if (generation !== gen) return;
+    if (error instanceof Error && error.message === 'replaced') return;
+    if (error instanceof Error && error.message === 'turnstile') {
+      say(strings.scan.turnstileWait);
+      return;
+    }
+    resetTurnstile();
     if (error instanceof ScanError) {
       if (error.code === 'decode') say(strings.scan.decode);
       else if (error.code === 'size') say(strings.scan.size);
@@ -212,10 +280,16 @@ async function run(file: File): Promise<void> {
   }
 }
 
-fileInput?.addEventListener('change', () => {
-  const file = fileInput.files?.[0];
-  if (file) void run(file);
-});
+function watchFile(input: HTMLInputElement | null): void {
+  input?.addEventListener('change', () => {
+    const file = input.files?.[0];
+    input.value = '';
+    if (file) void run(file);
+  });
+}
+
+watchFile(fileInput);
+watchFile(cameraInput);
 drop?.addEventListener('dragover', (event) => event.preventDefault());
 drop?.addEventListener('drop', (event) => {
   event.preventDefault();

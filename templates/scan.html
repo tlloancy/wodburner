@@ -3,15 +3,15 @@
   <h1>{{h1}}</h1>
   <p class="lead">{{lead}}</p>
   <p id="offline" hidden>{{offline}}</p>
-  <form id="pick">
-    <label class="drop" id="drop">
-      {{drop}}
-      <span>{{file}}</span>
-      <input id="file" type="file" accept="image/*">
-    </label>
-  </form>
-  <p id="scan-status" role="status"></p>
   <div id="turnstile"></div>
+  <p id="scan-status" role="status"></p>
+  <form id="pick">
+    <p class="drop" id="drop">{{drop}}</p>
+    <div class="actions">
+      <label class="btn">{{file}} <input id="file" class="sr-only" type="file" accept="image/*"></label>
+      <label class="btn btn-accent">{{camera}} <input id="camera" class="sr-only" type="file" accept="image/*" capture="environment"></label>
+    </div>
+  </form>
   <form id="review" class="stack" hidden>
     <p id="confidence"><span id="confidence-label">{{confidence}}</span></p>
     <ul id="warnings" class="warnings"></ul>
