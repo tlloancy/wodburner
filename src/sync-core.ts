@@ -2,7 +2,7 @@ import { sha256Hex } from './hash';
 import { exportDocument, importDocument } from './transfer';
 import type { Wod } from './types';
 
-// Sync without an account. A random secret key never leaves the device. From it we derive
+// Sync without an account. The secret key is not sent to the server. From it we derive
 // (1) an opaque id the server stores the data under and (2) an AES-GCM key that encrypts the data
 // before it is sent. The server holds ciphertext only and cannot tell whose it is.
 

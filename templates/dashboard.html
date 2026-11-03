@@ -29,8 +29,11 @@
     <div id="sync-live" class="stack" hidden>
       <p>{{syncKeyLabel}}</p>
       <code id="sync-key" class="keybox"></code>
+      <div id="sync-qr" class="qr"></div>
+      <p class="meta">{{syncScan}}</p>
       <p class="meta">{{syncWarn}}</p>
       <div class="actions">
+        <button type="button" id="sync-share" class="btn">{{syncShare}}</button>
         <button type="button" id="sync-copy" class="btn btn-ghost">{{syncCopy}}</button>
         <button type="button" id="sync-now" class="btn">{{syncNow}}</button>
         <button type="button" id="sync-stop" class="btn btn-ghost">{{syncDisable}}</button>

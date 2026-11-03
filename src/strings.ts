@@ -33,6 +33,8 @@ export interface Strings {
     syncBadKey: string;
     syncLimit: string;
     syncCopied: string;
+    syncLinkCopied: string;
+    syncOther: string;
     syncOn: string;
     syncOff: string;
     confirmSyncOff: string;

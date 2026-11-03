@@ -4,9 +4,11 @@ import { fill } from '../fill';
 import { workoutHash } from '../hash';
 import { clearChoice } from '../lang';
 import { registerSW } from '../pwa';
+import { qrModules } from '../qr';
 import { buildIndex, matchRanges, parseQuery, search, sortHits, type Indexed, type SortMode } from '../search';
 import * as sync from '../sync';
 import { SyncFailure } from '../sync';
+import { parseKey } from '../sync-core';
 import { timerHref } from '../timer-link';
 import { exportDocument, importDocument } from '../transfer';
 import type { Format, Result, TimerConfig, Wod } from '../types';
@@ -440,11 +442,46 @@ function syncError(error: unknown): string {
   return code === 'notfound' ? strings.dashboard.syncNotFound : code === 'badkey' ? strings.dashboard.syncBadKey : code === 'limit' ? strings.dashboard.syncLimit : strings.dashboard.syncNetwork;
 }
 
+function deviceLink(key: string): string {
+  return `${location.origin}${location.pathname}#k=${key}`;
+}
+
+function linkedKey(): string | null {
+  if (!location.hash.startsWith('#k=')) return null;
+  const raw = location.hash.slice(3);
+  history.replaceState(null, '', `${location.pathname}${location.search}`);
+  return raw;
+}
+
+function drawQr(key: string): void {
+  const host = document.querySelector<HTMLElement>('#sync-qr');
+  if (!host) return;
+  host.replaceChildren();
+  const { n, dark } = qrModules(deviceLink(key));
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', `-4 -4 ${n + 8} ${n + 8}`);
+  svg.setAttribute('aria-hidden', 'true');
+  const bg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  bg.setAttribute('x', '-4');
+  bg.setAttribute('y', '-4');
+  bg.setAttribute('width', String(n + 8));
+  bg.setAttribute('height', String(n + 8));
+  bg.setAttribute('fill', '#fff');
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('fill', '#111');
+  let d = '';
+  for (let row = 0; row < n; row++) for (let col = 0; col < n; col++) if (dark[row * n + col]) d += `M${col} ${row}h1v1h-1z`;
+  path.setAttribute('d', d);
+  svg.append(bg, path);
+  host.append(svg);
+}
+
 function showSync(): void {
   const key = sync.savedKey();
   if (syncOff) syncOff.hidden = key !== null;
   if (syncLive) syncLive.hidden = key === null;
   if (syncKey) syncKey.textContent = key ? sync.display(key) : '';
+  if (key) drawQr(key);
 }
 
 // Runs after a change on this page. Failures stay silent: the next visit tries again.
@@ -488,6 +525,16 @@ document.querySelector('#sync-copy')?.addEventListener('click', () => {
   if (!key) return;
   void navigator.clipboard?.writeText(sync.display(key)).then(() => syncSay(strings.dashboard.syncCopied), () => undefined);
 });
+document.querySelector('#sync-share')?.addEventListener('click', () => {
+  const key = sync.savedKey();
+  if (!key) return;
+  const url = deviceLink(key);
+  if (typeof navigator.share === 'function') {
+    void navigator.share({ title: 'WODBurner', url }).catch(() => undefined);
+    return;
+  }
+  void navigator.clipboard?.writeText(url).then(() => syncSay(strings.dashboard.syncLinkCopied), () => undefined);
+});
 document.querySelector('#sync-stop')?.addEventListener('click', () => {
   void (async () => {
     if (!(await ask(strings.dashboard.confirmSyncOff))) return;
@@ -497,9 +544,18 @@ document.querySelector('#sync-stop')?.addEventListener('click', () => {
   })();
 });
 
+const incoming = linkedKey();
+const incomingKey = incoming ? parseKey(incoming) : null;
 showSync();
 void draw();
 {
   const key = sync.savedKey();
-  if (key) void runSync(() => sync.syncNow(key));
+  if (incoming && !incomingKey) syncSay(strings.dashboard.syncBadKey);
+  else if (incomingKey && key && incomingKey !== key) {
+    syncSay(strings.dashboard.syncOther);
+    void runSync(() => sync.syncNow(key));
+  } else if (incomingKey && !key) {
+    document.querySelector('#sync')?.setAttribute('open', '');
+    void runSync(() => sync.join(incomingKey));
+  } else if (key) void runSync(() => sync.syncNow(key));
 }
