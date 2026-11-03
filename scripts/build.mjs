@@ -284,7 +284,6 @@ for (const lang of ['fr', 'en']) {
       category: wod.category === 'hero' ? 'Hero' : 'Girl',
       name: esc(wod.name),
       nameAttr: esc(wod.name),
-      unverified: wod.verified ? '' : `<p class="banner">${esc(p.hero.unverified)}</p>`,
       formatLabel: esc(p.hero.format),
       format: esc(ui.formats[wod.format]),
       formatValue: esc(wod.format),

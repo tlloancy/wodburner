@@ -231,14 +231,13 @@
       "title": "CrossFit benchmarks — WODBurner",
       "description": "Benchmark workouts: Fran, Cindy, Murph and the Girls. The text is in the page. The timer starts without an account.",
       "h1": "Benchmarks",
-      "lead": "The text is the widely published version. A card marked “needs review” has not been checked by a person yet."
+      "lead": "The text is the widely published version."
     },
     "hero": {
       "launch": "Start the timer",
       "add": "Add to my history",
       "scaling": "Scaling",
       "format": "Format",
-      "unverified": "Needs review: a person should check the numbers before you rely on them.",
       "descriptionSuffix": "Benchmark workout on WODBurner. Start the timer or add it to this device’s history."
     },
     "privacy": {

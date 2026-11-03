@@ -231,14 +231,13 @@
       "title": "Benchmarks CrossFit — WODBurner",
       "description": "WODs de référence : Fran, Cindy, Murph et les Girls. Le texte est dans la page, le chrono se lance sans compte.",
       "h1": "Benchmarks",
-      "lead": "La définition affichée est celle que l’on retrouve le plus souvent. Une fiche marquée « à vérifier » n’a pas encore été relue par un humain."
+      "lead": "La définition affichée est celle que l’on retrouve le plus souvent."
     },
     "hero": {
       "launch": "Lancer le chrono",
       "add": "Ajouter à mon historique",
       "scaling": "Échelle",
       "format": "Format",
-      "unverified": "À vérifier : un humain doit relire les chiffres avant de s’y fier.",
       "descriptionSuffix": "WOD de référence sur WODBurner. Lancez le chrono ou ajoutez-le à l’historique de cet appareil."
     },
     "privacy": {
