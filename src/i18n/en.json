@@ -304,7 +304,7 @@
         {
           "h": "What stays on this device",
           "p": [
-            "Workouts, results, sound and volume are stored in this browser (IndexedDB). The language you pick is kept in the browser’s local storage. The JSON export copies them. If you turn on sync, a copy encrypted in your browser with a secret key we never see is kept on our Cloudflare servers, with no name or email; turning sync off deletes it. Scanning a friend’s key copies their history into yours, with their name, and writes nothing into their backup. Erase everything removes them from the device. That is the only action that stands in for deleting an account, because there is no account."
+            "Workouts, results, sound and volume are stored in this browser (IndexedDB). The language shown is the phone’s. The JSON export copies them. If you turn on sync, a copy encrypted in your browser with a secret key we never see is kept on our Cloudflare servers, with no name or email; turning sync off deletes it. Scanning a friend’s key copies their history into yours, with their name, and writes nothing into their backup. Erase everything removes them from the device. That is the only action that stands in for deleting an account, because there is no account."
           ]
         },
         {

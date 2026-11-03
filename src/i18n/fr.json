@@ -304,7 +304,7 @@
         {
           "h": "Ce qui reste sur cet appareil",
           "p": [
-            "Les WODs, les résultats, le son et le volume sont enregistrés dans ce navigateur (IndexedDB). La langue que vous choisissez est gardée dans le stockage local du navigateur. L’export JSON vous permet de les copier. Si vous activez la synchro, une copie chiffrée dans votre navigateur par une clé secrète que nous ne connaissons pas est conservée sur nos serveurs Cloudflare, sans nom ni e-mail ; la désactiver l’efface. Scanner la clé d’un copain copie son historique dans le vôtre, avec son nom, et n’écrit rien dans sa sauvegarde. Tout effacer retire ces données de l’appareil. C’est le seul geste qui correspond à une suppression de compte, puisqu’il n’y a pas de compte."
+            "Les WODs, les résultats, le son et le volume sont enregistrés dans ce navigateur (IndexedDB). La langue affichée est celle du téléphone. L’export JSON vous permet de les copier. Si vous activez la synchro, une copie chiffrée dans votre navigateur par une clé secrète que nous ne connaissons pas est conservée sur nos serveurs Cloudflare, sans nom ni e-mail ; la désactiver l’efface. Scanner la clé d’un copain copie son historique dans le vôtre, avec son nom, et n’écrit rien dans sa sauvegarde. Tout effacer retire ces données de l’appareil. C’est le seul geste qui correspond à une suppression de compte, puisqu’il n’y a pas de compte."
           ]
         },
         {

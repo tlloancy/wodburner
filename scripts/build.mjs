@@ -135,14 +135,9 @@ const pages = [];
 
 function chrome(lang, currentPath, section = '') {
   const pack = packs[lang].pages;
-  const other = lang === 'fr' ? 'en' : 'fr';
-  const otherHref = currentPath === '/' ? `/${other}/` : currentPath.replace(`/${lang}/`, `/${other}/`);
   const here = (name) => (section === name ? ' aria-current="page"' : '');
   const vars = {
     lang,
-    other,
-    otherHref,
-    otherName: other === 'fr' ? 'Français' : 'English',
     navTimers: esc(pack.nav.timers),
     navHeroes: esc(pack.nav.heroes),
     navHistory: esc(pack.nav.history),

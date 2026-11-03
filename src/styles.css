@@ -55,14 +55,13 @@ a { color: inherit; }
 .word { font-weight: 750; letter-spacing: -0.03em; text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; min-height: 48px; }
 .word img { width: 32px; height: auto; border-radius: 8px; }
 nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
-nav a, .lang, .word, .foot a, .btn, .tile { text-decoration: none; }
-nav a, .lang {
+nav a, .word, .foot a, .btn, .tile { text-decoration: none; }
+nav a {
   min-height: 48px;
   display: inline-flex;
   align-items: center;
 }
-.lang { margin-left: auto; }
-nav a:hover, .lang:hover, .foot a:hover, .word:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+nav a:hover, .foot a:hover, .word:hover { text-decoration: underline; text-underline-offset: 0.2em; }
 nav a[aria-current="page"] { color: var(--accent); text-decoration: none; }
 
 h1 {
@@ -182,7 +181,7 @@ textarea { min-height: 9rem; resize: vertical; }
   border: 0;
 }
 .controls { display: grid; gap: 0.6rem; }
-body.is-running .top, body.is-running .foot, body.is-running .langbar, body.is-running #modify, body.is-running .vol { display: none; }
+body.is-running .top, body.is-running .foot, body.is-running #modify, body.is-running .vol { display: none; }
 body.is-running .timer-shell { justify-content: center; }
 body.is-running .clock { font-size: clamp(5.5rem, 34vw, 15rem); }
 body.is-running .controls { margin-top: 0.6rem; }
@@ -215,23 +214,6 @@ dialog::backdrop { background: rgb(0 0 0 / 72%); }
   white-space: nowrap;
   border: 0;
 }
-
-.langbar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 5;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 0.75rem;
-  padding: 0.75rem max(1rem, env(safe-area-inset-right)) calc(0.75rem + env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
-  background: var(--raise);
-  border-top: 1px solid var(--line);
-}
-.langbar p { margin: 0; flex: 1 1 14rem; }
-html.has-langbar body { padding-bottom: calc(6.5rem + env(safe-area-inset-bottom)); }
 
 .sync { border: 1px solid var(--line); border-radius: 0.75rem; padding: 0.8rem 1rem; margin: 1rem 0; }
 .sync summary { cursor: pointer; font-weight: 700; }

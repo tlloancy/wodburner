@@ -2,15 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { chooseLang, pageLang, swapLang } from './lang';
 
 describe('chooseLang', () => {
-  it('uses the stored choice first', () => {
-    expect(chooseLang({ stored: 'en', languages: ['fr-FR'] })).toBe('en');
-    expect(chooseLang({ stored: 'fr', languages: ['en-US'] })).toBe('fr');
-  });
-
-  it('ignores a stored value the site does not support', () => {
-    expect(chooseLang({ stored: 'de', languages: ['fr-FR'] })).toBe('fr');
-    expect(chooseLang({ stored: 42, languages: ['fr'] })).toBe('fr');
-    expect(chooseLang({ stored: null, languages: [] })).toBe('en');
+  it('follows the phone list when it is empty or unknown', () => {
+    expect(chooseLang({ languages: [] })).toBe('en');
   });
 
   it('matches regional tags on their language', () => {
@@ -32,7 +25,6 @@ describe('chooseLang', () => {
 
   it('supports a third language through the supported list', () => {
     expect(chooseLang({ languages: ['es-MX'], supported: ['fr', 'en', 'es'] })).toBe('es');
-    expect(chooseLang({ stored: 'es', languages: ['fr'], supported: ['fr', 'en', 'es'] })).toBe('es');
   });
 });
 

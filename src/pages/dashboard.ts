@@ -2,7 +2,6 @@ import strings from '@i18n';
 import { clearAll, deleteWod, getWod, listWods, putWod, replaceWods } from '../db';
 import { fill } from '../fill';
 import { workoutHash } from '../hash';
-import { clearChoice } from '../lang';
 import { registerSW } from '../pwa';
 import { qrModules } from '../qr';
 import { buildIndex, matchRanges, parseQuery, search, sortHits, type Indexed, type SortMode } from '../search';
@@ -391,7 +390,6 @@ document.querySelector('#clear')?.addEventListener('click', () => {
     const ok = await ask(strings.dashboard.confirmClear);
     if (!ok) return;
     await clearAll();
-    clearChoice();
     await sync.disable();
     showSync();
     say(strings.dashboard.cleared);
