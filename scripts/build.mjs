@@ -288,6 +288,7 @@ for (const lang of ['fr', 'en']) {
       format: esc(ui.formats[wod.format]),
       formatValue: esc(wod.format),
       text: esc(text),
+      note: wod.note ? `<p class="banner">${esc(wod.note[lang])}</p>` : '',
       scalingLabel: esc(p.hero.scaling),
       scaling: esc(wod.scaling[lang]),
       launchHref: esc(timerHref(lang, wod.format, wod.timer, wod.name)),

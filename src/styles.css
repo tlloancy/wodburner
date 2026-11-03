@@ -134,11 +134,12 @@ input, select, textarea {
 }
 textarea { min-height: 9rem; resize: vertical; }
 .cards, .recent, .results, .warnings { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem; }
-.card {
+.card, .banner {
   background: var(--raise);
   border: 1px solid var(--line);
   padding: 0.9rem;
 }
+.banner { border-color: var(--accent); margin: 0.75rem 0 0; }
 .actions, .tools, .pick-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
 .wod-text { white-space: pre-wrap; font: inherit; margin: 0; }
 .recent li, .results li { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
