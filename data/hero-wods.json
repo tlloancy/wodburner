@@ -416,5 +416,3754 @@
       "en": "Keep 20 minutes. Shorten the run, or use banded pull-ups.",
       "fr": "Gardez les 20 minutes. Course plus courte, ou tractions élastiques."
     }
+  },
+  {
+    "slug": "jt",
+    "name": "JT",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "21-15-9 reps for time of:\nHandstand push-ups\nRing dips\nPush-ups",
+      "fr": "21-15-9 répétitions, for time :\npompes en équilibre\nRing dips\npompes"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "michael",
+    "name": "Michael",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\nRun 800 meters\n50 back extensions\n50 sit-ups",
+      "fr": "3 tours for time :\n800 m de course\n50 extensions du dos\n50 abdominaux"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "daniel",
+    "name": "Daniel",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n50 pull-ups\n400-meter run\n21 thrusters\n800-meter run\n21 thrusters\n400-meter run\n50 pull-ups\n♀ 65 lb\n♂ 95 lb",
+      "fr": "For time :\n50 tractions\n400 m de course\n21 thrusters\n800 m de course\n21 thrusters\n400 m de course\n50 tractions\nFemmes 65 lb\nHommes 95 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "josh",
+    "name": "Josh",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n21 overhead squats\n42 pull-ups\n15 overhead squats\n30 pull-ups\n9 overhead squats\n18 pull-ups\n♀ 65 lb\n♂ 95 lb",
+      "fr": "For time :\n21 overhead squats\n42 tractions\n15 overhead squats\n30 tractions\n9 overhead squats\n18 tractions\nFemmes 65 lb\nHommes 95 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "jason",
+    "name": "Jason",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n100 squats\n5 muscle-ups\n75 squats\n10 muscle-ups\n50 squats\n15 muscle-ups\n25 squats\n20 muscle-ups",
+      "fr": "For time :\n100 squats\n5 muscle-ups\n75 squats\n10 muscle-ups\n50 squats\n15 muscle-ups\n25 squats\n20 muscle-ups"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "badger",
+    "name": "Badger",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n30 squat cleans\n30 pull-ups\nRun 800 meters\n♀ 65 lb\n♂ 95 lb",
+      "fr": "3 tours for time :\n30 squat cleans\n30 tractions\n800 m de course\nFemmes 65 lb\nHommes 95 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "joshie",
+    "name": "Joshie",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n21 dumbbell snatches, right arm\n21 L pull-ups\n21 dumbbell snatches, left arm\n21 L pull-ups\n♀ 25 lb\n♂ 40 lb",
+      "fr": "3 tours for time :\n21 dumbbell snatches, right arm\n21 L tractions\n21 dumbbell snatches, left arm\n21 L tractions\nFemmes 25 lb\nHommes 40 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "nate",
+    "name": "Nate",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds as possible in 20 minutes of:\n2 muscle-ups\n4 handstand push-ups\n8 kettlebell swings\n♀ 53 lb\n♂ 70 lb",
+      "fr": "AMRAP 20 min :\n2 muscle-ups\n4 pompes en équilibre\n8 kettlebell swings\nFemmes 53 lb\nHommes 70 lb"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "randy",
+    "name": "Randy",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n75 power snatches\n♀ 55 lb\n♂ 75 lb",
+      "fr": "For time :\n75 arrachés puissance\nFemmes 55 lb\nHommes 75 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "tommy-v",
+    "name": "Tommy V",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n21 thrusters\n12 rope climbs\n15 thrusters\n9 rope climbs\n9 thrusters\n6 rope climbs\n♀ 75 lb, 15-foot rope\n♂ 115 lb, 15-foot rope",
+      "fr": "For time :\n21 thrusters\n12 montées de corde\n15 thrusters\n9 montées de corde\n9 thrusters\n6 montées de corde\nFemmes 75 lb, 15-foot rope\nHommes 115 lb, 15-foot rope"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "griff",
+    "name": "Griff",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 800 meters\nRun 400 meters backwards\nRun 800 meters\nRun 400 meters backwards",
+      "fr": "For time :\n800 m de course\n400 m de course backwards\n800 m de course\n400 m de course backwards"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "ryan",
+    "name": "Ryan",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n7 muscle-ups\n21 burpees",
+      "fr": "5 tours for time :\n7 muscle-ups\n21 burpees"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "erin",
+    "name": "Erin",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n15 dumbbell split cleans\n21 pull-ups\n♀ 30 lb\n♂ 40 lb",
+      "fr": "5 tours for time :\n15 dumbbell split cleans\n21 tractions\nFemmes 30 lb\nHommes 40 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "mr-joshua",
+    "name": "Mr. Joshua",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\nRun 400 meters\n30 GHD sit-ups\n15 deadlifts\n♀ 175 lb\n♂ 250 lb",
+      "fr": "5 tours for time :\n400 m de course\n30 GHD abdominaux\n15 soulevés de terre\nFemmes 175 lb\nHommes 250 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "dt",
+    "name": "DT",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n12 deadlifts\n9 hang power cleans\n6 push jerks\n♀ 105 lb\n♂ 155 lb",
+      "fr": "5 tours for time :\n12 soulevés de terre\n9 hang power cleans\n6 push jerks\nFemmes 105 lb\nHommes 155 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "danny",
+    "name": "Danny",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds in 20 minutes as you can of:\n30 box jumps\n20 push presses\n30 pull-ups\n♀ 75-lb barbell, 20-inch box\n♂ 115-lb barbell, 24-inch box",
+      "fr": "AMRAP 20 min :\n30 box jumps\n20 push presses\n30 tractions\nFemmes 75-lb barbell, 20-inch box\nHommes 115-lb barbell, 24-inch box"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "hansen",
+    "name": "Hansen",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n30 kettlebell swings\n30 burpees\n30 GHD sit-ups\n♀ 53 lb\n♂ 70 lb",
+      "fr": "5 tours for time :\n30 kettlebell swings\n30 burpees\n30 GHD abdominaux\nFemmes 53 lb\nHommes 70 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "tyler",
+    "name": "Tyler",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n7 muscle-ups\n21 sumo deadlift high pulls\n♀ 65 lb\n♂ 95 lb",
+      "fr": "5 tours for time :\n7 muscle-ups\n21 sumo deadlift high pulls\nFemmes 65 lb\nHommes 95 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "lumberjack-20",
+    "name": "Lumberjack 20",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n20 deadlifts\nRun 400 meters\n20 kettlebell swings\nRun 400 meters\n20 overhead squats\nRun 400 meters\n20 burpees\nRun 400 meters\n20 chest-to-bar pull-ups\nRun 400 meters\n20 box jumps\nRun 400 meters\n20 dumbbell squat cleans\nRun 400 meters\n♀ 185-lb deadlifts, 53-lb kettlebell, 75-lb overhead squats, 20-inch box, 30-lb dumbbells\n♂ 275-lb deadlifts, 70-lb kettlebell, 115-lb overhead squats, 24-inch box, 45-lb dumbbells",
+      "fr": "For time :\n20 soulevés de terre\n400 m de course\n20 kettlebell swings\n400 m de course\n20 overhead squats\n400 m de course\n20 burpees\n400 m de course\n20 tractions chest-to-bar\n400 m de course\n20 box jumps\n400 m de course\n20 dumbbell squat cleans\n400 m de course\nFemmes 185-lb soulevés de terre, 53-lb kettlebell, 75-lb overhead squats, 20-inch box, 30-lb dumbbells\nHommes 275-lb soulevés de terre, 70-lb kettlebell, 115-lb overhead squats, 24-inch box, 45-lb dumbbells"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "stephen",
+    "name": "Stephen",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "30-25-20-15-10-5 reps of:\nGHD sit-ups\nBack extensions\nKnees-to-elbows\nStiff-legged deadlift\n♀ 65 lb\n♂ 95 lb",
+      "fr": "30-25-20-15-10-5 reps of:\nGHD abdominaux\nextensions du dos\nknees-to-elbows\nStiff-legged deadlift\nFemmes 65 lb\nHommes 95 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "garrett",
+    "name": "Garrett",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n75 squats\n25 ring handstand push-ups\n25 L pull-ups",
+      "fr": "3 tours for time :\n75 squats\n25 ring pompes en équilibre\n25 L tractions"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "war-frank",
+    "name": "War Frank",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n25 muscle-ups\n100 squats\n35 GHD sit-ups",
+      "fr": "3 tours for time :\n25 muscle-ups\n100 squats\n35 GHD abdominaux"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "mcghee",
+    "name": "Mcghee",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1800
+    },
+    "text": {
+      "en": "As many rounds as possible in\n30 minutes of:\n5 deadlifts\n13 push-ups\n9 box jumps\n♀ 185-lb barbell, 20-inch box\n♂ 275-lb barbell, 24-inch box",
+      "fr": "As many rounds as possible in\n30 minutes of:\n5 soulevés de terre\n13 pompes\n9 box jumps\nFemmes 185-lb barbell, 20-inch box\nHommes 275-lb barbell, 24-inch box"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "paul",
+    "name": "Paul",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n50 double-unders\n35 knees-to-elbows\n20-yard overhead walk\n♀ 125 lb\n♂ 185 lb",
+      "fr": "5 tours for time :\n50 double-unders\n35 knees-to-elbows\n20-yard overhead walk\nFemmes 125 lb\nHommes 185 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "jerry",
+    "name": "Jerry",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 1 mile\nRow 2K\nRun 1 mile",
+      "fr": "For time :\n1 mile de course\nRow 2K\n1 mile de course"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "nutts",
+    "name": "Nutts",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n10 handstand push-ups\n15 deadlifts\n25 box jumps\n50 pull-ups\n100 wall-ball shots\n200 double-unders\nRun 400 meters with a plate\n♀ 175-lb deadlifts, 24-inch box, 14-lb medicine ball to 9 feet, 25-lb plate\n♂ 250-lb deadlifts, 30-inch box, 20-lb medicine ball to 10 feet, 45-lb plate",
+      "fr": "For time :\n10 pompes en équilibre\n15 soulevés de terre\n25 box jumps\n50 tractions\n100 wall-ball shots\n200 double-unders\n400 m de course with a plate\nFemmes 175-lb soulevés de terre, 24-inch box, 14-lb medicine ball to 9 feet, 25-lb plate\nHommes 250-lb soulevés de terre, 30-inch box, 20-lb medicine ball to 10 feet, 45-lb plate"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "arnie",
+    "name": "Arnie",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "With a single kettlebell for time:\n21 Turkish get-ups, right arm\n50 kettlebell swings\n21 overhead squats, left arm\n50 kettlebell swings\n21 overhead squats, right arm\n50 kettlebell swings\n21 Turkish get-ups, left arm\n♀ 53 lb\n♂ 70 lb",
+      "fr": "With a single kettlebell For time :\n21 Turkish get-ups, right arm\n50 kettlebell swings\n21 overhead squats, left arm\n50 kettlebell swings\n21 overhead squats, right arm\n50 kettlebell swings\n21 Turkish get-ups, left arm\nFemmes 53 lb\nHommes 70 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "the-seven",
+    "name": "The Seven",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds for time of:\n7 handstand push-ups\n7 thrusters\n7 knees-to-elbows\n7 deadlifts\n7 burpees\n7 kettlebell swings\n7 pull-ups\n♀ 95-lb thrusters, 165-lb deadlifts, 53-lb kettlebell\n♂ 135-lb thrusters, 245-lb deadlifts, 70-lb kettlebell",
+      "fr": "7 tours for time :\n7 pompes en équilibre\n7 thrusters\n7 knees-to-elbows\n7 soulevés de terre\n7 burpees\n7 kettlebell swings\n7 tractions\nFemmes 95-lb thrusters, 165-lb soulevés de terre, 53-lb kettlebell\nHommes 135-lb thrusters, 245-lb soulevés de terre, 70-lb kettlebell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "rj",
+    "name": "RJ",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\nRun 800 meters\n5 rope climbs to 15 feet\n50 push-ups",
+      "fr": "5 tours for time :\n800 m de course\n5 montées de corde to 15 feet\n50 pompes"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "luce",
+    "name": "Luce",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "Wearing a weight vest, 3 rounds for time of:\n1K run\n10 muscle-ups\n100 squats\n♀ 14-lb vest\n♂ 20-lb vest",
+      "fr": "Wearing a weight vest, 3 tours for time :\n1K run\n10 muscle-ups\n100 squats\nFemmes 14-lb vest\nHommes 20-lb vest"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "johnson",
+    "name": "Johnson",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n20 minutes of:\n9 deadlifts\n8 muscle-ups\n9 squat cleans\n♀ 165-lb deadlifts, 105-lb squat cleans\n♂ 245-lb deadlifts, 155-lb squat cleans",
+      "fr": "Complete as many rounds and reps as possible in\n20 minutes of:\n9 soulevés de terre\n8 muscle-ups\n9 squat cleans\nFemmes 165-lb soulevés de terre, 105-lb squat cleans\nHommes 245-lb soulevés de terre, 155-lb squat cleans"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "roy",
+    "name": "Roy",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n15 deadlifts\n20 box jumps\n25 pull-ups\n♀ 155-lb deadlifts, 20-inch box\n♂ 225-lb deadlifts, 24-inch box",
+      "fr": "5 tours for time :\n15 soulevés de terre\n20 box jumps\n25 tractions\nFemmes 155-lb soulevés de terre, 20-inch box\nHommes 225-lb soulevés de terre, 24-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "adambrown",
+    "name": "Adambrown",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "2 rounds for time of:\n24 deadlifts\n24 box jumps\n24 wall-ball shots\n24 bench presses\n24 box jumps\n24 wall-ball shots\n24 cleans\n♀ 95-lb deadlifts, 20-inch box, 14-lb ball to 9 feet, 135-lb bench press, 95-lb clean\n♂ 295-lb deadlifts, 24-inch box, 20-lb ball to 10 feet, 195-lb bench press, 145-lb cleans",
+      "fr": "2 tours for time :\n24 soulevés de terre\n24 box jumps\n24 wall-ball shots\n24 bench presses\n24 box jumps\n24 wall-ball shots\n24 cleans\nFemmes 95-lb soulevés de terre, 20-inch box, 14-lb ball to 9 feet, 135-lb bench press, 95-lb clean\nHommes 295-lb soulevés de terre, 24-inch box, 20-lb ball to 10 feet, 195-lb bench press, 145-lb cleans"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "coe",
+    "name": "Coe",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "10 rounds for time of:\n10 thrusters\n10 ring push-ups\n♀ 65 lb\n♂ 95 lb",
+      "fr": "10 tours for time :\n10 thrusters\n10 ring pompes\nFemmes 65 lb\nHommes 95 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "severin",
+    "name": "Severin",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n50 strict pull-ups\n100 hand-release push-ups\nRun 5K\nIf you’ve got a weight vest or body armor, wear it.\n♀ 14-lb vest\n♂ 20-lb vest",
+      "fr": "For time :\n50 strict tractions\n100 pompes hand-release\nRun 5K\nIf you’ve got a weight vest or body armor, wear it.\nFemmes 14-lb vest\nHommes 20-lb vest"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "helton",
+    "name": "Helton",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\nRun 800 meters\n30 dumbbell squat cleans\n30 burpees\n♀ 35-lb dumbbells\n♂ 50-lb dumbbells",
+      "fr": "3 tours for time :\n800 m de course\n30 dumbbell squat cleans\n30 burpees\nFemmes 35-lb dumbbells\nHommes 50-lb dumbbells"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "jack",
+    "name": "Jack",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n20 minutes of:\n10 push presses\n10 kettlebell swings\n10 box jumps\n♀ 75-lb barbell, 35-lb kettlebell, 20-inch box\n♂ 115-lb barbell, 53-lb kettlebell, 24-inch box",
+      "fr": "Complete as many rounds and reps as possible in\n20 minutes of:\n10 push presses\n10 kettlebell swings\n10 box jumps\nFemmes 75-lb barbell, 35-lb kettlebell, 20-inch box\nHommes 115-lb barbell, 53-lb kettlebell, 24-inch box"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "forrest",
+    "name": "Forrest",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n20 L pull-ups\n30 toes-to-bars\n40 burpees\nRun 800 meters",
+      "fr": "3 tours for time :\n20 L tractions\n30 toes-to-bar\n40 burpees\n800 m de course"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "bulger",
+    "name": "Bulger",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "10 rounds for time of:\n150-meter run\n7 chest-to-bar pull-ups\n7 front squats\n7 handstand push-ups\n♀ 95 lb\n♂ 135 lb",
+      "fr": "10 tours for time :\n150 m de course\n7 tractions chest-to-bar\n7 front squats\n7 pompes en équilibre\nFemmes 95 lb\nHommes 135 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "brenton",
+    "name": "Brenton",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n100-foot bear crawl\n100-foot standing broad jump\nDo 3 burpees after every\n5 broad jumps. If you’ve got a 20-lb vest or body armor, wear it.",
+      "fr": "5 tours for time :\n100-foot bear crawl\n100-foot standing broad jump\nDo 3 burpees after every\n5 broad jumps. If you’ve got a 20-lb vest or body armor, wear it."
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "blake",
+    "name": "Blake",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "4 rounds for time of:\n100-foot overhead walking lunge\n30 box jumps\n20 wall-ball shots\n10 handstand push-ups\n♀ 25-lb plate, 20-inch box, 14-lb medicine ball to a\n9-foot target\n♂ 45-lb plate, 24-inch box, 20-lb medicine ball to a\n10-foot target",
+      "fr": "4 tours for time :\n100-foot overhead walking lunge\n30 box jumps\n20 wall-ball shots\n10 pompes en équilibre\nFemmes 25-lb plate, 20-inch box, 14-lb medicine ball to a\n9-foot target\nHommes 45-lb plate, 24-inch box, 20-lb medicine ball to a\n10-foot target"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "collin",
+    "name": "Collin",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "6 rounds for time of:\n400-meter sandbag carry\n12 push presses\n12 box jumps\n12 sumo deadlift high pulls\n♀ 35-lb sandbag, 75-lb push press, 20-inch box, 65-lb sumo deadlift high pull\n♂ 50-lb sandbag, 115-lb push press, 24-inch box, 95-lb sumo deadlift high pull",
+      "fr": "6 tours for time :\n400-meter sandbag carry\n12 push presses\n12 box jumps\n12 sumo deadlift high pulls\nFemmes 35-lb sandbag, 75-lb push press, 20-inch box, 65-lb sumo deadlift high pull\nHommes 50-lb sandbag, 115-lb push press, 24-inch box, 95-lb sumo deadlift high pull"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "thompson",
+    "name": "Thompson",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "10 rounds for time of:\n1 rope climb to 15 feet\n29 back squats\n10-meter barbell farmers carry\n♀ 65-lb back squat, 95-lb farmers carry\n♂ 95-lb back squat, 135-lb farmers carry\nBegin the rope climbs seated on the floor.",
+      "fr": "10 tours for time :\n1 rope climb to 15 feet\n29 back squats\n10-meter barbell farmers carry\nFemmes 65-lb back squat, 95-lb farmers carry\nHommes 95-lb back squat, 135-lb farmers carry\nBegin the montées de corde seated on the floor."
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "whitten",
+    "name": "Whitten",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n22 kettlebell swings\n22 box jumps\n400-meter run\n22 burpees\n22 wall-ball shots\n♀ 53-lbkettlebell, 20-inch box, 14-lb medicine ball to a\n9-foot target\n♂ 72-lb kettlebell, 24-inch box, 20-lb medicine ball to a\n10-foot target",
+      "fr": "5 tours for time :\n22 kettlebell swings\n22 box jumps\n400 m de course\n22 burpees\n22 wall-ball shots\nFemmes 53-lbkettlebell, 20-inch box, 14-lb medicine ball to a\n9-foot target\nHommes 72-lb kettlebell, 24-inch box, 20-lb medicine ball to a\n10-foot target"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "bull",
+    "name": "Bull",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "2 rounds for time of:\n200 double-unders\n50 overhead squats\n50 pull-ups\n1-mile run\n♀ 95-lb barbell\n♂ 135-lb barbell",
+      "fr": "2 tours for time :\n200 double-unders\n50 overhead squats\n50 tractions\n1 mile de course\nFemmes 95-lb barbell\nHommes 135-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "rankel",
+    "name": "Rankel",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds as possible in 20 minutes of:\n6 deadlifts\n7 burpee pull-ups\n10 kettlebell swings\n200-meter run\n♀ 155-lb barbell, 53-lb kettlebell\n♂ 225-lb barbell, 70-lb kettlebell",
+      "fr": "AMRAP 20 min :\n6 soulevés de terre\n7 burpee tractions\n10 kettlebell swings\n200 m de course\nFemmes 155-lb barbell, 53-lb kettlebell\nHommes 225-lb barbell, 70-lb kettlebell"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "holbrook",
+    "name": "Holbrook",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "10 rounds, each for time, of:\n5 thrusters\n10 pull-ups\n100-meter sprint\nRest 1 minute between rounds.\n♀ 75 lb\n♂ 115 lb",
+      "fr": "10 rounds, each for time, of:\n5 thrusters\n10 tractions\n100-meter sprint\nRest 1 minute between rounds.\nFemmes 75 lb\nHommes 115 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "ledesma",
+    "name": "Ledesma",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n20 minutes of:\n5 parallette handstand push-ups\n10 toes-to-rings\n15 medicine-ball cleans\n♀ 14-lb medicine ball\n♂ 20-lb medicine ball",
+      "fr": "Complete as many rounds and reps as possible in\n20 minutes of:\n5 parallette pompes en équilibre\n10 toes-to-rings\n15 medicine-ball cleans\nFemmes 14-lb medicine ball\nHommes 20-lb medicine ball"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "wittman",
+    "name": "Wittman",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds for time of:\n15 kettlebell swings\n15 power cleans\n15 box jumps\n♀ 35-lb kettlebell, 65-lb barbell, 20-inch box\n♂ 53-lb kettlebell, 95-lb barbell, 24-inch box",
+      "fr": "7 tours for time :\n15 kettlebell swings\n15 power cleans\n15 box jumps\nFemmes 35-lb kettlebell, 65-lb barbell, 20-inch box\nHommes 53-lb kettlebell, 95-lb barbell, 24-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "mccluskey",
+    "name": "Mccluskey",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds of:\n9 muscle-ups\n15 burpee pull-ups\n21 pull-ups\nRun 800 meters\nIf you’ve got a 20-lb vest or body armor, wear it.",
+      "fr": "3 rounds of:\n9 muscle-ups\n15 burpee tractions\n21 tractions\n800 m de course\nIf you’ve got a 20-lb vest or body armor, wear it."
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "weaver",
+    "name": "Weaver",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "4 rounds for time of:\n10 L pull-ups\n15 push-ups\n15 chest-to-bar pull-ups\n15 push-ups\n20 pull-ups\n15 push-ups",
+      "fr": "4 tours for time :\n10 L tractions\n15 pompes\n15 tractions chest-to-bar\n15 pompes\n20 tractions\n15 pompes"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "hammer",
+    "name": "Hammer",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds, each for time, of:\n5 power cleans\n10 front squats\n5 jerks\n20 pull-ups\nRest 90 seconds between rounds.\n♀ 95 lb\n♂ 135 lb",
+      "fr": "5 rounds, each for time, of:\n5 power cleans\n10 front squats\n5 jerks\n20 tractions\nRepos de 90 secondes between rounds.\nFemmes 95 lb\nHommes 135 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "abbate",
+    "name": "Abbate",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n1-mile run\n21 clean and jerks\n800-meter run\n21 clean and jerks\n1-mile run\n♀ 105 lb\n♂ 155 lb",
+      "fr": "For time :\n1 mile de course\n21 clean and jerks\n800 m de course\n21 clean and jerks\n1 mile de course\nFemmes 105 lb\nHommes 155 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "moore",
+    "name": "Moore",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds in 20 minutes as you can of:\n1 rope climb to 15 feet\nRun 400 meters\nMax-rep handstand push-ups",
+      "fr": "AMRAP 20 min :\n1 rope climb to 15 feet\n400 m de course\nMax-rep pompes en équilibre"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "wilmot",
+    "name": "Wilmot",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "6 rounds for time of:\n50 squats\n25 ring dips",
+      "fr": "6 tours for time :\n50 squats\n25 ring dips"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "moon",
+    "name": "Moon",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds for time of:\n10 dumbbell hang split snatches, right arm\n1 rope climb to 15 feet\n10 dumbbell hang split snatches, left arm\n1 rope climb\nAlternate feet on the split snatches.\n♀ 30-lb dumbbell\n♂ 40-lb dumbbell",
+      "fr": "7 tours for time :\n10 dumbbell hang split snatches, right arm\n1 rope climb to 15 feet\n10 dumbbell hang split snatches, left arm\n1 rope climb\nAlternate feet on the split snatches.\nFemmes 30-lb dumbbell\nHommes 40-lb dumbbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "small",
+    "name": "Small",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\nRow 1,000 meters\n50 burpees\n50 box jumps\nRun 800 meters\n♀ 20-inch box\n♂ 24-inch box",
+      "fr": "3 tours for time :\nRow 1,000 meters\n50 burpees\n50 box jumps\n800 m de course\nFemmes 20-inch box\nHommes 24-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "morrison",
+    "name": "Morrison",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "50-40-30-20-10 reps for time of:\nWall-ball shots\nBox jumps\nKettlebell swings\n♀ 14-lb medicine ball to a\n9-foot target, 20-inch box, 35-lb kettlebell\n♂ 20-lb medicine ball to a\n10-foot target, 24-inch box, 53-lb kettlebell",
+      "fr": "50-40-30-20-10 répétitions, for time :\nWall-ball shots\nbox jumps\nkettlebell swings\nFemmes 14-lb medicine ball to a\n9-foot target, 20-inch box, 35-lb kettlebell\nHommes 20-lb medicine ball to a\n10-foot target, 24-inch box, 53-lb kettlebell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "manion",
+    "name": "Manion",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds for time of:\nRun 400 meters\n29 back squat\n♀ 95 lb\n♂ 135 lb",
+      "fr": "7 tours for time :\n400 m de course\n29 back squat\nFemmes 95 lb\nHommes 135 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "gator",
+    "name": "Gator",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "8 rounds for time of:\n5 front squat\n26 ring push-ups\n♀ 125 lb\n♂ 185 lb",
+      "fr": "8 tours for time :\n5 front squat\n26 ring pompes\nFemmes 125 lb\nHommes 185 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "bradley",
+    "name": "Bradley",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "10 rounds for time of:\nSprint 100 meters\n10 pull-ups\nSprint 100 meters\n10 burpees\nRest 30 seconds",
+      "fr": "10 tours for time :\nSprint 100 meters\n10 tractions\nSprint 100 meters\n10 burpees\nRepos de 30 secondes"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "meadows",
+    "name": "Meadows",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n20 muscle-ups\n25 lowers from an inverted hang on the rings, slowly, with straight body and arms\n30 ring handstand push-ups\n35 ring rows\n40 ring push-ups",
+      "fr": "For time :\n20 muscle-ups\n25 lowers from an inverted hang on the rings, slowly, with straight body and arms\n30 ring pompes en équilibre\n35 ring rows\n40 ring pompes"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "santiago",
+    "name": "Santiago",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds for time of:\n18 dumbbell hang squat cleans\n18 pull-ups\n10 power cleans\n10 handstand push-ups\n♀ 20-lb dumbbells, 95-lb barbell\n♂ 35-lb dumbbells, 135-lb barbell",
+      "fr": "7 tours for time :\n18 dumbbell hang squat cleans\n18 tractions\n10 power cleans\n10 pompes en équilibre\nFemmes 20-lb dumbbells, 95-lb barbell\nHommes 35-lb dumbbells, 135-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "carse",
+    "name": "Carse",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "21-18-15-12-9-6-3 reps for time of:\nSquat cleans\nDouble-unders\nDeadlifts\nBox jumps\nBegin each round with a\n50-meter bear crawl.\n♀ 95-lb squat clean, 125-lb deadlift, 20-inch box\n♂ 135-lb squat clean, 185-lb deadlift, 24-inch box",
+      "fr": "21-18-15-12-9-6-3 répétitions, for time :\nsquat cleans\nDouble-unders\nsoulevés de terre\nbox jumps\nBegin each round with a\n50-meter bear crawl.\nFemmes 95-lb squat clean, 125-lb deadlift, 20-inch box\nHommes 135-lb squat clean, 185-lb deadlift, 24-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "bradshaw",
+    "name": "Bradshaw",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "10 rounds for time of:\n3 handstand push-ups\n6 deadlifts\n12 pull-ups\n24 double-unders\n♀ 155 lb\n♂ 225 lb",
+      "fr": "10 tours for time :\n3 pompes en équilibre\n6 soulevés de terre\n12 tractions\n24 double-unders\nFemmes 155 lb\nHommes 225 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "white",
+    "name": "White",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n3 rope climbs to 15 feet\n10 toes-to-bars\n21 overhead walking lunges\n400-meter run\n♀ 25-lb plate\n♂ 45-lb plate",
+      "fr": "5 tours for time :\n3 montées de corde to 15 feet\n10 toes-to-bar\n21 overhead fentes marchées\n400 m de course\nFemmes 25-lb plate\nHommes 45-lb plate"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "dae-han",
+    "name": "Dae Han",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\nRun 800 meters with an empty barbell\n3 rope climbs\n12 thrusters\n♀ 15-foot rope climb, 95-lb thrusters\n♂ 15-foot rope climb, 135-lb thrusters",
+      "fr": "3 tours for time :\n800 m de course with an empty barbell\n3 montées de corde\n12 thrusters\nFemmes 15-foot rope climb, 95-lb thrusters\nHommes 15-foot rope climb, 135-lb thrusters"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "hidalgo",
+    "name": "Hidalgo",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 2 miles\nRest 2 minutes\n20 squat cleans\n20 box jumps\n20 overhead walking lunges\n20 box jumps\n20 squat cleans\nRest 2 minutes\nRun 2 miles\nWomen 95-lb barbell, 20-inch box, 25-lb plate\nMen 135-lb barbell, 24-inch box, 45-lb plate\nIf you’ve got a 20-lb vest or body armor, wear it.",
+      "fr": "For time :\n2 miles de course\nRepos de 2 minutes\n20 squat cleans\n20 box jumps\n20 overhead walking lunges\n20 box jumps\n20 squat cleans\nRepos de 2 minutes\n2 miles de course\nFemmes 95-lb barbell, boîte de 20 inch, disque de 25 lb\nHommes 135-lb barbell, boîte de 24 inch, disque de 45 lb\nSi vous avez un gilet ou un body armor, portez-le."
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "wood",
+    "name": "Wood",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n400-meter run\n10 burpee box jumps\n10 sumo deadlift high pulls\n10 thrusters\nRest 1 minute\n♀ 20-inch box, 65-lb barbell\n♂ 24-inch box, 95-lb barbell",
+      "fr": "5 tours for time :\n400 m de course\n10 burpee box jumps\n10 sumo deadlift high pulls\n10 thrusters\nRest 1 minute\nFemmes 20-inch box, 65-lb barbell\nHommes 24-inch box, 95-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "zimmerman",
+    "name": "Zimmerman",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1500
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n25 minutes of:\n11 chest-to-bar pull-ups\n2 deadlifts\n10 handstand push-ups\n♀ 205 lb\n♂ 315 lb",
+      "fr": "Complete as many rounds and reps as possible in\n25 minutes of:\n11 tractions chest-to-bar\n2 soulevés de terre\n10 pompes en équilibre\nFemmes 205 lb\nHommes 315 lb"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "klepto",
+    "name": "Klepto",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "4 rounds for time of:\n27 box jumps\n20 burpees\n11 squat cleans\n♀ 20-inch box, 95-lb cleans\n♂ 24-inch box, 145-lb cleans",
+      "fr": "4 tours for time :\n27 box jumps\n20 burpees\n11 squat cleans\nFemmes 20-inch box, 95-lb cleans\nHommes 24-inch box, 145-lb cleans"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "del",
+    "name": "Del",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n25 burpees\nRun 400 meters with a medicine ball\n25 weighted pull-ups with a dumbbell\nRun 400 meters with a medicine ball\n25 handstand push-ups\nRun 400 meters with a medicine ball\n25 chest-to-bar pull-ups\nRun 400 meters with a medicine ball\n25 burpees\n♀ 14-lb medicine ball, 15-lb dumbbell\n♂ 20-lb medicine ball, 20-lb dumbbell",
+      "fr": "For time :\n25 burpees\n400 m de course with a medicine ball\n25 weighted tractions with a dumbbell\n400 m de course with a medicine ball\n25 pompes en équilibre\n400 m de course with a medicine ball\n25 tractions chest-to-bar\n400 m de course with a medicine ball\n25 burpees\nFemmes 14-lb medicine ball, 15-lb dumbbell\nHommes 20-lb medicine ball, 20-lb dumbbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "pheezy",
+    "name": "Pheezy",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n5 front squats\n18 pull-ups\n5 deadlifts\n18 toes-to-bars\n5 push jerks\n18 hand-release push-ups\n♀ 115-lb front squats, 155-lb deadlifts, 115-lb push jerks\n♂ 165-lb front squats, 225-lb deadlifts, 165-lb push jerks",
+      "fr": "3 tours for time :\n5 front squats\n18 tractions\n5 soulevés de terre\n18 toes-to-bar\n5 push jerks\n18 pompes hand-release\nFemmes 115-lb front squats, 155-lb soulevés de terre, 115-lb push jerks\nHommes 165-lb front squats, 225-lb soulevés de terre, 165-lb push jerks"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "jj",
+    "name": "J.J.",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n1 squat clean\n10 parallette handstand push-ups\n2 squat cleans\n9 parallette handstand push-ups\n3 squat cleans\n8 parallette handstand push-ups\n4 squat cleans\n7 parallette handstand push-ups\n5 squat cleans\n6 parallette handstand push-ups\n6 squat cleans\n5 parallette handstand push-ups\n7 squat cleans\n4 parallette handstand push-ups\n8 squat cleans\n3 parallette handstand push-ups\n9 squat cleans\n2 parallette handstand push-ups\n10 squat cleans\n1 parallette handstand push-up\n♀ 125 lb\n♂ 185 lb",
+      "fr": "For time :\n1 squat clean\n10 parallette pompes en équilibre\n2 squat cleans\n9 parallette pompes en équilibre\n3 squat cleans\n8 parallette pompes en équilibre\n4 squat cleans\n7 parallette pompes en équilibre\n5 squat cleans\n6 parallette pompes en équilibre\n6 squat cleans\n5 parallette pompes en équilibre\n7 squat cleans\n4 parallette pompes en équilibre\n8 squat cleans\n3 parallette pompes en équilibre\n9 squat cleans\n2 parallette pompes en équilibre\n10 squat cleans\n1 parallette handstand push-up\nFemmes 125 lb\nHommes 185 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "jag-28",
+    "name": "Jag 28",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 800 meters\n28 kettlebell swings\n28 strict pull-ups\n28 kettlebell clean and jerks\n28 strict pull-ups\nRun 800 meters\n♀ 53 lb\n♂ 70 lb",
+      "fr": "For time :\n800 m de course\n28 kettlebell swings\n28 strict tractions\n28 kettlebell clean and jerks\n28 strict tractions\n800 m de course\nFemmes 53 lb\nHommes 70 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "brian",
+    "name": "Brian",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n5 rope climbs to 15 feet\n25 back squats\n♀ 125 lb\n♂ 185 lb",
+      "fr": "3 tours for time :\n5 montées de corde to 15 feet\n25 back squats\nFemmes 125 lb\nHommes 185 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "nick",
+    "name": "Nick",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "12 rounds for time of:\n10 dumbbell hang squat cleans\n6 handstand push-ups on dumbbells\n♀ 30 lb\n♂ 45 lb",
+      "fr": "12 tours for time :\n10 dumbbell hang squat cleans\n6 pompes en équilibre on dumbbells\nFemmes 30 lb\nHommes 45 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "strange",
+    "name": "Strange",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "8 rounds for time of:\n600-meter run\n11 weighted pull-ups\n11 walking lunges with two kettlebells\n11 kettlebell thrusters\n♀ 35 lb\n♂ 53 lb",
+      "fr": "8 tours for time :\n600 m de course\n11 weighted tractions\n11 fentes marchées with two kettlebells\n11 kettlebell thrusters\nFemmes 35 lb\nHommes 53 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "tumilson",
+    "name": "Tumilson",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "8 rounds for time of:\nRun 200 meters\n11 dumbbell burpee deadlifts\n♀ 45-lb dumbbells\n♂ 60-lb dumbbells",
+      "fr": "8 tours for time :\n200 m de course\n11 dumbbell burpee soulevés de terre\nFemmes 45-lb dumbbells\nHommes 60-lb dumbbells"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "ship",
+    "name": "Ship",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "9 rounds for time of:\n7 squat cleans\n8 burpee box jumps\n♀ 125-lb cleans, 30-inch box\n♂ 185-lb cleans, 36-inch box",
+      "fr": "9 tours for time :\n7 squat cleans\n8 burpee box jumps\nFemmes 125-lb cleans, 30-inch box\nHommes 185-lb cleans, 36-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "jared",
+    "name": "Jared",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "4 rounds for time of:\nRun 800 meters\n40 pull-ups\n70 push-ups",
+      "fr": "4 tours for time :\n800 m de course\n40 tractions\n70 pompes"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "tully",
+    "name": "Tully",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "4 rounds for time of:\nSwim 200 meters\n23 dumbbell squat cleans\n♀ 30-lb dumbbells\n♂ 40-lb dumbbells",
+      "fr": "4 tours for time :\nSwim 200 meters\n23 dumbbell squat cleans\nFemmes 30-lb dumbbells\nHommes 40-lb dumbbells"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "holleyman",
+    "name": "Holleyman",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "30 rounds for time of:\n5 wall-ball shots\n3 handstand push-ups\n1 power clean\n♀ 14-lb medicine ball to 9 feet, 155-lb cleans\n♂ 20-lb medicine ball to 10 feet, 225-lb cleans",
+      "fr": "30 tours for time :\n5 wall-ball shots\n3 pompes en équilibre\n1 power clean\nFemmes 14-lb medicine ball to 9 feet, 155-lb cleans\nHommes 20-lb medicine ball to 10 feet, 225-lb cleans"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "adrian",
+    "name": "Adrian",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds for time of:\n3 forward rolls\n5 wall climbs\n7 toes-to-bars\n9 box jumps\n♀ 24-inch box\n♂ 30-inch box",
+      "fr": "7 tours for time :\n3 forward rolls\n5 wall climbs\n7 toes-to-bar\n9 box jumps\nFemmes 24-inch box\nHommes 30-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "glen",
+    "name": "Glen",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n30 clean and jerks\nRun 1 mile\n10 rope climbs to 15 feet\nRun 1 mile\n100 burpees\n♀ 95-lb clean and jerks\n♂ 135-lb clean and jerks",
+      "fr": "For time :\n30 clean and jerks\n1 mile de course\n10 montées de corde to 15 feet\n1 mile de course\n100 burpees\nFemmes 95-lb clean and jerks\nHommes 135-lb clean and jerks"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "tom",
+    "name": "Tom",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1500
+    },
+    "text": {
+      "en": "Complete as many rounds as possible in 25 minutes of:\n7 muscle-ups\n11 thrusters\n14 toes-to-bars\n♀ 105 lb\n♂ 155 lb",
+      "fr": "AMRAP 25 min :\n7 muscle-ups\n11 thrusters\n14 toes-to-bar\nFemmes 105 lb\nHommes 155 lb"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "ralph",
+    "name": "Ralph",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "4 rounds for time of:\n8 deadlifts\n16 burpees\n3 rope climbs to 15 feet\nRun 600 meters\n♀ 175-lb deadlifts\n♂ 250-lb deadlift",
+      "fr": "4 tours for time :\n8 soulevés de terre\n16 burpees\n3 montées de corde to 15 feet\n600 m de course\nFemmes 175-lb soulevés de terre\nHommes 250-lb deadlift"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "clovis",
+    "name": "Clovis",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 10 miles\n150 burpee pull-ups\nPartition the run and burpee pull-ups as needed.",
+      "fr": "For time :\nRun 10 miles\n150 burpee tractions\nPartition the run and burpee tractions as needed."
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "weston",
+    "name": "Weston",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\nRow 1,000 meters\n200-meter farmers carry\n50-meter dumbbell waiters walk, right arm\n50-meter dumbbell waiters walk, left arm\n♀ 30-lb dumbbells\n♂ 45-lb dumbbells",
+      "fr": "5 tours for time :\nRow 1,000 meters\n200-meter farmers carry\n50-meter dumbbell waiters walk, right arm\n50-meter dumbbell waiters walk, left arm\nFemmes 30-lb dumbbells\nHommes 45-lb dumbbells"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "loredo",
+    "name": "Loredo",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "6 rounds for time of:\n24 squats\n24 push-ups\n24 walking lunge steps\nRun 400 meters",
+      "fr": "6 tours for time :\n24 squats\n24 pompes\n24 walking lunge steps\n400 m de course"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "sean",
+    "name": "Sean",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "10 rounds for time of:\n11 chest-to-bar pull-ups\n22 front squats\n♀ 55 lb\n♂ 75 lb",
+      "fr": "10 tours for time :\n11 tractions chest-to-bar\n22 front squats\nFemmes 55 lb\nHommes 75 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "hortman",
+    "name": "Hortman",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 2700
+    },
+    "text": {
+      "en": "Complete as many rounds as possible in 45 minutes of:\nRun 800 meters\n80 squats\n8 muscle-ups",
+      "fr": "AMRAP 45 min :\n800 m de course\n80 squats\n8 muscle-ups"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "hamilton",
+    "name": "Hamilton",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\nRow 1,000 meters\n50 push-ups\nRun 1,000 meters\n50 pull-ups",
+      "fr": "3 tours for time :\nRow 1,000 meters\n50 pompes\n1,000 m de course\n50 tractions"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "zeus",
+    "name": "Zeus",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n30 wall-ball shots\n30 sumo deadlift high pulls\n30 box jumps\n30 push presses\n30-calorie row\n30 push-ups\n10 back squats\n♀ 14-lb medicine ball to a 9-foot target, 55-lb barbell, 20-inch box, bodyweight back squat\n♂ 20-lb medicine ball to a 10-foot target, 75-lb barbell, 24-inch box, bodyweight back squat",
+      "fr": "3 tours for time :\n30 wall-ball shots\n30 sumo deadlift high pulls\n30 box jumps\n30 push presses\n30-calorie row\n30 pompes\n10 back squats\nFemmes 14-lb medicine ball to a 9-foot target, 55-lb barbell, 20-inch box, bodyweight back squat\nHommes 20-lb medicine ball to a 10-foot target, 75-lb barbell, 24-inch box, bodyweight back squat"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "barraza",
+    "name": "Barraza",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1080
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n18 minutes of:\nRun 200 meters\n9 deadlifts\n6 burpee bar muscle-ups\n♀ 185 lb\n♂ 275 lb",
+      "fr": "Complete as many rounds and reps as possible in\n18 minutes of:\n200 m de course\n9 soulevés de terre\n6 burpee bar muscle-ups\nFemmes 185 lb\nHommes 275 lb"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "cameron",
+    "name": "Cameron",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n50 walking lunge steps\n25 chest-to-bar pull-ups\n50 box jumps\n25 triple-unders\n50 back extensions\n25 ring dips\n50 knees-to-elbows\n25 wall-ball shot “two-for-ones”\n50 sit-ups\n5 rope climbs to 15 feet\n♀ 20-inch box, 14-lb medicine ball to a 9-foot target\n♂ 24-inch box, 20-lb medicine ball to a 10-foot target",
+      "fr": "For time :\n50 walking lunge steps\n25 tractions chest-to-bar\n50 box jumps\n25 triple-unders\n50 extensions du dos\n25 ring dips\n50 knees-to-elbows\n25 wall-ball shot “two-for-ones”\n50 abdominaux\n5 montées de corde to 15 feet\nFemmes 20-inch box, 14-lb medicine ball to a 9-foot target\nHommes 24-inch box, 20-lb medicine ball to a 10-foot target"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "jorge",
+    "name": "Jorge",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n30 GHD sit-ups\n15 squat cleans\n24 GHD sit-ups\n12 squat cleans\n18 GHD sit-ups\n9 squat cleans\n12 GHD sit-ups\n6 squat cleans\n6 GHD sit-ups\n3 squat cleans\n♀ 105 lb\n♂ 155 lb",
+      "fr": "For time :\n30 GHD abdominaux\n15 squat cleans\n24 GHD abdominaux\n12 squat cleans\n18 GHD abdominaux\n9 squat cleans\n12 GHD abdominaux\n6 squat cleans\n6 GHD abdominaux\n3 squat cleans\nFemmes 105 lb\nHommes 155 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "schmalls",
+    "name": "Schmalls",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 800 meters\nThen,\n2 rounds of:\n50 burpees\n40 pull-ups\n30 single-leg squats\n20 kettlebell swings\n10 handstand push-ups\nThen, Run 800 meters\n♀ 35-lb kettlebell\n♂ 53-lb kettlebell",
+      "fr": "For time :\n800 m de course\nPuis,\n2 rounds of:\n50 burpees\n40 tractions\n30 single-leg squats\n20 kettlebell swings\n10 pompes en équilibre\nPuis, 800 m de course\nFemmes 35-lb kettlebell\nHommes 53-lb kettlebell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "brehm",
+    "name": "Brehm",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n10 rope climbs to 15 feet\n20 back squats\n30 handstand push-ups\n40-calorie row\n♀ 155 lb\n♂ 225 lb",
+      "fr": "For time :\n10 montées de corde to 15 feet\n20 back squats\n30 pompes en équilibre\n40-calorie row\nFemmes 155 lb\nHommes 225 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "omar",
+    "name": "Omar",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n10 thrusters\n15 bar-facing burpees\n20 thrusters\n25 bar-facing burpees\n30 thrusters\n35 bar-facing burpees\n♀ 65 lb\n♂ 95 lb",
+      "fr": "For time :\n10 thrusters\n15 bar-facing burpees\n20 thrusters\n25 bar-facing burpees\n30 thrusters\n35 bar-facing burpees\nFemmes 65 lb\nHommes 95 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "gallant",
+    "name": "Gallant",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n1-mile run with a medicine ball\n60 burpee pull-ups\n800-meter run with a medicine ball\n30 burpee pull-ups\n400-meter run with a medicine ball\n15 burpee pull-ups\n♀ 14-lb medicine ball\n♂ 20-lb medicine ball",
+      "fr": "For time :\n1 mile de course with a medicine ball\n60 burpee tractions\n800 m de course with a medicine ball\n30 burpee tractions\n400 m de course with a medicine ball\n15 burpee tractions\nFemmes 14-lb medicine ball\nHommes 20-lb medicine ball"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "bruck",
+    "name": "Bruck",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "4 rounds for time of:\n400-meter run\n24 back squats\n24 jerks\n♀ 125-lb back squat, 95-lb jerk\n♂ 185-lb back squat, 135-lb jerk",
+      "fr": "4 tours for time :\n400 m de course\n24 back squats\n24 jerks\nFemmes 125-lb back squat, 95-lb jerk\nHommes 185-lb back squat, 135-lb jerk"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "smykowski",
+    "name": "Smykowski",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 6K\n60 burpee pull-ups",
+      "fr": "For time :\nRun 6K\n60 burpee tractions"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "falkel",
+    "name": "Falkel",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1500
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n25 minutes of:\n8 handstand push-ups\n8 box jumps\n1 rope climb to 15 feet\n♀ 24-inch box\n♂ 30-inch box",
+      "fr": "Complete as many rounds and reps as possible in\n25 minutes of:\n8 pompes en équilibre\n8 box jumps\n1 rope climb to 15 feet\nFemmes 24-inch box\nHommes 30-inch box"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "donny",
+    "name": "Donny",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "21-15-9-9-15-21 reps for time of:\nDeadlifts\nBurpees\n♀ 155 lb\n♂ 225 lb",
+      "fr": "21-15-9-9-15-21 répétitions, for time :\nsoulevés de terre\nburpees\nFemmes 155 lb\nHommes 225 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "dobogai",
+    "name": "Dobogai",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds for time of:\n8 muscle-ups\n22-yard farmers carry\n♀ 35-lb dumbbells\n♂ 50-lb dumbbells",
+      "fr": "7 tours for time :\n8 muscle-ups\n22-yard farmers carry\nFemmes 35-lb dumbbells\nHommes 50-lb dumbbells"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "hotshots-19",
+    "name": "Hotshots 19",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "6 rounds for time of:\n30 squats\n19 power cleans\n7 strict pull-ups\n400-meter run\n♀ 95-lb barbell\n♂ 135-lb barbell",
+      "fr": "6 tours for time :\n30 squats\n19 power cleans\n7 strict tractions\n400 m de course\nFemmes 95-lb barbell\nHommes 135-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "roney",
+    "name": "Roney",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "4 rounds for time of:\n200-meter run\n11 thrusters\n200-meter run\n11 push presses\n200-meter run\n11 bench presses\n♀ 95-lb barbell\n♂ 135-lb barbell",
+      "fr": "4 tours for time :\n200 m de course\n11 thrusters\n200 m de course\n11 push presses\n200 m de course\n11 bench presses\nFemmes 95-lb barbell\nHommes 135-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "the-don",
+    "name": "The Don",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n66 deadlifts\n66 box jump\n66 kettlebell swings\n66 knees-to-elbows\n66 sit-ups\n66 pull-ups\n66 thrusters\n66 wall-ball shots\n66 burpees\n66 double-unders\n♀ 70-lb deadlift, 20-inch box, 35-lb kettlebell, 35-lb thruster, 14-lb medicine ball to a\n9-foot target\n♂ 110-lb deadlift, 24-inch box, 53-lb kettlebell, 55-lb thruster, 20-lb medicine ball to a\n10-foot target",
+      "fr": "For time :\n66 soulevés de terre\n66 box jump\n66 kettlebell swings\n66 knees-to-elbows\n66 abdominaux\n66 tractions\n66 thrusters\n66 wall-ball shots\n66 burpees\n66 double-unders\nFemmes 70-lb deadlift, 20-inch box, 35-lb kettlebell, 35-lb thruster, 14-lb medicine ball to a\n9-foot target\nHommes 110-lb deadlift, 24-inch box, 53-lb kettlebell, 55-lb thruster, 20-lb medicine ball to a\n10-foot target"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "dragon",
+    "name": "Dragon",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 5K\n4 minutes to find\n4-rep-max deadlift\nRun 5K\n4 minutes to find 4-rep max push jerk",
+      "fr": "For time :\nRun 5K\n4 minutes to find\n4-rep-max deadlift\nRun 5K\n4 minutes to find 4-rep max push jerk"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "walsh",
+    "name": "Walsh",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "4 rounds for time of:\n22 burpee pull-ups\n22 back squats\n200-meter run with a plate overhead\n♀ 125-lb barbell, 25-lb plate\n♂ 185-lb barbell, 45-lb plate",
+      "fr": "4 tours for time :\n22 burpee tractions\n22 back squats\n200 m de course with a plate overhead\nFemmes 125-lb barbell, 25-lb plate\nHommes 185-lb barbell, 45-lb plate"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "lee",
+    "name": "Lee",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n400-meter run\n1 deadlift\n3 squat cleans\n5 push jerks\n3 muscle-ups\n1 rope climb to 15 feet\n♀ 225-lb deadlift, 125-lb squat clean, 125-lb push jerk\n♂ 345-lb deadlift, 185-lb squat clean, 185-lb push jerk",
+      "fr": "5 tours for time :\n400 m de course\n1 deadlift\n3 squat cleans\n5 push jerks\n3 muscle-ups\n1 rope climb to 15 feet\nFemmes 225-lb deadlift, 125-lb squat clean, 125-lb push jerk\nHommes 345-lb deadlift, 185-lb squat clean, 185-lb push jerk"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "willy",
+    "name": "Willy",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n800-meter run\n5 front squats\n200-meter run\n11 chest-to-bar pull-ups\n400-meter run\n12 kettlebell swings\n♀ 155-lb barbell, 53-lb kettlebell\n♂ 225-lb barbell, 70-lb kettlebell",
+      "fr": "3 tours for time :\n800 m de course\n5 front squats\n200 m de course\n11 tractions chest-to-bar\n400 m de course\n12 kettlebell swings\nFemmes 155-lb barbell, 53-lb kettlebell\nHommes 225-lb barbell, 70-lb kettlebell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "coffey",
+    "name": "Coffey",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n800-meter run\n50 back squats\n50 bench presses\n800-meter run\n35 back squats\n35 bench presses\n800-meter run\n20 back squats\n20 bench presses\n800-meter run\n1 muscle-up\n♀ 95 lb\n♂ 135 lb",
+      "fr": "For time :\n800 m de course\n50 back squats\n50 bench presses\n800 m de course\n35 back squats\n35 bench presses\n800 m de course\n20 back squats\n20 bench presses\n800 m de course\n1 muscle-up\nFemmes 95 lb\nHommes 135 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "dg",
+    "name": "DG",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 600
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n10 minutes of:\n8 toes-to-bars\n8 dumbbell thrusters\n12 dumbbell walking lunges\n♀ 20-lb dumbbells\n♂ 35-lb dumbbells",
+      "fr": "Complete as many rounds and reps as possible in\n10 minutes of:\n8 toes-to-bar\n8 dumbbell thrusters\n12 dumbbell fentes marchées\nFemmes 20-lb dumbbells\nHommes 35-lb dumbbells"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "tk",
+    "name": "TK",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n20 minutes of:\n8 strict pull-ups\n8 box jumps\n12 kettlebell swings\n♀ 30-inch box, 53-lb kettlebell\n♂ 36-inch box, 70-lb kettlebell",
+      "fr": "Complete as many rounds and reps as possible in\n20 minutes of:\n8 strict tractions\n8 box jumps\n12 kettlebell swings\nFemmes 30-inch box, 53-lb kettlebell\nHommes 36-inch box, 70-lb kettlebell"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "taylor",
+    "name": "Taylor",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "4 rounds for time of:\n400-meter run\n5 burpee muscle-ups\nIf you’ve got a weighted vest or body armor, wear it.\n♀ 14-lb vest\n♂ 20-lb vest",
+      "fr": "4 tours for time :\n400 m de course\n5 burpee muscle-ups\nIf you’ve got a weighted vest or body armor, wear it.\nFemmes 14-lb vest\nHommes 20-lb vest"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "justin",
+    "name": "Justin",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "30-20-10 reps for time of:\nBodyweight back squats\nBodyweight bench presses\nStrict pull-ups",
+      "fr": "30-20-10 répétitions, for time :\nBodyweight back squats\nBodyweight bench presses\nStrict tractions"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "nukes",
+    "name": "Nukes",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "8 minutes to complete:\n1-mile run\nMax reps deadlifts\nThen, 10 minutes to complete:\n1-mile run\nMax reps power cleans\nThen, 12 minutes to complete:\n1-mile run\nMax reps overhead squats\nDo not rest between rounds.\n♀ 205-lb deadlift, 155-lb power clean, 95-lb overhead squat\n♂ 315-lb deadlift, 225-lb power clean, 135-lb overhead squat",
+      "fr": "8 minutes to complete:\n1 mile de course\nMax reps soulevés de terre\nPuis, 10 minutes to complete:\n1 mile de course\nMax reps power cleans\nPuis, 12 minutes to complete:\n1 mile de course\nMax reps overhead squats\nDo not rest between rounds.\nFemmes 205-lb deadlift, 155-lb power clean, 95-lb overhead squat\nHommes 315-lb deadlift, 225-lb power clean, 135-lb overhead squat"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "zembiec",
+    "name": "Zembiec",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n11 back squats\n7 strict burpee pull-ups\n400-meter run\n♀ 125-lb barbell\n♂ 185-lb barbell",
+      "fr": "5 tours for time :\n11 back squats\n7 strict burpee tractions\n400 m de course\nFemmes 125-lb barbell\nHommes 185-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "alexander",
+    "name": "Alexander",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n31 back squats\n12 power cleans\n♀ 95-lb back squat, 125-lb power clean\n♂ 135-lb back squat, 185-lb power clean",
+      "fr": "5 tours for time :\n31 back squats\n12 power cleans\nFemmes 95-lb back squat, 125-lb power clean\nHommes 135-lb back squat, 185-lb power clean"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "wyk",
+    "name": "Wyk",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n5 front squats\n5 rope climbs to 15 feet\n400-meter run with a plate\n♀ 155-lb barbell, 25-lb plate\n♂ 225-lb barbell, 45-lb plate",
+      "fr": "5 tours for time :\n5 front squats\n5 montées de corde to 15 feet\n400 m de course with a plate\nFemmes 155-lb barbell, 25-lb plate\nHommes 225-lb barbell, 45-lb plate"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "bell",
+    "name": "Bell",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n21 deadlifts\n15 pull-ups\n9 front squats\n♀ 125-lb barbell\n♂ 185-lb barbell",
+      "fr": "3 tours for time :\n21 soulevés de terre\n15 tractions\n9 front squats\nFemmes 125-lb barbell\nHommes 185-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "jbo",
+    "name": "JBO",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1680
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n28 minutes of:\n9 overhead squats\n1 legless rope climb to 15 feet, beginning from seated\n12 bench presses\n♀ 75-lb barbell\n♂ 115-lb barbell",
+      "fr": "Complete as many rounds and reps as possible in\n28 minutes of:\n9 overhead squats\n1 legless rope climb to 15 feet, beginning from seated\n12 bench presses\nFemmes 75-lb barbell\nHommes 115-lb barbell"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "kevin",
+    "name": "Kevin",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n32 deadlifts\n32 hanging hip touches, alternating arms\n800-meter running farmers carry\n♀ 125-lb barbell, 10-lb dumbbells\n♂ 185-lb barbell, 15-lb dumbbells",
+      "fr": "3 tours for time :\n32 soulevés de terre\n32 hanging hip touches, alternating arms\n800-meter running farmers carry\nFemmes 125-lb barbell, 10-lb dumbbells\nHommes 185-lb barbell, 15-lb dumbbells"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "rocket",
+    "name": "Rocket",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1800
+    },
+    "text": {
+      "en": "Complete as many rounds as possible in 30 minutes of:\n50-yard swim\n10 push-ups\n15 squats",
+      "fr": "AMRAP 30 min :\n50-yard swim\n10 pompes\n15 squats"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "riley",
+    "name": "Riley",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 1.5 miles\n150 burpees\nRun 1.5 miles\nIf you’ve got a weight vest or body armor, wear it.",
+      "fr": "For time :\nRun 1.5 miles\n150 burpees\nRun 1.5 miles\nIf you’ve got a weight vest or body armor, wear it."
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "feeks",
+    "name": "Feeks",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n2 100-meter shuttle sprints\n2 dumbbell squat clean thrusters\n4 100-meter shuttle sprints\n4 dumbbell squat clean thrusters\n6 100-meter shuttle sprints\n6 dumbbell squat clean thrusters\n8 100-meter shuttle sprints\n8 dumbbell squat clean thrusters\n10 100-meter shuttle sprints\n10 dumbbell squat clean thrusters\n12 100-meter shuttle sprints\n12 dumbbell squat clean thrusters\n14 100-meter shuttle sprints\n14 dumbbell squat clean thrusters\n16 100-meter shuttle sprints\n16 dumbbell squat clean thrusters\n♀ 45-lb dumbbells\n♂ 65-lb dumbbells",
+      "fr": "For time :\n2 100-meter shuttle sprints\n2 dumbbell squat clean thrusters\n4 100-meter shuttle sprints\n4 dumbbell squat clean thrusters\n6 100-meter shuttle sprints\n6 dumbbell squat clean thrusters\n8 100-meter shuttle sprints\n8 dumbbell squat clean thrusters\n10 100-meter shuttle sprints\n10 dumbbell squat clean thrusters\n12 100-meter shuttle sprints\n12 dumbbell squat clean thrusters\n14 100-meter shuttle sprints\n14 dumbbell squat clean thrusters\n16 100-meter shuttle sprints\n16 dumbbell squat clean thrusters\nFemmes 45-lb dumbbells\nHommes 65-lb dumbbells"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "ned",
+    "name": "Ned",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds for time of:\n11 bodyweight back squats\n1,000-meter row",
+      "fr": "7 tours for time :\n11 bodyweight back squats\n1,000-meter row"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "sham",
+    "name": "Sham",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds for time of:\n11 bodyweight deadlifts\n100-meter sprint",
+      "fr": "7 tours for time :\n11 bodyweight soulevés de terre\n100-meter sprint"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "ozzy",
+    "name": "Ozzy",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds for time of:\n11 deficit handstand push-ups\n1,000-meter run",
+      "fr": "7 tours for time :\n11 deficit pompes en équilibre\n1,000 m de course"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "jenny",
+    "name": "Jenny",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n20 minutes of:\n20 overhead squats\n20 back squats\n400-meter run\n♀ 35-lb barbell\n♂ 45-lb barbell",
+      "fr": "Complete as many rounds and reps as possible in\n20 minutes of:\n20 overhead squats\n20 back squats\n400 m de course\nFemmes 35-lb barbell\nHommes 45-lb barbell"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "spehar",
+    "name": "Spehar",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n100 thrusters\n100 chest-to-bar pull-ups\nRun 6 miles\nPartition the thrusters, pull-ups, and run as needed.\n♀ 95 lb\n♂ 135 lb",
+      "fr": "For time :\n100 thrusters\n100 tractions chest-to-bar\nRun 6 miles\nPartition the thrusters, tractions, and run as needed.\nFemmes 95 lb\nHommes 135 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "luke",
+    "name": "Luke",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 400 meters\n15 clean and jerks\nRun 400 meters\n30 toes-to-bars\nRun 400 meters\n45 wall-ball shots\nRun 400 meters\n45 kettlebell swings\nRun 400 meters\n30 ring dips\nRun 400 meters\n15 front-rack weighted lunges\nRun 400 meters\n♀ 105-lb barbell, 14-lb medicine ball to a 9-foot target, 35-lb kettlebell\n♂ 155-lb barbell, 20-lb medicine ball to a 10-foot target, 53-lb kettlebell",
+      "fr": "For time :\n400 m de course\n15 clean and jerks\n400 m de course\n30 toes-to-bar\n400 m de course\n45 wall-ball shots\n400 m de course\n45 kettlebell swings\n400 m de course\n30 ring dips\n400 m de course\n15 front-rack weighted lunges\n400 m de course\nFemmes 105-lb barbell, 14-lb medicine ball to a 9-foot target, 35-lb kettlebell\nHommes 155-lb barbell, 20-lb medicine ball to a 10-foot target, 53-lb kettlebell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "robbie",
+    "name": "Robbie",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1500
+    },
+    "text": {
+      "en": "Complete as many rounds as possible in 25 minutes of:\n8 freestanding handstand push-ups\n1 L-sit rope climb to 15 feet",
+      "fr": "AMRAP 25 min :\n8 freestanding pompes en équilibre\n1 L-sit rope climb to 15 feet"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "shawn",
+    "name": "Shawn",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 5 miles\nRun in 5-minute intervals, stopping after each to perform\n50 squats and 50 push-ups before beginning the next\n5-minute run interval.",
+      "fr": "For time :\nRun 5 miles\nRun in 5-minute intervals, stopping after each to perform\n50 squats and 50 pompes before beginning the next\n5-minute run interval."
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "foo",
+    "name": "Foo",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "For time:\n13 bench presses\nThen, complete as many rounds and reps as possible in\n20 minutes of:\n7 chest-to-bar pull-ups\n77 double-unders\n2 squat clean thrusters\n28 sit-ups\n♀ 110 lb\n♂ 170 lb",
+      "fr": "For time :\n13 bench presses\nPuis, complete as many rounds and reps as possible in\n20 minutes of:\n7 tractions chest-to-bar\n77 double-unders\n2 squat clean thrusters\n28 abdominaux\nFemmes 110 lb\nHommes 170 lb"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "bowen",
+    "name": "Bowen",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n800-meter run\n7 deadlifts\n10 burpee pull-ups\n14 single-arm kettlebell thrusters, 7 each arm\n20 box jumps\n♀ 185-lb barbell, 35-lb kettlebell, 20-inch box\n♂ 275-lb barbell, 53-lb kettlebell, 24-inch box",
+      "fr": "3 tours for time :\n800 m de course\n7 soulevés de terre\n10 burpee tractions\n14 single-arm kettlebell thrusters, 7 each arm\n20 box jumps\nFemmes 185-lb barbell, 35-lb kettlebell, 20-inch box\nHommes 275-lb barbell, 53-lb kettlebell, 24-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "gaza",
+    "name": "Gaza",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n35 kettlebell swings\n30 push-ups\n25 pull-ups\n20 box jumps\n1-mile run\n♀ 35-lb kettlebell, 24-inch box\n♂ 53-lb kettlebell, 30-inch box",
+      "fr": "5 tours for time :\n35 kettlebell swings\n30 pompes\n25 tractions\n20 box jumps\n1 mile de course\nFemmes 35-lb kettlebell, 24-inch box\nHommes 53-lb kettlebell, 30-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "crain",
+    "name": "Crain",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "2 rounds for time of:\n34 push-ups\n50-yard sprint\n34 deadlifts\n50-yard sprint\n34 box jumps\n50-yard sprint\n34 clean and jerk\n50-yard sprint\n34 burpees\n50-yard sprint\n34 wall-ball shots\n50-yard sprint\n34 pull-ups\n50-yard sprint\n♀ 95-lb deadlift, 24-inch box, 65-lb clean and jerk, 14-lb medicine ball to a 9-foot target\n♂ 135-lb deadlift, 24-inch box, 95-lb clean and jerk, 20-lb medicine ball to a 10-foot target",
+      "fr": "2 tours for time :\n34 pompes\n50-yard sprint\n34 soulevés de terre\n50-yard sprint\n34 box jumps\n50-yard sprint\n34 clean and jerk\n50-yard sprint\n34 burpees\n50-yard sprint\n34 wall-ball shots\n50-yard sprint\n34 tractions\n50-yard sprint\nFemmes 95-lb deadlift, 24-inch box, 65-lb clean and jerk, 14-lb medicine ball to a 9-foot target\nHommes 135-lb deadlift, 24-inch box, 95-lb clean and jerk, 20-lb medicine ball to a 10-foot target"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "capoot",
+    "name": "Capoot",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n100 push-ups\nRun 800 meters\n75 push-ups\nRun 1,200 meters\n50 push-ups\nRun 1,600 meters\n25 push-ups\nRun 2,000 meters",
+      "fr": "For time :\n100 pompes\n800 m de course\n75 pompes\n1,200 m de course\n50 pompes\n1,600 m de course\n25 pompes\n2,000 m de course"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "hall",
+    "name": "Hall",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n3 cleans\n200-meter sprint\n20 kettlebell snatches, 10 each arm\nRest 2 minutes between rounds.\n♀ 155-lb barbell, 35-lb kettlebell\n♂ 225-lb barbell, 53-lb kettlebell",
+      "fr": "5 tours for time :\n3 cleans\n200-meter sprint\n20 kettlebell snatches, 10 each arm\nRepos de 2 minutes entre les séries.\nFemmes 155-lb barbell, 35-lb kettlebell\nHommes 225-lb barbell, 53-lb kettlebell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "servais",
+    "name": "Servais",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 1.5 miles\nThen, 8 rounds of:\n19 pull-ups\n19 push-ups\n19 burpees\nThen, 400-meter sandbag carry\n1-mile farmers carry\n♀ Heavy sandbag, 30-lb dumbbells\n♂ Heavy sandbag, 45-lb dumbbells",
+      "fr": "For time :\nRun 1.5 miles\nPuis, 8 rounds of:\n19 tractions\n19 pompes\n19 burpees\nPuis, 400-meter sandbag carry\n1-mile farmers carry\nFemmes Heavy sandbag, 30-lb dumbbells\nHommes Heavy sandbag, 45-lb dumbbells"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "pk",
+    "name": "PK",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n10 back squats\n10 deadlifts\n400-meter sprint\nRest 2 minutes between rounds.\n♀ 155-lb back squats, 185-lb deadlifts\n♂ 225-lb back squats, 275-lb deadlifts",
+      "fr": "5 tours for time :\n10 back squats\n10 soulevés de terre\n400-meter sprint\nRepos de 2 minutes entre les séries.\nFemmes 155-lb back squats, 185-lb soulevés de terre\nHommes 225-lb back squats, 275-lb soulevés de terre"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "marco",
+    "name": "Marco",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n21 pull-ups\n15 handstand push-ups\n9 thrusters\n♀ 95 lb\n♂ 135 lb",
+      "fr": "3 tours for time :\n21 tractions\n15 pompes en équilibre\n9 thrusters\nFemmes 95 lb\nHommes 135 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "rene",
+    "name": "René",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds for time of:\n400-meter run\n21 walking lunges\n15 pull-ups\n9 burpees\nIf you have a weight vest or body armor, wear it.\n♀ 14-lb weight vest\n♂ 20-lb weight vest",
+      "fr": "7 tours for time :\n400 m de course\n21 fentes marchées\n15 tractions\n9 burpees\nSi vous avez un gilet ou un body armor, portez-le.\nFemmes 14-lb weight vest\nHommes 20-lb weight vest"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "pike",
+    "name": "Pike",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n20 thrusters\n10 strict ring dips\n20 push-ups\n10 strict handstand push-ups\n50-meter bear crawl\n♀ 55 lb\n♂ 75 lb",
+      "fr": "5 tours for time :\n20 thrusters\n10 strict ring dips\n20 pompes\n10 strict pompes en équilibre\n50-meter bear crawl\nFemmes 55 lb\nHommes 75 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "kutschbach",
+    "name": "Kutschbach",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds for time of:\n11 back squats\n10 jerks\n♀ 125-lb back squat, 95-lb jerk\n♂ 185-lb back squat, 135-lb jerk",
+      "fr": "7 tours for time :\n11 back squats\n10 jerks\nFemmes 125-lb back squat, 95-lb jerk\nHommes 185-lb back squat, 135-lb jerk"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "jennifer",
+    "name": "Jennifer",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1560
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n26 minutes of:\n10 pull-ups\n15 kettlebell swings\n20 box jumps\n♀ 35-lb kettlebell, 20-inch box\n♂ 53-lb kettlebell, 24-inch box",
+      "fr": "Complete as many rounds and reps as possible in\n26 minutes of:\n10 tractions\n15 kettlebell swings\n20 box jumps\nFemmes 35-lb kettlebell, 20-inch box\nHommes 53-lb kettlebell, 24-inch box"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "horton",
+    "name": "Horton",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "9 rounds for time, with a partner, of:\n9 bar muscle-ups\n11 clean and jerks, 105/155 lb\n50-yard buddy carry\nShare the work with your partner however you choose.\nOne person works at a time.\nIf you can’t find a partner, perform 5 reps of each exercise per round and find a heavy sandbag to carry.\n♀ 105 lb\n♂ 155 lb",
+      "fr": "9 rounds For time, à deux :, of:\n9 bar muscle-ups\n11 clean and jerks, 105/155 lb\n50-yard buddy carry\nShare the work with your partner however you choose.\nOne person works at a time.\nIf you can’t find a partner, perform 5 reps of each exercise per round and find a heavy sandbag to carry.\nFemmes 105 lb\nHommes 155 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "scooter",
+    "name": "Scooter",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "On a 35-minute clock with a partner, complete as many rounds and reps as possible in\n30 minutes of:\n30 double-unders\n15 pull-ups\n15 push-ups\n100-meter sprint\nThen, 5 minutes to find a 1-rep max partner deadlift\nFor the AMRAP, have one partner work while the other rests, switching after a full round is completed. If you’re performing without a partner, rest 60 seconds between each round, and find a regular 1-rep max deadlift.",
+      "fr": "On a 35-minute clock with a partner, complete as many rounds and reps as possible in\n30 minutes of:\n30 double-unders\n15 tractions\n15 pompes\n100-meter sprint\nPuis, 5 minutes to find a 1-rep max partner deadlift\nFor the AMRAP, have one partner work while the other rests, switching after a full round is completed. If you’re performing without a partner, Repos de 60 secondes between each round, and find a regular 1-rep max deadlift."
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "matt-16",
+    "name": "Matt 16",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n16 deadlifts\n16 hang power cleans\n16 push presses\nRun 800 meters\n16 deadlifts\n16 hang power cleans\n16 push presses\nRun 800 meters\n16 deadlifts\n16 hang power cleans\n16 push presses\n♀ 185-lb deadlift, 125-lb hang power clean, 95-lb push press\n♂ 275-lb deadlift, 185-lb hang power clean, 135-lb push press",
+      "fr": "For time :\n16 soulevés de terre\n16 hang power cleans\n16 push presses\n800 m de course\n16 soulevés de terre\n16 hang power cleans\n16 push presses\n800 m de course\n16 soulevés de terre\n16 hang power cleans\n16 push presses\nFemmes 185-lb deadlift, 125-lb hang power clean, 95-lb push press\nHommes 275-lb deadlift, 185-lb hang power clean, 135-lb push press"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "tup",
+    "name": "T.u.p.",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "15-12-9-6-3 reps for time of:\nPower cleans\nPull-ups\nFront squats\nPull-ups\n♀ 95 lb\n♂ 135 lb",
+      "fr": "15-12-9-6-3 répétitions, for time :\npower cleans\ntractions\nfront squats\ntractions\nFemmes 95 lb\nHommes 135 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "harper",
+    "name": "Harper",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1380
+    },
+    "text": {
+      "en": "Complete as many rounds as possible in 23 minutes of:\n9 chest-to-bar pull-ups\n15 power cleans\n21 squats\n400-meter run with a plate\n♀ 95-lb barbell, 25-lb plate\n♂ 135-lb barbell, 45-lb plate",
+      "fr": "AMRAP 23 min :\n9 tractions chest-to-bar\n15 power cleans\n21 squats\n400 m de course with a plate\nFemmes 95-lb barbell, 25-lb plate\nHommes 135-lb barbell, 45-lb plate"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "sisson",
+    "name": "Sisson",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds as possible in 20 minutes of:\n1 rope climb to 15 feet\n5 burpees\n200-meter run\nIf you’ve got a weight vest or body armor, wear it.\n♀ 14-lb weight vest\n♂ 20-lb weight vest",
+      "fr": "AMRAP 20 min :\n1 rope climb to 15 feet\n5 burpees\n200 m de course\nIf you’ve got a weight vest or body armor, wear it.\nFemmes 14-lb weight vest\nHommes 20-lb weight vest"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "terry",
+    "name": "Terry",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n1-mile run\n100 push-ups\n100-meter bear crawl\n1-mile run\n100-meter bear crawl\n100 push-ups\n1-mile run",
+      "fr": "For time :\n1 mile de course\n100 pompes\n100-meter bear crawl\n1 mile de course\n100-meter bear crawl\n100 pompes\n1 mile de course"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "big-sexy",
+    "name": "Big Sexy",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n6 deadlifts\n6 burpees\n5 cleans\n5 chest-to-bar pull-ups\n4 thrusters\n4 muscle-ups\n♀ 205-lb deadlift, 155-lb clean, 105-lb thruster\n♂ 315-lb deadlift, 225-lb clean, 155-lb thruster",
+      "fr": "5 tours for time :\n6 soulevés de terre\n6 burpees\n5 cleans\n5 tractions chest-to-bar\n4 thrusters\n4 muscle-ups\nFemmes 205-lb deadlift, 155-lb clean, 105-lb thruster\nHommes 315-lb deadlift, 225-lb clean, 155-lb thruster"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "woehlke",
+    "name": "Woehlke",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds, each for time, of:\n4 jerks\n5 front squats\n6 power cleans\n40 pull-ups\n50 push-ups\n60 sit-ups\nRest 3 minutes between rounds.\n♀ 125-lb barbell\n♂ 185-lb barbell",
+      "fr": "3 rounds, each for time, of:\n4 jerks\n5 front squats\n6 power cleans\n40 tractions\n50 pompes\n60 abdominaux\nRepos de 3 minutes entre les séries.\nFemmes 125-lb barbell\nHommes 185-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "maupin",
+    "name": "Maupin",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "4 rounds for time of:\nRun 800 meters\n49 push-ups\n49 sit-ups\n49 squats",
+      "fr": "4 tours for time :\n800 m de course\n49 pompes\n49 abdominaux\n49 squats"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "hildy",
+    "name": "Hildy",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n100-calorie row\n75 thrusters\n50 pull-ups\n75 wall-ball shots\n100-calorie row\nIf you’ve got a weight vest or body armor, wear it.\n♀ 35-lb barbell, 14-lb medicine ball to a 9-foot target, 14-lb weight vest\n♂ 45-lb barbell, 20-lb medicine ball to a 10-foot target, 20-lb weight vest",
+      "fr": "For time :\n100-calorie row\n75 thrusters\n50 tractions\n75 wall-ball shots\n100-calorie row\nIf you’ve got a weight vest or body armor, wear it.\nFemmes 35-lb barbell, 14-lb medicine ball to a 9-foot target, 14-lb weight vest\nHommes 45-lb barbell, 20-lb medicine ball to a 10-foot target, 20-lb weight vest"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "tj",
+    "name": "T.j.",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n10 bench presses\n10 strict pull-ups\nMax-set thrusters\nRepeat the triplet until you have completed 100 thrusters.\n♀ 125-lb bench press, 95-lb thruster\n♂ 185-lb bench press, 135-lb thruster",
+      "fr": "For time :\n10 bench presses\n10 strict tractions\nMax-set thrusters\nRepeat the triplet until you have completed 100 thrusters.\nFemmes 125-lb bench press, 95-lb thruster\nHommes 185-lb bench press, 135-lb thruster"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "monti",
+    "name": "Monti",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n50 barbell step-ups\n15 cleans\n50 barbell step-ups\n10 snatches\n♀ 35-lb step-up, 20-inch box, 95-lb clean and snatch\n♂ 45-lb step-up, 20-inch box, 135-lb clean and snatch",
+      "fr": "5 tours for time :\n50 barbell step-ups\n15 cleans\n50 barbell step-ups\n10 snatches\nFemmes 35-lb step-up, 20-inch box, 95-lb clean and snatch\nHommes 45-lb step-up, 20-inch box, 135-lb clean and snatch"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "dvb",
+    "name": "DVB",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 1 mile with a medicine ball\nThen, 8 rounds of:\n10 wall-ball shots\n1 rope climb\nRun 800 meters with a medicine ball\nThen, 4 rounds of:\n10 wall-ball shots\n1 rope climb\nRun 400 meters with a medicine ball\nThen 2 rounds of:\n10 wall-ball shots\n1 rope climb\n♀ 14-lb medicine ball, 9-foot target\n♂ 20-lb medicine ball, 10-foot target",
+      "fr": "For time :\n1 mile de course with a medicine ball\nPuis, 8 rounds of:\n10 wall-ball shots\n1 rope climb\n800 m de course with a medicine ball\nPuis, 4 rounds of:\n10 wall-ball shots\n1 rope climb\n400 m de course with a medicine ball\nThen 2 rounds of:\n10 wall-ball shots\n1 rope climb\nFemmes 14-lb medicine ball, 9-foot target\nHommes 20-lb medicine ball, 10-foot target"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "nickman",
+    "name": "Nickman",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "10 rounds for time of:\n200-meter farmers carry\n10 weighted pull-ups\n20 dumbbell alternating power snatches\n♀ 40-lb dumbbells for farmers carry and power snatches, 20-lb dumbbells for pull-ups\n♂ 55-lb dumbbells for farmers carry and power snatches, 35-lb dumbbells for pull-ups",
+      "fr": "10 tours for time :\n200-meter farmers carry\n10 weighted tractions\n20 dumbbell alternating arrachés puissance\nFemmes 40-lb dumbbells for farmers carry and arrachés puissance, 20-lb dumbbells for tractions\nHommes 55-lb dumbbells for farmers carry and arrachés puissance, 35-lb dumbbells for tractions"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "marston",
+    "name": "Marston",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n20 minutes of:\n1 deadlift\n10 toes-to-bars\n15 bar-facing burpees\n♀ 275 lb\n♂ 405 lb",
+      "fr": "Complete as many rounds and reps as possible in\n20 minutes of:\n1 deadlift\n10 toes-to-bar\n15 bar-facing burpees\nFemmes 275 lb\nHommes 405 lb"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "artie",
+    "name": "Artie",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n20 minutes of:\n5 pull-ups\n10 push-ups\n15 squats\n5 pull-ups\n10 thrusters\n♀ 65 lb\n♂ 95 lb",
+      "fr": "Complete as many rounds and reps as possible in\n20 minutes of:\n5 tractions\n10 pompes\n15 squats\n5 tractions\n10 thrusters\nFemmes 65 lb\nHommes 95 lb"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "hollywood",
+    "name": "Hollywood",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 2,000 meters\n22 wall-ball shots\n22 muscle-ups\n22 wall-ball shots\n22 power cleans\n22 wall-ball shots\nRun 2,000 meters\n♀ 20-lb medicine ball to a\n9-foot target, 125-lb barbell\n♂ 30-lb medicine ball to a\n10-foot target, 185-lb barbell",
+      "fr": "For time :\n2,000 m de course\n22 wall-ball shots\n22 muscle-ups\n22 wall-ball shots\n22 power cleans\n22 wall-ball shots\n2,000 m de course\nFemmes 20-lb medicine ball to a\n9-foot target, 125-lb barbell\nHommes 30-lb medicine ball to a\n10-foot target, 185-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "manuel",
+    "name": "Manuel",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds of:\n3 minutes of rope climbs\n2 minutes of squats\n2 minutes of push-ups\n3 minutes to run 400 meters\nWear a weight vest or body armor. After the run, rest for the remainder of the 3 minutes before beginning the next round.",
+      "fr": "5 rounds of:\n3 minutes of montées de corde\n2 minutes of squats\n2 minutes of pompes\n3 minutes to 400 m de course\nWear a weight vest or body armor. After the run, rest for the remainder of the 3 minutes before beginning the next round."
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "tiff",
+    "name": "Tiff",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "On a 25-minute clock:\n1.5-mile run\nThen, in the remaining time, complete as many rounds and reps as possible of:\n11 chest-to-bar pull-ups\n7 hang squat cleans\n7 push presses\n♀ 105 lb\n♂ 155 lb",
+      "fr": "On a 25-minute clock:\n1.5 mile de course\nPuis, in the remaining time, complete as many rounds and reps as possible of:\n11 tractions chest-to-bar\n7 hang squat cleans\n7 push presses\nFemmes 105 lb\nHommes 155 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "paul-pena",
+    "name": "Paul Pena",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds, each for time, of:\n100-meter sprint\n19 kettlebell swings\n10 burpee box jumps\nRest 3 minutes between rounds.\n♀ 53-lb kettlebell, 20-inch box\n♂ 70-lb kettlebell, 24-inch box",
+      "fr": "7 rounds, each for time, of:\n100-meter sprint\n19 kettlebell swings\n10 burpee box jumps\nRepos de 3 minutes entre les séries.\nFemmes 53-lb kettlebell, 20-inch box\nHommes 70-lb kettlebell, 24-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "yeti",
+    "name": "Yeti",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n25 pull-ups\n10 muscle-ups\n1.5-mile run\n10 muscle-ups\n25 pull-ups",
+      "fr": "For time :\n25 tractions\n10 muscle-ups\n1.5 mile de course\n10 muscle-ups\n25 tractions"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "liam",
+    "name": "Liam",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 800 meters with a plate\n100 toes-to-bars\n50 front squats\n10 rope climbs to 15 feet\nRun 800 meters with a plate\nPartition the toes-to-bars, front squats, and rope climbs as needed. Start and finish with the run.\n♀ 25-lb plate, 105-lb barbell\n♂ 45-lb plate, 155-lb barbell",
+      "fr": "For time :\n800 m de course with a plate\n100 toes-to-bar\n50 front squats\n10 montées de corde to 15 feet\n800 m de course with a plate\nPartition the toes-to-bar, front squats, and montées de corde as needed. Start and finish with the run.\nFemmes 25-lb plate, 105-lb barbell\nHommes 45-lb plate, 155-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "wes",
+    "name": "Wes",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 800 meters with a 25-lb plate\nThen, 14 rounds of:\n5 strict pull-ups\n4 burpee box jumps, 24-inch box\n3 cleans, 185 lb\nThen, run 800 meters with a 25-lb plate",
+      "fr": "For time :\n800 m de course with a 25-lb plate\nPuis, 14 rounds of:\n5 strict tractions\n4 burpee box jumps, 24-inch box\n3 cleans, 185 lb\nPuis, 800 m de course with a 25-lb plate"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "miron",
+    "name": "Miron",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n800-meter run\n23 back squats, ¾ body weight\n13 deadlifts, 1 ½ body weight",
+      "fr": "5 tours for time :\n800 m de course\n23 back squats, ¾ body weight\n13 soulevés de terre, 1 ½ body weight"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "pat",
+    "name": "Pat",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 800 meters with a plate\nThen, 14 rounds of:\n5 strict pull-ups\n4 burpee box jumps\n3 cleans\nThen, Run 800 meters with a plate\n♀ 25-lb plate, 20-inch box, 125-lb barbell\n♂ 25-lb plate, 24-inch box, 185-lb barbell",
+      "fr": "For time :\n800 m de course with a plate\nPuis, 14 rounds of:\n5 strict tractions\n4 burpee box jumps\n3 cleans\nPuis, 800 m de course with a plate\nFemmes 25-lb plate, 20-inch box, 125-lb barbell\nHommes 25-lb plate, 24-inch box, 185-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "scotty",
+    "name": "Scotty",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 660
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in 11 minutes of:\n5 deadlifts\n18 wall-ball shots\n17 burpees over the bar\n♀ 205-lb barbell, 14-lb medicine ball to a 9-foot target\n♂ 315-lb barbell, 20-lb medicine ball to a 10-foot target",
+      "fr": "AMRAP 11 min :\n5 soulevés de terre\n18 wall-ball shots\n17 burpees over the bar\nFemmes 205-lb barbell, 14-lb medicine ball to a 9-foot target\nHommes 315-lb barbell, 20-lb medicine ball to a 10-foot target"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "rich",
+    "name": "Rich",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n13 squat snatches\nThen, 10 rounds of:\n10 pull-ups\n100-meter sprint\nThen, 13 squat cleans\n♀ 105 lb\n♂ 155 lb",
+      "fr": "For time :\n13 squat snatches\nPuis, 10 rounds of:\n10 tractions\n100-meter sprint\nPuis, 13 squat cleans\nFemmes 105 lb\nHommes 155 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "dallas-5",
+    "name": "Dallas 5",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 minutes of:\nBurpees\nThen, 5 minutes of:\n7 deadlifts\n7 box jumps\nThen, 5 minutes of:\nTurkish get-ups\nThen, 5 minutes of:\n7 snatches\n7 push-ups\nThen, 5 minutes of:\nRowing for calories\nComplete as many reps as possible at each 5-minute station. Rest 1 minute between stations.\n♀ 105-lb deadlift, 20-inch box, 30-lb dumbbell for Turkish get-up, 55-lb snatch\n♂ 155-lb deadlift, 24-inch box, 40-lb dumbbell for Turkish get-up, 75-lb snatch",
+      "fr": "5 minutes of:\nburpees\nPuis, 5 minutes of:\n7 soulevés de terre\n7 box jumps\nPuis, 5 minutes of:\nTurkish get-ups\nPuis, 5 minutes of:\n7 snatches\n7 pompes\nPuis, 5 minutes of:\nRowing for calories\nComplete as many reps as possible at each 5-minute station. Rest 1 minute between stations.\nFemmes 105-lb deadlift, 20-inch box, 30-lb dumbbell for Turkish get-up, 55-lb snatch\nHommes 155-lb deadlift, 24-inch box, 40-lb dumbbell for Turkish get-up, 75-lb snatch"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "dunn",
+    "name": "Dunn",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1140
+    },
+    "text": {
+      "en": "Complete as many rounds as possible in 19 minutes of:\n3 muscle-ups\n1 shuttle sprint (5 yards, 10 yards, 15 yards)\n6 burpee box jump-overs\nOn the burpees, jump over the box without touching it.\n♀ 20-inch box\n♂ 20-inch box",
+      "fr": "AMRAP 19 min :\n3 muscle-ups\n1 shuttle sprint (5 yards, 10 yards, 15 yards)\n6 burpee box jump-overs\nOn the burpees, jump over the box without touching it.\nFemmes 20-inch box\nHommes 20-inch box"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "kev",
+    "name": "Kev",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "With a partner, complete as many rounds and reps as possible in 26 minutes of:\n6 deadlifts, each\n9 synchronized bar facing burpees\n9 bar muscle-ups, each\n55-foot partner barbell carry\n♀ 205-lb barbell\n♂ 315-lb barbell",
+      "fr": "With a partner, AMRAP 26 min :\n6 soulevés de terre, each\n9 synchronized bar facing burpees\n9 bar muscle-ups, each\n55-foot partner barbell carry\nFemmes 205-lb barbell\nHommes 315-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "emily",
+    "name": "Emily",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "10 rounds for time of:\n30 double-unders\n15 pull-ups\n30 squats\n100-meter sprint\nRest 2 minutes",
+      "fr": "10 tours for time :\n30 double-unders\n15 tractions\n30 squats\n100-meter sprint\nRest 2 minutes"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "andy",
+    "name": "Andy",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n25 thrusters\n50 box jumps\n75 deadlifts\n1.5-mile run\n75 deadlifts\n50 box jumps\n25 thrusters\nWear a weight vest or body armor.\n♀ 14-lb weight vest, 75-lb barbell, 20-inch box\n♂ 20-lb weight vest, 115-lb barbell, 24-inch box",
+      "fr": "For time :\n25 thrusters\n50 box jumps\n75 soulevés de terre\n1.5 mile de course\n75 soulevés de terre\n50 box jumps\n25 thrusters\nWear a weight vest or body armor.\nFemmes 14-lb weight vest, 75-lb barbell, 20-inch box\nHommes 20-lb weight vest, 115-lb barbell, 24-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "viola",
+    "name": "Viola",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n20 minutes of:\n400-meter run\n11 power snatches\n17 pull-ups\n13 power cleans\n♀ 65 lb\n♂ 95 lb",
+      "fr": "Complete as many rounds and reps as possible in\n20 minutes of:\n400 m de course\n11 arrachés puissance\n17 tractions\n13 power cleans\nFemmes 65 lb\nHommes 95 lb"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "coffland",
+    "name": "Coffland",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "Hang from a pull-up bar for 6 minutes\nEach time you drop from the bar, complete:\n800-meter run\n30 push-ups",
+      "fr": "Hang from a pull-up bar for 6 minutes\nEach time you drop from the bar, complete:\n800 m de course\n30 pompes"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "the-lyon",
+    "name": "The Lyon",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds, each for time, of:\n7 squat cleans\n7 shoulder-to-overheads\n7 burpee chest-to-bar pull-ups\nRest 2 minutes between rounds.\nIdeally, use a pull-up bar that is\n6 inches above your max reach when standing.\n♀ 115-lb barbell\n♂ 165-lb barbell",
+      "fr": "5 rounds, each for time, of:\n7 squat cleans\n7 shoulder-to-overheads\n7 burpee tractions chest-to-bar\nRepos de 2 minutes entre les séries.\nIdeally, use a pull-up bar that is\n6 inches above your max reach when standing.\nFemmes 115-lb barbell\nHommes 165-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "t",
+    "name": "T",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n100-meter sprint\n10 squat clean thrusters\n15 kettlebell swings\n100-meter sprint\nRest 2 minutes\n♀ 75-lb barbell and\n35-lb kettlebell\n♂ 75-lb barbell and\n35-lb kettlebell",
+      "fr": "5 tours for time :\n100-meter sprint\n10 squat clean thrusters\n15 kettlebell swings\n100-meter sprint\nRest 2 minutes\nFemmes 75-lb barbell and\n35-lb kettlebell\nHommes 75-lb barbell and\n35-lb kettlebell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "havana",
+    "name": "Havana",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1500
+    },
+    "text": {
+      "en": "Complete as many rounds as possible in 25 minutes of:\n150 double-unders\n50 push-ups\n15 power cleans\n♀ 125 lb\n♂ 185 lb",
+      "fr": "AMRAP 25 min :\n150 double-unders\n50 pompes\n15 power cleans\nFemmes 125 lb\nHommes 185 lb"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "tama",
+    "name": "Tama",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n800-meter single-arm barbell farmers carry, weight 1\n31 toes-to-bars\n31 push-ups\n31 front squats\n400-meter single-arm barbell farmers carry, weight 2\n31 toes-to-bars\n31 push-ups\n31 hang power cleans\n200-meter single-arm barbell farmers carry, weight 3\n♀ Farmers carry 35 - 65 - 95 lb; Front squat 65 lb; Hang power clean 95 lb\n♂ Farmers carry 45 - 95 - 135 lb; Front squat 95 lb; Hang power clean 135 lb",
+      "fr": "For time :\n800-meter single-arm barbell farmers carry, weight 1\n31 toes-to-bar\n31 pompes\n31 front squats\n400-meter single-arm barbell farmers carry, weight 2\n31 toes-to-bar\n31 pompes\n31 hang power cleans\n200-meter single-arm barbell farmers carry, weight 3\nFemmes Farmers carry 35 - 65 - 95 lb; Front squat 65 lb; Hang power clean 95 lb\nHommes Farmers carry 45 - 95 - 135 lb; Front squat 95 lb; Hang power clean 135 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "otis",
+    "name": "Otis",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 900
+    },
+    "text": {
+      "en": "Complete as many reps as possible in 15 minutes of:\n1 back squat, 1 shoulder press, 1 deadlift\n2 back squats, 2 shoulder presses, 2 deadlifts\n3 back squats, 3 shoulder presses, 3 deadlifts\nEtc.\nUse 1½ body weight for the squats and deadlifts and ¾ body weight for the presses.",
+      "fr": "AMRAP 15 min :\n1 back squat, 1 shoulder press, 1 deadlift\n2 back squats, 2 shoulder presses, 2 soulevés de terre\n3 back squats, 3 shoulder presses, 3 soulevés de terre\nEtc.\nUse 1½ body weight for the squats and soulevés de terre and ¾ body weight for the presses."
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "josie",
+    "name": "Josie",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time, wearing a 20-lb vest:\n1-mile run\nThen, 3 rounds of:\n30 burpees\n4 power cleans\n6 front squats\nThen, 1-mile run\n♀ 105 lb\n♂ 155 lb",
+      "fr": "For time, wearing a 20-lb vest:\n1 mile de course\nPuis, 3 rounds of:\n30 burpees\n4 power cleans\n6 front squats\nPuis, 1 mile de course\nFemmes 105 lb\nHommes 155 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "dork",
+    "name": "Dork",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "6 rounds for time of:\n60 double-unders\n30 kettlebell swings\n15 burpees\n♀ 35-lb kettlebell\n♂ 53-lb kettlebell",
+      "fr": "6 tours for time :\n60 double-unders\n30 kettlebell swings\n15 burpees\nFemmes 35-lb kettlebell\nHommes 53-lb kettlebell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "bert",
+    "name": "Bert",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n50 burpees\n400-meter run\n100 push-ups\n400-meter run\n150 walking lunges\n400-meter run\n200 squats\n400-meter run\n150 walking lunges\n400-meter run\n100 push-ups\n400-meter run\n50 burpees",
+      "fr": "For time :\n50 burpees\n400 m de course\n100 pompes\n400 m de course\n150 fentes marchées\n400 m de course\n200 squats\n400 m de course\n150 fentes marchées\n400 m de course\n100 pompes\n400 m de course\n50 burpees"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "wade",
+    "name": "Wade",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time, wearing a 20-lb vest or body armor:\nRun 1,200 meters\nThen, 4 rounds of:\n12 strict pull-ups\n9 strict dips\n6 strict handstand push-ups\nThen, run 1,200 meters",
+      "fr": "For time, wearing a 20-lb vest or body armor:\n1,200 m de course\nPuis, 4 rounds of:\n12 strict tractions\n9 strict dips\n6 strict pompes en équilibre\nPuis, 1,200 m de course"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "fournier",
+    "name": "Fournier",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n50 shoulder-to-overheads\n50-foot arm-over-arm sled pull\n40 burpees\n50-foot arm-over-arm sled pull\n30 sumo deadlift high pulls\n50-foot arm-over-arm sled pull\n♀ 75-lb shoulder-to-overhead, 55-lb sumo deadlift high pull\n♂ 115-lb shoulder-to-overhead, 85-lb sumo deadlift high pull\nFor the sled pull, use a load that is challenging but doesn’t require extended rest periods.",
+      "fr": "For time :\n50 shoulder-to-overheads\n50-foot arm-over-arm sled pull\n40 burpees\n50-foot arm-over-arm sled pull\n30 sumo deadlift high pulls\n50-foot arm-over-arm sled pull\nFemmes 75-lb shoulder-to-overhead, 55-lb sumo deadlift high pull\nHommes 115-lb shoulder-to-overhead, 85-lb sumo deadlift high pull\nFor the sled pull, use a load that is challenging but doesn’t require extended rest periods."
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "larry",
+    "name": "Larry",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "21-18-15-12-9-6-3 reps for time of:\nFront squats\nBar-facing burpees\n♀ 75-lb squat, 50-lb sandbag\n♂ 115-lb squat, 80-lb sandbag",
+      "fr": "21-18-15-12-9-6-3 répétitions, for time :\nfront squats\nBar-facing burpees\nFemmes 75-lb squat, 50-lb sandbag\nHommes 115-lb squat, 80-lb sandbag"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "kelly-brown",
+    "name": "Kelly Brown",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\nRow 440 meter\n10 box jumps\n10 deadlifts\n10 wall-ball shots\n♀ 20-lb medicine ball to 9 feet, 185-lb deadlift, 24-inch box\n♂ 30-lb medicine ball to 10 feet, 275-lb deadlift, 30-inch box",
+      "fr": "5 tours for time :\nRow 440 meter\n10 box jumps\n10 soulevés de terre\n10 wall-ball shots\nFemmes 20-lb medicine ball to 9 feet, 185-lb deadlift, 24-inch box\nHommes 30-lb medicine ball to 10 feet, 275-lb deadlift, 30-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "kerrie",
+    "name": "Kerrie",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "Wearing a weight vest, 10 rounds for time of:\n100-meter sprint\n5 burpees\n20 sit-ups\n15 push-ups\n100-meter sprint\nRest 2 minutes",
+      "fr": "Wearing a weight vest, 10 tours for time :\n100-meter sprint\n5 burpees\n20 abdominaux\n15 pompes\n100-meter sprint\nRest 2 minutes"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "martin",
+    "name": "Martin",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "For time, with a partner:\n2,000-meter row\n100 bodyweight deadlifts\n50 thrusters (65/95 lb)\n1,000-meter row\n100 hand-release push-ups\n50 pull-ups\n500-meter row\n100 sit-ups\n100 wall-ball shots (14/20 lb)",
+      "fr": "For time, à deux :\n2,000-meter row\n100 bodyweight soulevés de terre\n50 thrusters (65/95 lb)\n1,000-meter row\n100 pompes hand-release\n50 tractions\n500-meter row\n100 abdominaux\n100 wall-ball shots (14/20 lb)"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "laura",
+    "name": "Laura",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "With a partner, complete as many rounds as possible in\n21 minutes of:\n30-calorie row\n20 burpees over the rower\n10 power cleans\n♀ 105 lb\n♂ 155 lb",
+      "fr": "With a partner, complete as many rounds as possible in\n21 minutes of:\n30-calorie row\n20 burpees over the rower\n10 power cleans\nFemmes 105 lb\nHommes 155 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "lorenzo",
+    "name": "Lorenzo",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 1,000 meters\nThen,\n5 rounds of:\n15 push-ups\n20 medicine-ball cleans\n21 burpees\nThen, Run 1,000 meters",
+      "fr": "For time :\n1,000 m de course\nPuis,\n5 rounds of:\n15 pompes\n20 medicine-ball cleans\n21 burpees\nPuis, 1,000 m de course"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "peyton",
+    "name": "Peyton",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds as possible in 20 minutes of:\n10 chest-to-bar pull-ups\n10 dumbbell thrusters, 35/50 lb\nStop and perform 40 double unders every 2 minutes, including at 0:00.\nThen, at the 20:00 mark, complete a 2-mile run.\nPost rounds of the AMRAP and run time to comments.",
+      "fr": "AMRAP 20 min :\n10 tractions chest-to-bar\n10 dumbbell thrusters, 35/50 lb\nStop and perform 40 double unders every 2 minutes, including at 0:00.\nPuis, at the 20:00 mark, complete a 2 mile de course.\nPost rounds of the AMRAP and run time to comments."
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "maxton",
+    "name": "Maxton",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "With a weight vest, 13 rounds for time of:\n8 strict pull-ups\n26 box step-ups\n21 burpees\n♀ 14-lb vest, 20-inch box\n♂ 20-lb vest, 24-inch box",
+      "fr": "With a weight vest, 13 tours for time :\n8 strict tractions\n26 box step-ups\n21 burpees\nFemmes 14-lb vest, 20-inch box\nHommes 20-lb vest, 24-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "eva-strong",
+    "name": "Eva Strong",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "With a partner, 5 rounds for time of:\n24 double-unders (each)\n19 toes-to-bars (total)\n2 clean and jerks (total)\n400-meter run (together)\n♀ 135 lb\n♂ 205 lb",
+      "fr": "With a partner, 5 tours for time :\n24 double-unders (each)\n19 toes-to-bar (total)\n2 clean and jerks (total)\n400 m de course (together)\nFemmes 135 lb\nHommes 205 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "chad1000x",
+    "name": "Chad1000x",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n1,000 weighted box step-ups\n♀ 35-lb ruck, 20-inch box\n♂ 45-lb ruck, 20-inch box",
+      "fr": "For time :\n1,000 weighted box step-ups\nFemmes 35-lb ruck, 20-inch box\nHommes 45-lb ruck, 20-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "tpt9000",
+    "name": "Tpt9000",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n100-meter run\nThen, 9 rounds of:\n8 burpees\n26 kettlebell swings\n21 wall-ball shots\n100-meter run\n♀ 35-lb kettlebell, 14-lb medicine ball to 9-foot target\n♂ 44-lb kettlebell, 20-lb medicine ball to 10-foot target\nIf you have a 14-/20-lb weight vest, wear it.",
+      "fr": "For time :\n100 m de course\nPuis, 9 rounds of:\n8 burpees\n26 kettlebell swings\n21 wall-ball shots\n100 m de course\nFemmes 35-lb kettlebell, 14-lb medicine ball to 9-foot target\nHommes 44-lb kettlebell, 20-lb medicine ball to 10-foot target\nIf you have a 14-/20-lb weight vest, wear it."
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "garbo",
+    "name": "Garbo",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "On a 21-minute clock:\n400-meter run\nThen, as many rounds and reps as possible of:\n10 hand-release push-ups\n4 strict pull-ups\n20 kettlebell swings\n10 kettlebell goblet squats\n♀ 35-lb kettlebell\n♂ 53-lb kettlebell",
+      "fr": "On a 21-minute clock:\n400 m de course\nPuis, as many rounds and reps as possible of:\n10 pompes hand-release\n4 strict tractions\n20 kettlebell swings\n10 kettlebell goblet squats\nFemmes 35-lb kettlebell\nHommes 53-lb kettlebell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "mccartney",
+    "name": "Mccartney",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time in teams of 3:\n2,000-meter row\n14 dumbbell thrusters\n34 kettlebell swings\n484 double-unders\n108 burpees\n2,000-meter row\n18 deadlifts\n♀ 35-lb dumbbells, 53-lb kettlebell, 155-lb deadlifts\n♂ 50-lb dumbbells, 70-lb kettlebell, 225-lb deadlifts",
+      "fr": "For time in teams of 3:\n2,000-meter row\n14 dumbbell thrusters\n34 kettlebell swings\n484 double-unders\n108 burpees\n2,000-meter row\n18 soulevés de terre\nFemmes 35-lb dumbbells, 53-lb kettlebell, 155-lb soulevés de terre\nHommes 50-lb dumbbells, 70-lb kettlebell, 225-lb soulevés de terre"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "wesley",
+    "name": "Wesley",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "On a 35-minute clock:\n800-meter run\nThen, as many rounds and reps as possible of:\n8 box jumps\n6 strict pull-ups\n21-yard walking lunge with a\n45-lb plate overhead",
+      "fr": "On a 35-minute clock:\n800 m de course\nPuis, as many rounds and reps as possible of:\n8 box jumps\n6 strict tractions\n21-yard walking lunge with a\n45-lb plate overhead"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "hammy",
+    "name": "Hammy",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n1,200-meter run\n80 box step-overs\n40 hand-release push-ups\n800-meter run\n40 burpees to target\n20 strict pull-ups\n400-meter run\n20 burpee box jumps\n10 ring muscle-ups\n400-meter run\n40 burpees to target\n20 strict pull-ups\n800-meter run\n80 box step-overs\n40 hand-release push-ups\n1,200-meter run\nIIf you have a 14-/20-lb weight vest, wear it for as much of the workout as possible.\n♀ 20-inch box, 6-inch target for burpees\n♂ 24-inch box, 6-inch target for burpees",
+      "fr": "For time :\n1,200 m de course\n80 box step-overs\n40 pompes hand-release\n800 m de course\n40 burpees to target\n20 strict tractions\n400 m de course\n20 burpee box jumps\n10 muscle-ups aux anneaux\n400 m de course\n40 burpees to target\n20 strict tractions\n800 m de course\n80 box step-overs\n40 pompes hand-release\n1,200 m de course\nIIf you have a 14-/20-lb weight vest, wear it for as much of the workout as possible.\nFemmes 20-inch box, 6-inch target for burpees\nHommes 24-inch box, 6-inch target for burpees"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "triple-deuce",
+    "name": "Triple Deuce",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "As many rounds and reps as possible in 20 minutes of:\n22 burpees\n22 air squats\n22 pull-ups\n22 sandbag ground-to-over-the-shoulders\n722-meter sprint\n♀ 40-lb sandbag\n♂ 60-lb sandbag",
+      "fr": "AMRAP 20 min :\n22 burpees\n22 squats\n22 tractions\n22 sandbag ground-to-over-the-shoulders\n722-meter sprint\nFemmes 40-lb sandbag\nHommes 60-lb sandbag"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "k27",
+    "name": "K27",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "27 rounds for time of:\n5 hang power cleans\n5 burpees\n15 double-unders\n♀ 105 lb\n♂ 185 lb",
+      "fr": "27 tours for time :\n5 hang power cleans\n5 burpees\n15 double-unders\nFemmes 105 lb\nHommes 185 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "buriak",
+    "name": "Buriak",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "As many rounds and reps as possible in 20 minutes of:\n5 squat cleans\n10 burpees over the bar\n15 pull-ups\n200-meter run\n♀ 135 lb\n♂ 155 lb",
+      "fr": "AMRAP 20 min :\n5 squat cleans\n10 burpees over the bar\n15 tractions\n200 m de course\nFemmes 135 lb\nHommes 155 lb"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "oda-7313",
+    "name": "Oda 7313",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds for time of:\n300-meter jog\n10 left-arm dumbbell thrusters\n10 right-arm dumbbell thrusters\n7 strict pull-ups\nWear a 10-14-lb weight vest.\n♀ 20 lb\n♂ 30 lb",
+      "fr": "7 tours for time :\n300-meter jog\n10 left-arm dumbbell thrusters\n10 right-arm dumbbell thrusters\n7 strict tractions\nWear a 10-14-lb weight vest.\nFemmes 20 lb\nHommes 30 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "goose",
+    "name": "Goose",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "For time with a partner:\n106 deadlifts\nThen, 7 rounds of:\n3 rope climbs\n15 thrusters\n15 kettlebell swings\nThen, 400-meter run with a plate (Both partners carry a plate.)\n♀ 95-lb barbell, 15-foot rope, 53-lb kettlebell, 25-lb plate\n♂ 135-lb barbell, 15-foot rope, 70-lb kettlebell, 45-lb plate",
+      "fr": "For time with a partner:\n106 soulevés de terre\nPuis, 7 rounds of:\n3 montées de corde\n15 thrusters\n15 kettlebell swings\nPuis, 400 m de course with a plate (Both partners carry a plate.)\nFemmes 95-lb barbell, 15-foot rope, 53-lb kettlebell, 25-lb plate\nHommes 135-lb barbell, 15-foot rope, 70-lb kettlebell, 45-lb plate"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "pikey",
+    "name": "Pikey",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 400 meters\n12 burpee bar muscle-ups\n15 squat snatches\nRun 800 meters\n12 burpee bar muscle-ups\n20 clean and jerks\nRun 800 meters\n12 burpee bar muscle-ups\n18 thrusters\nRun 400 meters\n♀ 105-lb barbell\n♂ 155-lb barbell",
+      "fr": "For time :\n400 m de course\n12 burpee bar muscle-ups\n15 squat snatches\n800 m de course\n12 burpee bar muscle-ups\n20 clean and jerks\n800 m de course\n12 burpee bar muscle-ups\n18 thrusters\n400 m de course\nFemmes 105-lb barbell\nHommes 155-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "gale-force",
+    "name": "Gale Force",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1800
+    },
+    "text": {
+      "en": "As many rounds and reps as possible in 30 minutes of:\n20 box step-ups with a weighted backpack\n23 burpees-over-backpack\n19 air squats\nWhen 30 minutes have elapsed, complete one more set of 19 squats together as a group.\n♀ 35-lb backpack, 20-inch box\n♂ 50-lb backpack, 24-inch box",
+      "fr": "AMRAP 30 min :\n20 box step-ups with a weighted backpack\n23 burpees-over-backpack\n19 squats\nWhen 30 minutes have elapsed, complete one more set of 19 squats together as a group.\nFemmes 35-lb backpack, 20-inch box\nHommes 50-lb backpack, 24-inch box"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "northrup",
+    "name": "Northrup",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n26 barbell back-rack step-ups\nThen, 3 rounds of:\n17 power cleans\n19 sit-ups\n21 deadlifts\nThen, 31-calorie row\n♀ 20-inch box, 65-lb barbell\n♂ 24-inch box, 95-lb barbell",
+      "fr": "For time :\n26 barbell back-rack step-ups\nPuis, 3 rounds of:\n17 power cleans\n19 abdominaux\n21 soulevés de terre\nPuis, 31-calorie row\nFemmes 20-inch box, 65-lb barbell\nHommes 24-inch box, 95-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "fern",
+    "name": "Fern",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "With a 60-minute time cap:\nFor time:\n2-mile run\nThen 9 rounds of:\n20-calorie row\n20 burpees\nThen 3 rounds for time of\n30 push-ups\n30 pull-ups\n30 burpees\n♀ Wear a 14-lb weight vest\n♂ Wear a 20-lb weight vest",
+      "fr": "With a 60-minute time cap:\nFor time :\n2 mile de course\nThen 9 rounds of:\n20-calorie row\n20 burpees\nThen 3 tours for time :\n30 pompes\n30 tractions\n30 burpees\nFemmes Wear a 14-lb weight vest\nHommes Wear a 20-lb weight vest"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "finseth",
+    "name": "Finseth",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "On an 18-minute clock for reps:\n83 wall-ball shots\nThen, as many rounds and reps as possible of:\n2 power cleans\n18 push-ups\n24 double-unders\n♀ 14-lb medicine ball to 9 feet, 125-lb barbell\n♂ 20-lb medicine ball to 10 feet, 185-lb barbell",
+      "fr": "On an 18-minute clock for reps:\n83 wall-ball shots\nPuis, as many rounds and reps as possible of:\n2 power cleans\n18 pompes\n24 double-unders\nFemmes 14-lb medicine ball to 9 feet, 125-lb barbell\nHommes 20-lb medicine ball to 10 feet, 185-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "gage",
+    "name": "Gage",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n1,996-meter row\nThen, 3 rounds of:\n12 power cleans\n11 back squats\n3 rope climbs to 15 feet\n27 burpees\nThen, 2,024-meter row\n♀ 105-lb barbell,\n♂ 155-lb barbell,",
+      "fr": "For time :\n1,996-meter row\nPuis, 3 rounds of:\n12 power cleans\n11 back squats\n3 montées de corde to 15 feet\n27 burpees\nPuis, 2,024-meter row\nFemmes 105-lb barbell,\nHommes 155-lb barbell,"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "josh-o",
+    "name": "Josh-O",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "For time with a partner:\n400-meter run\n2 rounds of:\n44 dumbbell front squats\n44 dumbbell floor presses\n44 dumbbell hang clean and jerks\nThen, 1,979-meter row\n2 rounds of:\n44 dumbbell deadlifts\n44 dumbbell bent-over rows\n44 dumbbell lunges\nThen, 400-meter Run\nRun together and split all other work as needed.\nUse two dumbbells.\n♀ 35-lb dumbbells\n♂ 50-lb dumbbells",
+      "fr": "For time with a partner:\n400 m de course\n2 rounds of:\n44 dumbbell front squats\n44 dumbbell floor presses\n44 dumbbell hang clean and jerks\nPuis, 1,979-meter row\n2 rounds of:\n44 dumbbell soulevés de terre\n44 dumbbell bent-over rows\n44 dumbbell lunges\nPuis, 400 m de course\nRun together and split all other work as needed.\nUse two dumbbells.\nFemmes 35-lb dumbbells\nHommes 50-lb dumbbells"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "whitt",
+    "name": "Whitt",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time:\n800-meter run with medicine ball\n30 wall-ball shots\n30 ball slams with medicine ball\n♀ 20-lb medicine ball\n♂ 30-lb medicine ball",
+      "fr": "3 rounds For time :\n800 m de course with medicine ball\n30 wall-ball shots\n30 ball slams with medicine ball\nFemmes 20-lb medicine ball\nHommes 30-lb medicine ball"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "ryan-so",
+    "name": "Ryan So",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n1,600-meter run\nThen,\n4 rounds of:\n9 power cleans\n2 strict pull-ups\n14 burpees\nThen,\n3 rounds of:\n13 box jumps\n13 push-ups\n50 double-unders\nThen, 1,600-meter run\n♀ 14-lb weight vest for run, 95-lb barbell, 20-inch box\n♂ 20-lb weight vest for run, 135-lb barbell, 24-inch box",
+      "fr": "For time :\n1,600 m de course\nPuis,\n4 rounds of:\n9 power cleans\n2 strict tractions\n14 burpees\nPuis,\n3 rounds of:\n13 box jumps\n13 pompes\n50 double-unders\nPuis, 1,600 m de course\nFemmes 14-lb weight vest for run, 95-lb barbell, 20-inch box\nHommes 20-lb weight vest for run, 135-lb barbell, 24-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "hoover",
+    "name": "Hoover",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "8 rounds for time of:\nRun 400 meters\n15 burpee box jump-overs\n10-calorie bike\n6 alternating dumbbell snatches\n♀ 20-inch box, 50-lb dumbbell\n♂ 24-inch box, 75-lb dumbbell",
+      "fr": "8 tours for time :\n400 m de course\n15 burpee box jump-overs\n10-calorie bike\n6 alternating dumbbell snatches\nFemmes 20-inch box, 50-lb dumbbell\nHommes 24-inch box, 75-lb dumbbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "city-100",
+    "name": "City 100",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "For time with a partner:\n31 shuttle runs (7 meters down,\n7 meters back)\nThen,\n10 rounds for time of:\n7 deadlifts\n7 hang power cleans\n7-meter overhead walking lunge\n♀ 105-lb barbell\n♂ 155-lb barbell\nOne partner must hold a barbell in the front rack while the other partner performs an entire round of the complex.\nUpon finishing the round, switch stations.",
+      "fr": "For time with a partner:\n31 shuttle runs (7 meters down,\n7 meters back)\nPuis,\n10 tours for time :\n7 soulevés de terre\n7 hang power cleans\n7-meter overhead walking lunge\nFemmes 105-lb barbell\nHommes 155-lb barbell\nOne partner must hold a barbell in the front rack while the other partner performs an entire round of the complex.\nUpon finishing the round, switch stations."
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "alec",
+    "name": "Alec",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n3 rounds of:\n8 burpees\n28 air squats\n9 push-ups\nThen, Run 1,000 meters\n25 over-the-shoulder sandbag cleans\nRun 1,000 meters\nThen,\n5 rounds of:\n10 deadlifts\n14 box jumps\n10 burpees\n♀ 75-lb sandbag, 155-lb deadlifts, 20-inch box\n♂ 100-lb sandbag, 225-lb deadlifts, 24-inch box",
+      "fr": "For time :\n3 rounds of:\n8 burpees\n28 squats\n9 pompes\nPuis, 1,000 m de course\n25 over-the-shoulder sandbag cleans\n1,000 m de course\nPuis,\n5 rounds of:\n10 soulevés de terre\n14 box jumps\n10 burpees\nFemmes 75-lb sandbag, 155-lb soulevés de terre, 20-inch box\nHommes 100-lb sandbag, 225-lb soulevés de terre, 24-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "muller",
+    "name": "Muller",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\nRun 1,000 meters\n710-meter plate carry\nThen,\n5 rounds of:\n13 burpee pull-ups\n13 deadlifts\nThen, 710-meter plate carry\nRun 1,000 meters\n♀ 25-lb plate, 155-lb deadlifts\n♂ 45-lb plate, 225-lb deadlifts",
+      "fr": "For time :\n1,000 m de course\n710-meter plate carry\nPuis,\n5 rounds of:\n13 burpee tractions\n13 soulevés de terre\nPuis, 710-meter plate carry\n1,000 m de course\nFemmes 25-lb plate, 155-lb soulevés de terre\nHommes 45-lb plate, 225-lb soulevés de terre"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "dominic-j-hall",
+    "name": "Dominic J. Hall",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "On a running clock:\nFrom 0:00-12:23:\nMax-reps box step-ups\nFrom 12:23-15:00:\nRest\nFrom 15:00-48:00:\nAs many reps as possible of:\n9 deadlifts\n400-m run\n22 push-ups\n♀ Wear a 14-lb vest, 20-inch box, 185-lb deadlifts\n♂ Wear a 20-lb vest, 20-inch box, 275-lb deadlifts",
+      "fr": "On a running clock:\nFrom 0:00-12:23:\nMax-reps box step-ups\nFrom 12:23-15:00:\nRest\nFrom 15:00-48:00:\nAs many reps as possible of:\n9 soulevés de terre\n400-m run\n22 pompes\nFemmes Wear a 14-lb vest, 20-inch box, 185-lb soulevés de terre\nHommes Wear a 20-lb vest, 20-inch box, 275-lb soulevés de terre"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "jonathon-farmer",
+    "name": "Jonathon Farmer",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n1,500-meter row\nThen,\n2 rounds of:\n53 push-ups\n11 pull-ups\n5 shoulder presses\n100-meter farmers carry\n50-meter sled push\n300-meter sprint\nThen, 1,500-meter row\n♀ 95-lb shoulder press, 35-lb farmers carry, 45-lb sled push\n♂ 135-lb shoulder press, 70-lb farmers carry, 90-lb sled push",
+      "fr": "For time :\n1,500-meter row\nPuis,\n2 rounds of:\n53 pompes\n11 tractions\n5 shoulder presses\n100-meter farmers carry\n50-meter sled push\n300-meter sprint\nPuis, 1,500-meter row\nFemmes 95-lb shoulder press, 35-lb farmers carry, 45-lb sled push\nHommes 135-lb shoulder press, 70-lb farmers carry, 90-lb sled push"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "ryan-comas",
+    "name": "Ryan Comas",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time as a 3-person team:\n1,065-foot versa climb or 1,065-meter row or ski\nThen,\n10 rounds of:\n13 deadlifts\n13 pull-ups\n13-calorie row\n13 back squats\n13 burpees\nThen, 1,065-foot versa climb or 1,065-meter row or ski\n♀ 165-lb barbell\n♂ 225-lb barbell",
+      "fr": "For time as a 3-person team:\n1,065-foot versa climb or 1,065-meter row or ski\nPuis,\n10 rounds of:\n13 soulevés de terre\n13 tractions\n13-calorie row\n13 back squats\n13 burpees\nPuis, 1,065-foot versa climb or 1,065-meter row or ski\nFemmes 165-lb barbell\nHommes 225-lb barbell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "timothy-helton",
+    "name": "Timothy Helton",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "For time, as a 3-person team:\n2,364-meter row\nThen,\n10 rounds of:\n49 wall-ball shots\n26 pull-ups\n200-meter run\n8 ring muscle-ups\n40 deadlifts\nThen, On a 10-minute clock:\nBuild to a heavy single back squat for each team member.\nClock begins immediately upon completion of the 10 rounds.\n♀ 14-lb medicine ball to 9 feet, 105-lb deadlift\n♂ 20-lb medicine ball to 10 feet, 155-lb deadlift",
+      "fr": "For time, as a 3-person team:\n2,364-meter row\nPuis,\n10 rounds of:\n49 wall-ball shots\n26 tractions\n200 m de course\n8 muscle-ups aux anneaux\n40 soulevés de terre\nPuis, On a 10-minute clock:\nBuild to a heavy single back squat for each team member.\nClock begins immediately upon completion of the 10 rounds.\nFemmes 14-lb medicine ball to 9 feet, 105-lb deadlift\nHommes 20-lb medicine ball to 10 feet, 155-lb deadlift"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "topsy",
+    "name": "Topsy",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1500
+    },
+    "text": {
+      "en": "Complete as many rounds and reps as possible in\n25 minutes of:\n3 ring muscle-ups\n8 thrusters\n17-calorie row\n♀ 75 lb\n♂ 115 lb",
+      "fr": "Complete as many rounds and reps as possible in\n25 minutes of:\n3 muscle-ups aux anneaux\n8 thrusters\n17-calorie row\nFemmes 75 lb\nHommes 115 lb"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "locke",
+    "name": "Locke",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n565-meter row or run\nThen,\n7 rounds\n9 deadlifts\n25 push-ups\n21 box step-ups\nThen, 565-meter row or run\n♀ 125 lb, 20-inch box\n♂ 185 lb, 24-inch box",
+      "fr": "For time :\n565-meter row or run\nPuis,\n7 rounds\n9 soulevés de terre\n25 pompes\n21 box step-ups\nPuis, 565-meter row or run\nFemmes 125 lb, 20-inch box\nHommes 185 lb, 24-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "estrada",
+    "name": "Estrada",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "100 box step-ups with a weighted backpack\nThen,\n3 rounds of:\n800-meter run\n17-calorie bike\n25 front squats\n♀ 35-lb backpack, 20-inch box,\n135 lb front squats\n♂ 50-lb backpack, 20-inch box,\n185 lb front squats",
+      "fr": "100 box step-ups with a weighted backpack\nPuis,\n3 rounds of:\n800 m de course\n17-calorie bike\n25 front squats\nFemmes 35-lb backpack, 20-inch box,\n135 lb front squats\nHommes 50-lb backpack, 20-inch box,\n185 lb front squats"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "leehan",
+    "name": "Leehan",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "7 rounds for time of:\n6 deadlifts\n6 air squats\n6 box jumps (20/24 inches)\nAdd 6 reps to each movement after every round.\nThen, 1,742-meter row\n♀ 125 lb, 20-inch box,\n♂ 185 lb, 24-inch box,",
+      "fr": "7 tours for time :\n6 soulevés de terre\n6 squats\n6 box jumps (20/24 inches)\nAdd 6 reps to each movement after every round.\nPuis, 1,742-meter row\nFemmes 125 lb, 20-inch box,\nHommes 185 lb, 24-inch box,"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "nunez",
+    "name": "Nunez",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time:\n800m run\n60 burpee box jump overs\n50 pull-ups\n40 squats (weight 1)\n600m run\n30 burpee box jump overs\n25 chest-to-bar pull-ups\n20 squats (weight 2)\n400m run\n15 burpee box jump overs\n12 bar muscle-ups\n10 squat cleans (weight 3)\n♀ 20 inch box, 65 - 125 -\n155 lb. squats\n♂ 20 inch box, 95 - 185 -\n225 lb. squats",
+      "fr": "For time :\n800m run\n60 burpee box jump overs\n50 tractions\n40 squats (weight 1)\n600m run\n30 burpee box jump overs\n25 tractions chest-to-bar\n20 squats (weight 2)\n400m run\n15 burpee box jump overs\n12 bar muscle-ups\n10 squat cleans (weight 3)\nFemmes 20 inch box, 65 - 125 -\n155 lb. squats\nHommes 20 inch box, 95 - 185 -\n225 lb. squats"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "drew",
+    "name": "Drew",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "For time, all with a weight vest: (Each round honors one of the heroes who died in the helicopter crash.)\nKraus: 200-meter run, 30 pull ups, 30 hand-release push-ups,\n4 deadlifts*\nRest 30 seconds\nScott: 400-meter run, 25 pull ups, 25 hand-release push-ups,\n4 deadlifts*\nRest 30 seconds\nGood: 600-meter run, 20 pull ups, 20 hand-release push-ups,\n4 deadlifts*\nRest 30 seconds\nCully: 800-meter run, 15 pull ups, 15 hand-release push-ups,\n4 deadlifts*\nRest 30 seconds\nNight Stalkers: 269 step-ups\n*Prescribed weight for deadlifts is 1.5 times bodyweight.",
+      "fr": "For time, avec un gilet : (Each round honors one of the heroes who died in the helicopter crash.)\nKraus: 200 m de course, 30 tractions, 30 pompes hand-release,\n4 soulevés de terre*\nRepos de 30 secondes\nScott: 400 m de course, 25 tractions, 25 pompes hand-release,\n4 soulevés de terre*\nRepos de 30 secondes\nGood: 600 m de course, 20 tractions, 20 pompes hand-release,\n4 soulevés de terre*\nRepos de 30 secondes\nCully: 800 m de course, 15 tractions, 15 pompes hand-release,\n4 soulevés de terre*\nRepos de 30 secondes\nNight Stalkers: 269 step-ups\n*Prescribed weight for soulevés de terre is 1.5 times bodyweight."
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "maloney",
+    "name": "Maloney",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "6 rounds for time of:\n300-meter shuttle run (50-meters out and back x 6, 100-meters out and back x 3)\n16 deadlifts\n♀ 125 lb\n♂ 185 lb\n6 hang power cleans\nRest 2 minutes between sets.",
+      "fr": "6 tours for time :\n300-meter shuttle run (50-meters out and back x 6, 100-meters out and back x 3)\n16 soulevés de terre\nFemmes 125 lb\nHommes 185 lb\n6 hang power cleans\nRepos de 2 minutes entre les séries."
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "jacks-triangle",
+    "name": "Jack’s Triangle",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "On a 23:00 clock, for total reps:\nMinutes 0:00-2:00\nMax deadlifts (155/225 lb)\nMinutes 2:00-21:00\nAs many rounds and reps as possible in 19 minutes of:\n4 strict pull-ups\n11 box jumps\n13 hand-release push-ups\n23-calorie bike\nMinutes 21:00-23:00\nMax deadlifts\n♀ 155-lb barbell, 24-inch box\n♂ 225-lb barbell, 30-inch box",
+      "fr": "On a 23:00 clock, for total reps:\nMinutes 0:00-2:00\nMax soulevés de terre (155/225 lb)\nMinutes 2:00-21:00\nAMRAP 19 min :\n4 strict tractions\n11 box jumps\n13 pompes hand-release\n23-calorie bike\nMinutes 21:00-23:00\nMax soulevés de terre\nFemmes 155-lb barbell, 24-inch box\nHommes 225-lb barbell, 30-inch box"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "maxim-56",
+    "name": "Maxim 56",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "For time, with a partner:\nBuy-in: Each partner completes a 56-second handstand hold or wall sit\nThen, each athlete completes:\n56 burpees\n56 flutter kicks (4-count)\n56 walking lunges\n56 hand-release push-ups\n56 air squats\nCash out: 5,600-meter run",
+      "fr": "For time, à deux :\nBuy-in: Each partner completes a 56-second handstand hold or wall sit\nPuis, each athlete completes:\n56 burpees\n56 flutter kicks (4-count)\n56 fentes marchées\n56 pompes hand-release\n56 squats\nCash out: 5,600 m de course"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "daniel-ray",
+    "name": "Daniel Ray",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n25-foot double-kettlebell front-rack lunge\n9 strict pull-ups\n50-foot double-kettlebell overhead carry\n16 hand-release push-ups\n75-foot double-kettlebell front-rack carry\n23 air squats\n100-foot double-kettlebell farmers carry\n400-meter run\nIf you have a weight vest or body armor, wear it.\n♀ 35-lb kettlebell\n♂ 53-lb kettlebell",
+      "fr": "5 tours for time :\n25-foot double-kettlebell front-rack lunge\n9 strict tractions\n50-foot double-kettlebell overhead carry\n16 pompes hand-release\n75-foot double-kettlebell front-rack carry\n23 squats\n100-foot double-kettlebell farmers carry\n400 m de course\nSi vous avez un gilet ou un body armor, portez-le.\nFemmes 35-lb kettlebell\nHommes 53-lb kettlebell"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "santora",
+    "name": "Santora",
+    "category": "hero",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for reps of:\n1 minute of squat cleans\n1 minute of 20-foot shuttle sprints (20 feet forward and 20 feet backward = 1 rep)\n1 minute of deadlifts\n1 minute of burpees\n1 minute of jerks\nRest 1 minute between rounds.\nWomen 105-lb squat cleans, 165-lb deadlifts, 105-lb jerks\nMen 155-lb squat cleans, 245-lb deadlifts, 155-lb jerk",
+      "fr": "3 tours, pour les répétitions :\n1 minute de squat cleans\n1 minute de navettes de 20 pieds (20 pieds aller et 20 pieds retour = 1 répétition)\n1 minute de soulevés de terre\n1 minute de burpees\n1 minute de jerks\nRepos de 1 minute entre les tours.\nFemmes squat cleans 105 lb, soulevés de terre 165 lb, jerks 105 lb\nHommes squat cleans 155 lb, soulevés de terre 245 lb, jerk 155 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "ricky",
+    "name": "Ricky",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "Complete as many rounds as possible in 20 minutes of:\n10 pull-ups\n5 dumbbell deadlifts\n8 push presses\nWomen 50-lb dumbbells, 95-lb barbell\nMen 75-lb dumbbells, 135-lb barbell",
+      "fr": "AMRAP 20 min :\n10 tractions\n5 soulevés de terre haltères\n8 push presses\nFemmes haltères de 50 lb, barre de 95 lb\nHommes haltères de 75 lb, barre de 135 lb"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
+  },
+  {
+    "slug": "desforges",
+    "name": "Desforges",
+    "category": "hero",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n12 deadlifts\n20 pull-ups\n12 clean and jerks\n20 knees-to-elbows\nWomen 155-lb deadlifts, 95-lb clean and jerks\nMen 225-lb deadlifts, 135-lb clean and jerks",
+      "fr": "5 tours for time :\n12 soulevés de terre\n20 tractions\n12 épaulés-jetés\n20 knees-to-elbows\nFemmes soulevés de terre 155 lb, épaulés-jetés 95 lb\nHommes soulevés de terre 225 lb, épaulés-jetés 135 lb"
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    }
+  },
+  {
+    "slug": "rahoi",
+    "name": "Rahoi",
+    "category": "hero",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 720
+    },
+    "text": {
+      "en": "Complete as many rounds as possible in 12 minutes of:\n12 box jumps\n6 thrusters\n6 bar-facing burpees\nWomen 20-inch box, 65-lb thrusters\nMen 24-inch box, 95-lb thrusters",
+      "fr": "AMRAP 12 min :\n12 box jumps\n6 thrusters\n6 burpees face à la barre\nFemmes boîte de 20 inch, thrusters 65 lb\nHommes boîte de 24 inch, thrusters 95 lb"
+    },
+    "scaling": {
+      "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
+      "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
+    }
   }
 ]
