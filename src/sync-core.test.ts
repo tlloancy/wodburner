@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { workoutHash } from './hash';
-import { mergePayload, newKey, open, packPayload, parseKey, seal, showKey, vaultId } from './sync-core';
+import { applyFriend, cleanWho, mergePayload, newKey, open, packPayload, parseKey, seal, showKey, tombstoneKey, vaultId } from './sync-core';
 import type { Wod } from './types';
 
 async function wod(name: string, at: string): Promise<Wod> {
@@ -95,10 +95,46 @@ describe('mergePayload', () => {
     const remote = { v: 1 as const, wods: packPayload([], {}).wods, deleted: { nope: 'x', [a.hash]: 12 } as never };
     expect((await mergePayload([a], {}, remote)).wods).toHaveLength(1);
   });
+  it('does not delete a friend copy when ours is deleted', async () => {
+    const mine = await wod('Fran', '2026-01-01T00:00:00.000Z');
+    const theirs = { ...mine, id: crypto.randomUUID(), by: 'ab'.repeat(20), who: 'Alex' };
+    const merged = await mergePayload([mine, theirs], { [mine.hash]: '2026-03-01T00:00:00.000Z' }, null);
+    expect(merged.wods).toEqual([theirs]);
+  });
   it('merges results of the same workout', async () => {
     const a = await wod('Fran', '2026-01-01T00:00:00.000Z');
     const withResult = { ...a, results: [{ at: '2026-01-02T00:00:00.000Z', kind: 'free' as const, value: '4:12' }] };
     const merged = await mergePayload([a], {}, packPayload([withResult], {}));
     expect(merged.wods[0]?.results).toHaveLength(1);
+  });
+});
+
+describe('friend copy', () => {
+  it('adds their workouts under their name and leaves ours in place', async () => {
+    const mine = await wod('Fran', '2026-01-01T00:00:00.000Z');
+    const theirs = await wod('Cindy', '2026-02-01T00:00:00.000Z');
+    const nested = { ...theirs, id: crypto.randomUUID(), name: 'Murph', by: 'cd'.repeat(20), who: 'Sam' };
+    const friend = { id: 'ab'.repeat(20), name: '  Alex  ' };
+    const copy = applyFriend([mine], [theirs, nested], friend, {});
+    expect(copy.added).toBe(1);
+    expect(copy.wods.map((item) => item.name).sort()).toEqual(['Cindy', 'Fran']);
+    expect(copy.wods.find((item) => item.name === 'Cindy')?.who).toBe('Alex');
+    expect(copy.wods.find((item) => item.name === 'Fran')?.by).toBeUndefined();
+    expect(cleanWho('  Alex  ')).toBe('Alex');
+  });
+  it('does not bring back a copy that was deleted here', async () => {
+    const theirs = await wod('Cindy', '2026-02-01T00:00:00.000Z');
+    const id = 'ab'.repeat(20);
+    const copy = applyFriend([], [theirs], { id, name: 'Alex' }, { [tombstoneKey({ hash: theirs.hash, by: id })]: '2026-03-01T00:00:00.000Z' });
+    expect(copy.wods).toHaveLength(0);
+    expect(copy.changed).toBe(false);
+  });
+  it('drops a workout they removed', async () => {
+    const theirs = await wod('Cindy', '2026-02-01T00:00:00.000Z');
+    const id = 'ab'.repeat(20);
+    const kept = { ...theirs, by: id, who: 'Alex' };
+    const copy = applyFriend([kept], [], { id, name: 'Alex' }, {});
+    expect(copy.wods).toHaveLength(0);
+    expect(copy.dropped).toEqual([tombstoneKey(kept)]);
   });
 });

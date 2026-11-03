@@ -236,6 +236,7 @@ html.has-langbar body { padding-bottom: calc(6.5rem + env(safe-area-inset-bottom
 .sync { border: 1px solid var(--line); border-radius: 0.75rem; padding: 0.8rem 1rem; margin: 1rem 0; }
 .sync summary { cursor: pointer; font-weight: 700; }
 .keybox { display: block; padding: 0.8rem; border: 1px dashed var(--line); border-radius: 0.5rem; font-size: 1.05rem; letter-spacing: 0.06em; word-break: break-all; user-select: all; }
+.who { margin: 0.15rem 0 0; color: var(--accent); font-weight: 700; }
 .qr { width: 12rem; margin: 0.75rem 0; }
 .qr svg { display: block; width: 100%; height: auto; }
 .searchbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.6rem; }

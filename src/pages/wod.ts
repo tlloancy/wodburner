@@ -21,6 +21,17 @@ async function openWod(): Promise<void> {
   if (missing) missing.hidden = true;
   panel.hidden = false;
   title.textContent = wod.name || strings.untitled;
+  let who = document.querySelector<HTMLElement>('#wod-who');
+  if (wod.who) {
+    if (!who) {
+      who = document.createElement('p');
+      who.id = 'wod-who';
+      who.className = 'who';
+      title.after(who);
+    }
+    who.hidden = false;
+    who.textContent = wod.who;
+  } else if (who) who.hidden = true;
   text.textContent = wod.text;
   const href = new URL(timerHref(lang, wod.format, wod.timer, wod.name), location.origin);
   href.searchParams.set('wod', wod.id);

@@ -34,8 +34,10 @@ export interface Strings {
     syncLimit: string;
     syncCopied: string;
     syncLinkCopied: string;
-    syncOther: string;
     syncOn: string;
+    friendDone: string;
+    friendNeedName: string;
+    friendNameless: string;
     syncOff: string;
     confirmSyncOff: string;
     countAll: string;

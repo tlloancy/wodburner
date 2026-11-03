@@ -18,6 +18,8 @@ function wod(partial: Partial<Wod> = {}): Wod {
     source: partial.source ?? 'manual',
     hash: partial.hash ?? HASH,
     results: partial.results ?? [],
+    ...(partial.by ? { by: partial.by } : {}),
+    ...(partial.who ? { who: partial.who } : {}),
   };
 }
 
@@ -68,6 +70,15 @@ describe('merge', () => {
     expect(merged.wods[0]?.id).toBe(left.id);
     expect(merged.wods[0]?.createdAt).toBe('2025-01-01T00:00:00.000Z');
     expect(merged.wods[0]?.results.map((result) => result.value)).toEqual(['4:12', '3:58']);
+  });
+
+  it('keeps a friend copy apart from ours when the hash matches', () => {
+    const mine = wod();
+    const theirs = wod({ id: '22222222-2222-4222-8222-222222222222', by: 'a'.repeat(40), who: 'Alex' });
+    const merged = mergeByHash([mine], [theirs]);
+    expect(merged.added).toBe(1);
+    expect(merged.wods).toHaveLength(2);
+    expect(merged.wods.find((item) => item.by)?.who).toBe('Alex');
   });
 
   it('recomputes the hash on import', async () => {

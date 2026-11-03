@@ -116,7 +116,9 @@ export function parseWod(value: unknown): Wod {
   if (typeof value.source !== 'string' || !SOURCES.includes(value.source as WodSource)) throw new DataError('invalid-wod');
   if (typeof value.hash !== 'string' || !/^[0-9a-f]{64}$/.test(value.hash)) throw new DataError('invalid-wod');
   if (!Array.isArray(value.results) || value.results.length > 500) throw new DataError('invalid-wod');
-  return {
+  if (value.by !== undefined && (typeof value.by !== 'string' || !/^[0-9a-f]{40}$/.test(value.by))) throw new DataError('invalid-wod');
+  if (value.who !== undefined && (typeof value.who !== 'string' || value.who.trim().length === 0 || value.who.trim().length > 40)) throw new DataError('invalid-wod');
+  const wod: Wod = {
     id: value.id,
     name: value.name,
     format: value.format as Format,
@@ -127,6 +129,9 @@ export function parseWod(value: unknown): Wod {
     hash: value.hash,
     results: value.results.map(parseResult),
   };
+  if (typeof value.by === 'string') wod.by = value.by;
+  if (typeof value.who === 'string') wod.who = value.who.trim();
+  return wod;
 }
 
 export interface ExportFile {

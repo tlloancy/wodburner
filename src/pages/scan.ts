@@ -237,7 +237,7 @@ async function save(form: HTMLFormElement, action: 'save' | 'launch'): Promise<v
   const text = String(data.get('text') ?? '');
   const timer = readTimer(data, format);
   const hash = await workoutHash(name, format, text);
-  const existing = (await listWods()).find((wod) => wod.hash === hash);
+  const existing = (await listWods()).find((wod) => !wod.by && wod.hash === hash);
   let wod: Wod;
   if (existing) wod = existing;
   else {

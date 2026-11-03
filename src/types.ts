@@ -31,6 +31,9 @@ export interface Wod {
   source: WodSource;
   hash: string;
   results: Result[];
+  // Present when the workout was copied from someone else's backup. It stays apart from ours, even with the same hash.
+  by?: string;
+  who?: string;
 }
 
 export type BoardRole = 'skill' | 'metcon';

@@ -18,7 +18,7 @@ button?.addEventListener('click', () => {
       const text = (document.querySelector('#hero-text')?.textContent || '').trim();
       const timer = parseTimer(JSON.parse(button.dataset.timer || '{}') as unknown);
       const hash = await workoutHash(name, format, text);
-      const existing = (await listWods()).find((wod) => wod.hash === hash);
+      const existing = (await listWods()).find((wod) => !wod.by && wod.hash === hash);
       if (existing) {
         if (status) status.textContent = strings.hero.duplicate;
         return;

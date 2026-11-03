@@ -366,7 +366,7 @@ async function saveResult(view: TimerView): Promise<void> {
   try {
     if (wodId) {
       const existing = await getWod(wodId);
-      if (existing) {
+      if (existing && !existing.by) {
         existing.results.push(result);
         await putWod(existing);
         saveStatus.textContent = strings.timer.saved;
@@ -374,7 +374,7 @@ async function saveResult(view: TimerView): Promise<void> {
       }
     }
     const hash = await workoutHash(name, format, text);
-    const same = (await listWods()).find((wod) => wod.hash === hash);
+    const same = (await listWods()).find((wod) => !wod.by && wod.hash === hash);
     if (same) {
       same.results.push(result);
       await putWod(same);

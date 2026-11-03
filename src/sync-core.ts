@@ -13,8 +13,9 @@ export const MAX_BLOB = 900_000;
 export interface Payload {
   v: 1;
   wods: unknown;
-  // hash of a deleted workout -> when it was deleted
+  // hash of a deleted workout -> when it was deleted. A friend's copy uses `${by}:${hash}`.
   deleted: Record<string, string>;
+  who?: string;
 }
 
 export function newKey(bytes: Uint8Array = crypto.getRandomValues(new Uint8Array(20))): string {
@@ -86,17 +87,78 @@ export async function open(key: string, blob: string): Promise<Payload> {
   return value as Payload;
 }
 
+const TOMBSTONE = /^(?:[0-9a-f]{40}:)?[0-9a-f]{64}$/;
+
+export function cleanWho(value: unknown): string {
+  if (typeof value !== 'string') return '';
+  return value.replace(/\s+/g, ' ').trim().slice(0, 40);
+}
+
+export function tombstoneKey(wod: { hash: string; by?: string }): string {
+  return wod.by ? `${wod.by}:${wod.hash}` : wod.hash;
+}
+
 export function cleanDeleted(value: unknown): Record<string, string> {
   const out: Record<string, string> = {};
   if (typeof value !== 'object' || value === null) return out;
   for (const [hash, when] of Object.entries(value)) {
-    if (/^[0-9a-f]{64}$/.test(hash) && typeof when === 'string' && !Number.isNaN(Date.parse(when))) out[hash] = when;
+    if (TOMBSTONE.test(hash) && typeof when === 'string' && !Number.isNaN(Date.parse(when))) out[hash] = when;
   }
   return out;
 }
 
-export function packPayload(wods: Wod[], deleted: Record<string, string>): Payload {
-  return { v: 1, wods: exportDocument(wods), deleted };
+export function packPayload(wods: Wod[], deleted: Record<string, string>, who = ''): Payload {
+  const payload: Payload = { v: 1, wods: exportDocument(wods), deleted };
+  const name = cleanWho(who);
+  if (name) payload.who = name;
+  return payload;
+}
+
+export interface FriendCopy {
+  wods: Wod[];
+  added: number;
+  dropped: string[];
+  changed: boolean;
+}
+
+// Copies someone else's own workouts next to ours. Their copies of other people are left out.
+// A copy we deleted stays deleted. A workout they removed is dropped here too.
+export function applyFriend(local: Wod[], remote: Wod[], friend: { id: string; name: string }, deleted: Record<string, string>): FriendCopy {
+  const name = cleanWho(friend.name);
+  if (!/^[0-9a-f]{40}$/.test(friend.id) || !name) throw new Error('friend');
+  const incoming = new Map<string, Wod>();
+  for (const wod of remote) {
+    if (wod.by || deleted[`${friend.id}:${wod.hash}`]) continue;
+    incoming.set(wod.hash, wod);
+  }
+  const wods: Wod[] = [];
+  const seen = new Set<string>();
+  const dropped: string[] = [];
+  let added = 0;
+  let changed = false;
+  for (const wod of local) {
+    if (wod.by !== friend.id) {
+      wods.push(wod);
+      continue;
+    }
+    const fresh = incoming.get(wod.hash);
+    if (!fresh) {
+      dropped.push(`${friend.id}:${wod.hash}`);
+      changed = true;
+      continue;
+    }
+    seen.add(wod.hash);
+    const next: Wod = { ...fresh, id: wod.id, by: friend.id, who: name, timer: { ...fresh.timer }, results: fresh.results.map((result) => ({ ...result })) };
+    if (next.who !== wod.who || next.name !== wod.name || next.text !== wod.text || next.format !== wod.format || JSON.stringify(next.timer) !== JSON.stringify(wod.timer) || JSON.stringify(next.results) !== JSON.stringify(wod.results)) changed = true;
+    wods.push(next);
+  }
+  for (const fresh of incoming.values()) {
+    if (seen.has(fresh.hash)) continue;
+    wods.push({ ...fresh, id: crypto.randomUUID(), by: friend.id, who: name, timer: { ...fresh.timer }, results: fresh.results.map((result) => ({ ...result })) });
+    added += 1;
+    changed = true;
+  }
+  return { wods, added, dropped, changed };
 }
 
 export interface Merged {
@@ -116,6 +178,9 @@ export async function mergePayload(local: Wod[], localDeleted: Record<string, st
     wods = merged.wods;
     added = merged.added;
   }
-  const kept = wods.filter((wod) => !deleted[wod.hash] || wod.createdAt > (deleted[wod.hash] as string));
+  const kept = wods.filter((wod) => {
+    const when = deleted[tombstoneKey(wod)];
+    return !when || wod.createdAt > when;
+  });
   return { wods: kept, deleted, added };
 }

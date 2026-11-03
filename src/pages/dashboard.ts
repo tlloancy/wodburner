@@ -8,7 +8,7 @@ import { qrModules } from '../qr';
 import { buildIndex, matchRanges, parseQuery, search, sortHits, type Indexed, type SortMode } from '../search';
 import * as sync from '../sync';
 import { SyncFailure } from '../sync';
-import { parseKey } from '../sync-core';
+import { parseKey, tombstoneKey } from '../sync-core';
 import { timerHref } from '../timer-link';
 import { exportDocument, importDocument } from '../transfer';
 import type { Format, Result, TimerConfig, Wod } from '../types';
@@ -168,7 +168,7 @@ async function draw(): Promise<void> {
     return;
   }
   total = wods.length;
-  index = buildIndex(wods, (w) => ({ name: w.name || strings.untitled, text: w.text, meta: `${strings.formats[w.format]} ${w.results.map((r) => `${r.value} ${r.note ?? ''}`).join(' ')}` }));
+  index = buildIndex(wods, (w) => ({ name: w.name || strings.untitled, text: w.text, meta: `${w.who ?? ''} ${strings.formats[w.format]} ${w.results.map((r) => `${r.value} ${r.note ?? ''}`).join(' ')}` }));
   if (finder) finder.hidden = total < 2;
   drawChips(wods);
   render();
@@ -200,6 +200,11 @@ function render(): void {
     const shownName = wod.name || strings.untitled;
     highlight(open, shownName, matchRanges(shownName, query));
     title.append(open);
+    const who = wod.who ? document.createElement('p') : null;
+    if (who && wod.who) {
+      who.className = 'who';
+      who.textContent = wod.who;
+    }
     const meta = document.createElement('p');
     meta.className = 'meta';
     const time = document.createElement('time');
@@ -261,7 +266,10 @@ function render(): void {
       if (noteValue && result.value !== noteValue) result.note = noteValue;
       void saveResult(wod.id, result);
     });
-    item.append(title, meta, text, results, actions, resultForm);
+    item.append(title);
+    if (who) item.append(who);
+    item.append(meta, text, results, actions);
+    if (!wod.by) item.append(resultForm);
     list.append(item);
   }
 }
@@ -302,7 +310,7 @@ async function removeWod(wod: Wod): Promise<void> {
   const ok = await ask(fill(strings.dashboard.confirmDelete, { name: wod.name || strings.untitled }));
   if (!ok) return;
   await deleteWod(wod.id);
-  await sync.forgetDeleted(wod.hash);
+  await sync.forgetDeleted(tombstoneKey(wod));
   await draw();
   quietSync();
 }
@@ -323,7 +331,7 @@ form?.addEventListener('submit', (event) => {
     }
     const timer = readConfig(data, format);
     const hash = await workoutHash(name, format, text);
-    const existing = (await listWods()).find((wod) => wod.hash === hash);
+    const existing = (await listWods()).find((wod) => !wod.by && wod.hash === hash);
     if (existing) {
       sayForm(strings.dashboard.duplicate);
       return;
@@ -439,7 +447,7 @@ function syncSay(message: string): void {
 
 function syncError(error: unknown): string {
   const code = error instanceof SyncFailure ? error.code : 'network';
-  return code === 'notfound' ? strings.dashboard.syncNotFound : code === 'badkey' ? strings.dashboard.syncBadKey : code === 'limit' ? strings.dashboard.syncLimit : strings.dashboard.syncNetwork;
+  return code === 'notfound' ? strings.dashboard.syncNotFound : code === 'badkey' ? strings.dashboard.syncBadKey : code === 'limit' ? strings.dashboard.syncLimit : code === 'noname' ? strings.dashboard.friendNameless : strings.dashboard.syncNetwork;
 }
 
 function deviceLink(key: string): string {
@@ -481,6 +489,8 @@ function showSync(): void {
   if (syncOff) syncOff.hidden = key !== null;
   if (syncLive) syncLive.hidden = key === null;
   if (syncKey) syncKey.textContent = key ? sync.display(key) : '';
+  const nameInput = document.querySelector<HTMLInputElement>('#sync-name');
+  if (nameInput && document.activeElement !== nameInput) nameInput.value = sync.currentWho();
   if (key) drawQr(key);
 }
 
@@ -525,6 +535,12 @@ document.querySelector('#sync-copy')?.addEventListener('click', () => {
   if (!key) return;
   void navigator.clipboard?.writeText(sync.display(key)).then(() => syncSay(strings.dashboard.syncCopied), () => undefined);
 });
+document.querySelector('#sync-name')?.addEventListener('change', () => {
+  const input = document.querySelector<HTMLInputElement>('#sync-name');
+  sync.setWho(input?.value ?? '');
+  if (input) input.value = sync.currentWho();
+  quietSync();
+});
 document.querySelector('#sync-share')?.addEventListener('click', () => {
   const key = sync.savedKey();
   if (!key) return;
@@ -544,6 +560,44 @@ document.querySelector('#sync-stop')?.addEventListener('click', () => {
   })();
 });
 
+async function pullFriends(): Promise<void> {
+  let changed = false;
+  for (const friendKey of sync.savedFriends()) {
+    try {
+      const report = await sync.importFriend(friendKey);
+      if (report.changed) changed = true;
+    } catch {
+      // One friend offline keeps the last copy.
+    }
+  }
+  if (!changed) return;
+  await draw();
+  quietSync();
+}
+
+async function runFriend(friendKey: string): Promise<void> {
+  try {
+    let report: Awaited<ReturnType<typeof sync.importFriend>>;
+    try {
+      report = await sync.importFriend(friendKey);
+    } catch (error) {
+      if (!(error instanceof SyncFailure) || error.code !== 'noname') throw error;
+      const typed = window.prompt(strings.dashboard.friendNeedName) ?? '';
+      if (!typed.trim()) {
+        syncSay(strings.dashboard.friendNameless);
+        return;
+      }
+      report = await sync.importFriend(friendKey, typed);
+    }
+    syncSay(fill(strings.dashboard.friendDone, { name: report.name, added: report.added, total: report.total }));
+    await draw();
+    quietSync();
+  } catch (error) {
+    syncSay(syncError(error));
+  }
+  showSync();
+}
+
 const incoming = linkedKey();
 const incomingKey = incoming ? parseKey(incoming) : null;
 showSync();
@@ -552,10 +606,15 @@ void draw();
   const key = sync.savedKey();
   if (incoming && !incomingKey) syncSay(strings.dashboard.syncBadKey);
   else if (incomingKey && key && incomingKey !== key) {
-    syncSay(strings.dashboard.syncOther);
-    void runSync(() => sync.syncNow(key));
+    document.querySelector('#sync')?.setAttribute('open', '');
+    void runFriend(incomingKey);
   } else if (incomingKey && !key) {
     document.querySelector('#sync')?.setAttribute('open', '');
     void runSync(() => sync.join(incomingKey));
-  } else if (key) void runSync(() => sync.syncNow(key));
+  } else if (key) {
+    void (async () => {
+      await runSync(() => sync.syncNow(key));
+      await pullFriends();
+    })();
+  }
 }

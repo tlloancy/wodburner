@@ -41,8 +41,10 @@
       "syncLimit": "The backup is too large.",
       "syncCopied": "Key copied.",
       "syncLinkCopied": "Link copied.",
-      "syncOther": "This device already has a different key. It was left as is.",
       "syncOn": "Sync is on. Send the code to your other devices.",
+      "friendDone": "{name}'s history: {added} new, {total} in all.",
+      "friendNeedName": "What is your friend's name?",
+      "friendNameless": "A name is required so their workouts stay apart from yours.",
       "syncOff": "Sync is off, copy deleted.",
       "confirmSyncOff": "Turn off sync and delete the server copy? Your WODs stay on this device.",
       "countAll": "{n} WODs",
@@ -196,6 +198,8 @@
       "syncHave": "I already have a key",
       "syncRestore": "Get my WODs",
       "syncKeyLabel": "Your secret key",
+      "syncName": "Your name",
+      "syncNameHint": "A friend who scans your code sees this name on your workouts.",
       "syncCopy": "Copy key",
       "syncShare": "Send to another device",
       "syncScan": "The other phone scans it with its camera: history opens and the workouts come in.",
@@ -300,7 +304,7 @@
         {
           "h": "What stays on this device",
           "p": [
-            "Workouts, results, sound and volume are stored in this browser (IndexedDB). The language you pick is kept in the browser’s local storage. The JSON export copies them. If you turn on sync, a copy encrypted in your browser with a secret key we never see is kept on our Cloudflare servers, with no name or email; turning sync off deletes it. Erase everything removes them from the device. That is the only action that stands in for deleting an account, because there is no account."
+            "Workouts, results, sound and volume are stored in this browser (IndexedDB). The language you pick is kept in the browser’s local storage. The JSON export copies them. If you turn on sync, a copy encrypted in your browser with a secret key we never see is kept on our Cloudflare servers, with no name or email; turning sync off deletes it. Scanning a friend’s key copies their history into yours, with their name, and writes nothing into their backup. Erase everything removes them from the device. That is the only action that stands in for deleting an account, because there is no account."
           ]
         },
         {

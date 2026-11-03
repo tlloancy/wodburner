@@ -26,7 +26,7 @@ Les adresses de l’ancien site sans langue vont vers l’anglais : `/timers`, `
 
 ## Données
 
-`Format`, `TimerConfig`, `Result` et `Wod` sont dans `src/types.ts`. Le hash est le SHA-256 de name + format + text normalisés. IndexedDB `wodburner`, stores `wods` (clé `id`, index `createdAt`) et `meta`. `navigator.storage.persist()` après un enregistrement. Export `{version, exportedAt, wods}`. Import version 1, fusion par hash. La photo n’est pas stockée.
+`Format`, `TimerConfig`, `Result` et `Wod` sont dans `src/types.ts`. Le hash est le SHA-256 de name + format + text normalisés. IndexedDB `wodburner`, stores `wods` (clé `id`, index `createdAt`) et `meta`. `navigator.storage.persist()` après un enregistrement. Export `{version, exportedAt, wods}`. Import version 1, fusion par hash pour les WODs à soi. Une copie reçue d’un copain a `by` et `who` : elle ne fusionne pas avec un WOD à soi du même hash. La photo n’est pas stockée.
 
 ## Scan
 

@@ -41,8 +41,10 @@
       "syncLimit": "La sauvegarde est trop volumineuse.",
       "syncCopied": "Clé copiée.",
       "syncLinkCopied": "Lien copié.",
-      "syncOther": "Cet appareil a déjà une autre clé. Elle n’a pas été changée.",
       "syncOn": "Synchro activée. Envoyez le code à vos autres appareils.",
+      "friendDone": "Historique de {name} : {added} nouveaux, {total} au total.",
+      "friendNeedName": "Comment s’appelle ce copain ?",
+      "friendNameless": "Il faut un nom pour séparer ses WODs des vôtres.",
       "syncOff": "Synchro désactivée, copie effacée.",
       "confirmSyncOff": "Désactiver la synchro et effacer la copie du serveur ? Vos WODs restent sur cet appareil.",
       "countAll": "{n} WODs",
@@ -196,6 +198,8 @@
       "syncHave": "J’ai déjà une clé",
       "syncRestore": "Récupérer mes WODs",
       "syncKeyLabel": "Votre clé secrète",
+      "syncName": "Votre nom",
+      "syncNameHint": "Un copain qui scanne votre code voit ce nom sur vos WODs.",
       "syncCopy": "Copier la clé",
       "syncShare": "Envoyer à un autre appareil",
       "syncScan": "L’autre téléphone le scanne avec son appareil photo : l’historique s’ouvre et les WODs arrivent.",
@@ -300,7 +304,7 @@
         {
           "h": "Ce qui reste sur cet appareil",
           "p": [
-            "Les WODs, les résultats, le son et le volume sont enregistrés dans ce navigateur (IndexedDB). La langue que vous choisissez est gardée dans le stockage local du navigateur. L’export JSON vous permet de les copier. Si vous activez la synchro, une copie chiffrée dans votre navigateur par une clé secrète que nous ne connaissons pas est conservée sur nos serveurs Cloudflare, sans nom ni e-mail ; la désactiver l’efface. Tout effacer retire ces données de l’appareil. C’est le seul geste qui correspond à une suppression de compte, puisqu’il n’y a pas de compte."
+            "Les WODs, les résultats, le son et le volume sont enregistrés dans ce navigateur (IndexedDB). La langue que vous choisissez est gardée dans le stockage local du navigateur. L’export JSON vous permet de les copier. Si vous activez la synchro, une copie chiffrée dans votre navigateur par une clé secrète que nous ne connaissons pas est conservée sur nos serveurs Cloudflare, sans nom ni e-mail ; la désactiver l’efface. Scanner la clé d’un copain copie son historique dans le vôtre, avec son nom, et n’écrit rien dans sa sauvegarde. Tout effacer retire ces données de l’appareil. C’est le seul geste qui correspond à une suppression de compte, puisqu’il n’y a pas de compte."
           ]
         },
         {
