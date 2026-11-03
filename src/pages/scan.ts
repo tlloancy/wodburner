@@ -19,7 +19,7 @@ const cameraInput = document.querySelector<HTMLInputElement>('#camera');
 const drop = document.querySelector<HTMLElement>('#drop');
 const warnings = document.querySelector<HTMLElement>('#warnings');
 const confidence = document.querySelector<HTMLElement>('#confidence');
-const widget = document.querySelector<HTMLElement>('#turnstile');
+const widget = document.querySelector<HTMLElement>('#abuse-check');
 const siteKey = document.body.dataset.turnstile || '';
 const endpoint = `${document.body.dataset.worker || ''}/scan`;
 
@@ -51,8 +51,10 @@ interface TurnstileApi {
 }
 
 function turnstileApi(): TurnstileApi | null {
-  const host = window as unknown as { turnstile?: TurnstileApi };
-  return host.turnstile ?? null;
+  const host = window as unknown as { turnstile?: Partial<TurnstileApi> };
+  const api = host.turnstile;
+  if (!api || typeof api.render !== 'function' || typeof api.getResponse !== 'function' || typeof api.reset !== 'function') return null;
+  return api as TurnstileApi;
 }
 
 async function ensureTurnstile(): Promise<void> {

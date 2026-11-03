@@ -183,7 +183,7 @@ textarea { min-height: 9rem; resize: vertical; }
   background: var(--raise);
 }
 #pick .actions { display: grid; grid-template-columns: 1fr 1fr; }
-#turnstile { min-height: 65px; margin: 0.4rem 0 0.8rem; }
+#abuse-check { min-height: 65px; margin: 0.4rem 0 0.8rem; }
 dialog {
   background: var(--raise);
   color: var(--fg);
