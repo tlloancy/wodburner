@@ -27,6 +27,24 @@ export interface Strings {
     announceHitsOne: string;
   };
   dashboard: {
+    syncDone: string;
+    syncNetwork: string;
+    syncNotFound: string;
+    syncBadKey: string;
+    syncLimit: string;
+    syncCopied: string;
+    syncOn: string;
+    syncOff: string;
+    confirmSyncOff: string;
+    countAll: string;
+    countOne: string;
+    countFiltered: string;
+    noMatch: string;
+    more: string;
+    sortRecent: string;
+    sortName: string;
+    chipAll: string;
+    chipResult: string;
     duplicate: string;
     imported: string;
     importError: string;

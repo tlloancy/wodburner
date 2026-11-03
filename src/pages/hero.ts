@@ -1,12 +1,11 @@
 import strings from '@i18n';
-import { listWods, putWod, setMeta } from '../db';
+import { listWods, putWod } from '../db';
 import { workoutHash } from '../hash';
 import { registerSW } from '../pwa';
 import type { Format, Wod } from '../types';
 import { parseTimer } from '../validate';
 
 registerSW();
-void setMeta('lang', document.body.dataset.lang === 'fr' ? 'fr' : 'en').catch(() => undefined);
 
 const button = document.querySelector<HTMLButtonElement>('#add-hero');
 const status = document.querySelector<HTMLElement>('#add-status');

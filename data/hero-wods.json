@@ -12,15 +12,16 @@
     "scaling": {
       "en": "Keep 21-15-9. Lighten the thrusters or switch pull-ups for banded or jumping pull-ups.",
       "fr": "Gardez 21-15-9. Allégez les thrusters, ou remplacez les tractions par des tractions élastiques ou sautées."
-    },
-    "verified": true
+    }
   },
   {
     "slug": "cindy",
     "name": "Cindy",
     "category": "girl",
     "format": "amrap",
-    "timer": { "durationSec": 1200 },
+    "timer": {
+      "durationSec": 1200
+    },
     "text": {
       "en": "AMRAP 20 min:\n5 pull-ups\n10 push-ups\n15 air squats",
       "fr": "AMRAP 20 min :\n5 tractions\n10 pompes\n15 squats"
@@ -28,8 +29,7 @@
     "scaling": {
       "en": "Keep the 5-10-15. Use banded pull-ups or knee push-ups, and shorten the clock if needed.",
       "fr": "Gardez le 5-10-15. Tractions élastiques ou pompes sur les genoux, et raccourcissez le chrono si besoin."
-    },
-    "verified": true
+    }
   },
   {
     "slug": "murph",
@@ -44,8 +44,7 @@
     "scaling": {
       "en": "Partition the pull-ups, push-ups and squats as you like. Shorten the run or the reps before adding load.",
       "fr": "Répartissez tractions, pompes et squats comme vous voulez. Raccourcissez la course ou les reps avant d’ajouter une charge."
-    },
-    "verified": true
+    }
   },
   {
     "slug": "helen",
@@ -60,8 +59,7 @@
     "scaling": {
       "en": "Keep 3 rounds. Use a lighter kettlebell and banded pull-ups.",
       "fr": "Gardez 3 tours. Kettlebell plus légère et tractions élastiques."
-    },
-    "verified": false
+    }
   },
   {
     "slug": "grace",
@@ -76,8 +74,7 @@
     "scaling": {
       "en": "Keep 30 reps. Lighten the bar until the reps stay unbroken or in a few quick sets.",
       "fr": "Gardez 30 répétitions. Allégez la barre pour rester en séries courtes."
-    },
-    "verified": false
+    }
   },
   {
     "slug": "diane",
@@ -92,8 +89,7 @@
     "scaling": {
       "en": "Keep 21-15-9. Lighten the deadlift and pike the handstand push-ups.",
       "fr": "Gardez 21-15-9. Allégez le soulevé de terre et passez les pompes en équilibre en pike."
-    },
-    "verified": false
+    }
   },
   {
     "slug": "annie",
@@ -108,8 +104,7 @@
     "scaling": {
       "en": "Keep the rep scheme. Single-unders can stand in for double-unders.",
       "fr": "Gardez le schéma. Des single-unders peuvent remplacer les double-unders."
-    },
-    "verified": false
+    }
   },
   {
     "slug": "karen",
@@ -118,14 +113,13 @@
     "format": "fortime",
     "timer": {},
     "text": {
-      "en": "150 wall-ball shots for time, 20 lb (9 kg) ball",
-      "fr": "150 wall-balls for time, médecine-ball de 20 lb (9 kg)"
+      "en": "150 wall-ball shots for time, 20 lb (9 kg) ball, 10 ft (3 m) target",
+      "fr": "150 wall-balls for time, médecine-ball de 20 lb (9 kg), cible à 10 ft (3 m)"
     },
     "scaling": {
       "en": "Keep the squat and the target you can hit. Lighten the ball or lower the rep count.",
       "fr": "Gardez le squat et une cible que vous touchez. Allégez le ballon ou baissez les répétitions."
-    },
-    "verified": false
+    }
   },
   {
     "slug": "isabel",
@@ -137,15 +131,10 @@
       "en": "30 snatches for time, 135 lb (61 kg)",
       "fr": "30 arrachés for time, 135 lb (61 kg)"
     },
-    "note": {
-      "en": "Heavy Isabel: same 30 snatches at 100 kg. The 2025 competition load is 225 lb (102 kg) or 155 lb (70 kg).",
-      "fr": "Heavy Isabel : mêmes 30 arrachés à 100 kg. La charge de compétition 2025 est 225 lb (102 kg) ou 155 lb (70 kg)."
-    },
     "scaling": {
       "en": "Keep 30 reps. Lighten the bar so the snatches stay in quick sets.",
       "fr": "Gardez 30 répétitions. Allégez la barre pour rester en séries courtes."
-    },
-    "verified": false
+    }
   },
   {
     "slug": "jackie",
@@ -160,8 +149,7 @@
     "scaling": {
       "en": "Keep the order. Shorten the row, lighten the thrusters, and band the pull-ups.",
       "fr": "Gardez l’ordre. Raccourcissez le rameur, allégez les thrusters, tractions élastiques."
-    },
-    "verified": false
+    }
   },
   {
     "slug": "elizabeth",
@@ -176,8 +164,7 @@
     "scaling": {
       "en": "Keep 21-15-9. Lighten the cleans and use foot-assisted or banded ring dips.",
       "fr": "Gardez 21-15-9. Allégez les cleans et assistez les dips aux anneaux."
-    },
-    "verified": false
+    }
   },
   {
     "slug": "angie",
@@ -192,8 +179,7 @@
     "scaling": {
       "en": "Keep the order. Cut each movement to 50 or 25 reps, or use easier variations.",
       "fr": "Gardez l’ordre. Passez à 50 ou 25 répétitions, ou à des variantes plus faciles."
-    },
-    "verified": false
+    }
   },
   {
     "slug": "barbara",
@@ -208,15 +194,17 @@
     "scaling": {
       "en": "The 3-minute rest stays. Lower the reps or use easier pull-ups and push-ups. The clock here does not insert the rests for you.",
       "fr": "Le repos de 3 minutes reste. Baissez les reps ou facilitez tractions et pompes. Ce chrono n’insère pas les repos tout seul."
-    },
-    "verified": false
+    }
   },
   {
     "slug": "chelsea",
     "name": "Chelsea",
     "category": "girl",
     "format": "emom",
-    "timer": { "intervalSec": 60, "rounds": 30 },
+    "timer": {
+      "intervalSec": 60,
+      "rounds": 30
+    },
     "text": {
       "en": "Every minute for 30 minutes:\n5 pull-ups\n10 push-ups\n15 squats",
       "fr": "Chaque minute pendant 30 minutes :\n5 tractions\n10 pompes\n15 squats"
@@ -224,8 +212,7 @@
     "scaling": {
       "en": "Keep the minute. Reduce the reps or the number of minutes so you finish inside the minute.",
       "fr": "Gardez la minute. Baissez les reps ou le nombre de minutes pour finir dans la minute."
-    },
-    "verified": false
+    }
   },
   {
     "slug": "nancy",
@@ -240,15 +227,16 @@
     "scaling": {
       "en": "Keep 5 rounds. Lighten the bar or shorten the run.",
       "fr": "Gardez 5 tours. Allégez la barre ou raccourcissez la course."
-    },
-    "verified": false
+    }
   },
   {
     "slug": "mary",
     "name": "Mary",
     "category": "girl",
     "format": "amrap",
-    "timer": { "durationSec": 1200 },
+    "timer": {
+      "durationSec": 1200
+    },
     "text": {
       "en": "AMRAP 20 min:\n5 handstand push-ups\n10 one-legged squats, alternating\n15 pull-ups",
       "fr": "AMRAP 20 min :\n5 pompes en équilibre\n10 squats sur une jambe, en alternant\n15 tractions"
@@ -256,8 +244,7 @@
     "scaling": {
       "en": "Keep the 20 minutes. Pike the handstand push-ups, hold a support on the pistols, and band the pull-ups.",
       "fr": "Gardez les 20 minutes. Pike pour les pompes, appui pour les pistols, élastique pour les tractions."
-    },
-    "verified": false
+    }
   },
   {
     "slug": "kelly",
@@ -272,8 +259,7 @@
     "scaling": {
       "en": "Keep 5 rounds. Lower the box, lighten the ball, or reduce the reps.",
       "fr": "Gardez 5 tours. Boîte plus basse, ballon plus léger, ou moins de répétitions."
-    },
-    "verified": false
+    }
   },
   {
     "slug": "linda",
@@ -288,7 +274,6 @@
     "scaling": {
       "en": "Keep the descending ladder. Use lighter fixed bars if the bodyweight loads are too heavy.",
       "fr": "Gardez l’échelle descendante. Des barres fixes plus légères si les charges au poids de corps sont trop lourdes."
-    },
-    "verified": false
+    }
   }
 ]

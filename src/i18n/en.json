@@ -34,6 +34,24 @@
       "announceHitsOne": "{n} round"
     },
     "dashboard": {
+      "syncDone": "Synced: {total} WODs ({added} received).",
+      "syncNetwork": "Cannot reach the server. Try again.",
+      "syncNotFound": "No backup for this key. Check it.",
+      "syncBadKey": "Invalid key or unreadable backup.",
+      "syncLimit": "The backup is too large.",
+      "syncCopied": "Key copied.",
+      "syncOn": "Sync is on. Write your key down.",
+      "syncOff": "Sync is off, copy deleted.",
+      "confirmSyncOff": "Turn off sync and delete the server copy? Your WODs stay on this device.",
+      "countAll": "{n} WODs",
+      "countOne": "1 WOD",
+      "countFiltered": "{n} of {total}",
+      "noMatch": "No WOD matches.",
+      "more": "Show more",
+      "sortRecent": "Recent",
+      "sortName": "A → Z",
+      "chipAll": "All",
+      "chipResult": "With a result",
       "duplicate": "This workout is already in your history.",
       "imported": "Import: {added} added, {merged} merged.",
       "importError": "Unreadable file. Use a WODBurner version 1 export.",
@@ -87,6 +105,7 @@
       "lead": "Choose a language. The timer stays on this device."
     },
     "home": {
+      "searchGo": "Search",
       "title": "WODBurner — CrossFit timer",
       "description": "For Time, AMRAP, EMOM and Tabata timer, benchmark workouts, and whiteboard scan. No account. Stored on this device.",
       "h1": "The timer, ready.",
@@ -169,6 +188,21 @@
       "save": "Save"
     },
     "dashboard": {
+      "syncTitle": "Sync between devices",
+      "syncIntro": "No account, no password. A secret key made here encrypts your WODs before they are sent: the server cannot read them. Keep the key. It is the only way to get them back.",
+      "syncEnable": "Turn on sync",
+      "syncHave": "I already have a key",
+      "syncRestore": "Get my WODs",
+      "syncKeyLabel": "Your secret key",
+      "syncCopy": "Copy key",
+      "syncNow": "Sync now",
+      "syncDisable": "Turn off and delete the copy",
+      "syncWarn": "Write it down somewhere else. If it is lost it cannot be recovered. Anyone who knows it can read the backup.",
+      "searchLabel": "Search my WODs",
+      "searchPlaceholder": "Name, movement, weight… (press /)",
+      "clearSearch": "Clear",
+      "sortLabel": "Sort",
+      "filters": "Filters",
       "title": "History — WODBurner",
       "description": "Workout history stored on this device.",
       "h1": "History",
@@ -218,7 +252,7 @@
       "format": "Format",
       "text": "Text",
       "confidence": "Confidence",
-      "warnings": "Check this"
+      "warnings": "Unclear parts"
     },
     "wod": {
       "title": "Saved workout — WODBurner",
@@ -262,7 +296,7 @@
         {
           "h": "What stays on this device",
           "p": [
-            "Workouts, results, language, sound and volume are stored in this browser (IndexedDB). The JSON export copies them. Erase everything removes them from the device. That is the only action that stands in for deleting an account, because there is no account."
+            "Workouts, results, sound and volume are stored in this browser (IndexedDB). The language you pick is kept in the browser’s local storage. The JSON export copies them. If you turn on sync, a copy encrypted in your browser with a secret key we never see is kept on our Cloudflare servers, with no name or email; turning sync off deletes it. Erase everything removes them from the device. That is the only action that stands in for deleting an account, because there is no account."
           ]
         },
         {

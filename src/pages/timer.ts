@@ -251,6 +251,7 @@ function paint(view: TimerView): void {
   label.textContent = phaseLabel(view);
   sub.textContent = subLabel(view);
   document.body.dataset.segment = view.phase === 'idle' ? '' : view.segmentKind;
+  document.body.classList.toggle('is-running', view.phase === 'prep' || view.phase === 'running' || view.phase === 'paused');
   startBtn.hidden = view.phase !== 'idle';
   pauseBtn.hidden = view.phase !== 'running' && view.phase !== 'prep' && view.phase !== 'paused';
   pauseBtn.textContent = view.phase === 'paused' ? strings.timer.resume : strings.timer.pause;

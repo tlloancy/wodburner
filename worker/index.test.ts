@@ -11,6 +11,9 @@ function memory() {
     async put(key: string, value: string) {
       map.set(key, value);
     },
+    async delete(key: string) {
+      map.delete(key);
+    },
   };
 }
 
@@ -23,6 +26,7 @@ function env(over: Partial<Env> = {}): Env {
     ALLOWED_ORIGIN: 'https://wodburner.app',
     GEMINI_API_KEY: 'test-key',
     TURNSTILE_SECRET: 'turnstile-secret',
+    IP_HASH_SALT: 'test-salt-0123456789abcdef',
     GEMINI_MODEL: 'gemini-2.5-flash',
     KV: memory(),
     ...over,
@@ -146,6 +150,22 @@ describe('scan worker', () => {
     expect(err).not.toHaveBeenCalled();
   });
 
+  it('refuses to run without a real IP salt', async () => {
+    installFetch();
+    const response = await handleRequest(post(jpeg(40)), env({ IP_HASH_SALT: undefined }));
+    expect(response.status).toBe(503);
+    expect(geminiCalls).toBe(0);
+  });
+
+  it('gives the quota back when the provider fails', async () => {
+    installFetch();
+    const e = env({ SCANS_PER_IP_PER_DAY: '1' });
+    mode = 'http';
+    expect((await handleRequest(post(jpeg(41)), e)).status).toBe(502);
+    mode = 'ok';
+    expect((await handleRequest(post(jpeg(42)), e)).status).toBe(200);
+  });
+
   it('uses GEMINI_MODEL from the environment', async () => {
     installFetch();
     await handleRequest(post(jpeg(11)), env({ GEMINI_MODEL: 'custom-model' }));
@@ -159,5 +179,40 @@ describe('scan worker', () => {
     expect(ok.headers.get('access-control-allow-origin')).toBe('https://wodburner.app');
     const denied = await handleRequest(new Request('https://scan.wodburner.app/scan', { method: 'OPTIONS', headers: { origin: 'https://evil.test' } }), env());
     expect(denied.status).toBe(403);
+  });
+});
+
+describe('sync endpoint', () => {
+  const id = 'a'.repeat(40);
+  const call = (method: string, path: string, body?: string, origin = 'https://wodburner.app') =>
+    new Request(`https://scan.wodburner.app${path}`, { method, headers: { origin, 'content-type': 'text/plain' }, body });
+
+  it('stores, returns and deletes an opaque blob', async () => {
+    const box = env();
+    expect((await handleRequest(call('GET', `/sync/${id}`), box)).status).toBe(404);
+    expect((await handleRequest(call('PUT', `/sync/${id}`, 'Abc_-123'), box)).status).toBe(204);
+    const got = await handleRequest(call('GET', `/sync/${id}`), box);
+    expect(got.status).toBe(200);
+    expect(await got.text()).toBe('Abc_-123');
+    expect(got.headers.get('access-control-allow-origin')).toBe('https://wodburner.app');
+    expect((await handleRequest(call('DELETE', `/sync/${id}`), box)).status).toBe(204);
+    expect((await handleRequest(call('GET', `/sync/${id}`), box)).status).toBe(404);
+  });
+
+  it('refuses a bad origin, a bad id, a bad body and a missing salt', async () => {
+    const box = env();
+    expect((await handleRequest(call('PUT', `/sync/${id}`, 'x', 'https://evil.test'), box)).status).toBe(403);
+    expect((await handleRequest(call('GET', '/sync/short'), box)).status).toBe(400);
+    expect((await handleRequest(call('PUT', `/sync/${id}`, '<script>'), box)).status).toBe(413);
+    expect((await handleRequest(call('PUT', `/sync/${id}`, 'x'.repeat(900_001)), box)).status).toBe(413);
+    expect((await handleRequest(call('PUT', `/sync/${id}`, 'abc'), env({ IP_HASH_SALT: undefined }))).status).toBe(503);
+    expect((await handleRequest(call('PATCH', `/sync/${id}`, 'abc'), box)).status).toBe(405);
+  });
+
+  it('limits writes per IP per day', async () => {
+    const box = env({ SYNC_WRITES_PER_IP_PER_DAY: '2' });
+    expect((await handleRequest(call('PUT', `/sync/${id}`, 'a'), box)).status).toBe(204);
+    expect((await handleRequest(call('PUT', `/sync/${id}`, 'b'), box)).status).toBe(204);
+    expect((await handleRequest(call('PUT', `/sync/${id}`, 'c'), box)).status).toBe(429);
   });
 });

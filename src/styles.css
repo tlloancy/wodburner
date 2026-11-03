@@ -105,7 +105,7 @@ h2 { font-size: 1.35rem; letter-spacing: -0.02em; }
   background: var(--raise);
   color: var(--fg);
   border-color: var(--line);
-  min-height: 6.5rem;
+  min-height: 0;
   text-align: left;
 }
 .tile span { font-size: 1.25rem; font-weight: 700; line-height: 1.2; }
@@ -182,6 +182,11 @@ textarea { min-height: 9rem; resize: vertical; }
   border: 0;
 }
 .controls { display: grid; gap: 0.6rem; }
+body.is-running .top, body.is-running .foot, body.is-running .langbar, body.is-running #modify, body.is-running .vol { display: none; }
+body.is-running .timer-shell { justify-content: center; }
+body.is-running .clock { font-size: clamp(5.5rem, 34vw, 15rem); }
+body.is-running .controls { margin-top: 0.6rem; }
+@media (max-width: 520px) { .grid2 .tile { padding: 0.8rem 1rem; } }
 .timer-shell form .btn, .timer-shell .controls .btn { width: 100%; }
 
 .drop {
@@ -211,6 +216,35 @@ dialog::backdrop { background: rgb(0 0 0 / 72%); }
   border: 0;
 }
 
+.langbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  padding: 0.75rem max(1rem, env(safe-area-inset-right)) calc(0.75rem + env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+  background: var(--raise);
+  border-top: 1px solid var(--line);
+}
+.langbar p { margin: 0; flex: 1 1 14rem; }
+html.has-langbar body { padding-bottom: calc(6.5rem + env(safe-area-inset-bottom)); }
+
+.sync { border: 1px solid var(--line); border-radius: 0.75rem; padding: 0.8rem 1rem; margin: 1rem 0; }
+.sync summary { cursor: pointer; font-weight: 700; }
+.keybox { display: block; padding: 0.8rem; border: 1px dashed var(--line); border-radius: 0.5rem; font-size: 1.05rem; letter-spacing: 0.06em; word-break: break-all; user-select: all; }
+.searchbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.6rem; }
+.searchbar input, .searchbar select { width: 100%; }
+label.btn { position: relative; cursor: pointer; }
+label.btn input[type=file] { position: absolute; inset: 0; opacity: 0; width: 100%; cursor: pointer; }
+label.btn:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.6rem 0 0.2rem; }
+.chip { font: inherit; padding: 0.3rem 0.8rem; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--fg); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--ink); }
+mark { background: color-mix(in srgb, var(--accent) 28%, transparent); color: inherit; border-radius: 2px; padding: 0 1px; }
 @media (max-width: 520px) {
   .grid2, #pick .actions { grid-template-columns: 1fr; }
 }

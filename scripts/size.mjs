@@ -31,6 +31,7 @@ console.log(`${totalGzip.toString().padStart(8)} gzip  ${total.toString().padSta
 
 function budgetFor(file) {
   if (file.includes('/scan/')) return 30 * 1024;
+  if (file.includes('/dashboard/')) return 14 * 1024; // history: search, sync, manual form
   if (/\/timers\/(for-time|amrap|emom|tabata)\//.test(file) || file.includes('/wod/')) return 25 * 1024;
   return 10 * 1024;
 }

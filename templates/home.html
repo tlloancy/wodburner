@@ -15,6 +15,10 @@
     <p>{{empty}}</p>
     <a class="btn btn-ghost" href="/{{lang}}/hero-wods/">{{heroesLink}}</a>
   </div>
+  <form id="home-search" class="searchbar" action="/{{lang}}/dashboard/" method="get" role="search" hidden>
+    <input name="q" type="search" placeholder="{{searchPlaceholder}}" aria-label="{{searchLabel}}" autocomplete="off" enterkeyhint="search">
+    <button class="btn" type="submit">{{searchGo}}</button>
+  </form>
   <ul id="recent-list" class="recent"></ul>
   {{footer}}
 </main>

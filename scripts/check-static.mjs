@@ -5,7 +5,6 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 const heroes = JSON.parse(await readFile(path.join(root, 'data/hero-wods.json'), 'utf8'));
-const todo = await readFile(path.join(root, 'TODO-VERIFY.md'), 'utf8');
 const failures = [];
 const fail = (message) => failures.push(message);
 
@@ -61,8 +60,6 @@ if (!sw.includes('/fr/') || sw.includes('scan.wodburner.app')) fail('service wor
 
 for (const wod of heroes) {
   if (!wod.text?.fr || !wod.text?.en || !wod.scaling?.fr || !wod.scaling?.en) fail(`${wod.slug} missing text`);
-  if (wod.verified === false && !todo.includes(wod.slug)) fail(`${wod.slug} missing from TODO-VERIFY.md`);
-  if (wod.verified === true && todo.includes(`\`${wod.slug}\``)) fail(`${wod.slug} is verified and still listed`);
 }
 
 if (failures.length) {

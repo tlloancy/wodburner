@@ -9,7 +9,7 @@ SCANS_PER_IP_PER_DAY = "5"
 SCANS_GLOBAL_PER_DAY = "500"
 
 # Create with: npx wrangler kv namespace create WODBURNER
-# Then replace the id below. GEMINI_API_KEY and TURNSTILE_SECRET are secrets, not vars.
+# Then replace the id below. GEMINI_API_KEY, TURNSTILE_SECRET and IP_HASH_SALT (random, 16+ chars: openssl rand -hex 24) are secrets, not vars. Without a salt the Worker answers 503.
 [[kv_namespaces]]
 binding = "KV"
 id = "822188303ac0457ab03dd28b0911b4df"

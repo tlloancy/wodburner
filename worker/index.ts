@@ -70,9 +70,12 @@ export interface Env {
   SCANS_PER_IP_PER_DAY?: string;
   SCANS_GLOBAL_PER_DAY?: string;
   IP_HASH_SALT?: string;
+  SYNC_WRITES_PER_IP_PER_DAY?: string;
+  SYNC_WRITES_GLOBAL_PER_DAY?: string;
   KV: {
     get(key: string): Promise<string | null>;
     put(key: string, value: string, options?: { expirationTtl?: number }): Promise<void>;
+    delete(key: string): Promise<void>;
   };
 }
 
@@ -89,6 +92,9 @@ const COPY = {
     upstream: 'Le scan a échoué. Réessayez.',
     invalid: 'La lecture n’a pas produit un résultat exploitable.',
     config: 'Le service de scan n’est pas configuré.',
+    syncId: 'Identifiant de synchronisation invalide.',
+    syncSize: 'Sauvegarde trop volumineuse.',
+    syncQuota: 'Trop de synchronisations aujourd’hui. Réessayez demain.',
   },
   en: {
     method: 'Method not allowed.',
@@ -102,6 +108,9 @@ const COPY = {
     upstream: 'The scan failed. Try again.',
     invalid: 'The reading could not be used.',
     config: 'The scan service is not configured.',
+    syncId: 'Invalid sync id.',
+    syncSize: 'Backup too large.',
+    syncQuota: 'Too many syncs today. Try again tomorrow.',
   },
 } as const;
 
@@ -118,8 +127,10 @@ export async function handleRequest(request: Request, env: Env): Promise<Respons
     if (origin !== env.ALLOWED_ORIGIN) return json(403, 'origin', copy.origin, origin, false);
     return new Response(null, { status: 204, headers: cors(env.ALLOWED_ORIGIN) });
   }
-  if (request.method !== 'POST') return json(405, 'method', copy.method, origin);
   if (origin !== env.ALLOWED_ORIGIN) return json(403, 'origin', copy.origin, origin, false);
+  const path = new URL(request.url).pathname;
+  if (path === '/sync' || path.startsWith('/sync/')) return handleSync(request, env, path, origin, copy);
+  if (request.method !== 'POST') return json(405, 'method', copy.method, origin);
 
   const mime = (request.headers.get('content-type') || '').split(';')[0]?.trim().toLowerCase() || '';
   if (mime !== 'image/webp' && mime !== 'image/jpeg') return json(415, 'type', copy.type, origin);
@@ -138,8 +149,10 @@ export async function handleRequest(request: Request, env: Env): Promise<Respons
   const cached = await env.KV.get(`cache:${digest}`);
   if (cached) return new Response(cached, { status: 200, headers: cors(origin) });
 
+  if (!env.GEMINI_API_KEY) return json(503, 'config', copy.config, origin);
   const day = new Date().toISOString().slice(0, 10);
-  const ipHash = await sha256Hex(`${env.IP_HASH_SALT || 'wodburner-v1'}:${request.headers.get('cf-connecting-ip') || 'unknown'}`);
+  if (!env.IP_HASH_SALT || env.IP_HASH_SALT.length < 16) return json(503, 'config', copy.config, origin);
+  const ipHash = await sha256Hex(`${env.IP_HASH_SALT}:${request.headers.get('cf-connecting-ip') || 'unknown'}`);
   const ipKey = `ip:${day}:${ipHash}`;
   const globalKey = `global:${day}`;
   const ipLimit = positiveInt(env.SCANS_PER_IP_PER_DAY, 5);
@@ -150,7 +163,6 @@ export async function handleRequest(request: Request, env: Env): Promise<Respons
   await env.KV.put(ipKey, String(ipCount + 1), { expirationTtl: 172800 });
   await env.KV.put(globalKey, String(globalCount + 1), { expirationTtl: 172800 });
 
-  if (!env.GEMINI_API_KEY) return json(502, 'upstream', copy.config, origin);
   let parsed: unknown;
   let lastError: Code = 'invalid';
   for (let attempt = 0; attempt < 2; attempt++) {
@@ -178,12 +190,55 @@ export async function handleRequest(request: Request, env: Env): Promise<Respons
     }
   }
   if (!parsed) {
+    // A provider fault is not the visitor's scan: give the slot back.
+    if (lastError === 'upstream' || lastError === 'timeout') {
+      await env.KV.put(ipKey, String(ipCount), { expirationTtl: 172800 });
+      await env.KV.put(globalKey, String(globalCount), { expirationTtl: 172800 });
+    }
     const status = lastError === 'timeout' ? 504 : lastError === 'upstream' ? 502 : 422;
     return json(status, lastError, copy[lastError], origin);
   }
   const body = JSON.stringify(parsed);
   await env.KV.put(`cache:${digest}`, body, { expirationTtl: 86400 });
   return new Response(body, { status: 200, headers: cors(origin) });
+}
+
+const SYNC_MAX = 900_000;
+const SYNC_TTL = 60 * 60 * 24 * 400;
+
+// Encrypted backups. The server stores opaque text under an id derived from a secret key it never sees.
+async function handleSync(request: Request, env: Env, path: string, origin: string, copy: (typeof COPY)[keyof typeof COPY]): Promise<Response> {
+  const id = path.slice('/sync/'.length);
+  if (!/^[0-9a-f]{40}$/.test(id)) return json(400, 'syncId', copy.syncId, origin);
+  const key = `sync:${id}`;
+  if (request.method === 'GET') {
+    const value = await env.KV.get(key);
+    if (value === null) return json(404, 'syncId', copy.syncId, origin);
+    const headers = cors(origin);
+    headers.set('content-type', 'text/plain; charset=utf-8');
+    return new Response(value, { status: 200, headers });
+  }
+  if (request.method === 'DELETE') {
+    await env.KV.delete(key);
+    return new Response(null, { status: 204, headers: cors(origin) });
+  }
+  if (request.method !== 'PUT') return json(405, 'method', copy.method, origin);
+  if (!env.IP_HASH_SALT || env.IP_HASH_SALT.length < 16) return json(503, 'config', copy.config, origin);
+  const declared = Number(request.headers.get('content-length') || '');
+  if (Number.isFinite(declared) && declared > SYNC_MAX) return json(413, 'syncSize', copy.syncSize, origin);
+  const body = await request.text();
+  if (body.length === 0 || body.length > SYNC_MAX || !/^[A-Za-z0-9_-]+$/.test(body)) return json(413, 'syncSize', copy.syncSize, origin);
+  const day = new Date().toISOString().slice(0, 10);
+  const ipHash = await sha256Hex(`${env.IP_HASH_SALT}:${request.headers.get('cf-connecting-ip') || 'unknown'}`);
+  const ipKey = `syncw:${day}:${ipHash}`;
+  const globalKey = `syncw:${day}`;
+  const ipCount = Number((await env.KV.get(ipKey)) || '0');
+  const globalCount = Number((await env.KV.get(globalKey)) || '0');
+  if (ipCount >= positiveInt(env.SYNC_WRITES_PER_IP_PER_DAY, 200) || globalCount >= positiveInt(env.SYNC_WRITES_GLOBAL_PER_DAY, 20_000)) return json(429, 'syncQuota', copy.syncQuota, origin);
+  await env.KV.put(ipKey, String(ipCount + 1), { expirationTtl: 172800 });
+  await env.KV.put(globalKey, String(globalCount + 1), { expirationTtl: 172800 });
+  await env.KV.put(key, body, { expirationTtl: SYNC_TTL });
+  return new Response(null, { status: 204, headers: cors(origin) });
 }
 
 async function callGemini(env: Env, mime: string, bytes: Uint8Array): Promise<unknown> {
@@ -258,7 +313,7 @@ function isObj(value: unknown): value is Record<string, unknown> {
 function cors(origin: string): Headers {
   const headers = new Headers();
   headers.set('access-control-allow-origin', origin);
-  headers.set('access-control-allow-methods', 'POST, OPTIONS');
+  headers.set('access-control-allow-methods', 'GET, PUT, POST, DELETE, OPTIONS');
   headers.set('access-control-allow-headers', 'Content-Type, X-Turnstile, X-License');
   headers.set('access-control-max-age', '86400');
   headers.set('vary', 'Origin');

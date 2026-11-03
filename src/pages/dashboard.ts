@@ -1,8 +1,12 @@
 import strings from '@i18n';
-import { clearAll, deleteWod, getWod, listWods, putWod, replaceWods, setMeta } from '../db';
+import { clearAll, deleteWod, getWod, listWods, putWod, replaceWods } from '../db';
 import { fill } from '../fill';
 import { workoutHash } from '../hash';
+import { clearChoice } from '../lang';
 import { registerSW } from '../pwa';
+import { buildIndex, matchRanges, parseQuery, search, sortHits, type Indexed, type SortMode } from '../search';
+import * as sync from '../sync';
+import { SyncFailure } from '../sync';
 import { timerHref } from '../timer-link';
 import { exportDocument, importDocument } from '../transfer';
 import type { Format, Result, TimerConfig, Wod } from '../types';
@@ -10,7 +14,6 @@ import { parseTimer } from '../validate';
 
 registerSW();
 const lang = document.body.dataset.lang === 'fr' ? 'fr' : 'en';
-void setMeta('lang', lang).catch(() => undefined);
 
 const list = document.querySelector<HTMLElement>('#list');
 const empty = document.querySelector<HTMLElement>('#empty');
@@ -84,25 +87,116 @@ function readConfig(data: FormData, format: Format): TimerConfig {
   return parseTimer(timer);
 }
 
+const PAGE = 50;
+const finder = document.querySelector<HTMLElement>('#finder');
+const box = document.querySelector<HTMLInputElement>('#q');
+const sortSelect = document.querySelector<HTMLSelectElement>('#sort');
+const chipsBox = document.querySelector<HTMLElement>('#chips');
+const count = document.querySelector<HTMLElement>('#count');
+const more = document.querySelector<HTMLButtonElement>('#more');
+
+let index: Indexed<Wod>[] = [];
+let total = 0;
+let fmt = '';
+let withResult = false;
+let sort: SortMode = 'recent';
+let limit = PAGE;
+
+function highlight(node: HTMLElement, text: string, ranges: [number, number][]): void {
+  if (!ranges.length) {
+    node.textContent = text;
+    return;
+  }
+  node.textContent = '';
+  let at = 0;
+  for (const [a, b] of ranges) {
+    if (a > at) node.append(text.slice(at, a));
+    const mark = document.createElement('mark');
+    mark.textContent = text.slice(a, b);
+    node.append(mark);
+    at = b;
+  }
+  if (at < text.length) node.append(text.slice(at));
+}
+
+function chip(key: string, text: string, on: boolean, toggle: () => void): HTMLButtonElement {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'chip';
+  button.dataset.key = key;
+  button.setAttribute('aria-pressed', String(on));
+  button.textContent = text;
+  button.addEventListener('click', () => {
+    toggle();
+    limit = PAGE;
+    render();
+  });
+  return button;
+}
+
+function drawChips(wods: Wod[]): void {
+  if (!chipsBox) return;
+  const present = (Object.keys(strings.formats) as Format[]).filter((f) => wods.some((w) => w.format === f));
+  if (fmt && !present.includes(fmt as Format)) fmt = '';
+  chipsBox.replaceChildren(chip('', strings.dashboard.chipAll, !fmt && !withResult, () => {
+    fmt = '';
+    withResult = false;
+  }));
+  for (const f of present) chipsBox.append(chip(f, strings.formats[f], fmt === f, () => {
+    fmt = fmt === f ? '' : f;
+  }));
+  if (wods.some((w) => w.results.length)) chipsBox.append(chip('result', strings.dashboard.chipResult, withResult, () => {
+    withResult = !withResult;
+  }));
+}
+
+function syncUrl(): void {
+  const value = box?.value.trim() ?? '';
+  const url = new URL(location.href);
+  if (value) url.searchParams.set('q', value);
+  else url.searchParams.delete('q');
+  history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+}
+
 async function draw(): Promise<void> {
-  if (!list || !empty) return;
-  list.replaceChildren();
   let wods: Wod[] = [];
   try {
     wods = await listWods();
   } catch {
     return;
   }
-  empty.hidden = wods.length > 0;
+  total = wods.length;
+  index = buildIndex(wods, (w) => ({ name: w.name || strings.untitled, text: w.text, meta: `${strings.formats[w.format]} ${w.results.map((r) => `${r.value} ${r.note ?? ''}`).join(' ')}` }));
+  if (finder) finder.hidden = total < 2;
+  drawChips(wods);
+  render();
+}
+
+function render(): void {
+  if (!list || !empty) return;
+  list.replaceChildren();
+  empty.hidden = total > 0;
+  const query = parseQuery(box && total > 1 ? box.value : '');
+  let hits = search(index, query).filter((h) => (!fmt || h.item.format === fmt) && (!withResult || h.item.results.length > 0));
+  hits = sortHits(hits, sort, (w) => w.name || strings.untitled);
+  if (count) {
+    count.textContent = !total ? '' : !hits.length ? strings.dashboard.noMatch : hits.length === total ? (total === 1 ? strings.dashboard.countOne : fill(strings.dashboard.countAll, { n: total })) : fill(strings.dashboard.countFiltered, { n: hits.length, total });
+  }
+  const shown = hits.slice(0, limit);
+  if (more) {
+    more.hidden = hits.length <= limit;
+    more.textContent = strings.dashboard.more;
+  }
   const when = new Intl.DateTimeFormat(lang, { dateStyle: 'medium', timeStyle: 'short' });
-  for (const wod of wods) {
+  for (const { item: wod } of shown) {
     const item = document.createElement('li');
     item.className = 'card';
     item.dataset.id = wod.id;
     const title = document.createElement('h2');
     const open = document.createElement('a');
     open.href = `/${lang}/wod/#${encodeURIComponent(wod.id)}`;
-    open.textContent = wod.name || strings.untitled;
+    const shownName = wod.name || strings.untitled;
+    highlight(open, shownName, matchRanges(shownName, query));
     title.append(open);
     const meta = document.createElement('p');
     meta.className = 'meta';
@@ -112,7 +206,7 @@ async function draw(): Promise<void> {
     meta.append(strings.formats[wod.format], ' · ', time);
     const text = document.createElement('pre');
     text.className = 'wod-text';
-    text.textContent = wod.text;
+    highlight(text, wod.text, matchRanges(wod.text, query));
     const results = document.createElement('ul');
     results.className = 'results';
     for (const result of wod.results) {
@@ -196,6 +290,7 @@ async function saveResult(id: string, result: Result): Promise<void> {
   wod.results.push(result);
   await putWod(wod);
   await draw();
+  quietSync();
   const card = [...(list?.children ?? [])].find((node) => node instanceof HTMLElement && node.dataset.id === id);
   const note = card?.querySelector('.save-note');
   if (note) note.textContent = strings.dashboard.resultSaved;
@@ -205,7 +300,9 @@ async function removeWod(wod: Wod): Promise<void> {
   const ok = await ask(fill(strings.dashboard.confirmDelete, { name: wod.name || strings.untitled }));
   if (!ok) return;
   await deleteWod(wod.id);
+  await sync.forgetDeleted(wod.hash);
   await draw();
+  quietSync();
 }
 
 formatSelect?.addEventListener('change', showFields);
@@ -244,6 +341,7 @@ form?.addEventListener('submit', (event) => {
     showFields();
     sayForm(strings.dashboard.saved);
     await draw();
+    quietSync();
   })();
 });
 
@@ -271,6 +369,7 @@ document.querySelector<HTMLInputElement>('#import')?.addEventListener('change', 
       await replaceWods(merged.wods);
       say(fill(strings.dashboard.imported, { added: merged.added, merged: merged.merged }));
       await draw();
+      quietSync();
     } catch {
       say(strings.dashboard.importError);
     }
@@ -282,10 +381,125 @@ document.querySelector('#clear')?.addEventListener('click', () => {
     const ok = await ask(strings.dashboard.confirmClear);
     if (!ok) return;
     await clearAll();
-    await setMeta('lang', lang);
+    clearChoice();
+    await sync.disable();
+    showSync();
     say(strings.dashboard.cleared);
     await draw();
   })();
 });
 
+if (sortSelect) {
+  for (const [value, text] of [['recent', strings.dashboard.sortRecent], ['name', strings.dashboard.sortName]] as const) sortSelect.append(new Option(text, value));
+  sortSelect.addEventListener('change', () => {
+    sort = sortSelect.value === 'name' ? 'name' : 'recent';
+    render();
+  });
+}
+let timer = 0;
+box?.addEventListener('input', () => {
+  window.clearTimeout(timer);
+  timer = window.setTimeout(() => {
+    limit = PAGE;
+    syncUrl();
+    render();
+  }, 60);
+});
+box?.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && box.value) {
+    box.value = '';
+    syncUrl();
+    render();
+  }
+});
+more?.addEventListener('click', () => {
+  limit += PAGE;
+  render();
+});
+document.addEventListener('keydown', (event) => {
+  const target = event.target as HTMLElement | null;
+  if (event.key !== '/' || event.ctrlKey || event.metaKey || event.altKey) return;
+  if (target && /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName)) return;
+  if (!box || !finder || finder.hidden) return;
+  event.preventDefault();
+  box.focus();
+});
+if (box) box.value = new URLSearchParams(location.search).get('q') ?? '';
+
+const syncStatus = document.querySelector<HTMLElement>('#sync-status');
+const syncOff = document.querySelector<HTMLElement>('#sync-off');
+const syncLive = document.querySelector<HTMLElement>('#sync-live');
+const syncKey = document.querySelector<HTMLElement>('#sync-key');
+
+function syncSay(message: string): void {
+  if (syncStatus) syncStatus.textContent = message;
+}
+
+function syncError(error: unknown): string {
+  const code = error instanceof SyncFailure ? error.code : 'network';
+  return code === 'notfound' ? strings.dashboard.syncNotFound : code === 'badkey' ? strings.dashboard.syncBadKey : code === 'limit' ? strings.dashboard.syncLimit : strings.dashboard.syncNetwork;
+}
+
+function showSync(): void {
+  const key = sync.savedKey();
+  if (syncOff) syncOff.hidden = key !== null;
+  if (syncLive) syncLive.hidden = key === null;
+  if (syncKey) syncKey.textContent = key ? sync.display(key) : '';
+}
+
+// Runs after a change on this page. Failures stay silent: the next visit tries again.
+function quietSync(): void {
+  const key = sync.savedKey();
+  if (key) void sync.syncNow(key).catch(() => undefined);
+}
+
+async function runSync(action: () => Promise<{ added: number; total: number }>): Promise<void> {
+  try {
+    const report = await action();
+    syncSay(fill(strings.dashboard.syncDone, { total: report.total, added: report.added }));
+    await draw();
+  } catch (error) {
+    syncSay(syncError(error));
+  }
+  showSync();
+}
+
+document.querySelector('#sync-on')?.addEventListener('click', () => {
+  void (async () => {
+    try {
+      await sync.enable();
+      syncSay(strings.dashboard.syncOn);
+    } catch (error) {
+      syncSay(syncError(error));
+    }
+    showSync();
+  })();
+});
+document.querySelector<HTMLFormElement>('#sync-join')?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  void runSync(() => sync.join(document.querySelector<HTMLInputElement>('#sync-key-in')?.value ?? ''));
+});
+document.querySelector('#sync-now')?.addEventListener('click', () => {
+  const key = sync.savedKey();
+  if (key) void runSync(() => sync.syncNow(key));
+});
+document.querySelector('#sync-copy')?.addEventListener('click', () => {
+  const key = sync.savedKey();
+  if (!key) return;
+  void navigator.clipboard?.writeText(sync.display(key)).then(() => syncSay(strings.dashboard.syncCopied), () => undefined);
+});
+document.querySelector('#sync-stop')?.addEventListener('click', () => {
+  void (async () => {
+    if (!(await ask(strings.dashboard.confirmSyncOff))) return;
+    await sync.disable();
+    syncSay(strings.dashboard.syncOff);
+    showSync();
+  })();
+});
+
+showSync();
 void draw();
+{
+  const key = sync.savedKey();
+  if (key) void runSync(() => sync.syncNow(key));
+}

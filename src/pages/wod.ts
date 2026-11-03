@@ -1,11 +1,10 @@
 import strings from '@i18n';
-import { getWod, setMeta } from '../db';
+import { getWod } from '../db';
 import { registerSW } from '../pwa';
 import { timerHref } from '../timer-link';
 
 registerSW();
 const lang = document.body.dataset.lang === 'fr' ? 'fr' : 'en';
-void setMeta('lang', lang).catch(() => undefined);
 
 const missing = document.querySelector<HTMLElement>('#missing');
 const panel = document.querySelector<HTMLElement>('#wod-panel');

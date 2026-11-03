@@ -1,8 +1,7 @@
-import { listWods, setMeta } from '../db';
+import { listWods } from '../db';
 import { registerSW } from '../pwa';
 
 registerSW();
-void setMeta('lang', document.body.dataset.lang === 'fr' ? 'fr' : 'en').catch(() => undefined);
 
 const list = document.querySelector<HTMLElement>('#recent-list');
 const empty = document.querySelector<HTMLElement>('#recent-empty');
@@ -11,12 +10,16 @@ async function recent(): Promise<void> {
   if (!list || !empty) return;
   let wods;
   try {
-    wods = (await listWods()).slice(0, 5);
+    wods = await listWods();
   } catch {
     return;
   }
   if (wods.length === 0) return;
+  const all = wods.length;
+  wods = wods.slice(0, 5);
   empty.hidden = true;
+  const find = document.querySelector<HTMLElement>('#home-search');
+  if (find) find.hidden = all < 2;
   const lang = document.documentElement.lang || 'en';
   const when = new Intl.DateTimeFormat(lang, { dateStyle: 'medium', timeStyle: 'short' });
   for (const wod of wods) {

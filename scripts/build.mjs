@@ -70,7 +70,6 @@ await mkdir(path.join(dist, 'assets'), { recursive: true });
 await writeFile(path.join(dist, 'assets', cssName), cssResult.code);
 
 const entries = {
-  lang: 'src/pages/lang.ts',
   boot: 'src/pages/boot.ts',
   home: 'src/pages/home.ts',
   dashboard: 'src/pages/dashboard.ts',
@@ -79,6 +78,24 @@ const entries = {
   wod: 'src/pages/wod.ts',
   hero: 'src/pages/hero.ts',
 };
+async function classicScript(entry, name) {
+  const result = await esbuild.build({
+    absWorkingDir: root,
+    entryPoints: [entry],
+    bundle: true,
+    format: 'iife',
+    minify: true,
+    write: false,
+    target: 'es2022',
+    legalComments: 'none',
+  });
+  const code = result.outputFiles[0].text;
+  const file = `${name}.${createHash('sha256').update(code).digest('hex').slice(0, 10)}.js`;
+  await writeFile(path.join(dist, 'assets', file), code);
+  return file;
+}
+const localizeFile = await classicScript('src/pages/localize.ts', 'localize');
+const rootLangFile = await classicScript('src/pages/root-lang.ts', 'root-lang');
 const bundles = {};
 for (const lang of ['fr', 'en']) {
   bundles[lang] = {};
@@ -153,6 +170,8 @@ function addPage(page) {
     return `<link rel="alternate" hreflang="${code}" href="${href}">`;
   }).join('\n') + `\n<link rel="alternate" hreflang="x-default" href="${page.path === '/' ? `${site}/en/` : `${site}${page.path.replace(`/${lang}/`, '/en/')}`}">` : '';
   const script = page.script ? `<script type="module" src="/assets/${bundles[lang][page.script]}"></script>` : '';
+  const headFile = page.id === 'root' ? rootLangFile : page.id === 'missing' ? '' : localizeFile;
+  const headscript = headFile ? `<script src="/assets/${headFile}"></script>` : '';
   const html = fill(base, {
     lang: page.htmlLang || lang,
     title: esc(page.title),
@@ -166,6 +185,7 @@ function addPage(page) {
     css: cssName,
     csp: esc(cspMeta),
     jsonld: page.jsonld || '',
+    headscript,
     id: page.id,
     format: page.format || '',
     worker,
@@ -195,7 +215,7 @@ for (const lang of ['fr', 'en']) {
   const p = packs[lang].pages;
   const ui = packs[lang].ui;
   const home = chrome(lang, `/${lang}/`, '');
-  const homeBody = fill(await read('home.html'), { ...home, lang, h1: esc(p.home.h1), lead: esc(p.home.lead), scan: esc(p.home.scan), timersTitle: esc(p.home.timersTitle), fortime: esc(p.home.fortime), amrap: esc(p.home.amrap), emom: esc(p.home.emom), tabata: esc(p.home.tabata), recent: esc(p.home.recent), empty: esc(p.home.empty), heroesLink: esc(p.home.heroesLink) });
+  const homeBody = fill(await read('home.html'), { ...home, lang, h1: esc(p.home.h1), lead: esc(p.home.lead), scan: esc(p.home.scan), timersTitle: esc(p.home.timersTitle), fortime: esc(p.home.fortime), amrap: esc(p.home.amrap), emom: esc(p.home.emom), tabata: esc(p.home.tabata), recent: esc(p.home.recent), empty: esc(p.home.empty), heroesLink: esc(p.home.heroesLink), searchLabel: esc(p.dashboard.searchLabel), searchPlaceholder: esc(p.dashboard.searchPlaceholder), searchGo: esc(p.home.searchGo) });
   addPage({ lang, id: 'home', path: `/${lang}/`, out: `${lang}/index.html`, index: true, title: p.home.title, description: p.home.description, script: 'home', body: homeBody, jsonld: software(lang, `/${lang}/`, p.home.description) });
 
   const timers = chrome(lang, `/${lang}/timers/`, 'timers');
@@ -312,7 +332,6 @@ addPage({
   index: true,
   title: rootPack.root.title,
   description: rootPack.root.description,
-  script: 'lang',
   body: fill(await read('root.html'), { h1: esc(rootPack.root.h1), lead: esc(rootPack.root.lead) }),
   jsonld: software('en', '/', rootPack.root.description),
 });
@@ -334,7 +353,7 @@ for (const page of pages) {
   await writeFile(file, page.html);
 }
 
-const urls = new Set(['/', '/index.html', '/404.html', '/favicon.svg', '/mark.png', '/manifest.webmanifest', '/og.png', '/icons/icon-192.png', '/icons/icon-512.png', '/icons/icon-maskable-512.png', `/assets/${cssName}`]);
+const urls = new Set(['/', '/index.html', '/404.html', '/favicon.svg', '/mark.png', '/manifest.webmanifest', '/og.png', '/icons/icon-192.png', '/icons/icon-512.png', '/icons/icon-maskable-512.png', `/assets/${cssName}`, `/assets/${localizeFile}`, `/assets/${rootLangFile}`]);
 for (const lang of ['fr', 'en']) for (const file of Object.values(bundles[lang])) urls.add(`/assets/${file}`);
 for (const page of pages) {
   if (page.path.endsWith('.html')) urls.add(page.path);
@@ -398,7 +417,7 @@ await writeFile(path.join(dist, '_headers'), `/*
   Cache-Control: no-cache
 `);
 await writeFile(path.join(dist, '_redirects'), `${redirectLines(heroes.map((wod) => wod.slug)).join('\n')}\n`);
-await writeFile(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /fr/dashboard/\nDisallow: /en/dashboard/\nDisallow: /fr/scan/\nDisallow: /en/scan/\nDisallow: /fr/wod/\nDisallow: /en/wod/\n\nSitemap: ${site}/sitemap.xml\n`);
+await writeFile(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${site}/sitemap.xml\n`);
 
 const sitemap = [`<?xml version="1.0" encoding="UTF-8"?>`, `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`];
 for (const page of pages) if (page.indexable) sitemap.push(`  <url><loc>${page.canonical}</loc></url>`);

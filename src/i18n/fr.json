@@ -34,6 +34,24 @@
       "announceHitsOne": "{n} round"
     },
     "dashboard": {
+      "syncDone": "Synchronisé : {total} WODs ({added} reçus).",
+      "syncNetwork": "Pas de connexion au serveur. Réessayez.",
+      "syncNotFound": "Aucune sauvegarde pour cette clé. Vérifiez-la.",
+      "syncBadKey": "Clé invalide ou sauvegarde illisible.",
+      "syncLimit": "La sauvegarde est trop volumineuse.",
+      "syncCopied": "Clé copiée.",
+      "syncOn": "Synchro activée. Notez votre clé.",
+      "syncOff": "Synchro désactivée, copie effacée.",
+      "confirmSyncOff": "Désactiver la synchro et effacer la copie du serveur ? Vos WODs restent sur cet appareil.",
+      "countAll": "{n} WODs",
+      "countOne": "1 WOD",
+      "countFiltered": "{n} sur {total}",
+      "noMatch": "Aucun WOD ne correspond.",
+      "more": "Afficher la suite",
+      "sortRecent": "Récents",
+      "sortName": "A → Z",
+      "chipAll": "Tous",
+      "chipResult": "Avec résultat",
       "duplicate": "Ce WOD est déjà dans l’historique.",
       "imported": "Import : {added} ajoutés, {merged} fusionnés.",
       "importError": "Fichier illisible. Il faut un export WODBurner version 1.",
@@ -87,6 +105,7 @@
       "lead": "Choisissez la langue. Le chrono reste sur cet appareil."
     },
     "home": {
+      "searchGo": "Chercher",
       "title": "WODBurner — chrono CrossFit",
       "description": "Chrono For Time, AMRAP, EMOM et Tabata, WODs de référence, et scan d’un tableau blanc. Sans compte, sur cet appareil.",
       "h1": "Le chrono, prêt.",
@@ -169,6 +188,21 @@
       "save": "Enregistrer"
     },
     "dashboard": {
+      "syncTitle": "Synchroniser entre appareils",
+      "syncIntro": "Sans compte ni mot de passe. Une clé secrète, créée ici, chiffre vos WODs avant l’envoi : le serveur ne peut pas les lire. Gardez la clé : elle est la seule façon de les retrouver.",
+      "syncEnable": "Activer la synchro",
+      "syncHave": "J’ai déjà une clé",
+      "syncRestore": "Récupérer mes WODs",
+      "syncKeyLabel": "Votre clé secrète",
+      "syncCopy": "Copier la clé",
+      "syncNow": "Synchroniser",
+      "syncDisable": "Désactiver et effacer la copie",
+      "syncWarn": "Notez-la ailleurs. Perdue, elle ne peut pas être récupérée. Quiconque la connaît peut lire la sauvegarde.",
+      "searchLabel": "Rechercher dans mes WODs",
+      "searchPlaceholder": "Nom, mouvement, charge… (touche /)",
+      "clearSearch": "Effacer",
+      "sortLabel": "Tri",
+      "filters": "Filtres",
       "title": "Historique — WODBurner",
       "description": "Historique des WODs gardé sur cet appareil.",
       "h1": "Historique",
@@ -218,7 +252,7 @@
       "format": "Format",
       "text": "Texte",
       "confidence": "Confiance",
-      "warnings": "À vérifier"
+      "warnings": "Passages incertains"
     },
     "wod": {
       "title": "WOD enregistré — WODBurner",
@@ -262,7 +296,7 @@
         {
           "h": "Ce qui reste sur cet appareil",
           "p": [
-            "Les WODs, les résultats, la langue, le son et le volume sont enregistrés dans ce navigateur (IndexedDB). L’export JSON vous permet de les copier. Tout effacer retire ces données de l’appareil. C’est le seul geste qui correspond à une suppression de compte, puisqu’il n’y a pas de compte."
+            "Les WODs, les résultats, le son et le volume sont enregistrés dans ce navigateur (IndexedDB). La langue que vous choisissez est gardée dans le stockage local du navigateur. L’export JSON vous permet de les copier. Si vous activez la synchro, une copie chiffrée dans votre navigateur par une clé secrète que nous ne connaissons pas est conservée sur nos serveurs Cloudflare, sans nom ni e-mail ; la désactiver l’efface. Tout effacer retire ces données de l’appareil. C’est le seul geste qui correspond à une suppression de compte, puisqu’il n’y a pas de compte."
           ]
         },
         {
