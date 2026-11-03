@@ -1,6 +1,5 @@
 <main id="contenu" class="timer-shell">
   {{header}}
-  <p id="wod-name" class="wod-name" hidden></p>
   <section id="setup">
     <h1>{{h1}}</h1>
     <p class="lead">{{lead}}</p>
@@ -11,6 +10,10 @@
     </form>
   </section>
   <section id="run" hidden>
+    <div id="wod-now" class="wod-now" hidden>
+      <p id="wod-name" class="wod-name"></p>
+      <pre id="wod-text" class="wod-text" hidden></pre>
+    </div>
     <p id="live" class="sr-only" aria-live="polite"></p>
     <p id="label" class="phase-label">{{h1}}</p>
     <p id="clock" class="clock" aria-hidden="true">00:00</p>
@@ -36,7 +39,7 @@
       <label id="field-reps">{{repsLabel}} <input name="reps" type="number" min="0" inputmode="numeric"></label>
       <label id="field-note">{{noteLabel}} <input name="note" type="text" maxlength="500"></label>
       <button type="submit" class="btn btn-accent">{{save}}</button>
-      <p id="save-status" role="status"></p>
+      <p id="save-status" class="save-note" role="status"></p>
     </form>
   </section>
   {{footer}}

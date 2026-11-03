@@ -225,7 +225,9 @@ async function save(action: 'save' | 'launch'): Promise<void> {
     location.assign(`${href.pathname}${href.search}`);
     return;
   }
-  say(strings.scan.saved);
+  const reviewStatus = document.querySelector<HTMLElement>('#review-status');
+  if (reviewStatus) reviewStatus.textContent = strings.scan.saved;
+  else say(strings.scan.saved);
 }
 
 async function run(file: File): Promise<void> {

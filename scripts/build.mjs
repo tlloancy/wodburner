@@ -129,14 +129,12 @@ function chrome(lang, currentPath, section = '') {
     navTimers: esc(pack.nav.timers),
     navHeroes: esc(pack.nav.heroes),
     navHistory: esc(pack.nav.history),
-    navScan: esc(pack.nav.scan),
     privacy: esc(pack.nav.privacy),
     contact: esc(pack.nav.contact),
     email: esc(pack.nav.email),
     curTimers: here('timers'),
     curHeroes: here('heroes'),
     curHistory: here('history'),
-    curScan: here('scan'),
   };
   return { header: fill(headerTpl, vars), footer: fill(footerTpl, vars) };
 }
@@ -336,7 +334,7 @@ for (const page of pages) {
   await writeFile(file, page.html);
 }
 
-const urls = new Set(['/', '/index.html', '/404.html', '/favicon.svg', '/manifest.webmanifest', '/og.png', '/icons/icon-192.png', '/icons/icon-512.png', '/icons/icon-maskable-512.png', `/assets/${cssName}`]);
+const urls = new Set(['/', '/index.html', '/404.html', '/favicon.svg', '/mark.png', '/manifest.webmanifest', '/og.png', '/icons/icon-192.png', '/icons/icon-512.png', '/icons/icon-maskable-512.png', `/assets/${cssName}`]);
 for (const lang of ['fr', 'en']) for (const file of Object.values(bundles[lang])) urls.add(`/assets/${file}`);
 for (const page of pages) {
   if (page.path.endsWith('.html')) urls.add(page.path);

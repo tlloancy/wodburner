@@ -49,7 +49,9 @@ const summary = must<HTMLElement>('#result-summary');
 const fieldRounds = must<HTMLElement>('#field-rounds');
 const fieldReps = must<HTMLElement>('#field-reps');
 const saveStatus = must<HTMLElement>('#save-status');
+const wodNow = document.querySelector<HTMLElement>('#wod-now');
 const nameEl = document.querySelector<HTMLElement>('#wod-name');
+const textEl = document.querySelector<HTMLElement>('#wod-text');
 
 let engine: EngineState = createTimer(format, {});
 let config: TimerConfig = {};
@@ -480,9 +482,21 @@ if (!('requestFullscreen' in document.documentElement)) fullBtn.hidden = true;
 const params = new URLSearchParams(location.search);
 wodId = params.get('wod') || '';
 displayName = params.get('name') || '';
-if (nameEl) {
-  nameEl.textContent = displayName;
-  nameEl.hidden = displayName === '';
+
+function showWod(name: string, text: string): void {
+  if (!wodNow || !nameEl || !textEl) return;
+  const body = text.trim();
+  nameEl.textContent = name;
+  textEl.textContent = body;
+  textEl.hidden = body === '' || body === name;
+  wodNow.hidden = name === '' && textEl.hidden;
+}
+
+showWod(displayName, '');
+if (wodId) {
+  void getWod(wodId).then((wod) => {
+    if (wod) showWod(wod.name, wod.text);
+  }).catch(() => undefined);
 }
 const fromUrl = configFromQuery(params);
 if (fromUrl) {

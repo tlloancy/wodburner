@@ -15,6 +15,7 @@ void setMeta('lang', lang).catch(() => undefined);
 const list = document.querySelector<HTMLElement>('#list');
 const empty = document.querySelector<HTMLElement>('#empty');
 const status = document.querySelector<HTMLElement>('#status');
+const formStatus = document.querySelector<HTMLElement>('#form-status');
 const form = document.querySelector<HTMLFormElement>('#manual');
 const formatSelect = document.querySelector<HTMLSelectElement>('#format');
 const dialog = document.querySelector<HTMLDialogElement>('#confirm');
@@ -22,6 +23,10 @@ const confirmText = document.querySelector<HTMLElement>('#confirm-text');
 
 function say(message: string): void {
   if (status) status.textContent = message;
+}
+
+function sayForm(message: string): void {
+  if (formStatus) formStatus.textContent = message;
 }
 
 function ask(message: string): Promise<boolean> {
@@ -93,6 +98,7 @@ async function draw(): Promise<void> {
   for (const wod of wods) {
     const item = document.createElement('li');
     item.className = 'card';
+    item.dataset.id = wod.id;
     const title = document.createElement('h2');
     const open = document.createElement('a');
     open.href = `/${lang}/wod/#${encodeURIComponent(wod.id)}`;
@@ -139,7 +145,10 @@ async function draw(): Promise<void> {
     submit.type = 'submit';
     submit.className = 'btn';
     submit.textContent = label('addResult');
-    resultForm.append(rounds, reps, note, submit);
+    const saved = document.createElement('p');
+    saved.className = 'save-note';
+    saved.setAttribute('role', 'status');
+    resultForm.append(rounds, reps, note, submit, saved);
     resultForm.addEventListener('submit', (event) => {
       event.preventDefault();
       const data = new FormData(resultForm);
@@ -186,8 +195,10 @@ async function saveResult(id: string, result: Result): Promise<void> {
   if (!wod) return;
   wod.results.push(result);
   await putWod(wod);
-  say(strings.dashboard.resultSaved);
   await draw();
+  const card = [...(list?.children ?? [])].find((node) => node instanceof HTMLElement && node.dataset.id === id);
+  const note = card?.querySelector('.save-note');
+  if (note) note.textContent = strings.dashboard.resultSaved;
 }
 
 async function removeWod(wod: Wod): Promise<void> {
@@ -208,14 +219,14 @@ form?.addEventListener('submit', (event) => {
     const text = String(data.get('text') ?? '');
     const format = String(data.get('format') ?? 'other') as Format;
     if (!name) {
-      say(strings.dashboard.needName);
+      sayForm(strings.dashboard.needName);
       return;
     }
     const timer = readConfig(data, format);
     const hash = await workoutHash(name, format, text);
     const existing = (await listWods()).find((wod) => wod.hash === hash);
     if (existing) {
-      say(strings.dashboard.duplicate);
+      sayForm(strings.dashboard.duplicate);
       return;
     }
     await putWod({
@@ -231,7 +242,7 @@ form?.addEventListener('submit', (event) => {
     });
     form.reset();
     showFields();
-    say(strings.dashboard.saved);
+    sayForm(strings.dashboard.saved);
     await draw();
   })();
 });
