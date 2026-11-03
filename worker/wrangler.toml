@@ -12,4 +12,8 @@ SCANS_GLOBAL_PER_DAY = "500"
 # Then replace the id below. GEMINI_API_KEY and TURNSTILE_SECRET are secrets, not vars.
 [[kv_namespaces]]
 binding = "KV"
-id = "00000000000000000000000000000000"
+id = "822188303ac0457ab03dd28b0911b4df"
+
+[[routes]]
+pattern = "scan.wodburner.app"
+custom_domain = true
