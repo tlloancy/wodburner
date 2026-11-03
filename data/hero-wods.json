@@ -279,5 +279,142 @@
       "en": "Keep the descending ladder. Use lighter fixed bars if the bodyweight loads are too heavy.",
       "fr": "Gardez l’échelle descendante. Des barres fixes plus légères si les charges au poids de corps sont trop lourdes."
     }
+  },
+  {
+    "slug": "amanda",
+    "name": "Amanda",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "9-7-5 reps for time of:\nMuscle-ups\nSnatches, men 135 lb (61 kg), women 95 lb (43 kg)",
+      "fr": "9-7-5 répétitions, for time :\nMuscle-ups\nArrachés, hommes 135 lb (61 kg), femmes 95 lb (43 kg)"
+    },
+    "scaling": {
+      "en": "Keep 9-7-5. Band or jump the muscle-ups, and lighten the bar.",
+      "fr": "Gardez 9-7-5. Muscle-ups élastiques ou sautés, et allégez la barre."
+    }
+  },
+  {
+    "slug": "candy",
+    "name": "Candy",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n20 pull-ups\n40 push-ups\n60 squats",
+      "fr": "5 tours for time :\n20 tractions\n40 pompes\n60 squats"
+    },
+    "scaling": {
+      "en": "Keep 5 rounds. Band the pull-ups, use knee push-ups, or lower the reps.",
+      "fr": "Gardez 5 tours. Tractions élastiques, pompes sur les genoux, ou moins de répétitions."
+    }
+  },
+  {
+    "slug": "ellen",
+    "name": "Ellen",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n20 burpees\n21 dumbbell snatches, one dumbbell\n12 dumbbell thrusters, a pair\nWomen 35 lb (16 kg), men 50 lb (23 kg)",
+      "fr": "3 tours for time :\n20 burpees\n21 arrachés haltère, un haltère\n12 thrusters haltères, une paire\nFemmes 35 lb (16 kg), hommes 50 lb (23 kg)"
+    },
+    "scaling": {
+      "en": "Keep 3 rounds. Use lighter dumbbells.",
+      "fr": "Gardez 3 tours. Des haltères plus légers."
+    }
+  },
+  {
+    "slug": "eva",
+    "name": "Eva",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n800 m run\n30 kettlebell swings\n30 pull-ups\nWomen 1.5 pood (54 lb, 25 kg), men 2 pood (72 lb, 33 kg)",
+      "fr": "5 tours for time :\n800 m de course\n30 kettlebell swings\n30 tractions\nFemmes 1,5 pood (54 lb, 25 kg), hommes 2 pood (72 lb, 33 kg)"
+    },
+    "scaling": {
+      "en": "Keep 5 rounds. Lighter kettlebell, banded pull-ups, or a shorter run.",
+      "fr": "Gardez 5 tours. Kettlebell plus légère, tractions élastiques, ou course plus courte."
+    }
+  },
+  {
+    "slug": "gwen",
+    "name": "Gwen",
+    "category": "girl",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "For load:\nClean and jerk, 15-12-9 reps\nSame load for each set. Touch and go at the floor only. A re-grip off the floor is a foul. No dumping. Rest as needed between sets.",
+      "fr": "À la charge :\nÉpaulé-jeté, 15-12-9 répétitions\nMême charge à chaque série. Touch and go au sol seulement. Reprendre la prise au sol est une faute. Pas de lâcher. Repos libre entre les séries."
+    },
+    "scaling": {
+      "en": "Keep 15-12-9. Lower the load until every set stays touch-and-go.",
+      "fr": "Gardez 15-12-9. Baissez la charge pour que chaque série reste en touch and go."
+    }
+  },
+  {
+    "slug": "hope",
+    "name": "Hope",
+    "category": "girl",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "3 rounds. One minute at each station, then move on. The clock does not stop. One minute of rest before the next round. One point per rep.\nBurpees\nPower snatch, 75 lb (34 kg)\nBox jump, 24 inch (61 cm)\nThruster, 75 lb (34 kg)\nChest-to-bar pull-ups",
+      "fr": "3 tours. Une minute à chaque poste, puis on change. Le chrono ne s’arrête pas. Une minute de repos avant le tour suivant. Un point par répétition.\nBurpees\nArraché puissance, 75 lb (34 kg)\nBox jump, boîte de 24 inch (61 cm)\nThruster, 75 lb (34 kg)\nTractions chest-to-bar"
+    },
+    "scaling": {
+      "en": "Keep the minute stations. Lighter bar and a lower box.",
+      "fr": "Gardez les postes d’une minute. Barre plus légère et boîte plus basse."
+    }
+  },
+  {
+    "slug": "lynne",
+    "name": "Lynne",
+    "category": "girl",
+    "format": "other",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for max reps of:\nBench press, bodyweight\nPull-ups",
+      "fr": "5 tours, max de répétitions :\nDéveloppé couché, poids de corps\nTractions"
+    },
+    "scaling": {
+      "en": "Keep 5 rounds. Use a lighter bar if bodyweight is too heavy.",
+      "fr": "Gardez 5 tours. Une barre plus légère si le poids de corps est trop lourd."
+    }
+  },
+  {
+    "slug": "maggie",
+    "name": "Maggie",
+    "category": "girl",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "5 rounds for time of:\n20 handstand push-ups\n40 pull-ups\n60 one-legged squats, alternating",
+      "fr": "5 tours for time :\n20 pompes en équilibre\n40 tractions\n60 squats sur une jambe, en alternant"
+    },
+    "scaling": {
+      "en": "Keep 5 rounds. Pike the handstand push-ups, band the pull-ups, and hold a support on the pistols.",
+      "fr": "Gardez 5 tours. Pike pour les pompes, élastique pour les tractions, appui pour les pistols."
+    }
+  },
+  {
+    "slug": "nicole",
+    "name": "Nicole",
+    "category": "girl",
+    "format": "amrap",
+    "timer": {
+      "durationSec": 1200
+    },
+    "text": {
+      "en": "AMRAP 20 min:\n400 m run\nMax reps pull-ups",
+      "fr": "AMRAP 20 min :\n400 m de course\nMax de tractions"
+    },
+    "scaling": {
+      "en": "Keep 20 minutes. Shorten the run, or use banded pull-ups.",
+      "fr": "Gardez les 20 minutes. Course plus courte, ou tractions élastiques."
+    }
   }
 ]
