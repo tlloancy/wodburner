@@ -101,7 +101,8 @@ describe('arrangeBoard', () => {
     const shown = presentStored({ name: `${raw.slice(0, 79)}…`, format: 'other' as const, timer: {}, text: raw });
     expect(shown.format).toBe('fortime');
     expect(shown.timer).toEqual({ capSec: 20 * 60 });
-    expect(shown.name).toBe("WOD - FOR TIME - TC:20'");
+    expect(shown.name).toBe('30/24 cal · 300m run');
+    expect(presentStored({ name: 'Fran', format: 'fortime', timer: { capSec: 900 }, text: '21-15-9 thrusters' }).name).toBe('Fran');
     expect(shown.text).toBe("3 ROUNDS:\n30/24 cal\n300m run\n30/24 cal\n1' rest");
   });
 
@@ -112,6 +113,7 @@ describe('arrangeBoard', () => {
     expect(cardioResult.timer.capSec).toBe(15 * 60);
     expect(cardioResult.parts[0]?.text).toContain("500m ski/row\n1' rest");
     expect(cardioResult.parts[0]?.text).toContain('MAXIMUM 15');
+    expect(presentStored({ name: cardio, format: 'other' as const, timer: {}, text: cardio }).name).toBe('500m ski/row');
 
     const emom = "SKILL RENFO GYM PULL UPSEMOM 12'1: 30-45'' dead hang (E: lesté)2: 5-10 strict pull ups (E: lesté)3: 12 kb triceps extensionCONSIGNE:-> meme lest";
     const emomResult = scan(emom);
@@ -120,6 +122,7 @@ describe('arrangeBoard', () => {
     expect(emomResult.parts[0]?.text).toContain('1: 30-45');
     expect(emomResult.parts[0]?.text).toContain('\n2: 5-10 strict pull ups');
     expect(emomResult.parts[0]?.text).toContain('\n3: 12 kb triceps extension');
+    expect(presentStored({ name: emom, format: 'other' as const, timer: {}, text: emom }).name).toBe("EMOM 12' · 30-45'' dead hang");
   });
 
   it('unwraps a team for-time and keeps the cap', () => {
@@ -130,7 +133,7 @@ describe('arrangeBoard', () => {
     expect(result.parts[0]?.text).toContain('100 bmu\nAthlete A: max bmu\nAthlete B:');
     expect(result.parts[0]?.text).toContain('\nRx: 70/50kg\nInter: 75 bmu\nScale: box mu');
     const shown = presentStored({ name: `${raw.slice(0, 79)}…`, format: 'other' as const, timer: {}, text: raw });
-    expect(shown.name).toBe("WOD TEAM - FOR TIME - TC:16'");
+    expect(shown.name).toBe('100 bmu');
     expect(shown.text).toBe("100 bmu\nAthlete A: max bmu\nAthlete B: 1 macho man (80/55kg)\nCONSIGNES:\n-> macho man: 3 cleans + 3 front squats + 3 jerks\n-> switch directement\nRx: 70/50kg\nInter: 75 bmu\nScale: box mu");
   });
 

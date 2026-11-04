@@ -1,4 +1,5 @@
 import { listWods } from '../db';
+import { presentStored } from '../reflow';
 import { registerSW } from '../pwa';
 
 registerSW();
@@ -21,8 +22,9 @@ async function recent(): Promise<void> {
   const find = document.querySelector<HTMLElement>('#home-search');
   if (find) find.hidden = all < 2;
   const lang = document.documentElement.lang || 'en';
-  const when = new Intl.DateTimeFormat(lang, { dateStyle: 'medium', timeStyle: 'short' });
-  for (const wod of wods) {
+  const when = new Intl.DateTimeFormat(lang, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  for (const stored of wods) {
+    const wod = presentStored(stored);
     const item = document.createElement('li');
     const link = document.createElement('a');
     link.href = `/${lang}/wod/#${encodeURIComponent(wod.id)}`;

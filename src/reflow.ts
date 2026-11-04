@@ -92,19 +92,41 @@ function clock(text: string): { format: Format; timer: TimerConfig } | null {
 }
 
 function title(name: string, text: string): string {
-  const first = text.split('\n').map((line) => line.trim()).find(Boolean) || '';
-  const clipped = first.length > 80 ? `${first.slice(0, 79)}…` : first;
-  const compact = (value: string): string => value.replace(/…$/, '').replace(/\s+/g, '');
-  if (!name.trim()) return clipped || name;
-  const flatName = compact(name);
-  if (flatName.length > 40 && compact(text).startsWith(flatName.slice(0, Math.min(flatName.length, 48)))) return clipped;
-  return name;
+  const kept = name.trim();
+  const flat = (value: string): string => value.replace(/…$/, '').replace(/\s+/g, '');
+  const generated = !kept || (flat(kept).length > 40 && flat(text).startsWith(flat(kept).slice(0, Math.min(flat(kept).length, 48))));
+  if (!generated) return kept;
+  const bits: string[] = [];
+  for (const raw of text.split('\n')) {
+    const line = raw.trim();
+    if (!line || isHeader(line) || isAside(line)) continue;
+    const bit = line.replace(/:\s*$/, '').replace(/^\d{1,2}\s*:\s+/, '').replace(/\s*\([^)]*\)/g, '').replace(/\s+/g, ' ').trim();
+    if (!bit) continue;
+    const next = bits.length ? `${bits.join(' · ')} · ${bit}` : bit;
+    if (bits.length && next.length > 36) break;
+    bits.push(bit);
+    if (bits.length === 2) break;
+  }
+  if (bits.length) return bits.join(' · ');
+  const first = text.split('\n').map((line) => line.trim()).find(Boolean) || kept;
+  return first.length > 36 ? `${first.slice(0, 35)}…` : first;
+}
+
+function isHeader(line: string): boolean {
+  const t = fold(line).replace(/:\s*$/, '').trim();
+  return /^wod\b/.test(t) || /^skill\b/.test(t) || /^(for time|amrap|tabata|rft|pour le temps|contre la montre)$/.test(t);
+}
+
+function isAside(line: string): boolean {
+  const t = fold(line).trim();
+  return /^(?:->|→)/.test(line.trim()) || /^athlete\s+[a-z]\b/.test(t) || /^(consignes?|rx|inter|scale)\b/.test(t) || /^\d+\s*rounds?\s*:?\s*$/.test(t) || /^\d+\s*['’′]\s*(?:rest|repos)\b/.test(t);
 }
 
 function withoutTitle(name: string, text: string): string {
   const lines = text.split('\n');
-  if (lines[0]?.trim() === name.trim()) return lines.slice(1).join('\n').trim();
-  return text;
+  let start = lines[0]?.trim() === name.trim() ? 1 : 0;
+  while (lines[start] && isHeader(lines[start])) start += 1;
+  return lines.slice(start).join('\n').trim();
 }
 
 export function presentStored<T extends { name: string; format: Format; timer: TimerConfig; text: string }>(wod: T): T {
