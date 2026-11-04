@@ -1,3 +1,4 @@
+import { reflow } from './reflow';
 import type { BoardPart, BoardRole, Format, TimerConfig } from './types';
 
 export type { BoardPart, BoardRole };
@@ -48,6 +49,7 @@ function clockKind(line: string): 'amrap' | 'emom' | 'fortime' | 'tabata' | null
   if (/^every\s+(?:\d|minute\b)/.test(t) || /^toutes les\s+\d/.test(t) || /^chaque minute\b/.test(t)) return 'emom';
   if (/^tabata\b/.test(t)) return 'tabata';
   if (/^for\s*time\b/.test(t) || /^rounds?\s+for\s+time\b/.test(t) || /^rft\b/.test(t) || /^contre la montre\b/.test(t) || /^pour le temps\b/.test(t) || /^ft$/.test(t)) return 'fortime';
+  if (/\bfor\s*time\b/.test(t) && t.length < 120) return 'fortime';
   return null;
 }
 
@@ -155,6 +157,16 @@ function findRounds(lines: string[]): number | undefined {
 function findCap(lines: string[]): number | undefined {
   for (const line of lines) {
     const t = fold(line).trim();
+    const tc = /\btc\s*:?\s*(\d{1,3})(?:\s*:\s*(\d{2}))?\s*(?:['’′]|min(?:ute)?s?)?/.exec(t);
+    if (tc) {
+      const total = minutes(tc[1], tc[2]);
+      if (total) return total;
+    }
+    const maximum = /\bmaximum\s+(\d{1,3})\s*['’′]/.exec(t);
+    if (maximum) {
+      const total = minutes(maximum[1]);
+      if (total) return total;
+    }
     const seconds = /\b(?:time\s*cap|cap|plafond)\s*(?:de\s*)?(\d{1,4})\s*s(?:ec(?:onde)?s?)?\b/.exec(t);
     if (seconds) {
       const n = Number(seconds[1]);
@@ -253,6 +265,16 @@ function movementCount(text: string): number {
   }).length;
 }
 
+function preferTitle(name: string, text: string): string {
+  const first = text.split('\n').map((line) => line.trim()).find(Boolean) || '';
+  const clipped = first.length > 80 ? `${first.slice(0, 79)}…` : first;
+  const compact = (value: string): string => value.replace(/…$/, '').replace(/\s+/g, '');
+  if (!name.trim()) return clipped;
+  const flatName = compact(name);
+  if (flatName.length > 40 && compact(text).startsWith(flatName.slice(0, Math.min(flatName.length, 48)))) return clipped;
+  return name.trim();
+}
+
 function deriveName(text: string, role: BoardRole): string {
   for (const line of text.split('\n')) {
     const raw = line.trim();
@@ -324,10 +346,12 @@ function pieceFrom(text: string, role: BoardRole, inferred: Inferred | null, sol
 }
 
 export function arrangeBoard(input: BoardInput): { name: string; format: Format; timer: TimerConfig; parts: BoardPart[] } {
-  let raw = blocksFrom(input.text);
-  if (raw.length < 2 && input.parts && input.parts.length >= 2) {
+  const multi = Boolean(input.parts && input.parts.length >= 2 && blocksFrom(input.text).length < 2);
+  const textIn = multi ? input.text : reflow(input.text);
+  let raw = blocksFrom(textIn);
+  if (multi && input.parts) {
     const fromParts = input.parts.flatMap((part) => {
-      const inner = blocksFrom(part.text);
+      const inner = blocksFrom(reflow(part.text));
       const blocks = inner.length > 0 ? inner : [{ role: part.role, lines: part.text.split('\n') }];
       return blocks.map((block) => ({ role: block.role ?? part.role, lines: block.lines }));
     });
@@ -337,8 +361,8 @@ export function arrangeBoard(input: BoardInput): { name: string; format: Format;
 
   const solo = raw.length === 1;
   const drafts = raw.map((block) => {
-    const source = block.lines.join('\n').trim();
-    const text = solo ? input.text.trim() || source : source;
+    const source = reflow(block.lines.join('\n')).trim();
+    const text = solo ? textIn.trim() || source : source;
     return { hint: block.role, text, source, inferred: readClock(source || text) };
   }).filter((draft) => draft.text !== '');
   if (drafts.length === 0) {
@@ -350,14 +374,14 @@ export function arrangeBoard(input: BoardInput): { name: string; format: Format;
   const roles = assignRoles(drafts);
   const parts = drafts.flatMap((draft, index) => {
     const role = roles[index] ?? 'metcon';
-    const named = (solo ? input.name.trim() : '') || deriveName(draft.source, role);
+    const named = preferTitle(solo ? input.name : '', draft.text) || deriveName(draft.source, role);
     const piece = pieceFrom(draft.text, role, draft.inferred, solo, input, named);
     return piece ? [piece] : [];
   });
   parts.sort((a, b) => (a.role === b.role ? 0 : a.role === 'skill' ? -1 : 1));
   const primary = [...parts].reverse().find((part) => part.role === 'metcon') ?? parts[0];
   return {
-    name: input.name.trim() || primary.name,
+    name: preferTitle(input.name, parts.map((part) => part.text).join('\n')) || primary.name,
     format: primary.format,
     timer: primary.timer,
     parts,

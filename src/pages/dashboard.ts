@@ -4,6 +4,7 @@ import { fill } from '../fill';
 import { workoutHash } from '../hash';
 import { registerSW } from '../pwa';
 import { qrModules } from '../qr';
+import { presentStored } from '../reflow';
 import { buildIndex, matchRanges, parseQuery, search, sortHits, type Indexed, type SortMode } from '../search';
 import * as sync from '../sync';
 import { SyncFailure } from '../sync';
@@ -162,7 +163,7 @@ function syncUrl(): void {
 async function draw(): Promise<void> {
   let wods: Wod[] = [];
   try {
-    wods = await listWods();
+    wods = (await listWods()).map((wod) => presentStored(wod));
   } catch {
     return;
   }
@@ -238,8 +239,11 @@ function render(): void {
     actions.append(again, remove);
     const resultForm = document.createElement('form');
     resultForm.className = 'inline-result';
-    const rounds = input('number', 'rounds', label('rounds'));
-    const reps = input('number', 'reps', label('reps'));
+    const fields = wod.format === 'amrap'
+      ? [input('number', 'rounds', label('rounds')), input('number', 'reps', label('reps'))]
+      : wod.format === 'fortime'
+        ? [input('text', 'time', label('time'))]
+        : [input('text', 'score', label('result'))];
     const note = input('text', 'note', label('note'));
     const submit = document.createElement('button');
     submit.type = 'submit';
@@ -248,18 +252,21 @@ function render(): void {
     const saved = document.createElement('p');
     saved.className = 'save-note';
     saved.setAttribute('role', 'status');
-    resultForm.append(rounds, reps, note, submit, saved);
+    resultForm.append(...fields, note, submit, saved);
     resultForm.addEventListener('submit', (event) => {
       event.preventDefault();
       const data = new FormData(resultForm);
+      const timeValue = String(data.get('time') ?? '').trim();
+      const scoreValue = String(data.get('score') ?? '').trim();
       const roundValue = String(data.get('rounds') ?? '').trim();
       const repValue = String(data.get('reps') ?? '').trim();
       const noteValue = String(data.get('note') ?? '').trim();
-      const value = roundValue && repValue ? `${roundValue}+${repValue}` : roundValue || repValue || noteValue;
+      const roundsValue = roundValue && repValue ? `${roundValue}+${repValue}` : roundValue || repValue;
+      const value = timeValue || roundsValue || scoreValue || noteValue;
       if (!value) return;
       const result: Result = {
         at: new Date().toISOString(),
-        kind: roundValue || repValue ? 'rounds' : 'free',
+        kind: timeValue ? 'time' : roundsValue ? 'rounds' : 'free',
         value,
       };
       if (noteValue && result.value !== noteValue) result.note = noteValue;
@@ -273,7 +280,7 @@ function render(): void {
   }
 }
 
-function label(key: 'relaunch' | 'delete' | 'addResult' | 'rounds' | 'reps' | 'note'): string {
+function label(key: 'relaunch' | 'delete' | 'addResult' | 'rounds' | 'reps' | 'note' | 'time' | 'result'): string {
   const node = document.querySelector<HTMLElement>(`[data-label="${key}"]`);
   return node?.textContent || key;
 }

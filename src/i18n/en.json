@@ -233,6 +233,7 @@
       "note": "Note",
       "rounds": "Rounds",
       "reps": "Reps",
+      "time": "Time",
       "capMin": "Time cap, minutes",
       "minutes": "Minutes",
       "intervals": "Intervals",

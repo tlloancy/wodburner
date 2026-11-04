@@ -1,4 +1,5 @@
 import strings from '@i18n';
+import { presentStored } from '../reflow';
 import { getWod } from '../db';
 import { registerSW } from '../pwa';
 import { timerHref } from '../timer-link';
@@ -20,7 +21,8 @@ async function openWod(): Promise<void> {
   if (!wod || !panel || !title || !text || !results || !launch) return;
   if (missing) missing.hidden = true;
   panel.hidden = false;
-  title.textContent = wod.name || strings.untitled;
+  const view = presentStored(wod);
+  title.textContent = view.name || strings.untitled;
   let who = document.querySelector<HTMLElement>('#wod-who');
   if (wod.who) {
     if (!who) {
@@ -32,8 +34,8 @@ async function openWod(): Promise<void> {
     who.hidden = false;
     who.textContent = wod.who;
   } else if (who) who.hidden = true;
-  text.textContent = wod.text;
-  const href = new URL(timerHref(lang, wod.format, wod.timer, wod.name), location.origin);
+  text.textContent = view.text;
+  const href = new URL(timerHref(lang, view.format, view.timer, view.name), location.origin);
   href.searchParams.set('wod', wod.id);
   launch.href = `${href.pathname}${href.search}`;
   results.replaceChildren();

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { arrangeBoard } from './board';
+import { presentStored } from './reflow';
 import { parseScanResult } from './validate';
 import type { Format, TimerConfig } from './types';
 
@@ -88,6 +89,46 @@ describe('arrangeBoard', () => {
   it('uses Tabata defaults only when the piece says Tabata', () => {
     const result = scan('Tabata\nburpees');
     expect(result.parts[0]).toMatchObject({ format: 'tabata', timer: { workSec: 20, restSec: 10, rounds: 8 } });
+  });
+
+  it('unwraps a glued for-time and fills the time cap', () => {
+    const raw = "WOD - FOR TIME - TC:20'3 ROUNDS:30/24 cal300m run30/24 cal1' rest";
+    const result = scan(raw);
+    expect(result.format).toBe('fortime');
+    expect(result.timer.capSec).toBe(20 * 60);
+    expect(result.name).toBe("WOD - FOR TIME - TC:20'");
+    expect(result.parts[0]?.text).toBe("WOD - FOR TIME - TC:20'\n3 ROUNDS:\n30/24 cal\n300m run\n30/24 cal\n1' rest");
+    const shown = presentStored({ name: `${raw.slice(0, 79)}…`, format: 'other' as const, timer: {}, text: raw });
+    expect(shown.format).toBe('fortime');
+    expect(shown.timer).toEqual({ capSec: 20 * 60 });
+    expect(shown.text).toContain('300m run');
+    expect(shown.name).toBe("WOD - FOR TIME - TC:20'");
+  });
+
+  it('unwraps a capped rounds piece and an EMOM whose lines were glued', () => {
+    const cardio = "SKILL CARDIO4 ROUNDS:500m ski/row1' restCONSIGNE:-> MAXIMUM 15' pour finir";
+    const cardioResult = scan(cardio);
+    expect(cardioResult.format).toBe('fortime');
+    expect(cardioResult.timer.capSec).toBe(15 * 60);
+    expect(cardioResult.parts[0]?.text).toContain("500m ski/row\n1' rest");
+    expect(cardioResult.parts[0]?.text).toContain('MAXIMUM 15');
+
+    const emom = "SKILL RENFO GYM PULL UPSEMOM 12'1: 30-45'' dead hang (E: lesté)2: 5-10 strict pull ups (E: lesté)3: 12 kb triceps extensionCONSIGNE:-> meme lest";
+    const emomResult = scan(emom);
+    expect(emomResult.format).toBe('emom');
+    expect(emomResult.timer).toEqual({ intervalSec: 60, rounds: 12 });
+    expect(emomResult.parts[0]?.text).toContain('1: 30-45');
+    expect(emomResult.parts[0]?.text).toContain('\n2: 5-10 strict pull ups');
+    expect(emomResult.parts[0]?.text).toContain('\n3: 12 kb triceps extension');
+  });
+
+  it('unwraps a team for-time and keeps the cap', () => {
+    const raw = "WOD TEAM - FOR TIME - TC:16'100 bmuAthlete A: max bmuAthlete B: 1 macho man (80/55kg)CONSIGNES:-> macho man: 3 cleans + 3 front squats + 3 jerks-> switch directementRx: 70/50kgInter: 75 bmuScale: box mu";
+    const result = scan(raw);
+    expect(result.format).toBe('fortime');
+    expect(result.timer.capSec).toBe(16 * 60);
+    expect(result.parts[0]?.text).toContain('100 bmu\nAthlete A: max bmu\nAthlete B:');
+    expect(result.parts[0]?.text).toContain('\nRx: 70/50kg\nInter: 75 bmu\nScale: box mu');
   });
 
   it('stays stable when arranged twice', () => {
