@@ -101,8 +101,8 @@ describe('arrangeBoard', () => {
     const shown = presentStored({ name: `${raw.slice(0, 79)}…`, format: 'other' as const, timer: {}, text: raw });
     expect(shown.format).toBe('fortime');
     expect(shown.timer).toEqual({ capSec: 20 * 60 });
-    expect(shown.text).toContain('300m run');
     expect(shown.name).toBe("WOD - FOR TIME - TC:20'");
+    expect(shown.text).toBe("3 ROUNDS:\n30/24 cal\n300m run\n30/24 cal\n1' rest");
   });
 
   it('unwraps a capped rounds piece and an EMOM whose lines were glued', () => {
@@ -129,6 +129,9 @@ describe('arrangeBoard', () => {
     expect(result.timer.capSec).toBe(16 * 60);
     expect(result.parts[0]?.text).toContain('100 bmu\nAthlete A: max bmu\nAthlete B:');
     expect(result.parts[0]?.text).toContain('\nRx: 70/50kg\nInter: 75 bmu\nScale: box mu');
+    const shown = presentStored({ name: `${raw.slice(0, 79)}…`, format: 'other' as const, timer: {}, text: raw });
+    expect(shown.name).toBe("WOD TEAM - FOR TIME - TC:16'");
+    expect(shown.text).toBe("100 bmu\nAthlete A: max bmu\nAthlete B: 1 macho man (80/55kg)\nCONSIGNES:\n-> macho man: 3 cleans + 3 front squats + 3 jerks\n-> switch directement\nRx: 70/50kg\nInter: 75 bmu\nScale: box mu");
   });
 
   it('stays stable when arranged twice', () => {

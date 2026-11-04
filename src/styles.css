@@ -146,7 +146,8 @@ textarea { min-height: 9rem; resize: vertical; }
 .wod-text { white-space: pre-wrap; font: inherit; margin: 0; }
 .wod-now { margin: 0 0 0.7rem; }
 .wod-name { margin: 0; font-weight: 750; font-size: 1.35rem; letter-spacing: -0.03em; }
-.wod-now .wod-text { max-height: 7.5rem; overflow: auto; margin-top: 0.35rem; }
+.wod-now .wod-text { max-height: 14rem; overflow: auto; margin-top: 0.35rem; line-height: 1.45; }
+body.is-running .wod-now .wod-text { max-height: 6.5rem; }
 .save-note:not(:empty) { margin: 0.55rem 0 0; font-weight: 700; color: var(--accent); }
 .recent li, .results li { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
 .recent a { font-weight: 700; }

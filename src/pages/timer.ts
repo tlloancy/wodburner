@@ -15,6 +15,7 @@ import {
   type TimerView,
 } from '../engine/timer';
 import { fill } from '../fill';
+import { presentStored } from '../reflow';
 import { workoutHash } from '../hash';
 import { getMeta, getWod, listWods, putWod, setMeta } from '../db';
 import { registerSW } from '../pwa';
@@ -486,11 +487,14 @@ displayName = params.get('name') || '';
 
 function showWod(name: string, text: string): void {
   if (!wodNow || !nameEl || !textEl) return;
-  const body = text.trim();
-  nameEl.textContent = name;
+  const view = presentStored({ name, format: 'other', timer: {}, text: text || name });
+  const title = view.name.trim();
+  const body = view.text.trim();
+  nameEl.textContent = title;
   textEl.textContent = body;
-  textEl.hidden = body === '' || body === name;
-  wodNow.hidden = name === '' && textEl.hidden;
+  textEl.hidden = body === '';
+  wodNow.hidden = title === '' && body === '';
+  if (title) displayName = title;
 }
 
 showWod(displayName, '');

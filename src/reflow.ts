@@ -101,11 +101,18 @@ function title(name: string, text: string): string {
   return name;
 }
 
+function withoutTitle(name: string, text: string): string {
+  const lines = text.split('\n');
+  if (lines[0]?.trim() === name.trim()) return lines.slice(1).join('\n').trim();
+  return text;
+}
+
 export function presentStored<T extends { name: string; format: Format; timer: TimerConfig; text: string }>(wod: T): T {
   const text = reflow(wod.text);
   const found = clock(text);
   const name = title(wod.name, text);
-  if (!found || (wod.format !== 'other' && wod.format !== found.format)) return { ...wod, name, text };
+  const shown = withoutTitle(name, text);
+  if (!found || (wod.format !== 'other' && wod.format !== found.format)) return { ...wod, name, text: shown };
   const timer = wod.format === found.format ? { ...wod.timer, ...found.timer } : found.timer;
-  return { ...wod, name, text, format: found.format, timer };
+  return { ...wod, name, text: shown, format: found.format, timer };
 }
