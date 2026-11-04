@@ -272,8 +272,8 @@ for (const lang of ['fr', 'en']) {
   addPage({ lang, id: 'wod', path: `/${lang}/wod/`, out: `${lang}/wod/index.html`, index: false, title: p.wod.title, description: p.wod.description, script: 'wod', body: fill(await read('wod.html'), { ...wod, lang, h1: esc(p.wod.h1), lead: esc(p.wod.lead), missing: esc(p.wod.missing), launch: esc(p.wod.launch), results: esc(p.wod.results) }) });
 
   const heroBar = chrome(lang, `/${lang}/hero-wods/`, 'heroes');
-  const categoryLabel = { girl: 'Girl', hero: 'Hero', notable: lang === 'fr' ? 'Autre' : 'Other' };
-  const groups = ['girl', 'notable', 'hero'].map((category) => {
+  const categoryLabel = { girl: 'Girl', hero: 'Hero', notable: lang === 'fr' ? 'Autre' : 'Other', funny: 'Funny' };
+  const groups = ['girl', 'notable', 'funny', 'hero'].map((category) => {
     const items = heroes.filter((wod) => wod.category === category).map((wod) => `<li><a href="/${lang}/hero-wods/${esc(wod.slug)}/">${esc(wod.name)}</a> <span class="meta">${esc(ui.formats[wod.format])}</span></li>`).join('');
     if (!items) return '';
     return `<section><h2>${categoryLabel[category]}</h2><ul class="cards">${items}</ul></section>`;

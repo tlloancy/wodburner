@@ -4618,5 +4618,50 @@
       "en": "5 rounds for time of:\n400 m run\n7 strict pull-ups\n7 strict handstand push-ups\n20 toes-to-bar\n22 alternating dumbbell snatches\n200 m dumbbell carry\nWomen 35 lb (16 kg), men 50 lb (23 kg)",
       "fr": "5 tours for time :\n400 m de course\n7 tractions strictes\n7 pompes en équilibre strictes\n20 toes-to-bar\n22 arrachés haltère, en alternant\n200 m de portage haltères\nFemmes 35 lb (16 kg), hommes 50 lb (23 kg)"
     }
+  },
+  {
+    "slug": "king-kong",
+    "name": "King Kong",
+    "category": "funny",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n1 deadlift, 455 lb (206 kg)\n2 muscle-ups\n3 squat cleans, 250 lb (113 kg)\n4 handstand push-ups",
+      "fr": "3 tours for time :\n1 soulevé de terre, 455 lb (206 kg)\n2 muscle-ups\n3 squat cleans, 250 lb (113 kg)\n4 pompes en équilibre"
+    },
+    "scaling": {
+      "en": "Keep 1-2-3-4. Lighten both bars.",
+      "fr": "Gardez 1-2-3-4. Allégez les deux barres."
+    }
+  },
+  {
+    "slug": "christine",
+    "name": "Christine",
+    "category": "funny",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "3 rounds for time of:\n500 m row\n12 deadlifts, bodyweight\n21 box jumps, 20 inch (51 cm)",
+      "fr": "3 tours for time :\n500 m au rameur\n12 soulevés de terre, poids de corps\n21 box jumps, boîte de 20 inch (51 cm)"
+    },
+    "scaling": {
+      "en": "Keep 3 rounds. Lighten the deadlift below bodyweight.",
+      "fr": "Gardez 3 tours. Soulevé de terre plus léger que le poids de corps."
+    }
+  },
+  {
+    "slug": "megan",
+    "name": "Megan",
+    "category": "funny",
+    "format": "fortime",
+    "timer": {},
+    "text": {
+      "en": "21-15-9 reps for time of:\nBurpees\nKettlebell swings, men 53 lb (24 kg), women 35 lb (16 kg)\nDouble-unders",
+      "fr": "21-15-9 répétitions, for time :\nBurpees\nKettlebell swings, hommes 53 lb (24 kg), femmes 35 lb (16 kg)\nDouble-unders"
+    },
+    "scaling": {
+      "en": "Keep 21-15-9. Lighter kettlebell, or single-unders.",
+      "fr": "Gardez 21-15-9. Kettlebell plus légère, ou single-unders."
+    }
   }
 ]
