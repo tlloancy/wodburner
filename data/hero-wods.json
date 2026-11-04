@@ -4165,5 +4165,458 @@
       "en": "Keep the clock. Lighten the load or simplify the hardest movement.",
       "fr": "Gardez le chrono. Allégez la charge ou simplifiez le mouvement le plus dur."
     }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "marguerita",
+    "name": "Marguerita",
+    "category": "girl",
+    "format": "fortime",
+    "text": {
+      "en": "50 reps for time of:\nBurpee / push-up / jumping jack / sit-up / handstand",
+      "fr": "50 répétitions for time :\nBurpee / pompe / jumping jack / abdo / équilibre sur les mains"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "grettel",
+    "name": "Grettel",
+    "category": "girl",
+    "format": "fortime",
+    "text": {
+      "en": "10 rounds for time of:\n3 clean and jerks\n3 burpees over the bar\nWomen 95 lb (43 kg), men 135 lb (61 kg)",
+      "fr": "10 tours for time :\n3 épaulés-jetés\n3 burpees par-dessus la barre\nFemmes 95 lb (43 kg), hommes 135 lb (61 kg)"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "ingrid",
+    "name": "Ingrid",
+    "category": "girl",
+    "format": "fortime",
+    "text": {
+      "en": "10 rounds for time of:\n3 snatches\n3 burpees over the bar\nWomen 95 lb (43 kg), men 135 lb (61 kg)",
+      "fr": "10 tours for time :\n3 arrachés\n3 burpees par-dessus la barre\nFemmes 95 lb (43 kg), hommes 135 lb (61 kg)"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "The 3-minute rest stays. Lower the reps or the deadlift, and pike the handstand push-ups.",
+      "fr": "Le repos de 3 minutes reste. Baissez les reps ou le soulevé de terre, et pike pour les pompes."
+    },
+    "slug": "barbara-ann",
+    "name": "Barbara Ann",
+    "category": "girl",
+    "format": "fortime",
+    "text": {
+      "en": "5 rounds, each for time, of:\n20 handstand push-ups\n30 deadlifts, women 95 lb (43 kg), men 135 lb (61 kg)\n40 sit-ups\n50 double-unders\nRest exactly 3 minutes between rounds.",
+      "fr": "5 tours, chacun for time :\n20 pompes en équilibre\n30 soulevés de terre, femmes 95 lb (43 kg), hommes 135 lb (61 kg)\n40 abdominaux\n50 double-unders\nRepos de 3 minutes précises entre les tours."
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "lyla",
+    "name": "Lyla",
+    "category": "girl",
+    "format": "fortime",
+    "text": {
+      "en": "10-9-8-7-6-5-4-3-2-1 reps for time of:\nMuscle-ups\nBodyweight clean and jerks",
+      "fr": "10-9-8-7-6-5-4-3-2-1 répétitions, for time :\nMuscle-ups\nÉpaulés-jetés, poids de corps"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "andi",
+    "name": "Andi",
+    "category": "girl",
+    "format": "fortime",
+    "text": {
+      "en": "For time:\n100 hang power snatches\n100 push presses\n100 sumo deadlift high pulls\n100 front squats\nWomen 45 lb (20 kg), men 65 lb (29 kg)",
+      "fr": "For time :\n100 arrachés puissance suspendus\n100 push presses\n100 sumo deadlift high pulls\n100 front squats\nFemmes 45 lb (20 kg), hommes 65 lb (29 kg)"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Keep 5 rounds. Use less than three-quarter bodyweight, and pike the handstand push-ups.",
+      "fr": "Gardez 5 tours. Moins que les trois quarts du poids de corps, et pike pour les pompes."
+    },
+    "slug": "lane",
+    "name": "Lane",
+    "category": "girl",
+    "format": "other",
+    "text": {
+      "en": "5 rounds for max reps of:\n¾ bodyweight hang power snatches\nHandstand push-ups\nRest as needed between rounds.",
+      "fr": "5 tours, max de répétitions :\nArrachés puissance suspendus, ¾ du poids de corps\nPompes en équilibre\nRepos libre entre les tours."
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "ghd-annie",
+    "name": "GHD Annie",
+    "category": "girl",
+    "format": "fortime",
+    "text": {
+      "en": "For time:\n50-40-30-20-10\nDouble-unders\nGHD sit-ups",
+      "fr": "For time :\n50-40-30-20-10\nDouble-unders\nAbdos au GHD"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "nasty-girls",
+    "name": "Nasty Girls",
+    "category": "girl",
+    "format": "fortime",
+    "text": {
+      "en": "3 rounds for time of:\n50 squats\n7 muscle-ups\n10 hang power cleans, 135 lb (61 kg)",
+      "fr": "3 tours for time :\n50 squats\n7 muscle-ups\n10 hang power cleans, 135 lb (61 kg)"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "freestyle-diane",
+    "name": "Freestyle Diane",
+    "category": "girl",
+    "format": "fortime",
+    "text": {
+      "en": "For time:\n45 deadlifts, women 70 kg, men 102 kg\n45 handstand push-ups",
+      "fr": "For time :\n45 soulevés de terre, femmes 70 kg, hommes 102 kg\n45 pompes en équilibre"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Keep the shared run. One partner can take fewer box jumps and wall-balls.",
+      "fr": "Gardez la course à deux. L’un des deux peut prendre moins de box jumps et de wall-balls."
+    },
+    "slug": "partner-kelly",
+    "name": "Partner Kelly",
+    "category": "girl",
+    "format": "fortime",
+    "text": {
+      "en": "5 rounds for time with a partner:\n400 m run\n30 box jumps, women 20 inch (51 cm), men 24 inch (61 cm)\n30 wall-ball shots, women 14 lb (6 kg), men 20 lb (9 kg)\nRun together. Split the box jumps and the wall-balls as needed.",
+      "fr": "5 tours for time à deux :\n400 m de course\n30 box jumps, femmes 20 inch (51 cm), hommes 24 inch (61 cm)\n30 wall-balls, femmes 14 lb (6 kg), hommes 20 lb (9 kg)\nOn court ensemble. On se répartit les box jumps et les wall-balls."
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "power-amanda",
+    "name": "Power Amanda",
+    "category": "girl",
+    "format": "fortime",
+    "text": {
+      "en": "9-7-5 reps for time of:\nRing muscle-ups\nPower snatches, women 95 lb (43 kg), men 135 lb (61 kg)",
+      "fr": "9-7-5 répétitions, for time :\nMuscle-ups aux anneaux\nArrachés puissance, femmes 95 lb (43 kg), hommes 135 lb (61 kg)"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Keep the 3-minute stations. Ring rows, or knee push-ups.",
+      "fr": "Gardez les postes de 3 minutes. Tirages aux anneaux, ou pompes sur les genoux."
+    },
+    "slug": "time-priority-angie",
+    "name": "Time Priority Angie",
+    "category": "girl",
+    "format": "other",
+    "text": {
+      "en": "For reps:\n3:00 of pull-ups\n3:00 of push-ups\n3:00 of sit-ups\n3:00 of air squats",
+      "fr": "Aux répétitions :\n3:00 de tractions\n3:00 de pompes\n3:00 d’abdominaux\n3:00 de squats"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "filthy-50",
+    "name": "Filthy 50",
+    "category": "notable",
+    "format": "fortime",
+    "text": {
+      "en": "For time:\n50 box jumps\n50 jumping pull-ups\n50 kettlebell swings\n50 walking-lunge steps\n50 knees-to-elbows\n50 push presses\n50 back extensions\n50 wall-ball shots\n50 burpees\n50 double-unders\nWomen 20-inch box, 12 kg kettlebell, 35 lb (16 kg) push press, 14 lb (6 kg) ball\nMen 24-inch box, 16 kg kettlebell, 45 lb (20 kg) push press, 20 lb (9 kg) ball",
+      "fr": "For time :\n50 box jumps\n50 tractions sautées\n50 kettlebell swings\n50 pas de fentes marchées\n50 knees-to-elbows\n50 push presses\n50 extensions du dos\n50 wall-balls\n50 burpees\n50 double-unders\nFemmes : boîte de 20 inch (51 cm), kettlebell 12 kg, push press 35 lb (16 kg), ballon 14 lb (6 kg)\nHommes : boîte de 24 inch (61 cm), kettlebell 16 kg, push press 45 lb (20 kg), ballon 20 lb (9 kg)"
+    }
+  },
+  {
+    "timer": {
+      "intervalSec": 60,
+      "rounds": 18
+    },
+    "scaling": {
+      "en": "Keep the minutes. Lighter bar, lighter ball, lower box.",
+      "fr": "Gardez les minutes. Barre plus légère, ballon plus léger, boîte plus basse."
+    },
+    "slug": "fight-gone-bad",
+    "name": "Fight Gone Bad",
+    "category": "notable",
+    "format": "emom",
+    "text": {
+      "en": "3 rounds for max reps of:\n1 minute of wall-ball shots\n1 minute of sumo deadlift high pulls\n1 minute of box jumps\n1 minute of push presses\n1 minute of rowing, calories\nRest 1 minute\nWomen: 14 lb (6 kg) ball to 9 ft (2.7 m), 55 lb (25 kg) bar, 20-inch box\nMen: 20 lb (9 kg) ball to 10 ft (3 m), 75 lb (34 kg) bar, 20-inch box",
+      "fr": "3 tours, max de répétitions :\n1 minute de wall-balls\n1 minute de sumo deadlift high pulls\n1 minute de box jumps\n1 minute de push presses\n1 minute de rameur, calories\n1 minute de repos\nFemmes : ballon 14 lb (6 kg) à 9 ft (2,7 m), barre 55 lb (25 kg), boîte de 20 inch (51 cm)\nHommes : ballon 20 lb (9 kg) à 10 ft (3 m), barre 75 lb (34 kg), boîte de 20 inch (51 cm)"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Keep the 3-minute windows and the minute of rest. Lighten the bar.",
+      "fr": "Gardez les 3 minutes et la minute de repos. Allégez la barre."
+    },
+    "slug": "the-chief",
+    "name": "The Chief",
+    "category": "notable",
+    "format": "other",
+    "text": {
+      "en": "Max rounds in 3 minutes of:\n3 power cleans\n6 push-ups\n9 squats\nWomen 95 lb (43 kg), men 135 lb (61 kg)\nRest 1 minute. Repeat for 5 cycles.",
+      "fr": "Max de tours en 3 minutes :\n3 power cleans\n6 pompes\n9 squats\nFemmes 95 lb (43 kg), hommes 135 lb (61 kg)\n1 minute de repos. 5 cycles en tout."
+    }
+  },
+  {
+    "timer": {
+      "intervalSec": 60,
+      "rounds": 24
+    },
+    "scaling": {
+      "en": "Keep the minutes. Step the burpees back, or do single-unders.",
+      "fr": "Gardez les minutes. Burpees simplifiés, ou single-unders."
+    },
+    "slug": "the-ghost",
+    "name": "The Ghost",
+    "category": "notable",
+    "format": "emom",
+    "text": {
+      "en": "6 rounds of:\n1 minute of rowing\n1 minute of burpees\n1 minute of double-unders\n1 minute of rest\nScore = total reps",
+      "fr": "6 tours :\n1 minute de rameur\n1 minute de burpees\n1 minute de double-unders\n1 minute de repos\nScore = total des répétitions"
+    }
+  },
+  {
+    "timer": {
+      "workSec": 20,
+      "restSec": 10,
+      "rounds": 8,
+      "sets": 5,
+      "setRestSec": 60
+    },
+    "scaling": {
+      "en": "Keep 20 seconds on and 10 seconds off. Use an easier version of the movement you miss.",
+      "fr": "Gardez 20 secondes d’effort et 10 secondes de repos. Une version plus simple du mouvement qui coince."
+    },
+    "slug": "tabata-this",
+    "name": "Tabata This",
+    "category": "notable",
+    "format": "tabata",
+    "text": {
+      "en": "Tabata row\nRest 1 minute\nTabata squats\nRest 1 minute\nTabata pull-ups\nRest 1 minute\nTabata push-ups\nRest 1 minute\nTabata sit-ups\n20 seconds of work, 10 seconds of rest, 8 intervals.\nEach station scores its lowest interval. Add the five stations. The row counts calories.",
+      "fr": "Tabata rameur\n1 minute de repos\nTabata squats\n1 minute de repos\nTabata tractions\n1 minute de repos\nTabata pompes\n1 minute de repos\nTabata abdominaux\n20 secondes d’effort, 10 secondes de repos, 8 intervalles.\nChaque poste compte son intervalle le plus bas. On additionne les cinq. Le rameur compte les calories."
+    }
+  },
+  {
+    "timer": {
+      "workSec": 20,
+      "restSec": 10,
+      "rounds": 32
+    },
+    "scaling": {
+      "en": "Keep 20 seconds on and 10 seconds off. Band the pull-ups, or use knee push-ups.",
+      "fr": "Gardez 20 secondes d’effort et 10 secondes de repos. Tractions élastiques, ou pompes sur les genoux."
+    },
+    "slug": "tabata-something-else",
+    "name": "Tabata Something Else",
+    "category": "notable",
+    "format": "tabata",
+    "text": {
+      "en": "32 intervals of 20 seconds of work and 10 seconds of rest.\nThe first 8 are pull-ups, the next 8 are push-ups, the next 8 are sit-ups, the last 8 are squats.\nNo extra rest between the movements.\nScore = total reps from all 32 intervals.",
+      "fr": "32 intervalles de 20 secondes d’effort et 10 secondes de repos.\nLes 8 premiers : tractions. Les 8 suivants : pompes. Les 8 suivants : abdominaux. Les 8 derniers : squats.\nPas de repos en plus entre les mouvements.\nScore = total des répétitions sur les 32 intervalles."
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "l1-benchmark",
+    "name": "L1 Benchmark",
+    "category": "notable",
+    "format": "fortime",
+    "text": {
+      "en": "3 rounds for time of:\n15 thrusters\n12 burpees\nWomen 65 lb (29 kg), men 95 lb (43 kg)",
+      "fr": "3 tours for time :\n15 thrusters\n12 burpees\nFemmes 65 lb (29 kg), hommes 95 lb (43 kg)"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Stop adding weight when the rep is no longer solid.",
+      "fr": "Arrêtez d’ajouter du poids quand la répétition n’est plus solide."
+    },
+    "slug": "crossfit-total",
+    "name": "CrossFit Total",
+    "category": "notable",
+    "format": "other",
+    "text": {
+      "en": "1-rep max of each lift:\nBack squat\nShoulder press\nDeadlift\nThree attempts per lift. Finish one lift before the next.\nScore = back squat + shoulder press + deadlift",
+      "fr": "Maxi sur 1 répétition de chaque mouvement :\nSquat arrière\nShoulder press\nSoulevé de terre\nTrois essais par mouvement. On finit un mouvement avant le suivant.\nScore = squat arrière + shoulder press + soulevé de terre"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Stop adding weight when the rep is no longer solid.",
+      "fr": "Arrêtez d’ajouter du poids quand la répétition n’est plus solide."
+    },
+    "slug": "the-other-total",
+    "name": "The Other Total",
+    "category": "notable",
+    "format": "other",
+    "text": {
+      "en": "1-rep max of each lift:\nClean, from the ground, power or squat\nBench press\nOverhead squat\nScore = clean + bench press + overhead squat",
+      "fr": "Maxi sur 1 répétition de chaque mouvement :\nClean, du sol, puissance ou squat\nDéveloppé couché\nOverhead squat\nScore = clean + développé couché + overhead squat"
+    }
+  },
+  {
+    "timer": {
+      "capSec": 1200
+    },
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "2007-hopper",
+    "name": "2007 Hopper",
+    "category": "notable",
+    "format": "fortime",
+    "text": {
+      "en": "For time:\n1000 m row\nThen 5 rounds of:\n25 pull-ups\n7 shoulder-to-overhead\nWomen 85 lb (39 kg), men 135 lb (61 kg)\nTime cap: 20 minutes",
+      "fr": "For time :\n1000 m au rameur\nPuis 5 tours :\n25 tractions\n7 shoulder-to-overhead\nFemmes 85 lb (39 kg), hommes 135 lb (61 kg)\nPlafond : 20 minutes"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Keep 5 rounds. Lighter dumbbells. One partner can take less of the carry.",
+      "fr": "Gardez 5 tours. Haltères plus légers. L’un des deux peut prendre moins de portage."
+    },
+    "slug": "partner-weston",
+    "name": "Partner Weston",
+    "category": "hero",
+    "format": "fortime",
+    "text": {
+      "en": "5 rounds for time with a partner:\n1000 m row\n200 m dumbbell farmers carry\n50 m single-dumbbell waiters walk, right arm\n50 m single-dumbbell waiters walk, left arm\nOne partner works at a time.\nWomen 35 lb (16 kg), men 45 lb (20 kg)",
+      "fr": "5 tours for time à deux :\n1000 m au rameur\n200 m de farmers carry aux haltères\n50 m de waiters walk, un haltère, bras droit\n50 m de waiters walk, un haltère, bras gauche\nUn seul travaille à la fois.\nFemmes 35 lb (16 kg), hommes 45 lb (20 kg)"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "tommyg3x",
+    "name": "TommyG3x",
+    "category": "hero",
+    "format": "fortime",
+    "text": {
+      "en": "For time:\n300 m farmers carry\nThen 3 rounds of:\n7 power cleans\n9 push-ups\nThen 42 burpees\nThen 3 rounds of:\n5 pull-ups\n7 deadlifts\nThen 200 m farmers carry\nWomen: 14 lb (6 kg) vest, 35 lb (16 kg) dumbbells, 95 lb (43 kg) power cleans, 155 lb (70 kg) deadlifts\nMen: 20 lb (9 kg) vest, 50 lb (23 kg) dumbbells, 135 lb (61 kg) power cleans, 225 lb (102 kg) deadlifts",
+      "fr": "For time :\n300 m de farmers carry\nPuis 3 tours :\n7 power cleans\n9 pompes\nPuis 42 burpees\nPuis 3 tours :\n5 tractions\n7 soulevés de terre\nPuis 200 m de farmers carry\nFemmes : gilet 14 lb (6 kg), haltères 35 lb (16 kg), power cleans 95 lb (43 kg), soulevés de terre 155 lb (70 kg)\nHommes : gilet 20 lb (9 kg), haltères 50 lb (23 kg), power cleans 135 lb (61 kg), soulevés de terre 225 lb (102 kg)"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "gunny",
+    "name": "Gunny",
+    "category": "hero",
+    "format": "fortime",
+    "text": {
+      "en": "For time:\n1 mile weighted run\n50 push-ups\n50 sit-ups\n1 mile weighted run\n50 push-ups\n50 sit-ups\n1 mile weighted run\nWear a vest, body armor, or a pack. The runs are loaded with 50 lb (23 kg).",
+      "fr": "For time :\n1 mile de course lestée\n50 pompes\n50 abdominaux\n1 mile de course lestée\n50 pompes\n50 abdominaux\n1 mile de course lestée\nGilet, gilet pare-balles ou sac. Les courses sont lestées de 50 lb (23 kg)."
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "gavin",
+    "name": "Gavin",
+    "category": "hero",
+    "format": "fortime",
+    "text": {
+      "en": "20 rounds for time of:\n5 pull-ups\n10 push-ups\n15 air squats\n200 m run\nWomen 14 lb (6 kg) vest, men 20 lb (9 kg) vest",
+      "fr": "20 tours for time :\n5 tractions\n10 pompes\n15 squats\n200 m de course\nFemmes gilet 14 lb (6 kg), hommes gilet 20 lb (9 kg)"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "owen",
+    "name": "Owen",
+    "category": "hero",
+    "format": "fortime",
+    "text": {
+      "en": "5 rounds for time of:\n24 back squats, bodyweight\n800 m run",
+      "fr": "5 tours for time :\n24 squats arrière, poids de corps\n800 m de course"
+    }
+  },
+  {
+    "timer": {},
+    "scaling": {
+      "en": "Lighten the load or lower the reps, and keep the order of the movements.",
+      "fr": "Allégez la charge ou baissez les répétitions, et gardez l’ordre des mouvements."
+    },
+    "slug": "restrepo",
+    "name": "Restrepo",
+    "category": "hero",
+    "format": "fortime",
+    "text": {
+      "en": "5 rounds for time of:\n400 m run\n7 strict pull-ups\n7 strict handstand push-ups\n20 toes-to-bar\n22 alternating dumbbell snatches\n200 m dumbbell carry\nWomen 35 lb (16 kg), men 50 lb (23 kg)",
+      "fr": "5 tours for time :\n400 m de course\n7 tractions strictes\n7 pompes en équilibre strictes\n20 toes-to-bar\n22 arrachés haltère, en alternant\n200 m de portage haltères\nFemmes 35 lb (16 kg), hommes 50 lb (23 kg)"
+    }
   }
 ]
