@@ -1,6 +1,7 @@
 import { sha256Hex } from './hash';
 import { exportDocument, importDocument } from './transfer';
 import type { Wod } from './types';
+import { isoDate } from './validate';
 
 // Sync without an account. The secret key is not sent to the server. From it we derive
 // (1) an opaque id the server stores the data under and (2) an AES-GCM key that encrypts the data
@@ -50,6 +51,18 @@ export async function vaultId(key: string): Promise<string> {
   return (await sha256Hex(`wodburner:id:${key}`)).slice(0, 40);
 }
 
+// A second secret, derived one way from the key. It opens a read-only copy of our own workouts.
+// Whoever holds it cannot get back to the key, so they can read that copy but never write or delete anything.
+export async function shareCode(key: string): Promise<string> {
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`wodburner:share:${key}`));
+  return newKey(new Uint8Array(digest).slice(0, 20));
+}
+
+// Proof of ownership sent with every write. The server keeps only its hash.
+export async function writeToken(key: string): Promise<string> {
+  return sha256Hex(`wodburner:write:${key}`);
+}
+
 async function aesKey(key: string): Promise<CryptoKey> {
   const raw = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`wodburner:enc:${key}`));
   return crypto.subtle.importKey('raw', raw, 'AES-GCM', false, ['encrypt', 'decrypt']);
@@ -67,12 +80,20 @@ function fromBase64(text: string): Uint8Array {
   return Uint8Array.from(binary, (ch) => ch.charCodeAt(0));
 }
 
+async function pipe(data: Uint8Array, stream: CompressionStream | DecompressionStream): Promise<Uint8Array> {
+  const out = new Response(new Blob([data as BlobPart]).stream().pipeThrough(stream as unknown as ReadableWritablePair<Uint8Array, Uint8Array>));
+  return new Uint8Array(await out.arrayBuffer());
+}
+
+const MAX_PLAIN = 40_000_000;
+
+// Version 1 was plain JSON. Version 2 compresses before encrypting, so a long history fits the size limit.
 export async function seal(key: string, payload: Payload): Promise<string> {
   const iv = crypto.getRandomValues(new Uint8Array(12));
-  const data = new TextEncoder().encode(JSON.stringify(payload));
-  const cipher = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, await aesKey(key), data));
+  const data = await pipe(new TextEncoder().encode(JSON.stringify(payload)), new CompressionStream('gzip'));
+  const cipher = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, await aesKey(key), data as BufferSource));
   const out = new Uint8Array(1 + iv.length + cipher.length);
-  out[0] = 1;
+  out[0] = 2;
   out.set(iv, 1);
   out.set(cipher, 1 + iv.length);
   return toBase64(out);
@@ -80,9 +101,11 @@ export async function seal(key: string, payload: Payload): Promise<string> {
 
 export async function open(key: string, blob: string): Promise<Payload> {
   const bytes = fromBase64(blob);
-  if (bytes[0] !== 1 || bytes.length < 30) throw new Error('format');
-  const plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytes.slice(1, 13) }, await aesKey(key), bytes.slice(13));
-  const value: unknown = JSON.parse(new TextDecoder().decode(plain));
+  if ((bytes[0] !== 1 && bytes[0] !== 2) || bytes.length < 30) throw new Error('format');
+  const plain = new Uint8Array(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytes.slice(1, 13) }, await aesKey(key), bytes.slice(13)));
+  const raw = bytes[0] === 2 ? await pipe(plain, new DecompressionStream('gzip')) : plain;
+  if (raw.length > MAX_PLAIN) throw new Error('format');
+  const value: unknown = JSON.parse(new TextDecoder().decode(raw));
   if (typeof value !== 'object' || value === null || (value as { v?: unknown }).v !== 1) throw new Error('format');
   return value as Payload;
 }
@@ -102,9 +125,27 @@ export function cleanDeleted(value: unknown): Record<string, string> {
   const out: Record<string, string> = {};
   if (typeof value !== 'object' || value === null) return out;
   for (const [hash, when] of Object.entries(value)) {
-    if (TOMBSTONE.test(hash) && typeof when === 'string' && !Number.isNaN(Date.parse(when))) out[hash] = when;
+    if (TOMBSTONE.test(hash) && typeof when === 'string' && !Number.isNaN(Date.parse(when))) out[hash] = isoDate(when);
   }
   return out;
+}
+
+const TOMBSTONE_DAYS = 365;
+
+// A deletion only has to outlive the devices that still hold the workout. After a year it is forgotten,
+// so the list cannot grow forever.
+export function pruneDeleted(deleted: Record<string, string>, now = Date.now()): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const [hash, when] of Object.entries(deleted)) if (now - Date.parse(when) < TOMBSTONE_DAYS * 86_400_000) out[hash] = when;
+  return out;
+}
+
+// Moves the copies of a friend (and our deletions of them) from one id to another.
+export function moveFriend(wods: Wod[], deleted: Record<string, string>, from: string, to: string): { wods: Wod[]; deleted: Record<string, string> } {
+  const moved = wods.map((wod) => (wod.by === from ? { ...wod, by: to } : wod));
+  const next: Record<string, string> = {};
+  for (const [key, when] of Object.entries(deleted)) next[key.startsWith(`${from}:`) ? `${to}:${key.slice(from.length + 1)}` : key] = when;
+  return { wods: moved, deleted: next };
 }
 
 export function packPayload(wods: Wod[], deleted: Record<string, string>, who = ''): Payload {

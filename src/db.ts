@@ -66,11 +66,19 @@ export async function deleteWod(id: string): Promise<void> {
   await transactionDone(tx);
 }
 
-export async function replaceWods(wods: Wod[]): Promise<void> {
+// Writes only what changed since `before` was read, in one transaction. A workout saved in another tab
+// in the meantime is left alone, which a clear-then-rewrite would have wiped.
+export async function applyWods(before: Wod[], after: Wod[]): Promise<void> {
+  const prior = new Map(before.map((wod) => [wod.id, JSON.stringify(wod)]));
   const db = await openDb();
   const tx = db.transaction('wods', 'readwrite');
-  tx.objectStore('wods').clear();
-  for (const wod of wods) tx.objectStore('wods').put(wod);
+  const store = tx.objectStore('wods');
+  const keep = new Set<string>();
+  for (const wod of after) {
+    keep.add(wod.id);
+    if (prior.get(wod.id) !== JSON.stringify(wod)) store.put(wod);
+  }
+  for (const id of prior.keys()) if (!keep.has(id)) store.delete(id);
   await transactionDone(tx);
   await persistStorage();
 }

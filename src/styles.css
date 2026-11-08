@@ -52,6 +52,7 @@ a { color: inherit; }
 }
 .top { margin-bottom: 1.4rem; }
 .foot { margin-top: 2rem; color: var(--muted); }
+.foot small { flex-basis: 100%; }
 .word { font-weight: 750; letter-spacing: -0.03em; text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; min-height: 48px; }
 .word img { width: 32px; height: auto; border-radius: 8px; }
 nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }

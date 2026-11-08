@@ -8,7 +8,11 @@
       "tabata": "Tabata",
       "other": "Autre"
     },
-    "confidence": { "high": "élevée", "medium": "moyenne", "low": "faible" },
+    "confidence": {
+      "high": "élevée",
+      "medium": "moyenne",
+      "low": "faible"
+    },
     "timer": {
       "pause": "Pause",
       "resume": "Reprendre",
@@ -38,7 +42,7 @@
       "syncNetwork": "Pas de connexion au serveur. Réessayez.",
       "syncNotFound": "Aucune sauvegarde pour cette clé. Vérifiez-la.",
       "syncBadKey": "Clé invalide ou sauvegarde illisible.",
-      "syncLimit": "La sauvegarde est trop volumineuse.",
+      "syncLimit": "Sauvegarde trop volumineuse : elle ne se synchronise plus. Exportez puis supprimez d’anciens WODs.",
       "syncCopied": "Clé copiée.",
       "syncLinkCopied": "Lien copié.",
       "syncOn": "Synchro activée. Envoyez le code à vos autres appareils.",
@@ -64,7 +68,10 @@
       "confirmDelete": "Supprimer « {name} » ?",
       "resultSaved": "Résultat ajouté.",
       "needName": "Indiquez un nom.",
-      "saved": "WOD enregistré."
+      "saved": "WOD enregistré.",
+      "syncQuota": "Trop de synchros aujourd’hui. Réessayez demain.",
+      "syncSelf": "C’est votre propre lien.",
+      "friendLinkCopied": "Lien lecture seule copié."
     },
     "scan": {
       "preparing": "Préparation de la photo…",
@@ -100,7 +107,8 @@
       "scan": "Scanner",
       "privacy": "Confidentialité",
       "contact": "Contact",
-      "email": "thomaslloancy@gmail.com"
+      "email": "thomaslloancy@gmail.com",
+      "disclaimer": "WODBurner n’est pas affilié à CrossFit, LLC. CrossFit® est une marque de CrossFit, LLC."
     },
     "root": {
       "title": "WODBurner — chrono CrossFit",
@@ -199,13 +207,13 @@
       "syncRestore": "Récupérer mes WODs",
       "syncKeyLabel": "Votre clé secrète",
       "syncName": "Votre nom",
-      "syncNameHint": "Un copain qui scanne votre code voit ce nom sur vos WODs.",
+      "syncNameHint": "Un copain qui ouvre votre lien de partage voit ce nom sur vos WODs.",
       "syncCopy": "Copier la clé",
       "syncShare": "Envoyer à un autre appareil",
       "syncScan": "L’autre téléphone le scanne avec son appareil photo : l’historique s’ouvre et les WODs arrivent.",
       "syncNow": "Synchroniser",
       "syncDisable": "Désactiver et effacer la copie",
-      "syncWarn": "Notez-la ailleurs. Perdue, elle ne peut pas être récupérée. Quiconque la connaît peut lire la sauvegarde.",
+      "syncWarn": "Notez-la ailleurs. Perdue, elle ne peut pas être récupérée. Quiconque la connaît peut lire et modifier la sauvegarde : ne l’envoyez qu’à vos propres appareils.",
       "searchLabel": "Rechercher dans mes WODs",
       "searchPlaceholder": "Nom, mouvement, charge… (touche /)",
       "clearSearch": "Effacer",
@@ -243,7 +251,9 @@
       "tabataRounds": "Tours",
       "sets": "Blocs",
       "setRest": "Repos entre blocs, secondes",
-      "prep": "Préparation, secondes"
+      "prep": "Préparation, secondes",
+      "syncFriendHint": "Pour un copain : un lien en lecture seule. Il voit vos WODs et leurs résultats, sans pouvoir rien modifier, et ne peut pas remonter à votre clé.",
+      "syncFriendShare": "Partager en lecture seule"
     },
     "scan": {
       "title": "Scanner un tableau — WODBurner",
@@ -305,13 +315,13 @@
         {
           "h": "Ce qui reste sur cet appareil",
           "p": [
-            "Les WODs, les résultats, le son et le volume sont enregistrés dans ce navigateur (IndexedDB). La langue affichée est celle du téléphone. L’export JSON vous permet de les copier. Si vous activez la synchro, une copie chiffrée dans votre navigateur par une clé secrète que nous ne connaissons pas est conservée sur nos serveurs Cloudflare, sans nom ni e-mail ; la désactiver l’efface. Scanner la clé d’un copain copie son historique dans le vôtre, avec son nom, et n’écrit rien dans sa sauvegarde. Tout effacer retire ces données de l’appareil. C’est le seul geste qui correspond à une suppression de compte, puisqu’il n’y a pas de compte."
+            "Les WODs, les résultats, le son et le volume sont enregistrés dans ce navigateur (IndexedDB). La langue affichée est celle du téléphone. L’export JSON vous permet de les copier. Si vous activez la synchro, une copie chiffrée dans votre navigateur par une clé secrète que nous ne connaissons pas est conservée sur nos serveurs Cloudflare, sans nom ni e-mail ; la désactiver l’efface. Une seconde copie, chiffrée avec un code dérivé de la clé, contient vos WODs à vous et sert au partage en lecture seule : ce code permet de la lire, jamais de la modifier ni de retrouver votre clé. Ouvrir le lien d’un copain copie son historique dans le vôtre, avec son nom, et n’écrit rien dans sa sauvegarde. Tout effacer retire ces données de l’appareil. C’est le seul geste qui correspond à une suppression de compte, puisqu’il n’y a pas de compte."
           ]
         },
         {
           "h": "La photo du tableau",
           "p": [
-            "La photo part uniquement quand vous lancez un scan. Le navigateur la réduit, puis l’envoie au service de lecture de WODBurner. Ce service la transmet à Google Gemini le temps de la requête et ne la conserve pas. Le texte relu est ce qui peut être enregistré, et seulement sur votre appareil, si vous le demandez.",
+            "La photo part uniquement quand vous lancez un scan. Le navigateur la réduit, puis l’envoie au service de lecture de WODBurner. Ce service la transmet à Google Gemini le temps de la requête et ne la conserve pas. Le texte lu est gardé 24 heures sur nos serveurs Cloudflare, sous l’empreinte de l’image et non sous votre nom, pour qu’une même photo ne soit pas lue deux fois ; il est ensuite effacé. Il n’entre dans votre historique, sur votre appareil, que si vous l’enregistrez.",
             "Un tableau peut montrer des noms ou des visages. L’image n’est pas conservée par WODBurner."
           ]
         },

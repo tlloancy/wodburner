@@ -72,6 +72,8 @@ export interface Env {
   IP_HASH_SALT?: string;
   SYNC_WRITES_PER_IP_PER_DAY?: string;
   SYNC_WRITES_GLOBAL_PER_DAY?: string;
+  SYNC_CREATES_PER_IP_PER_DAY?: string;
+  SYNC_CREATES_GLOBAL_PER_DAY?: string;
   KV: {
     get(key: string): Promise<string | null>;
     put(key: string, value: string, options?: { expirationTtl?: number }): Promise<void>;
@@ -95,6 +97,7 @@ const COPY = {
     syncId: 'Identifiant de synchronisation invalide.',
     syncSize: 'Sauvegarde trop volumineuse.',
     syncQuota: 'Trop de synchronisations aujourd’hui. Réessayez demain.',
+    syncAuth: 'Cette sauvegarde appartient à une autre clé.',
   },
   en: {
     method: 'Method not allowed.',
@@ -111,10 +114,41 @@ const COPY = {
     syncId: 'Invalid sync id.',
     syncSize: 'Backup too large.',
     syncQuota: 'Too many syncs today. Try again tomorrow.',
+    syncAuth: 'This backup belongs to another key.',
   },
 } as const;
 
 type Code = keyof typeof COPY.en;
+
+// ALLOWED_ORIGIN can list several origins, separated by commas (the site and a preview deployment, say).
+function originAllowed(origin: string, env: Env): boolean {
+  return origin !== '' && env.ALLOWED_ORIGIN.split(',').some((item) => item.trim() === origin);
+}
+
+// Reads a body without ever holding more than `max` bytes, whatever the sender declared.
+async function readLimited(request: Request, max: number): Promise<Uint8Array | null> {
+  if (!request.body) return new Uint8Array(0);
+  const reader = request.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let total = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    total += value.byteLength;
+    if (total > max) {
+      await reader.cancel();
+      return null;
+    }
+    chunks.push(value);
+  }
+  const out = new Uint8Array(total);
+  let at = 0;
+  for (const chunk of chunks) {
+    out.set(chunk, at);
+    at += chunk.byteLength;
+  }
+  return out;
+}
 
 export async function handleRequest(request: Request, env: Env): Promise<Response> {
   const origin = request.headers.get('origin') || '';
@@ -124,10 +158,10 @@ export async function handleRequest(request: Request, env: Env): Promise<Respons
   void request.headers.get('x-license');
 
   if (request.method === 'OPTIONS') {
-    if (origin !== env.ALLOWED_ORIGIN) return json(403, 'origin', copy.origin, origin, false);
-    return new Response(null, { status: 204, headers: cors(env.ALLOWED_ORIGIN) });
+    if (!originAllowed(origin, env)) return json(403, 'origin', copy.origin, origin, false);
+    return new Response(null, { status: 204, headers: cors(origin) });
   }
-  if (origin !== env.ALLOWED_ORIGIN) return json(403, 'origin', copy.origin, origin, false);
+  if (!originAllowed(origin, env)) return json(403, 'origin', copy.origin, origin, false);
   const path = new URL(request.url).pathname;
   if (path === '/sync' || path.startsWith('/sync/')) return handleSync(request, env, path, origin, copy);
   if (request.method !== 'POST') return json(405, 'method', copy.method, origin);
@@ -136,8 +170,8 @@ export async function handleRequest(request: Request, env: Env): Promise<Respons
   if (mime !== 'image/webp' && mime !== 'image/jpeg') return json(415, 'type', copy.type, origin);
   const declared = Number(request.headers.get('content-length') || '');
   if (Number.isFinite(declared) && declared > 512 * 1024) return json(413, 'size', copy.size, origin);
-  const bytes = new Uint8Array(await request.arrayBuffer());
-  if (bytes.byteLength === 0 || bytes.byteLength > 512 * 1024) return json(413, 'size', copy.size, origin);
+  const bytes = await readLimited(request, 512 * 1024);
+  if (!bytes || bytes.byteLength === 0) return json(413, 'size', copy.size, origin);
   if (!magicOk(bytes, mime)) return json(400, 'magic', copy.magic, origin);
 
   const token = request.headers.get('x-turnstile') || '';
@@ -192,8 +226,8 @@ export async function handleRequest(request: Request, env: Env): Promise<Respons
   if (!parsed) {
     // A provider fault is not the visitor's scan: give the slot back.
     if (lastError === 'upstream' || lastError === 'timeout') {
-      await env.KV.put(ipKey, String(ipCount), { expirationTtl: 172800 });
-      await env.KV.put(globalKey, String(globalCount), { expirationTtl: 172800 });
+      await refund(env, ipKey);
+      await refund(env, globalKey);
     }
     const status = lastError === 'timeout' ? 504 : lastError === 'upstream' ? 502 : 422;
     return json(status, lastError, copy[lastError], origin);
@@ -203,14 +237,24 @@ export async function handleRequest(request: Request, env: Env): Promise<Respons
   return new Response(body, { status: 200, headers: cors(origin) });
 }
 
+// Takes one back from a counter as it is now, not as it was when the request began.
+async function refund(env: Env, key: string): Promise<void> {
+  const now = Number((await env.KV.get(key)) || '0');
+  await env.KV.put(key, String(Math.max(0, now - 1)), { expirationTtl: 172800 });
+}
+
 const SYNC_MAX = 900_000;
+const SYNC_FIRST_MAX = 262_144;
 const SYNC_TTL = 60 * 60 * 24 * 400;
 
 // Encrypted backups. The server stores opaque text under an id derived from a secret key it never sees.
+// Writing needs the write token that goes with that key. The server keeps its hash and compares it, so knowing
+// an id (or a read-only share code) is enough to read a copy but never to change or delete it.
 async function handleSync(request: Request, env: Env, path: string, origin: string, copy: (typeof COPY)[keyof typeof COPY]): Promise<Response> {
   const id = path.slice('/sync/'.length);
   if (!/^[0-9a-f]{40}$/.test(id)) return json(400, 'syncId', copy.syncId, origin);
   const key = `sync:${id}`;
+  const tokenKey = `synctok:${id}`;
   if (request.method === 'GET') {
     const value = await env.KV.get(key);
     if (value === null) return json(404, 'syncId', copy.syncId, origin);
@@ -218,18 +262,38 @@ async function handleSync(request: Request, env: Env, path: string, origin: stri
     headers.set('content-type', 'text/plain; charset=utf-8');
     return new Response(value, { status: 200, headers });
   }
+  if (request.method !== 'PUT' && request.method !== 'DELETE') return json(405, 'method', copy.method, origin);
+  const token = request.headers.get('x-write-token') || '';
+  if (!/^[0-9a-f]{64}$/.test(token)) return json(403, 'syncAuth', copy.syncAuth, origin);
+  const proof = await sha256Hex(token);
+  const stored = await env.KV.get(tokenKey);
+  // A backup made before tokens existed has none: the first write claims it.
+  if (stored !== null && stored !== proof) return json(403, 'syncAuth', copy.syncAuth, origin);
   if (request.method === 'DELETE') {
     await env.KV.delete(key);
+    await env.KV.delete(tokenKey);
     return new Response(null, { status: 204, headers: cors(origin) });
   }
-  if (request.method !== 'PUT') return json(405, 'method', copy.method, origin);
   if (!env.IP_HASH_SALT || env.IP_HASH_SALT.length < 16) return json(503, 'config', copy.config, origin);
   const declared = Number(request.headers.get('content-length') || '');
   if (Number.isFinite(declared) && declared > SYNC_MAX) return json(413, 'syncSize', copy.syncSize, origin);
-  const body = await request.text();
+  const raw = await readLimited(request, SYNC_MAX);
+  const body = raw ? new TextDecoder().decode(raw) : '';
   if (body.length === 0 || body.length > SYNC_MAX || !/^[A-Za-z0-9_-]+$/.test(body)) return json(413, 'syncSize', copy.syncSize, origin);
   const day = new Date().toISOString().slice(0, 10);
   const ipHash = await sha256Hex(`${env.IP_HASH_SALT}:${request.headers.get('cf-connecting-ip') || 'unknown'}`);
+  const exists = stored !== null || (await env.KV.get(key)) !== null;
+  if (!exists) {
+    // Making a new backup is the only way to fill the store: it is small and rationed.
+    if (body.length > SYNC_FIRST_MAX) return json(413, 'syncSize', copy.syncSize, origin);
+    const createIp = `synccreate:${day}:${ipHash}`;
+    const createAll = `synccreate:${day}`;
+    const createdIp = Number((await env.KV.get(createIp)) || '0');
+    const createdAll = Number((await env.KV.get(createAll)) || '0');
+    if (createdIp >= positiveInt(env.SYNC_CREATES_PER_IP_PER_DAY, 20) || createdAll >= positiveInt(env.SYNC_CREATES_GLOBAL_PER_DAY, 2000)) return json(429, 'syncQuota', copy.syncQuota, origin);
+    await env.KV.put(createIp, String(createdIp + 1), { expirationTtl: 172800 });
+    await env.KV.put(createAll, String(createdAll + 1), { expirationTtl: 172800 });
+  }
   const ipKey = `syncw:${day}:${ipHash}`;
   const globalKey = `syncw:${day}`;
   const ipCount = Number((await env.KV.get(ipKey)) || '0');
@@ -238,6 +302,7 @@ async function handleSync(request: Request, env: Env, path: string, origin: stri
   await env.KV.put(ipKey, String(ipCount + 1), { expirationTtl: 172800 });
   await env.KV.put(globalKey, String(globalCount + 1), { expirationTtl: 172800 });
   await env.KV.put(key, body, { expirationTtl: SYNC_TTL });
+  await env.KV.put(tokenKey, proof, { expirationTtl: SYNC_TTL });
   return new Response(null, { status: 204, headers: cors(origin) });
 }
 
@@ -314,7 +379,7 @@ function cors(origin: string): Headers {
   const headers = new Headers();
   headers.set('access-control-allow-origin', origin);
   headers.set('access-control-allow-methods', 'GET, PUT, POST, DELETE, OPTIONS');
-  headers.set('access-control-allow-headers', 'Content-Type, X-Turnstile, X-License');
+  headers.set('access-control-allow-headers', 'Content-Type, X-Turnstile, X-License, X-Write-Token');
   headers.set('access-control-max-age', '86400');
   headers.set('vary', 'Origin');
   headers.set('content-type', 'application/json; charset=utf-8');

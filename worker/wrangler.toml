@@ -3,6 +3,7 @@ main = "index.ts"
 compatibility_date = "2026-11-02"
 
 [vars]
+# Several origins can be listed, separated by commas (a preview deployment, for instance).
 ALLOWED_ORIGIN = "https://wodburner.app"
 GEMINI_MODEL = "gemini-2.5-flash"
 SCANS_PER_IP_PER_DAY = "5"

@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { handleRequest, SCAN_SCHEMA, type Env } from './index';
+import { newKey, open, packPayload, seal, shareCode, vaultId, writeToken } from '../src/sync-core';
 
 function memory() {
   const map = new Map<string, string>();
@@ -166,6 +167,15 @@ describe('scan worker', () => {
     expect((await handleRequest(post(jpeg(42)), e)).status).toBe(200);
   });
 
+  it('a refund never takes the counter below what other requests added', async () => {
+    installFetch();
+    const box = env({ SCANS_PER_IP_PER_DAY: '3' });
+    mode = 'http';
+    expect((await handleRequest(post(jpeg(60)), box)).status).toBe(502);
+    const counters = [...(box.KV as unknown as { map: Map<string, string> }).map.entries()].filter(([key]) => key.startsWith('ip:') || key.startsWith('global:'));
+    expect(counters.every(([, value]) => value === '0')).toBe(true);
+  });
+
   it('uses GEMINI_MODEL from the environment', async () => {
     installFetch();
     await handleRequest(post(jpeg(11)), env({ GEMINI_MODEL: 'custom-model' }));
@@ -184,8 +194,9 @@ describe('scan worker', () => {
 
 describe('sync endpoint', () => {
   const id = 'a'.repeat(40);
-  const call = (method: string, path: string, body?: string, origin = 'https://wodburner.app') =>
-    new Request(`https://scan.wodburner.app${path}`, { method, headers: { origin, 'content-type': 'text/plain' }, body });
+  const token = 'b'.repeat(64);
+  const call = (method: string, path: string, body?: string, origin = 'https://wodburner.app', write: string | null = token) =>
+    new Request(`https://scan.wodburner.app${path}`, { method, headers: { origin, 'content-type': 'text/plain', ...(write ? { 'x-write-token': write } : {}) }, body });
 
   it('stores, returns and deletes an opaque blob', async () => {
     const box = env();
@@ -214,5 +225,86 @@ describe('sync endpoint', () => {
     expect((await handleRequest(call('PUT', `/sync/${id}`, 'a'), box)).status).toBe(204);
     expect((await handleRequest(call('PUT', `/sync/${id}`, 'b'), box)).status).toBe(204);
     expect((await handleRequest(call('PUT', `/sync/${id}`, 'c'), box)).status).toBe(429);
+  });
+
+  it('only the holder of the write token can change or delete a backup', async () => {
+    const box = env();
+    expect((await handleRequest(call('PUT', `/sync/${id}`, 'first'), box)).status).toBe(204);
+    const other = 'c'.repeat(64);
+    expect((await handleRequest(call('PUT', `/sync/${id}`, 'hijack', undefined, other), box)).status).toBe(403);
+    expect((await handleRequest(call('DELETE', `/sync/${id}`, undefined, undefined, other), box)).status).toBe(403);
+    expect((await handleRequest(call('PUT', `/sync/${id}`, 'no-token', undefined, null), box)).status).toBe(403);
+    expect((await handleRequest(call('PUT', `/sync/${id}`, 'second'), box)).status).toBe(204);
+    // Reading needs no token: that is what makes a read-only copy possible.
+    expect(await (await handleRequest(call('GET', `/sync/${id}`, undefined, undefined, null), box)).text()).toBe('second');
+    expect((await handleRequest(call('DELETE', `/sync/${id}`), box)).status).toBe(204);
+  });
+
+  it('never stores the token itself', async () => {
+    const box = env();
+    await handleRequest(call('PUT', `/sync/${id}`, 'x'), box);
+    const stored = [...(box.KV as unknown as { map: Map<string, string> }).map.values()];
+    expect(stored).not.toContain(token);
+  });
+
+  it('a backup made before tokens existed is claimed by its first write', async () => {
+    const box = env();
+    await box.KV.put(`sync:${id}`, 'old');
+    expect((await handleRequest(call('PUT', `/sync/${id}`, 'new'), box)).status).toBe(204);
+    expect((await handleRequest(call('PUT', `/sync/${id}`, 'again', undefined, 'c'.repeat(64)), box)).status).toBe(403);
+  });
+
+  it('rations new backups and keeps the first one small', async () => {
+    const box = env({ SYNC_CREATES_PER_IP_PER_DAY: '2' });
+    const make = (n: number) => `/sync/${n.toString(16).padStart(40, '0')}`;
+    expect((await handleRequest(call('PUT', make(1), 'x'.repeat(262_145)), box)).status).toBe(413);
+    expect((await handleRequest(call('PUT', make(1), 'a'), box)).status).toBe(204);
+    expect((await handleRequest(call('PUT', make(2), 'a'), box)).status).toBe(204);
+    expect((await handleRequest(call('PUT', make(3), 'a'), box)).status).toBe(429);
+    // Updating an existing backup is not a creation, and can be large.
+    expect((await handleRequest(call('PUT', make(1), 'x'.repeat(300_000)), box)).status).toBe(204);
+  });
+
+  it('stops reading a body that is bigger than the limit even without a declared length', async () => {
+    const box = env();
+    const stream = new ReadableStream({
+      start(controller) {
+        for (let i = 0; i < 10; i++) controller.enqueue(new TextEncoder().encode('a'.repeat(100_000)));
+        controller.close();
+      },
+    });
+    const request = new Request(`https://scan.wodburner.app/sync/${id}`, { method: 'PUT', headers: { origin: 'https://wodburner.app', 'x-write-token': token }, body: stream, duplex: 'half' } as RequestInit);
+    expect((await handleRequest(request, box)).status).toBe(413);
+  });
+
+  it('accepts several allowed origins', async () => {
+    const box = env({ ALLOWED_ORIGIN: 'https://wodburner.app, https://preview.wodburner.pages.dev' });
+    const ok = await handleRequest(call('GET', `/sync/${id}`, undefined, 'https://preview.wodburner.pages.dev'), box);
+    expect(ok.status).toBe(404);
+    expect((await handleRequest(call('GET', `/sync/${id}`, undefined, 'https://evil.test'), box)).status).toBe(403);
+  });
+});
+
+describe('sharing end to end', () => {
+  const call = (method: string, id: string, body?: string, token?: string) =>
+    new Request(`https://scan.wodburner.app/sync/${id}`, { method, headers: { origin: 'https://wodburner.app', 'content-type': 'text/plain', ...(token ? { 'x-write-token': token } : {}) }, body });
+
+  it('a friend can read the share copy but cannot change it, delete it or reach the backup', async () => {
+    const box = env();
+    const key = newKey();
+    const code = await shareCode(key);
+    const token = await writeToken(key);
+    expect((await handleRequest(call('PUT', await vaultId(key), await seal(key, packPayload([], {}, 'Me')), token), box)).status).toBe(204);
+    expect((await handleRequest(call('PUT', await vaultId(code), await seal(code, packPayload([], {}, 'Me')), token), box)).status).toBe(204);
+
+    // The friend only holds the share code. Everything they can derive from it fails.
+    const friendToken = await writeToken(code);
+    const copy = await (await handleRequest(call('GET', await vaultId(code)), box)).text();
+    expect((await open(code, copy)).who).toBe('Me');
+    expect((await handleRequest(call('PUT', await vaultId(code), await seal(code, packPayload([], {}, 'Hacked')), friendToken), box)).status).toBe(403);
+    expect((await handleRequest(call('DELETE', await vaultId(code), undefined, friendToken), box)).status).toBe(403);
+    expect((await handleRequest(call('GET', await vaultId(code)), box)).status).toBe(200);
+    // Nothing derived from the code leads to the backup itself.
+    expect((await handleRequest(call('GET', await vaultId(await shareCode(code))), box)).status).toBe(404);
   });
 });

@@ -97,13 +97,19 @@ async function classicScript(entry, name) {
 const localizeFile = await classicScript('src/pages/localize.ts', 'localize');
 const rootLangFile = await classicScript('src/pages/root-lang.ts', 'root-lang');
 const bundles = {};
+const chunks = new Set();
 for (const lang of ['fr', 'en']) {
   bundles[lang] = {};
   for (const [name, entry] of Object.entries(entries)) {
+    // Code loaded with import() (the QR drawing, only needed once sync is on) is split into its own file.
     const result = await esbuild.build({
       absWorkingDir: root,
       entryPoints: [entry],
       bundle: true,
+      splitting: true,
+      outdir: path.join(dist, 'assets'),
+      entryNames: `${name}.${lang}.[hash]`,
+      chunkNames: 'chunk.[hash]',
       format: 'esm',
       minify: true,
       write: false,
@@ -120,10 +126,12 @@ for (const lang of ['fr', 'en']) {
         },
       }],
     });
-    const code = result.outputFiles[0].text;
-    const file = `${name}.${lang}.${createHash('sha256').update(code).digest('hex').slice(0, 10)}.js`;
-    await writeFile(path.join(dist, 'assets', file), code);
-    bundles[lang][name] = file;
+    for (const out of result.outputFiles) {
+      const file = path.basename(out.path);
+      await writeFile(out.path, out.contents);
+      if (file.startsWith('chunk.')) chunks.add(file);
+      else bundles[lang][name] = file;
+    }
   }
 }
 
@@ -144,6 +152,7 @@ function chrome(lang, currentPath, section = '') {
     privacy: esc(pack.nav.privacy),
     contact: esc(pack.nav.contact),
     email: esc(pack.nav.email),
+    disclaimer: esc(pack.nav.disclaimer),
     curTimers: here('timers'),
     curHeroes: here('heroes'),
     curHistory: here('history'),
@@ -349,20 +358,22 @@ for (const page of pages) {
   await writeFile(file, page.html);
 }
 
-const urls = new Set(['/', '/index.html', '/404.html', '/favicon.svg', '/mark.png', '/manifest.webmanifest', '/og.png', '/icons/icon-192.png', '/icons/icon-512.png', '/icons/icon-maskable-512.png', `/assets/${cssName}`, `/assets/${localizeFile}`, `/assets/${rootLangFile}`]);
+// Only the pages a visitor needs at the gym are stored on install. Benchmark pages are stored when they are visited.
+const shellIds = new Set(['home', 'timers', 'timer', 'dashboard', 'scan', 'wod', 'privacy', 'heroes']);
+const fixed = ['/favicon.svg', '/mark.png', '/manifest.webmanifest', '/og.png', '/icons/icon-192.png', '/icons/icon-512.png', '/icons/icon-maskable-512.png'];
+const urls = new Set(['/', '/404.html', ...fixed, `/assets/${cssName}`, `/assets/${localizeFile}`, `/assets/${rootLangFile}`]);
 for (const lang of ['fr', 'en']) for (const file of Object.values(bundles[lang])) urls.add(`/assets/${file}`);
-for (const page of pages) {
-  if (page.path.endsWith('.html')) urls.add(page.path);
-  else {
-    urls.add(page.path);
-    urls.add(`${page.path}index.html`);
-  }
-}
-const version = `wodburner-${createHash('sha256').update([...urls].sort().join('\n')).digest('hex').slice(0, 12)}`;
+for (const file of chunks) urls.add(`/assets/${file}`);
+for (const page of pages) if (shellIds.has(page.id)) urls.add(page.path);
+// The version changes when a page list or a file that keeps its name (icons, manifest) changes.
+const versionHash = createHash('sha256').update([...urls].sort().join('\n'));
+for (const file of fixed) versionHash.update(await readFile(path.join(dist, file)));
+const version = `wodburner-${versionHash.digest('hex').slice(0, 12)}`;
 const sw = `const VERSION=${JSON.stringify(version)};
 const PRECACHE=${JSON.stringify([...urls])};
+const WAIT=2000;
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(VERSION).then((cache) => cache.addAll(PRECACHE)).then(() => self.skipWaiting()));
+  event.waitUntil(caches.open(VERSION).then((cache) => Promise.all(PRECACHE.map((url) => cache.add(url).catch(() => undefined)))).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', (event) => {
   event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== VERSION).map((key) => caches.delete(key)))).then(() => self.clients.claim()));
@@ -373,27 +384,40 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
   const html = req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html');
-  event.respondWith(html ? networkFirst(req) : cacheFirst(req));
+  event.respondWith(html ? page(req, url) : asset(req));
 });
-async function networkFirst(req) {
+// A page is stored under its path alone: /fr/timers/amrap/?min=20&wod=1 and ?min=5 are the same page offline.
+async function page(req, url) {
   const cache = await caches.open(VERSION);
-  try {
-    const fresh = await fetch(req);
-    if (fresh.ok) await cache.put(req, fresh.clone());
-    return fresh;
-  } catch (error) {
-    return (await caches.match(req)) || (await caches.match('/404.html')) || new Response('Offline', { status: 503, headers: { 'content-type': 'text/plain; charset=utf-8' } });
+  const key = url.origin + url.pathname;
+  const cached = await cache.match(key);
+  const network = fetch(req).then((res) => {
+    if (res.ok && !res.redirected) cache.put(key, res.clone());
+    return res;
+  });
+  if (!cached) {
+    try {
+      return await network;
+    } catch (error) {
+      return (await cache.match('/404.html')) || new Response('Offline', { status: 503, headers: { 'content-type': 'text/plain; charset=utf-8' } });
+    }
   }
+  // Weak wifi must not hold the timer hostage: after a short wait the stored page is shown.
+  return Promise.race([network.catch(() => cached), new Promise((resolve) => setTimeout(() => resolve(cached), WAIT))]);
 }
-async function cacheFirst(req) {
+async function asset(req) {
   const cached = await caches.match(req);
   if (cached) return cached;
-  const fresh = await fetch(req);
-  if (fresh.ok) {
-    const cache = await caches.open(VERSION);
-    await cache.put(req, fresh.clone());
+  try {
+    const fresh = await fetch(req);
+    if (fresh.ok) {
+      const cache = await caches.open(VERSION);
+      await cache.put(req, fresh.clone());
+    }
+    return fresh;
+  } catch (error) {
+    return Response.error();
   }
-  return fresh;
 }
 `;
 await writeFile(path.join(dist, 'sw.js'), sw);
@@ -402,6 +426,7 @@ const headerCsp = contentSecurityPolicy(worker, false);
 await writeFile(path.join(dist, '_headers'), `/*
   Content-Security-Policy: ${headerCsp}
   X-Content-Type-Options: nosniff
+  Strict-Transport-Security: max-age=31536000
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: ${permissionsPolicy()}
   X-Frame-Options: DENY

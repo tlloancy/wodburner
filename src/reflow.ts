@@ -129,12 +129,31 @@ function withoutTitle(name: string, text: string): string {
   return lines.slice(start).join('\n').trim();
 }
 
-export function presentStored<T extends { name: string; format: Format; timer: TimerConfig; text: string }>(wod: T): T {
-  const text = reflow(wod.text);
+interface Presented {
+  name: string;
+  shown: string;
+  found: { format: Format; timer: TimerConfig } | null;
+}
+
+// The reading of a stored text never changes, so it is done once per text. A long history is redrawn often.
+const seen = new Map<string, Presented>();
+
+function present(name: string, source: string): Presented {
+  const key = `${name}\u0000${source}`;
+  const hit = seen.get(key);
+  if (hit) return hit;
+  const text = reflow(source);
   const found = clock(text);
-  const name = title(wod.name, text);
-  const shown = withoutTitle(name, text);
+  const shownName = title(name, text);
+  const made: Presented = { name: shownName, shown: withoutTitle(shownName, text), found };
+  if (seen.size >= 3000) seen.clear();
+  seen.set(key, made);
+  return made;
+}
+
+export function presentStored<T extends { name: string; format: Format; timer: TimerConfig; text: string }>(wod: T): T {
+  const { name, shown, found } = present(wod.name, wod.text);
   if (!found || (wod.format !== 'other' && wod.format !== found.format)) return { ...wod, name, text: shown };
-  const timer = wod.format === found.format ? { ...wod.timer, ...found.timer } : found.timer;
+  const timer = wod.format === found.format ? { ...wod.timer, ...found.timer } : { ...found.timer };
   return { ...wod, name, text: shown, format: found.format, timer };
 }

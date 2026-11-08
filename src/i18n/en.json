@@ -8,7 +8,11 @@
       "tabata": "Tabata",
       "other": "Other"
     },
-    "confidence": { "high": "high", "medium": "medium", "low": "low" },
+    "confidence": {
+      "high": "high",
+      "medium": "medium",
+      "low": "low"
+    },
     "timer": {
       "pause": "Pause",
       "resume": "Resume",
@@ -38,7 +42,7 @@
       "syncNetwork": "Cannot reach the server. Try again.",
       "syncNotFound": "No backup for this key. Check it.",
       "syncBadKey": "Invalid key or unreadable backup.",
-      "syncLimit": "The backup is too large.",
+      "syncLimit": "Backup too large: it no longer syncs. Export, then delete old WODs.",
       "syncCopied": "Key copied.",
       "syncLinkCopied": "Link copied.",
       "syncOn": "Sync is on. Send the code to your other devices.",
@@ -64,7 +68,10 @@
       "confirmDelete": "Delete “{name}”?",
       "resultSaved": "Result added.",
       "needName": "Enter a name.",
-      "saved": "Workout saved."
+      "saved": "Workout saved.",
+      "syncQuota": "Too many syncs today. Try again tomorrow.",
+      "syncSelf": "This is your own link.",
+      "friendLinkCopied": "Read-only link copied."
     },
     "scan": {
       "preparing": "Preparing the photo…",
@@ -100,7 +107,8 @@
       "scan": "Scan",
       "privacy": "Privacy",
       "contact": "Contact",
-      "email": "thomaslloancy@gmail.com"
+      "email": "thomaslloancy@gmail.com",
+      "disclaimer": "WODBurner is not affiliated with CrossFit, LLC. CrossFit® is a registered trademark of CrossFit, LLC."
     },
     "root": {
       "title": "WODBurner — CrossFit timer",
@@ -199,13 +207,13 @@
       "syncRestore": "Get my WODs",
       "syncKeyLabel": "Your secret key",
       "syncName": "Your name",
-      "syncNameHint": "A friend who scans your code sees this name on your workouts.",
+      "syncNameHint": "A friend who opens your share link sees this name on your workouts.",
       "syncCopy": "Copy key",
       "syncShare": "Send to another device",
       "syncScan": "The other phone scans it with its camera: history opens and the workouts come in.",
       "syncNow": "Sync now",
       "syncDisable": "Turn off and delete the copy",
-      "syncWarn": "Write it down somewhere else. If it is lost it cannot be recovered. Anyone who knows it can read the backup.",
+      "syncWarn": "Write it down somewhere else. If it is lost it cannot be recovered. Anyone who knows it can read and change the backup: send it to your own devices only.",
       "searchLabel": "Search my WODs",
       "searchPlaceholder": "Name, movement, weight… (press /)",
       "clearSearch": "Clear",
@@ -243,7 +251,9 @@
       "tabataRounds": "Rounds",
       "sets": "Sets",
       "setRest": "Rest between sets, seconds",
-      "prep": "Countdown, seconds"
+      "prep": "Countdown, seconds",
+      "syncFriendHint": "For a friend: a read-only link. They see your workouts and results and cannot change anything, and it does not reveal your key.",
+      "syncFriendShare": "Share read-only"
     },
     "scan": {
       "title": "Scan a whiteboard — WODBurner",
@@ -305,13 +315,13 @@
         {
           "h": "What stays on this device",
           "p": [
-            "Workouts, results, sound and volume are stored in this browser (IndexedDB). The language shown is the phone’s. The JSON export copies them. If you turn on sync, a copy encrypted in your browser with a secret key we never see is kept on our Cloudflare servers, with no name or email; turning sync off deletes it. Scanning a friend’s key copies their history into yours, with their name, and writes nothing into their backup. Erase everything removes them from the device. That is the only action that stands in for deleting an account, because there is no account."
+            "Workouts, results, sound and volume are stored in this browser (IndexedDB). The language shown is the phone’s. The JSON export copies them. If you turn on sync, a copy encrypted in your browser with a secret key we never see is kept on our Cloudflare servers, with no name or email; turning sync off deletes it. A second copy, encrypted with a code derived from the key, holds your own workouts and is used for read-only sharing: that code can read it, never change it or lead back to your key. Opening a friend’s link copies their history into yours, with their name, and writes nothing into their backup. Erase everything removes them from the device. That is the only action that stands in for deleting an account, because there is no account."
           ]
         },
         {
           "h": "The whiteboard photo",
           "p": [
-            "The photo leaves the device only when you start a scan. The browser shrinks it, then sends it to WODBurner’s reading service. That service forwards it to Google Gemini for the request and does not keep it. The text you review can be saved, and only on your device, if you ask for that.",
+            "The photo leaves the device only when you start a scan. The browser shrinks it, then sends it to WODBurner’s reading service. That service forwards it to Google Gemini for the request and does not keep it. The text that was read is kept for 24 hours on our Cloudflare servers, under the image’s fingerprint and not under your name, so the same photo is not read twice; it is then erased. It enters your history, on your device, only if you save it.",
             "A whiteboard can show names or faces. WODBurner does not keep the image."
           ]
         },

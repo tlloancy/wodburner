@@ -12,6 +12,11 @@ function isObj(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
+// Dates are compared as text later on, so every stored date is written the same way (UTC, milliseconds).
+export function isoDate(value: string): string {
+  return new Date(value).toISOString();
+}
+
 function optionalInt(value: unknown, min: number, max: number, code: string): number | undefined {
   if (value === undefined) return undefined;
   if (typeof value !== 'number' || !Number.isInteger(value) || value < min || value > max) throw new DataError(code);
@@ -98,7 +103,7 @@ function parseResult(value: unknown): Result {
   if (typeof value.at !== 'string' || Number.isNaN(Date.parse(value.at))) throw new DataError('invalid-result');
   if (value.kind !== 'time' && value.kind !== 'rounds' && value.kind !== 'free') throw new DataError('invalid-result');
   if (typeof value.value !== 'string' || value.value.length === 0 || value.value.length > 200) throw new DataError('invalid-result');
-  const result: Result = { at: value.at, kind: value.kind, value: value.value };
+  const result: Result = { at: isoDate(value.at), kind: value.kind, value: value.value };
   if (value.note !== undefined) {
     if (typeof value.note !== 'string' || value.note.length > 500) throw new DataError('invalid-result');
     result.note = value.note;
@@ -124,7 +129,7 @@ export function parseWod(value: unknown): Wod {
     format: value.format as Format,
     timer: parseTimer(value.timer ?? {}),
     text: value.text,
-    createdAt: value.createdAt,
+    createdAt: isoDate(value.createdAt),
     source: value.source as WodSource,
     hash: value.hash,
     results: value.results.map(parseResult),

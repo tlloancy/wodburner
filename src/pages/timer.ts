@@ -63,6 +63,22 @@ let sound = true;
 let tick = 0;
 let wodId = '';
 let displayName = '';
+let resultSaved = false;
+
+// performance.now() can stand still while a phone sleeps. The wall clock cannot, so any extra time it shows
+// is added back: the timer keeps counting when the screen locks.
+let lastPerf = performance.now();
+let lastWall = Date.now();
+let skew = 0;
+function nowMs(): number {
+  const perf = performance.now();
+  const wall = Date.now();
+  const gap = wall - lastWall - (perf - lastPerf);
+  if (gap > 1500) skew += gap;
+  lastPerf = perf;
+  lastWall = wall;
+  return perf + skew;
+}
 
 function must<T extends Element>(selector: string): T {
   const node = document.querySelector<T>(selector);
@@ -194,6 +210,7 @@ function showRun(): void {
   setup.hidden = true;
   run.hidden = false;
   resultForm.hidden = true;
+  resultSaved = false;
   engine = createTimer(format, config);
   prev = null;
   lastClock = '';
@@ -278,7 +295,7 @@ function paint(view: TimerView): void {
 }
 
 function render(): void {
-  const now = performance.now();
+  const now = nowMs();
   engine = reconcile(engine, now);
   const view = project(engine, now);
   if (prev) for (const cue of cues(prev, view)) play(cue);
@@ -312,19 +329,20 @@ async function keepAwake(): Promise<void> {
 
 function onStart(): void {
   unlockAudio();
-  const now = performance.now();
+  const now = nowMs();
   if (project(engine, now).phase === 'finished') {
+    resultSaved = false;
     engine = createTimer(format, config);
     prev = project(engine, now);
   }
-  if (project(engine, now).phase === 'idle') engine = start(engine, performance.now());
+  if (project(engine, now).phase === 'idle') engine = start(engine, nowMs());
   void keepAwake();
   render();
   startTicking();
 }
 
 function onPause(): void {
-  const now = performance.now();
+  const now = nowMs();
   const view = project(engine, now);
   if (view.phase === 'paused') {
     engine = resume(engine, now);
@@ -346,6 +364,12 @@ function describe(): string {
 }
 
 async function saveResult(view: TimerView): Promise<void> {
+  // One result per run: a second tap on Save must not add the same score again.
+  if (resultSaved) {
+    saveStatus.textContent = strings.timer.saved;
+    return;
+  }
+  resultSaved = true;
   const data = new FormData(resultForm);
   const rounds = String(data.get('rounds') ?? '').trim();
   const reps = String(data.get('reps') ?? '').trim();
@@ -397,6 +421,7 @@ async function saveResult(view: TimerView): Promise<void> {
     }
     saveStatus.textContent = strings.timer.saved;
   } catch {
+    resultSaved = false;
     saveStatus.textContent = strings.timer.saveFailed;
   }
 }
@@ -418,17 +443,17 @@ form.addEventListener('submit', (event) => {
 startBtn.addEventListener('click', onStart);
 pauseBtn.addEventListener('click', onPause);
 doneBtn.addEventListener('click', () => {
-  const now = performance.now();
+  const now = nowMs();
   const before = project(engine, now).phase;
   engine = markDone(engine, now);
-  if (before === 'prep' && project(engine, performance.now()).phase === 'idle') {
+  if (before === 'prep' && project(engine, nowMs()).phase === 'idle') {
     stopTicking();
     releaseWake();
   }
   render();
 });
 plusBtn.addEventListener('click', () => {
-  engine = addRound(engine, performance.now());
+  engine = addRound(engine, nowMs());
   render();
 });
 modifyBtn.addEventListener('click', () => {
@@ -460,7 +485,7 @@ fullBtn.addEventListener('click', () => {
 });
 resultForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  void saveResult(project(engine, performance.now()));
+  void saveResult(project(engine, nowMs()));
 });
 
 document.addEventListener('keydown', (event) => {
@@ -474,7 +499,7 @@ document.addEventListener('keydown', (event) => {
 
 document.addEventListener('visibilitychange', () => {
   render();
-  const phase = project(engine, performance.now()).phase;
+  const phase = project(engine, nowMs()).phase;
   if (document.visibilityState === 'visible' && (phase === 'running' || phase === 'prep')) void keepAwake();
 });
 window.addEventListener('pageshow', () => render());
