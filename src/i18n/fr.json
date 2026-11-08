@@ -70,8 +70,7 @@
       "needName": "Indiquez un nom.",
       "saved": "WOD enregistré.",
       "syncQuota": "Trop de synchros aujourd’hui. Réessayez demain.",
-      "syncSelf": "C’est votre propre lien.",
-      "friendLinkCopied": "Lien lecture seule copié."
+      "syncSelf": "C’est votre propre lien."
     },
     "scan": {
       "preparing": "Préparation de la photo…",
@@ -209,8 +208,8 @@
       "syncName": "Votre nom",
       "syncNameHint": "Un copain qui ouvre votre lien de partage voit ce nom sur vos WODs.",
       "syncCopy": "Copier la clé",
-      "syncShare": "Envoyer à un autre appareil",
-      "syncScan": "L’autre téléphone le scanne avec son appareil photo : l’historique s’ouvre et les WODs arrivent.",
+      "syncShare": "Copier le lien",
+      "syncScan": "Votre autre téléphone scanne ce code, ou vous collez le lien. Il reçoit la clé.",
       "syncNow": "Synchroniser",
       "syncDisable": "Désactiver et effacer la copie",
       "syncWarn": "Notez-la ailleurs. Perdue, elle ne peut pas être récupérée. Quiconque la connaît peut lire et modifier la sauvegarde : ne l’envoyez qu’à vos propres appareils.",
@@ -252,8 +251,7 @@
       "sets": "Blocs",
       "setRest": "Repos entre blocs, secondes",
       "prep": "Préparation, secondes",
-      "syncFriendHint": "Pour un copain : un lien en lecture seule. Il voit vos WODs et leurs résultats, sans pouvoir rien modifier, et ne peut pas remonter à votre clé.",
-      "syncFriendShare": "Partager en lecture seule"
+      "syncFriendHint": "Un copain scanne ce code, ou vous collez le lien. Il voit vos WODs et ne peut rien modifier. Le lien ne révèle pas votre clé."
     },
     "scan": {
       "title": "Scanner un tableau — WODBurner",

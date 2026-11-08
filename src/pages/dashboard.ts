@@ -455,8 +455,8 @@ function syncError(error: unknown): string {
   return code === 'notfound' ? strings.dashboard.syncNotFound : code === 'badkey' ? strings.dashboard.syncBadKey : code === 'limit' ? strings.dashboard.syncLimit : code === 'noname' ? strings.dashboard.friendNameless : code === 'quota' ? strings.dashboard.syncQuota : code === 'self' ? strings.dashboard.syncSelf : strings.dashboard.syncNetwork;
 }
 
-function deviceLink(key: string): string {
-  return `${location.origin}${location.pathname}#k=${key}`;
+function pageLink(kind: 'k' | 'f', code: string): string {
+  return `${location.origin}${location.pathname}#${kind}=${code}`;
 }
 
 // `#k=` carries a whole key (our own other device). `#f=` carries a read-only share code (a friend).
@@ -467,13 +467,9 @@ function linkedCode(): { kind: 'k' | 'f'; code: string } | null {
   return { kind: match[1] === 'f' ? 'f' : 'k', code: match[2] ?? '' };
 }
 
-async function drawQr(key: string): Promise<void> {
-  const host = document.querySelector<HTMLElement>('#sync-qr');
-  if (!host) return;
+function paintQr(host: HTMLElement, url: string, modules: (text: string) => { n: number; dark: Uint8Array }): void {
   host.replaceChildren();
-  // Loaded only when sync is on: most visits never need the QR code.
-  const { qrModules } = await import('../qr');
-  const { n, dark } = qrModules(deviceLink(key));
+  const { n, dark } = modules(url);
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svg.setAttribute('viewBox', `-4 -4 ${n + 8} ${n + 8}`);
   svg.setAttribute('aria-hidden', 'true');
@@ -492,6 +488,17 @@ async function drawQr(key: string): Promise<void> {
   host.append(svg);
 }
 
+async function drawQrs(key: string): Promise<void> {
+  const own = document.querySelector<HTMLElement>('#sync-qr');
+  const pal = document.querySelector<HTMLElement>('#friend-qr');
+  if (!own || !pal) return;
+  // Loaded only when sync is on: most visits never need the QR code.
+  const { qrModules } = await import('../qr');
+  paintQr(own, pageLink('k', key), qrModules);
+  const code = await sync.currentShareCode();
+  if (code) paintQr(pal, pageLink('f', code), qrModules);
+}
+
 function showSync(): void {
   const key = sync.savedKey();
   if (syncOff) syncOff.hidden = key !== null;
@@ -499,7 +506,7 @@ function showSync(): void {
   if (syncKey) syncKey.textContent = key ? sync.display(key) : '';
   const nameInput = document.querySelector<HTMLInputElement>('#sync-name');
   if (nameInput && document.activeElement !== nameInput) nameInput.value = sync.currentWho();
-  if (key) void drawQr(key).catch(() => undefined);
+  if (key) void drawQrs(key).catch(() => undefined);
 }
 
 // Runs after a change on this page. Failures stay silent: the next visit tries again.
@@ -553,20 +560,16 @@ document.querySelector('#sync-name')?.addEventListener('change', () => {
   if (input) input.value = sync.currentWho();
   quietSync();
 });
-function sendLink(url: string, copied: string): void {
-  if (typeof navigator.share === 'function') {
-    void navigator.share({ title: 'WODBurner', url }).catch(() => undefined);
-    return;
-  }
-  void navigator.clipboard?.writeText(url).then(() => syncSay(copied), () => undefined);
+function copyLink(url: string): void {
+  void navigator.clipboard?.writeText(url).then(() => syncSay(strings.dashboard.syncLinkCopied), () => undefined);
 }
 document.querySelector('#sync-share')?.addEventListener('click', () => {
   const key = sync.savedKey();
-  if (key) sendLink(deviceLink(key), strings.dashboard.syncLinkCopied);
+  if (key) copyLink(pageLink('k', key));
 });
 document.querySelector('#friend-share')?.addEventListener('click', () => {
   void sync.currentShareCode().then((code) => {
-    if (code) sendLink(`${location.origin}${location.pathname}#f=${code}`, strings.dashboard.friendLinkCopied);
+    if (code) copyLink(pageLink('f', code));
   });
 });
 document.querySelector('#sync-stop')?.addEventListener('click', () => {
