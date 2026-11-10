@@ -145,10 +145,21 @@ textarea { min-height: 9rem; resize: vertical; }
 .banner { border-color: var(--accent); margin: 0.75rem 0 0; }
 .actions, .tools, .pick-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
 .wod-text { white-space: pre-wrap; font: inherit; margin: 0; }
+.board { display: grid; gap: 0.28rem; margin: 0.4rem 0 0; }
+.board p { margin: 0; }
+.board .move { font-weight: 650; letter-spacing: -0.02em; }
+.board .kicker { margin-top: 0.35rem; color: var(--accent); font-size: 0.78rem; font-weight: 750; letter-spacing: 0.07em; text-transform: uppercase; }
+.board .rest, .board .note { color: var(--muted); font-size: 0.95rem; }
+.board .note { padding-left: 0.7rem; }
+.board .pair { display: flex; gap: 0.65rem; align-items: baseline; }
+.board .pair b { flex: none; min-width: 4.5rem; color: var(--muted); font-size: 0.75rem; font-weight: 750; letter-spacing: 0.06em; text-transform: uppercase; }
 .wod-now { margin: 0 0 0.7rem; }
 .wod-name { margin: 0 0 0.15rem; font-weight: 650; font-size: 1.2rem; letter-spacing: -0.03em; line-height: 1.2; }
-.wod-now .wod-text { max-height: 14rem; overflow: auto; margin-top: 0.35rem; line-height: 1.45; }
-body.is-running .wod-now .wod-text { max-height: 6.5rem; }
+.wod-now .board .move { font-size: 1.15rem; }
+.wod-now .board { max-height: 16rem; overflow: auto; }
+body.is-running .wod-now .board:not(.open) { max-height: none; overflow: visible; cursor: pointer; }
+body.is-running .wod-now .board:not(.open) > :not(:first-child) { display: none; }
+body.is-running .wod-now .board.open { max-height: 14rem; }
 .save-note:not(:empty) { margin: 0.55rem 0 0; font-weight: 700; color: var(--accent); }
 .results li { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
 .recent { display: grid; margin: 0.2rem 0 0; }
@@ -237,8 +248,10 @@ dialog::backdrop { background: rgb(0 0 0 / 72%); }
   border: 0;
 }
 
-.sync { border: 1px solid var(--line); border-radius: 0.75rem; padding: 0.8rem 1rem; margin: 1rem 0; }
-.sync summary { cursor: pointer; font-weight: 700; }
+.sync, .panel { border: 1px solid var(--line); border-radius: 0.75rem; padding: 0.8rem 1rem; margin: 1rem 0; }
+.sync summary, .panel summary { cursor: pointer; font-weight: 700; min-height: 48px; display: flex; align-items: center; }
+.share-label { margin: 0.9rem 0 0.35rem; font-size: 0.78rem; font-weight: 750; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.sync-stop { margin-top: 0.35rem; }
 .keybox { display: block; padding: 0.8rem; border: 1px dashed var(--line); border-radius: 0.5rem; font-size: 1.05rem; letter-spacing: 0.06em; word-break: break-all; user-select: all; }
 .who { margin: 0.15rem 0 0; color: var(--accent); font-weight: 700; }
 .qr { width: 12rem; margin: 0.75rem 0; }

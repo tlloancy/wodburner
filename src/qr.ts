@@ -173,3 +173,24 @@ export function qrModules(text: string): { n: number; dark: Uint8Array } {
   for (let i = 8; i < 15; i++) put(8, n - 15 + i, i);
   return { n, dark: mod };
 }
+
+export function drawQr(host: HTMLElement, text: string): void {
+  const { n, dark } = qrModules(text);
+  host.replaceChildren();
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', `-4 -4 ${n + 8} ${n + 8}`);
+  svg.setAttribute('aria-hidden', 'true');
+  const bg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  bg.setAttribute('x', '-4');
+  bg.setAttribute('y', '-4');
+  bg.setAttribute('width', String(n + 8));
+  bg.setAttribute('height', String(n + 8));
+  bg.setAttribute('fill', '#fff');
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('fill', '#111');
+  let d = '';
+  for (let row = 0; row < n; row++) for (let col = 0; col < n; col++) if (dark[row * n + col]) d += `M${col} ${row}h1v1h-1z`;
+  path.setAttribute('d', d);
+  svg.append(bg, path);
+  host.append(svg);
+}

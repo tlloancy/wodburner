@@ -1,4 +1,5 @@
 import strings from '@i18n';
+import { paintBoard } from '../board-view';
 import { presentStored } from '../reflow';
 import { getWod } from '../db';
 import { registerSW } from '../pwa';
@@ -34,7 +35,8 @@ async function openWod(): Promise<void> {
     who.hidden = false;
     who.textContent = wod.who;
   } else if (who) who.hidden = true;
-  text.textContent = view.text;
+  if (view.text) paintBoard(text, view.text);
+  else text.replaceChildren();
   const href = new URL(timerHref(lang, view.format, view.timer, view.name), location.origin);
   href.searchParams.set('wod', wod.id);
   launch.href = `${href.pathname}${href.search}`;

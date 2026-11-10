@@ -41,6 +41,6 @@ Le dossier git est `wodburner/`. Le répertoire de travail reste celui qui le co
 - `ALLOWED_ORIGIN` accepte plusieurs origines séparées par des virgules. Le Worker lit les corps de requête par morceaux et s'arrête à la limite, même sans `Content-Length`.
 - Le service worker pré-charge seulement la coquille (accueil, chronos, historique, scan, fiche, confidentialité, index des benchmarks) et garde chaque page sous son chemin sans paramètres : `?min=20&wod=…` s'ouvre hors ligne. Après 2 s sans réponse du réseau, la page stockée s'affiche. Les fiches de benchmarks se stockent à la visite.
 - Le chrono s'appuie sur `performance.now()` plus l'écart que montre l'horloge murale quand l'appareil a dormi (plus de 1,5 s). Les tests du moteur continuent d'injecter l'heure.
-- Le code QR est un morceau de JS chargé quand la synchro est active (`import()`), pour tenir le budget de 14 Ko de l'historique. Le lien « autre appareil » et le lien « copain » ont chacun un QR, avec le bouton qui copie ce même lien.
+- Le code QR est un morceau de JS chargé quand la synchro est active (`import()`), pour tenir le budget de 14 Ko de l'historique. Le lien « autre appareil » et le lien « copain » ont chacun un QR, avec le bouton qui copie ce même lien. Le premier est marqué pour un autre téléphone, le second pour un copain. L’historique montre les mouvements, le repos et les charges séparément, et range l’export sous la liste.
 - Le pied de page dit que WODBurner n'est pas affilié à CrossFit, LLC.
 

@@ -33,14 +33,18 @@ function sayForm(message: string): void {
   if (formStatus) formStatus.textContent = message;
 }
 
-function ask(message: string): Promise<boolean> {
+function ask(message: string, okLabel?: string): Promise<boolean> {
   if (!dialog || !confirmText) return Promise.resolve(window.confirm(message));
+  const ok = dialog.querySelector<HTMLButtonElement>('button[value="ok"]');
+  if (ok && !ok.dataset.label) ok.dataset.label = ok.textContent || '';
+  if (ok) ok.textContent = okLabel || ok.dataset.label || '';
   confirmText.textContent = message;
   dialog.showModal();
   return new Promise((resolve) => {
     dialog.addEventListener(
       'close',
       () => {
+        if (ok) ok.textContent = ok.dataset.label || '';
         resolve(dialog.returnValue === 'ok');
       },
       { once: true },
@@ -210,9 +214,19 @@ function render(): void {
     time.dateTime = wod.createdAt;
     time.textContent = when.format(new Date(wod.createdAt));
     meta.append(strings.formats[wod.format], ' · ', time);
-    const text = document.createElement('pre');
-    text.className = 'wod-text';
-    highlight(text, wod.text, matchRanges(wod.text, query));
+    const text = document.createElement('div');
+    const ranges = matchRanges(wod.text, query);
+    if (ranges.length) {
+      text.className = 'wod-text';
+      highlight(text, wod.text, ranges);
+    } else {
+      const body = wod.text;
+      text.className = 'board';
+      text.textContent = body;
+      void import('../board-view').then(({ paintBoard }) => {
+        if (text.isConnected && text.textContent === body) paintBoard(text, body);
+      });
+    }
     const results = document.createElement('ul');
     results.className = 'results';
     for (const result of wod.results) {
@@ -279,7 +293,7 @@ function render(): void {
   }
 }
 
-function label(key: 'relaunch' | 'delete' | 'addResult' | 'rounds' | 'reps' | 'note' | 'time' | 'result'): string {
+function label(key: 'relaunch' | 'delete' | 'addResult' | 'rounds' | 'reps' | 'note' | 'time' | 'result' | 'confirmCopy'): string {
   const node = document.querySelector<HTMLElement>(`[data-label="${key}"]`);
   return node?.textContent || key;
 }
@@ -467,36 +481,14 @@ function linkedCode(): { kind: 'k' | 'f'; code: string } | null {
   return { kind: match[1] === 'f' ? 'f' : 'k', code: match[2] ?? '' };
 }
 
-function paintQr(host: HTMLElement, url: string, modules: (text: string) => { n: number; dark: Uint8Array }): void {
-  host.replaceChildren();
-  const { n, dark } = modules(url);
-  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  svg.setAttribute('viewBox', `-4 -4 ${n + 8} ${n + 8}`);
-  svg.setAttribute('aria-hidden', 'true');
-  const bg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-  bg.setAttribute('x', '-4');
-  bg.setAttribute('y', '-4');
-  bg.setAttribute('width', String(n + 8));
-  bg.setAttribute('height', String(n + 8));
-  bg.setAttribute('fill', '#fff');
-  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  path.setAttribute('fill', '#111');
-  let d = '';
-  for (let row = 0; row < n; row++) for (let col = 0; col < n; col++) if (dark[row * n + col]) d += `M${col} ${row}h1v1h-1z`;
-  path.setAttribute('d', d);
-  svg.append(bg, path);
-  host.append(svg);
-}
-
 async function drawQrs(key: string): Promise<void> {
   const own = document.querySelector<HTMLElement>('#sync-qr');
   const pal = document.querySelector<HTMLElement>('#friend-qr');
   if (!own || !pal) return;
-  // Loaded only when sync is on: most visits never need the QR code.
-  const { qrModules } = await import('../qr');
-  paintQr(own, pageLink('k', key), qrModules);
+  const { drawQr } = await import('../qr');
+  drawQr(own, pageLink('k', key));
   const code = await sync.currentShareCode();
-  if (code) paintQr(pal, pageLink('f', code), qrModules);
+  if (code) drawQr(pal, pageLink('f', code));
 }
 
 function showSync(): void {
@@ -574,7 +566,7 @@ document.querySelector('#friend-share')?.addEventListener('click', () => {
 });
 document.querySelector('#sync-stop')?.addEventListener('click', () => {
   void (async () => {
-    if (!(await ask(strings.dashboard.confirmSyncOff))) return;
+    if (!(await ask(strings.dashboard.confirmSyncOff, label('confirmCopy')))) return;
     await sync.disable();
     syncSay(strings.dashboard.syncOff);
     showSync();

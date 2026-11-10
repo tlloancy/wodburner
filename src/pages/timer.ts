@@ -14,6 +14,7 @@ import {
   type EngineState,
   type TimerView,
 } from '../engine/timer';
+import { paintBoard } from '../board-view';
 import { fill } from '../fill';
 import { presentStored } from '../reflow';
 import { workoutHash } from '../hash';
@@ -336,6 +337,7 @@ function onStart(): void {
     prev = project(engine, now);
   }
   if (project(engine, now).phase === 'idle') engine = start(engine, nowMs());
+  textEl?.classList.remove('open');
   void keepAwake();
   render();
   startTicking();
@@ -516,11 +518,18 @@ function showWod(name: string, text: string): void {
   const title = view.name.trim();
   const body = view.text.trim();
   nameEl.textContent = title;
-  textEl.textContent = body;
+  textEl.classList.remove('open');
+  if (body) paintBoard(textEl, body);
+  else textEl.replaceChildren();
   textEl.hidden = body === '';
   wodNow.hidden = title === '' && body === '';
   if (title) displayName = title;
 }
+
+textEl?.addEventListener('click', () => {
+  if (!document.body.classList.contains('is-running') || !textEl) return;
+  textEl.classList.toggle('open');
+});
 
 showWod(displayName, '');
 if (wodId) {
