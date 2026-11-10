@@ -21,7 +21,8 @@ body {
   min-height: 100dvh;
   background: var(--bg);
   color: var(--fg);
-  font: 1.0625rem/1.45 ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font: 1.0625rem/1.5 "Avenir Next", "Segoe UI Variable", "Segoe UI", Roboto, "Adwaita Sans", sans-serif;
+  font-synthesis: none;
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
@@ -53,7 +54,7 @@ a { color: inherit; }
 .top { margin-bottom: 1.4rem; }
 .foot { margin-top: 2rem; color: var(--muted); }
 .foot small { flex-basis: 100%; }
-.word { font-weight: 750; letter-spacing: -0.03em; text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; min-height: 48px; }
+.word { font-weight: 700; letter-spacing: -0.02em; text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; min-height: 48px; }
 .word img { width: 32px; height: auto; border-radius: 8px; }
 nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
 nav a, .word, .foot a, .btn, .tile { text-decoration: none; }
@@ -69,7 +70,7 @@ h1 {
   margin: 0 0 0.6rem;
   font-size: clamp(2.3rem, 8vw, 3.6rem);
   line-height: 0.95;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.025em;
 }
 h2 { font-size: 1.35rem; letter-spacing: -0.02em; }
 .lead { font-size: 1.15rem; max-width: 38rem; }
@@ -124,7 +125,7 @@ h2 { font-size: 1.35rem; letter-spacing: -0.02em; }
 .stack, .card, form { display: grid; gap: 0.85rem; }
 .piece + .piece { border-top: 1px solid var(--line); padding-top: 1rem; }
 .piece h2 { margin: 0; font-size: 1.2rem; }
-label { display: grid; gap: 0.35rem; font-weight: 650; }
+label { display: grid; gap: 0.35rem; font-weight: 600; }
 input, select, textarea {
   min-height: 48px;
   width: 100%;
@@ -147,14 +148,14 @@ textarea { min-height: 9rem; resize: vertical; }
 .wod-text { white-space: pre-wrap; font: inherit; margin: 0; }
 .board { display: grid; gap: 0.28rem; margin: 0.4rem 0 0; }
 .board p { margin: 0; }
-.board .move { font-weight: 650; letter-spacing: -0.02em; }
-.board .kicker { margin-top: 0.35rem; color: var(--accent); font-size: 0.78rem; font-weight: 750; letter-spacing: 0.07em; text-transform: uppercase; }
+.board .move { font-weight: 600; letter-spacing: -0.02em; }
+.board .kicker { margin-top: 0.35rem; color: var(--accent); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
 .board .rest, .board .note { color: var(--muted); font-size: 0.95rem; }
 .board .note { padding-left: 0.7rem; }
 .board .pair { display: flex; gap: 0.65rem; align-items: baseline; }
-.board .pair b { flex: none; min-width: 4.5rem; color: var(--muted); font-size: 0.75rem; font-weight: 750; letter-spacing: 0.06em; text-transform: uppercase; }
+.board .pair b { flex: none; min-width: 4.5rem; color: var(--muted); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
 .wod-now { margin: 0 0 0.7rem; }
-.wod-name { margin: 0 0 0.15rem; font-weight: 650; font-size: 1.2rem; letter-spacing: -0.03em; line-height: 1.2; }
+.wod-name { margin: 0 0 0.15rem; font-weight: 600; font-size: 1.2rem; letter-spacing: -0.02em; line-height: 1.2; }
 .wod-now .board .move { font-size: 1.15rem; }
 .wod-now .board { max-height: 16rem; overflow: auto; }
 body.is-running .wod-now .board:not(.open) { max-height: none; overflow: visible; cursor: pointer; }
@@ -172,15 +173,15 @@ body.is-running .wod-now .board.open { max-height: 14rem; }
   border-top: 1px solid var(--line);
 }
 .recent a {
-  font-weight: 650;
+  font-weight: 600;
   font-size: 1.2rem;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   text-decoration: none;
 }
 .recent a:hover { text-decoration: underline; text-underline-offset: 0.18em; }
 .recent time { color: var(--muted); font-size: 0.85rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.card h2 { margin: 0 0 0.15rem; font-size: 1.2rem; font-weight: 650; letter-spacing: -0.03em; line-height: 1.2; }
+.card h2 { margin: 0 0 0.15rem; font-size: 1.2rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
 .card h2 a { text-decoration: none; }
 .card h2 a:hover { text-decoration: underline; text-underline-offset: 0.18em; }
 
@@ -193,18 +194,19 @@ body.is-running .wod-now .board.open { max-height: 14rem; }
 .timer-shell .clock-wrap, #run { display: flex; flex-direction: column; gap: 0.8rem; }
 .clock {
   margin: 0.2rem 0;
+  font-family: "DIN Alternate", "Avenir Next Condensed", "Segoe UI", Roboto, "Adwaita Sans", sans-serif;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum" 1;
-  font-weight: 760;
-  letter-spacing: -0.05em;
-  line-height: 0.85;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
   font-size: clamp(4.5rem, 28vw, 12rem);
   user-select: none;
 }
-.phase-label { margin: 0; font-size: 1.4rem; font-weight: 750; letter-spacing: 0.04em; text-transform: uppercase; }
+.phase-label { margin: 0; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
 .hits { margin: 0; font-size: clamp(2rem, 10vw, 4rem); font-variant-numeric: tabular-nums; }
 .plus { width: 100%; min-height: 6.5rem; font-size: 2rem; background: var(--accent); color: var(--ink); }
-.vol { display: flex; align-items: center; gap: 0.55rem; font-weight: 650; }
+.vol { display: flex; align-items: center; gap: 0.55rem; font-weight: 600; }
 .vol input[type="range"] {
   width: 9rem;
   min-height: 48px;
@@ -250,7 +252,7 @@ dialog::backdrop { background: rgb(0 0 0 / 72%); }
 
 .sync, .panel { border: 1px solid var(--line); border-radius: 0.75rem; padding: 0.8rem 1rem; margin: 1rem 0; }
 .sync summary, .panel summary { cursor: pointer; font-weight: 700; min-height: 48px; display: flex; align-items: center; }
-.share-label { margin: 0.9rem 0 0.35rem; font-size: 0.78rem; font-weight: 750; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.share-label { margin: 0.9rem 0 0.35rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
 .sync-stop { margin-top: 0.35rem; }
 .keybox { display: block; padding: 0.8rem; border: 1px dashed var(--line); border-radius: 0.5rem; font-size: 1.05rem; letter-spacing: 0.06em; word-break: break-all; user-select: all; }
 .who { margin: 0.15rem 0 0; color: var(--accent); font-weight: 700; }

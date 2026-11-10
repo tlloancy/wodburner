@@ -43,4 +43,5 @@ Le dossier git est `wodburner/`. Le répertoire de travail reste celui qui le co
 - Le chrono s'appuie sur `performance.now()` plus l'écart que montre l'horloge murale quand l'appareil a dormi (plus de 1,5 s). Les tests du moteur continuent d'injecter l'heure.
 - Le code QR est un morceau de JS chargé quand la synchro est active (`import()`), pour tenir le budget de 14 Ko de l'historique. Le lien « autre appareil » et le lien « copain » ont chacun un QR, avec le bouton qui copie ce même lien. Le premier est marqué pour un autre téléphone, le second pour un copain. L’historique montre les mouvements, le repos et les charges séparément, et range l’export sous la liste.
 - Le pied de page dit que WODBurner n'est pas affilié à CrossFit, LLC.
+- Pas de fichier de police. Le texte prend Avenir Next sur iPhone, la police du système ailleurs. Le chrono prend DIN Alternate là où le téléphone l'a. Les graisses s'arrêtent à 700 pour éviter un gras dessiné par le navigateur.
 
